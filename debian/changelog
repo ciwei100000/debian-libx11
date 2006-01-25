@@ -1,4 +1,4 @@
-libx11 (2:1.0.0-1) UNRELEASED; urgency=low
+libx11 (2:1.0.0-1) experimental; urgency=low
 
   * First upload to Debian
   * Remove versioned build-dep on x11proto-core-dev, since the first package
