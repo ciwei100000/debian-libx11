@@ -4,12 +4,14 @@ libx11 (2:1.0.0-2) experimental; urgency=low
     E. Hull.
   * Provide versioned build-depends on the X libs. Thanks Kurt Roeckx.
     (closes: #354161)
-  * Provide libx11-dev dependencies on x11proto-input-core and libxdmcp-dev.
+  * Provide libx11-dev dependencies on libxdmcp-dev.
     Thanks Kurt Roeckx. (closes: #354167)
   * Add a bunch of depends to libx11-dev from the monolith. Thanks Eugene
     Konev for the pointer.
+  * Add 001_no_xkb_in_pc_file.diff because we don't need x11proto-input-dev.
+    Thanks Eugene Konev.
 
- -- David Nusinow <dnusinow@debian.org>  Thu, 23 Feb 2006 23:07:54 -0500
+ -- David Nusinow <dnusinow@debian.org>  Thu, 23 Feb 2006 23:13:03 -0500
 
 libx11 (2:1.0.0-1) experimental; urgency=low
 
