@@ -2,8 +2,10 @@ libx11 (2:1.0.0-2) experimental; urgency=low
 
   * Properly install all the contents of /usr/lib/X11/locale. Thanks Zephenia
     E. Hull.
+  * Provide versioned build-depends on the X libs. Thanks Kurt Roeckx.
+    (closes: #354161)
 
- -- David Nusinow <dnusinow@debian.org>  Wed, 15 Feb 2006 20:09:10 -0500
+ -- David Nusinow <dnusinow@debian.org>  Thu, 23 Feb 2006 22:35:12 -0500
 
 libx11 (2:1.0.0-1) experimental; urgency=low
 
