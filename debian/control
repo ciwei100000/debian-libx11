@@ -8,9 +8,8 @@ Standards-Version: 3.6.1.0
 
 Package: libx11-6
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, x11-common
-Replaces: xlibs-data (<< 6.8.2-34)
-Pre-Depends: x11-common (>= 1.0)
+Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-data
+Pre-Depends: x11-common (>= 1:7.0.0)
 Description: X11 client-side library
  This package provides the main client interface to the X Window System, and is
  otherwise known as 'Xlib'.  It provides a complete API for the basic functions
@@ -23,9 +22,23 @@ Description: X11 client-side library
  This module can be found as the module 'lib/X11' at
  :pserver:anoncvs@cvs.freedesktop.org:/cvs/xorg
 
+Package: libx11-data
+Architecture: all
+Depends: ${misc:Depends}
+Pre-Depends: x11-common (>= 1:7.0.0)
+Description: X11 client-side library
+ This package provides the locale data files for libx11.
+ .
+ More information about X.Org can be found at:
+ <URL:http://xorg.freedesktop.org>
+ <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+ .
+ This module can be found as the module 'lib/X11' at
+ :pserver:anoncvs@cvs.freedesktop.org:/cvs/xorg
+
 Package: libx11-6-dbg
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, x11-common, libx11-6 (= ${Source-Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6 (= ${Source-Version})
 Description: X11 client-side library (debug package)
  This package provides the main client interface to the X Window System, and is
  otherwise known as 'Xlib'.  It provides a complete API for the basic functions
@@ -43,15 +56,14 @@ Description: X11 client-side library (debug package)
 
 Package: libx11-dev
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, x11-common, libx11-6 (= ${Source-Version}), libxau-dev (>= 1:1.0.0-1), libdmcp-dev (>= 1:1.0.0-1), libxext-dev (>= 1:1.0.0-1), libxi-dev (>= 1:1.0.0-1), libxkbfile-dev (>= 1:1.0.0.1-1), x11proto-core-dev (>= 6.8.99.8-1), x11proto-kb-dev, xtrans-dev
-Pre-Depends: x11-common (>= 1.0)
+Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6 (= ${Source-Version}), libxau-dev (>= 1:1.0.0-1), libxdmcp-dev (>= 1:1.0.0-1), libxext-dev (>= 1:1.0.0-1), libxi-dev (>= 1:1.0.0-1), libxkbfile-dev (>= 1:1.0.0.1-1), x11proto-core-dev (>= 6.8.99.8-1), x11proto-kb-dev, xtrans-dev
 Description: X11 client-side library (development headers)
  This package provides the main client interface to the X Window System, and is
  otherwise known as 'Xlib'.  It provides a complete API for the basic functions
  of the window system.
  .
- This package contains the development headers for the library found in libx11-6.
- Non-developers likely have little use for this package.
+ This package contains the development headers for the library found in 
+ libx11-6. Non-developers likely have little use for this package.
  .
  More information about X.Org can be found at:
  <URL:http://xorg.freedesktop.org>

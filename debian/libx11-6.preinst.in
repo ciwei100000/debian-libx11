@@ -1,4 +1,10 @@
 #!/bin/sh
+set -e
+
+THIS_PACKAGE=libx11-6
+THIS_SCRIPT=preinst
+
+#INCLUDE_SHELL_LIB#
 
 case "$1" in
   upgrade)

@@ -22,6 +22,17 @@ ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
 	INSTALL_PROGRAM += -s
 endif
 
+# This is for maintainer's convenience. It really should be always on option
+# but dh_install doesn't support --exclude-from <file>, and we leave out too
+# much crap to bother specifying it through --exclude arguments.
+# It alters dh_install call in binary_indep, as it is the first one called
+# from binary target.
+ifneq (,$(findstring checkinstall,$(DEB_BUILD_OPTIONS)))
+	dhinstallindepflags := --fail-missing
+else
+	dhinstallindepflags := -i
+endif
+
 DEB_HOST_ARCH      ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 DEB_HOST_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
@@ -31,12 +42,12 @@ else
 	confflags += --build=$(DEB_BUILD_GNU_TYPE) --host=$(DEB_HOST_GNU_TYPE)
 endif
 
-confflags += --enable-man-pages=3
+confflags += --enable-man-pages=3 --enable-loadable-i18n
 
 # so very wrong
 CFLAGS += -DLIBXCURSOR=\\\"libXcursor.so.1\\\"
 
-build: patch build-stamp
+build: genscripts patch build-stamp
 build-stamp:
 	dh_testdir
 
@@ -49,7 +60,7 @@ build-stamp:
 
 	touch build-stamp
 
-clean: xsfclean
+clean: autoreconf xsfclean
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp
@@ -75,23 +86,35 @@ binary-arch: build install
 	dh_testdir
 	dh_testroot
 
-	dh_installdocs
-	dh_install --sourcedir=debian/tmp
-	dh_installchangelogs
-	dh_link
-	dh_strip --dbg-package=$(PACKAGE)
-	dh_compress
-	dh_fixperms
-	dh_installdeb
-	dh_shlibdeps
-	dh_makeshlibs
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
+	dh_installdocs -s
+	dh_install --sourcedir=debian/tmp -s
+	dh_installchangelogs -s
+	dh_link -s
+	dh_strip --dbg-package=$(PACKAGE) -s
+	dh_compress -s
+	dh_fixperms -s
+	dh_makeshlibs -s
+	dh_shlibdeps -s
+	dh_installdeb -s
+	dh_gencontrol -s
+	dh_md5sums -s
+	dh_builddeb -s
 
 # Build architecture-independent files here.
 binary-indep: build install
-# Nothing to do
+	dh_testdir
+	dh_testroot
+
+	dh_installdocs -i
+	dh_installchangelogs -i
+	dh_install --sourcedir=debian/tmp $(dhinstallindepflags)
+	dh_link -i
+	dh_compress -i
+	dh_fixperms -i
+	dh_installdeb -i
+	dh_gencontrol -i
+	dh_md5sums -i
+	dh_builddeb -i
 
 binary: binary-indep binary-arch
 .PHONY: build clean binary-indep binary-arch binary install

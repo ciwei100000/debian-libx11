@@ -1,5 +1,6 @@
 libx11 (2:1.0.0-2) experimental; urgency=low
 
+  [ David Nusinow ]
   * Properly install all the contents of /usr/lib/X11/locale. Thanks Zephenia
     E. Hull.
   * Provide versioned build-depends on the X libs. Thanks Kurt Roeckx.
@@ -11,7 +12,36 @@ libx11 (2:1.0.0-2) experimental; urgency=low
   * Add 001_no_xkb_in_pc_file.diff because we don't need x11proto-input-dev.
     Thanks Eugene Konev.
 
- -- David Nusinow <dnusinow@debian.org>  Thu, 23 Feb 2006 23:13:03 -0500
+  [ Eugene Konev ]
+  * Move locale data in separate libx11-data package. Make libx11-6 depend
+    on it.
+  * libx11-6.install.in? Huh? Replaced with libx11-6.install
+  * Add real binary-indep.
+  * Add patches from 6.9:
+    - 002_arm_abi_brain_damage.diff
+    - 003_recognize_glibc_2.3.2_locale_names.diff
+    - 004_en_US.UTF-8_Compose_fix_Unicode_plane_1.diff
+    - 005_Compose_fix_latin1_UTF8.diff
+    - 006_tailor_pt_BR.UTF-8_Compose.diff
+    - 007_iso8859-15_Compose_fix.diff
+    - 008_remove_ko_Compose.diff
+    - 009_iso8859-15_Compose_Eurosign.diff
+    - 012_ru_RU_UTF-8_XLC_LOCALE.diff
+  * Adjust Pre-depends for libx11-6. Remove depends on x11-common from
+    libx11-dbg and libx11-dev as they depend on libx11-6 anyway.
+  * Run dh_install with --fail-missing if there is checkinstall in
+    DEB_BUILD_OPTIONS
+  * Resurrect libx11-6.post{inst,rm}.in. Add genscripts to build target's
+    dependencies.
+  * Fix libx11-6.preinst.in to include shelllib and define appropriate vars.
+  * Grab fixes for manpages section from Xorg CVS
+    - 010_manpages_fix.diff
+  * Grab ubuntu patch to support XLOCALELIBDIR separate from XLOCALEDIR
+    - 011_stolen_from_ubuntu_xlocalelibdir.diff
+  * Add --enable-loadable-i18n to confflags.
+  * Use new xsfbs-autoreconf.mk to do autoreconfing.
+
+ -- Eugene Konev <ejka@imfi.kspu.ru>  Mon, 27 Feb 2006 13:45:29 +0700
 
 libx11 (2:1.0.0-1) experimental; urgency=low
 

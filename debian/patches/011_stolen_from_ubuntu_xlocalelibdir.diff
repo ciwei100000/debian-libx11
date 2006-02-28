@@ -1,0 +1,271 @@
+Index: libx11-1.0.0/configure.ac
+===================================================================
+--- libx11-1.0.0.orig/configure.ac	2006-02-27 12:58:01.000000000 +0700
++++ libx11-1.0.0/configure.ac	2006-02-27 12:59:08.000000000 +0700
+@@ -312,8 +312,8 @@
+ # in ${libdir}
+ #
+ 
+-X11_LOCALEDATADIR="${X11_LIBDIR}/locale"
+-X11_LOCALELIBDIR="${X11_LIBDIR}/locale/lib"
++X11_LOCALEDATADIR="${X11_DATADIR}/locale"
++X11_LOCALELIBDIR="${X11_LIBDIR}/locale"
+ X11_LOCALEDIR="${X11_LOCALEDATADIR}"
+ XKEYSYMDB="${X11_DATADIR}/XKeysymDB"
+ XERRORDB="${X11_DATADIR}/XErrorDB"
+@@ -326,6 +326,7 @@
+ AC_DEFINE_DIR(XKEYSYMDB, XKEYSYMDB, [Location of keysym database])
+ AC_DEFINE_DIR(XERRORDB, XERRORDB, [Location of error message database])
+ AC_DEFINE_DIR(XLOCALEDIR, X11_LOCALEDIR, [Location of libX11 locale data])
++AC_DEFINE_DIR(XLOCALELIBDIR, X11_LOCALELIBDIR, [Location of libX11 locale libraries])
+ 
+ XORG_CHECK_MALLOC_ZERO
+ XORG_RELEASE_VERSION
+Index: libx11-1.0.0/src/xlibi18n/lcFile.c
+===================================================================
+--- libx11-1.0.0.orig/src/xlibi18n/lcFile.c	2006-02-27 12:58:01.000000000 +0700
++++ libx11-1.0.0/src/xlibi18n/lcFile.c	2006-02-27 13:00:21.000000000 +0700
+@@ -297,6 +297,80 @@
+     buf[buf_len-1] = '\0';
+ }
+ 
++static void
++xlocalelibdir(
++    char *buf,
++    int buf_len)
++{
++    char *p = buf;
++    int len = 0;
++
++#ifndef NO_XLOCALEDIR
++    char *dir;
++    int priv = 1;
++
++    dir = getenv("XLOCALELIBDIR");
++
++    if (dir) {
++#ifndef WIN32
++	/*
++	 * Only use the user-supplied path if the process isn't priviledged.
++	 */
++	if (getuid() == geteuid() && getgid() == getegid()) {
++#if defined(HASSETUGID)
++	    priv = issetugid();
++#elif defined(HASGETRESUID)
++	    {
++		uid_t ruid, euid, suid;
++		gid_t rgid, egid, sgid;
++		if ((getresuid(&ruid, &euid, &suid) == 0) &&
++		    (getresgid(&rgid, &egid, &sgid) == 0))
++		    priv = (euid != suid) || (egid != sgid);
++	    }
++#else
++	    /*
++	     * If there are saved ID's the process might still be priviledged
++	     * even though the above test succeeded.  If issetugid() and
++	     * getresgid() aren't available, test this by trying to set
++	     * euid to 0.
++	     *
++	     * Note: this only protects setuid-root clients.  It doesn't
++	     * protect other setuid or any setgid clients.  If this tradeoff
++	     * isn't acceptable, set DisableXLocaleDirEnv to YES in host.def.
++	     */
++	    unsigned int oldeuid;
++	    oldeuid = geteuid();
++	    if (seteuid(0) != 0) {
++		priv = 0;
++	    } else {
++		seteuid(oldeuid);
++		priv = 1;
++	    }
++#endif
++	}
++#else
++	priv = 0;
++#endif
++	if (!priv) {
++	    len = strlen(dir);
++	    strncpy(p, dir, buf_len);
++	    if (len < buf_len) {
++	        p[len++] = LC_PATHDELIM;
++	        p += len;
++	    }
++	}
++    }
++#endif /* NO_XLOCALEDIR */
++
++    if (len < buf_len)
++#ifndef __UNIXOS2__
++      strncpy(p, XLOCALELIBDIR, buf_len - len);
++#else
++      strncpy(p,__XOS2RedirRoot(XLOCALELIBDIR), buf_len - len);
++#endif
++    buf[buf_len-1] = '\0';
++}
++
+ /* Mapping direction */
+ typedef enum {
+   LtoR,		/* Map first field to second field */
+@@ -642,3 +716,85 @@
+  	Xfree(target_name);
+     return dir_name;
+ }
++
++char *
++_XlcLocaleLibDirName(dir_name, dir_len, lc_name)
++     char *dir_name;
++     size_t dir_len;
++     char *lc_name;
++{
++    char dir[PATH_MAX], buf[PATH_MAX], *name = NULL;
++    int i, n;
++    char *args[NUM_LOCALEDIR];
++    static char locale_alias[] = LOCALE_ALIAS;
++    char *target_name = (char*)0;
++    char *target_dir = (char*)0;
++    char *nlc_name = NULL;
++
++    xlocalelibdir (dir, PATH_MAX);
++    n = _XlcParsePath(dir, args, 256);
++    for (i = 0; i < n; ++i) {
++	if ((2 + (args[i] ? strlen(args[i]) : 0) +
++ 	     strlen(locale_alias)) < PATH_MAX) {
++ 	    sprintf (buf, "%s/%s", args[i], locale_alias);
++ 	    name = resolve_name(lc_name, buf, LtoR);
++	    if (!name) {
++		if (!nlc_name)
++		    nlc_name = normalize_lcname(lc_name);
++		if (nlc_name)
++		    name = resolve_name (nlc_name, buf, LtoR);
++	    }
++ 	}
++
++ 	/* If name is not an alias, use lc_name for locale.dir search */
++ 	if (name == NULL)
++ 	    name = lc_name;
++
++ 	/* look at locale.dir */
++
++ 	target_dir = args[i];
++ 	if (!target_dir) {
++ 	    /* something wrong */
++ 	    if (name != lc_name)
++ 		Xfree(name);
++ 	    continue;
++ 	}
++ 	if ((1 + (target_dir ? strlen (target_dir) : 0) +
++ 	     strlen("locale.dir")) < PATH_MAX) {
++ 	    sprintf(buf, "%s/locale.dir", target_dir);
++ 	    target_name = resolve_name(name, buf, RtoL);
++ 	}
++ 	if (name != lc_name)
++ 	    Xfree(name);
++ 	if (target_name != NULL) {
++ 	    char *p = 0;
++ 	    if ((p = strstr(target_name, "/XLC_LOCALE"))) {
++ 		*p = '\0';
++ 		break;
++ 	    }
++ 	    Xfree(target_name);
++ 	    target_name = NULL;
++ 	}
++ 	name = NULL;
++    }
++    if (nlc_name) Xfree(nlc_name);
++
++    if (target_name == NULL) {
++ 	/* vendor locale name == Xlocale name, no expansion of alias */
++ 	target_dir = args[0];
++ 	target_name = lc_name;
++    }
++    /* snprintf(dir_name, dir_len, "%s/%", target_dir, target_name); */
++    strncpy(dir_name, target_dir, dir_len - 1);
++    if (strlen(target_dir) >= dir_len - 1) {
++	dir_name[dir_len - 1] = '\0';
++    } else  {
++	strcat(dir_name, "/");
++	strncat(dir_name, target_name, dir_len - strlen(dir_name) - 1);
++	if (strlen(target_name) >= dir_len - strlen(dir_name) - 1)
++	    dir_name[dir_len - 1] = '\0';
++    }
++    if (target_name != lc_name)
++ 	Xfree(target_name);
++    return dir_name;
++}
+Index: libx11-1.0.0/src/xlibi18n/XlcDL.c
+===================================================================
+--- libx11-1.0.0.orig/src/xlibi18n/XlcDL.c	2006-02-27 12:58:01.000000000 +0700
++++ libx11-1.0.0/src/xlibi18n/XlcDL.c	2006-02-27 12:59:09.000000000 +0700
+@@ -403,21 +403,25 @@
+     dynamicLoadProc lc_loader = (dynamicLoadProc)NULL;
+     int count;
+     XI18NObjectsList objects_list;
+-    char lc_dir[BUFSIZE];
++    char lc_dir[BUFSIZE], lc_lib_dir[BUFSIZE];
+ 
+     if (lc_name == NULL) return (XLCd)NULL;
+ 
+-    if (_XlcLocaleDirName(lc_dir, BUFSIZE, (char *)lc_name) == (char*)NULL)
++    if (_XlcLocaleDirName(lc_dir, BUFSIZE, (char *)lc_name) == (char *)NULL)
++        return (XLCd)NULL;
++    if (_XlcLocaleLibDirName(lc_lib_dir, BUFSIZE, (char *)lc_name) == (char*)NULL)
+ 	return (XLCd)NULL;
+ 
+     resolve_object(lc_dir, lc_name);
++    resolve_object(lc_lib_dir, lc_name);
+ 
+     objects_list = xi18n_objects_list;
+     count = lc_count;
+     for (; count-- > 0; objects_list++) {
+         if (objects_list->type != XLC_OBJECT ||
+ 	    strcmp(objects_list->locale_name, lc_name)) continue;
+-	if (!open_object (objects_list, lc_dir))
++	if (!open_object (objects_list, lc_dir) && \
++            !open_object (objects_list, lc_lib_dir))
+ 	    continue;
+ 
+ 	lc_loader = (dynamicLoadProc)fetch_symbol (objects_list, objects_list->open);
+@@ -448,7 +452,7 @@
+ 
+   lc_name = lcd->core->name;
+ 
+-  if (_XlcLocaleDirName(lc_dir, BUFSIZE, lc_name) == NULL) return (XIM)0;
++  if (_XlcLocaleLibDirName(lc_dir, BUFSIZE, lc_name) == NULL) return (XIM)0;
+ 
+   count = lc_count;
+   for (; count-- > 0; objects_list++) {
+@@ -496,7 +500,7 @@
+ 
+   lc_name = lcd->core->name;
+ 
+-  if (_XlcLocaleDirName(lc_dir, BUFSIZE, lc_name) == NULL) return False;
++  if (_XlcLocaleLibDirName(lc_dir, BUFSIZE, lc_name) == NULL) return False;
+ 
+   count = lc_count;
+   for (; count-- > 0; objects_list++) {
+@@ -600,7 +604,7 @@
+ 
+   lc_name = lcd->core->name;
+ 
+-  if (_XlcLocaleDirName(lc_dir, BUFSIZE, lc_name) == NULL) return (XOM)0;
++  if (_XlcLocaleLibDirName(lc_dir, BUFSIZE, lc_name) == NULL) return (XOM)0;
+ 
+   count = lc_count;
+   for (; count-- > 0; objects_list++) {
+Index: libx11-1.0.0/src/xlibi18n/XlcPubI.h
+===================================================================
+--- libx11-1.0.0.orig/src/xlibi18n/XlcPubI.h	2006-02-27 12:58:01.000000000 +0700
++++ libx11-1.0.0/src/xlibi18n/XlcPubI.h	2006-02-27 12:59:09.000000000 +0700
+@@ -206,6 +206,12 @@
+     int			buf_len
+ );
+ 
++extern char *_XlcLocaleLibDirName(
++     char*             /* dir_name */,
++     size_t,	       /* dir_len */
++     char*             /* lc_name */
++);
++
+ extern char *_XlcLocaleDirName(
+      char*             /* dir_name */,
+      size_t,	       /* dir_len */

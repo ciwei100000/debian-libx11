@@ -1,0 +1,28 @@
+$Id$
+
+We have to do this to kludge around a bad decision made long ago in the
+design of the GCC ARM ABI.
+
+For extensive discussion and rationale, please see
+<URL: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=285396 >.
+
+Not submitted upstream to XFree86 or X.Org.
+
+Index: libx11-1.0.0/include/X11/Xlib.h
+===================================================================
+--- libx11-1.0.0.orig/include/X11/Xlib.h	2006-02-27 12:58:06.000000000 +0700
++++ libx11-1.0.0/include/X11/Xlib.h	2006-02-27 12:58:27.000000000 +0700
+@@ -1067,7 +1067,12 @@
+ typedef struct {		/* normal 16 bit characters are two bytes */
+     unsigned char byte1;
+     unsigned char byte2;
+-} XChar2b;
++}
++#if defined(__GNUC__) && defined(__arm__) && !defined(__ARM_EABI__)
++__attribute__ ((packed))
++#endif
++XChar2b;
++
+ 
+ typedef struct {
+     XChar2b *chars;		/* two byte characters */

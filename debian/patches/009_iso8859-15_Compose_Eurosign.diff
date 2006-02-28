@@ -1,0 +1,17 @@
+Index: libx11-1.0.0/nls/iso8859-15/Compose.pre
+===================================================================
+--- libx11-1.0.0.orig/nls/iso8859-15/Compose.pre	2006-02-27 12:58:50.000000000 +0700
++++ libx11-1.0.0/nls/iso8859-15/Compose.pre	2006-02-27 12:58:53.000000000 +0700
+@@ -56,8 +56,12 @@
+ <Multi_key> <equal> <L>			: "\243"	sterling
+ <Multi_key> <C> <equal>			: "\244"	EuroSign
+ <Multi_key> <equal> <C>			: "\244"	EuroSign
++<Multi_key> <c> <equal>			: "\244"	EuroSign
++<Multi_key> <equal> <c>			: "\244"	EuroSign
+ <Multi_key> <E> <equal>			: "\244"	EuroSign
++<Multi_key> <equal> <E>			: "\244"	EuroSign
+ <Multi_key> <e> <equal>			: "\244"	EuroSign
++<Multi_key> <equal> <e>			: "\244"	EuroSign
+ <Multi_key> <y> <minus>			: "\245"	yen
+ <Multi_key> <minus> <y>			: "\245"	yen
+ <Multi_key> <Y> <minus>			: "\245"	yen
