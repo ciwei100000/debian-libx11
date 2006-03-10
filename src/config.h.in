@@ -135,6 +135,9 @@
 /* Location of libX11 locale data */
 #undef XLOCALEDIR
 
+/* Location of libX11 locale libraries */
+#undef XLOCALELIBDIR
+
 /* Whether libX11 is compiled with thread support */
 #undef XTHREADS
 

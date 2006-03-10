@@ -1,3 +1,13 @@
+libx11 (2:1.0.0-3) experimental; urgency=low
+
+  [ David Nusinow ]
+  * Stop using the xsfbs autoreconf script. The main beneft of using quilt in
+    keeping the patches separate is for submitting things upstream and porting
+    our changes between upstream releases. Keeping the automatically generated
+    build system stuff in patches also doesn't fall under this use category.
+
+ -- David Nusinow <dnusinow@debian.org>  Thu,  9 Mar 2006 22:22:46 -0500
+
 libx11 (2:1.0.0-2) experimental; urgency=low
 
   [ David Nusinow ]
