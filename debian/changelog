@@ -5,8 +5,10 @@ libx11 (2:1.0.0-3) experimental; urgency=low
     keeping the patches separate is for submitting things upstream and porting
     our changes between upstream releases. Keeping the automatically generated
     build system stuff in patches also doesn't fall under this use category.
+  * Make libx11-6 conflict with xlibs-data. Thanks Kurt Roeckx.
+    (closes: #356415)
 
- -- David Nusinow <dnusinow@debian.org>  Thu,  9 Mar 2006 22:22:46 -0500
+ -- David Nusinow <dnusinow@debian.org>  Sun, 12 Mar 2006 14:00:31 -0500
 
 libx11 (2:1.0.0-2) experimental; urgency=low
 
