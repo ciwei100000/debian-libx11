@@ -10,7 +10,7 @@ Package: libx11-6
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-data
 Pre-Depends: x11-common (>= 1:7.0.0)
-Conflicts: xlibs-data
+Conflicts: xlibs-data (<< 1:7.0.0)
 Description: X11 client-side library
  This package provides the main client interface to the X Window System, and is
  otherwise known as 'Xlib'.  It provides a complete API for the basic functions
