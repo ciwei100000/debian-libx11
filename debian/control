@@ -3,7 +3,7 @@ Section: x11
 Priority: optional
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Uploaders: David Nusinow <dnusinow@debian.org>, Branden Robinson <branden@debian.org>, Fabio M. Di Nitto <fabbione@fabbione.net>
-Build-Depends: debhelper (>= 4.0.0), pkg-config, xtrans-dev, x11proto-bigreqs-dev, x11proto-core-dev, x11proto-kb-dev, x11proto-xext-dev, x11proto-xf86bigfont-dev, libxdmcp-dev (>= 1:1.0.0-1), libxau-dev (>= 1:1.0.0-1), x11proto-xcmisc-dev
+Build-Depends: debhelper (>= 4.0.0), pkg-config, xtrans-dev, x11proto-bigreqs-dev, x11proto-core-dev, x11proto-kb-dev, x11proto-xext-dev, x11proto-xf86bigfont-dev, libxdmcp-dev (>= 1:1.0.0-1), libxau-dev (>= 1:1.0.0-1), x11proto-xcmisc-dev, quilt
 Standards-Version: 3.6.1.0
 
 Package: libx11-6
