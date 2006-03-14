@@ -1,7 +1,10 @@
 libx11 (2:1.0.0-4) UNRELEASED-experimental; urgency=low
 
+  [ David Nusinow ]
   * Remove libx11-dev versioned dependency on libxext-dev. This was preventing
     bootstrapping of libxext. Thanks Eugene Konev.
+
+  [ Denis Barbier ]
   * Add Build-Depends: x11proto-input-dev, quilt.  Thanks Kurt Roeckx.
     (Closes: #356918).
 
