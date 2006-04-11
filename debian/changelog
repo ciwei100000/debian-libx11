@@ -1,3 +1,11 @@
+libx11 (2:1.0.0-6) unstable; urgency=low
+
+  * Remove libx11-dev's dependencies on libxi-dev and libxkbfile-dev. Add a
+    dependency on x11proto-input-dev instead. This should break some circular
+    dependencies. Thanks go yet again to Kurt Roeckx.
+
+ -- David Nusinow <dnusinow@debian.org>  Tue, 11 Apr 2006 18:17:46 -0400
+
 libx11 (2:1.0.0-5) unstable; urgency=low
 
   * Upload to unstable

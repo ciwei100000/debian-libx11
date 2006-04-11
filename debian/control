@@ -57,7 +57,7 @@ Description: X11 client-side library (debug package)
 
 Package: libx11-dev
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6 (= ${Source-Version}), libxau-dev (>= 1:1.0.0-1), libxdmcp-dev (>= 1:1.0.0-1), libxext-dev, libxi-dev (>= 1:1.0.0-1), libxkbfile-dev (>= 1:1.0.0.1-1), x11proto-core-dev (>= 6.8.99.8-1), x11proto-kb-dev, xtrans-dev
+Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6 (= ${Source-Version}), libxau-dev (>= 1:1.0.0-1), libxdmcp-dev (>= 1:1.0.0-1), libxext-dev, x11proto-core-dev (>= 6.8.99.8-1), x11proto-input-dev, x11proto-kb-dev, xtrans-dev
 Description: X11 client-side library (development headers)
  This package provides the main client interface to the X Window System, and is
  otherwise known as 'Xlib'.  It provides a complete API for the basic functions
