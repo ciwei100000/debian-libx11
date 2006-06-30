@@ -10,3 +10,4 @@
 010_manpages_fix.diff
 011_stolen_from_ubuntu_xlocalelibdir.diff
 012_ru_RU_UTF-8_XLC_LOCALE.diff
+013_SECURITY_setuid.diff

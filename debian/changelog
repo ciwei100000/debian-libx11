@@ -1,3 +1,11 @@
+libx11 (2:1.0.0-7) unstable; urgency=high
+
+  * Security update. Fix for setuid privledge escalation vulernabilities.
+    See http://lists.freedesktop.org/archives/xorg/2006-June/016146.html for
+    the full advisory.
+
+ -- David Nusinow <dnusinow@debian.org>  Fri, 30 Jun 2006 02:35:34 -0400
+
 libx11 (2:1.0.0-6) unstable; urgency=low
 
   * Remove libx11-dev's dependencies on libxi-dev and libxkbfile-dev. Add a
