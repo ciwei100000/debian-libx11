@@ -3,8 +3,9 @@ libx11 (2:1.0.0-7) unstable; urgency=high
   * Security update. Fix for setuid privledge escalation vulernabilities.
     See http://lists.freedesktop.org/archives/xorg/2006-June/016146.html for
     the full advisory.
+  * Bump standards version to 3.7.2.0
 
- -- David Nusinow <dnusinow@debian.org>  Fri, 30 Jun 2006 02:35:34 -0400
+ -- David Nusinow <dnusinow@debian.org>  Sat,  1 Jul 2006 17:05:07 -0400
 
 libx11 (2:1.0.0-6) unstable; urgency=low
 
