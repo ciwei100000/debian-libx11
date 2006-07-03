@@ -1,0 +1,216 @@
+libx11 (2:1.0.3-1) experimental; urgency=low
+
+  * New upstream release
+  * Dump obsolete patch 10 for manpage fix and 13 for setuid fix
+  * Run dh_install with --list-missing
+
+ -- David Nusinow <dnusinow@debian.org>  Mon,  3 Jul 2006 15:10:09 -0400
+
+libx11 (2:1.0.0-7) unstable; urgency=high
+
+  * Security update. Fix for setuid privledge escalation vulernabilities.
+    See http://lists.freedesktop.org/archives/xorg/2006-June/016146.html for
+    the full advisory.
+  * Bump standards version to 3.7.2.0
+
+ -- David Nusinow <dnusinow@debian.org>  Sat,  1 Jul 2006 17:05:07 -0400
+
+libx11 (2:1.0.0-6) unstable; urgency=low
+
+  * Remove libx11-dev's dependencies on libxi-dev and libxkbfile-dev. Add a
+    dependency on x11proto-input-dev instead. This should break some circular
+    dependencies. Thanks go yet again to Kurt Roeckx.
+
+ -- David Nusinow <dnusinow@debian.org>  Tue, 11 Apr 2006 18:17:46 -0400
+
+libx11 (2:1.0.0-5) unstable; urgency=low
+
+  * Upload to unstable
+
+ -- David Nusinow <dnusinow@debian.org>  Thu, 23 Mar 2006 22:44:26 -0500
+
+libx11 (2:1.0.0-4) experimental; urgency=low
+
+  [ David Nusinow ]
+  * Remove libx11-dev versioned dependency on libxext-dev. This was preventing
+    bootstrapping of libxext. Thanks Eugene Konev.
+
+  [ Denis Barbier ]
+  * Add Build-Depends: x11proto-input-dev, quilt.  Thanks Kurt Roeckx.
+    (Closes: #356918).
+
+ -- David Nusinow <dnusinow@debian.org>  Tue, 21 Mar 2006 19:55:58 -0500
+
+libx11 (2:1.0.0-3) experimental; urgency=low
+
+  [ David Nusinow ]
+  * Stop using the xsfbs autoreconf script. The main beneft of using quilt in
+    keeping the patches separate is for submitting things upstream and porting
+    our changes between upstream releases. Keeping the automatically generated
+    build system stuff in patches also doesn't fall under this use category.
+  * Make libx11-6 conflict with xlibs-data. Thanks Kurt Roeckx.
+    (closes: #356415)
+
+ -- David Nusinow <dnusinow@debian.org>  Sun, 12 Mar 2006 14:00:31 -0500
+
+libx11 (2:1.0.0-2) experimental; urgency=low
+
+  [ David Nusinow ]
+  * Properly install all the contents of /usr/lib/X11/locale. Thanks Zephenia
+    E. Hull.
+  * Provide versioned build-depends on the X libs. Thanks Kurt Roeckx.
+    (closes: #354161)
+  * Provide libx11-dev dependencies on libxdmcp-dev.
+    Thanks Kurt Roeckx. (closes: #354167)
+  * Add a bunch of depends to libx11-dev from the monolith. Thanks Eugene
+    Konev for the pointer.
+  * Add 001_no_xkb_in_pc_file.diff because we don't need x11proto-input-dev.
+    Thanks Eugene Konev.
+
+  [ Eugene Konev ]
+  * Move locale data in separate libx11-data package. Make libx11-6 depend
+    on it.
+  * libx11-6.install.in? Huh? Replaced with libx11-6.install
+  * Add real binary-indep.
+  * Add patches from 6.9:
+    - 002_arm_abi_brain_damage.diff
+    - 003_recognize_glibc_2.3.2_locale_names.diff
+    - 004_en_US.UTF-8_Compose_fix_Unicode_plane_1.diff
+    - 005_Compose_fix_latin1_UTF8.diff
+    - 006_tailor_pt_BR.UTF-8_Compose.diff
+    - 007_iso8859-15_Compose_fix.diff
+    - 008_remove_ko_Compose.diff
+    - 009_iso8859-15_Compose_Eurosign.diff
+    - 012_ru_RU_UTF-8_XLC_LOCALE.diff
+  * Adjust Pre-depends for libx11-6. Remove depends on x11-common from
+    libx11-dbg and libx11-dev as they depend on libx11-6 anyway.
+  * Run dh_install with --fail-missing if there is checkinstall in
+    DEB_BUILD_OPTIONS
+  * Resurrect libx11-6.post{inst,rm}.in. Add genscripts to build target's
+    dependencies.
+  * Fix libx11-6.preinst.in to include shelllib and define appropriate vars.
+  * Grab fixes for manpages section from Xorg CVS
+    - 010_manpages_fix.diff
+  * Grab ubuntu patch to support XLOCALELIBDIR separate from XLOCALEDIR
+    - 011_stolen_from_ubuntu_xlocalelibdir.diff
+  * Add --enable-loadable-i18n to confflags.
+  * Use new xsfbs-autoreconf.mk to do autoreconfing.
+
+ -- Eugene Konev <ejka@imfi.kspu.ru>  Mon, 27 Feb 2006 13:45:29 +0700
+
+libx11 (2:1.0.0-1) experimental; urgency=low
+
+  * First upload to Debian
+  * Remove versioned build-dep on x11proto-core-dev, since the first package
+    we'll be uploading will be versioned properly for us
+  * Remove patch dir as the patch has been incorporated by upstream
+
+ -- David Nusinow <dnusinow@debian.org>  Thu, 29 Dec 2005 20:51:20 -0500
+
+libx11 (1:6.2.1+cvs.20050722-8) breezy; urgency=low
+
+  * Fix non-UTF-8 locales by fixing generation of compose.dir, locale.alias,
+    and locale.dir in nls/ (closes: Ubuntu#13724).
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Fri, 30 Sep 2005 16:30:55 +1000
+
+libx11 (1:6.2.1+cvs.20050722-7) breezy; urgency=low
+
+  * Move man pages back to section 3 (closes: Ubuntu#16290).
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Thu, 29 Sep 2005 11:26:11 +1000
+
+libx11 (1:6.2.1+cvs.20050722-6) breezy; urgency=low
+
+  * Add libx11-dev Build-Depends on x11proto-kb-dev, so we get XKBstr.h, which
+    makes XKBlib.h usable.
+  * Add foo_t and TRANS_CLIENT defines to Xtrans users; thanks Isaac Richards
+    for the catch (closes: Ubuntu#12052).
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Fri, 19 Aug 2005 15:19:33 +1000
+
+libx11 (1:6.2.1+cvs.20050722-5) breezy; urgency=low
+
+  * Add x-common Pre-Depends to libx11-6, as we ship stuff in
+    /usr/lib/X11.
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Thu, 18 Aug 2005 12:12:45 +1000
+
+libx11 (1:6.2.1+cvs.20050722-4) breezy; urgency=low
+
+  * Fix search path for libXcursor.
+  * Add :s to compose.dir to get composition working in apps which use the
+    default X input method (closes: Ubuntu#12184).
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Mon,  8 Aug 2005 13:32:12 +1000
+
+libx11 (1:6.2.1+cvs.20050722-3) breezy; urgency=low
+
+  * Make ErrDes.c and StrKeysym.c look for XKEYSYMDB and XERRORDB, not
+    KEYSYMDB and ERRORDB, with the pleasant side-effect that they look
+    directly in /usr/share/X11, not /usr/lib/X11, so we can throw the cheesy
+    symlinks away.  This fixes some corner cases in hoary upgrades.
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Mon,  1 Aug 2005 13:17:15 +1000
+
+libx11 (1:6.2.1+cvs.20050722-2) breezy; urgency=low
+
+  * Move locale data back to /usr/share and libraries to /usr/lib.  XlcDL.c
+    and lcFile.c hacked to accommodate this, as well as configure.ac.  This
+    fixes all the locale problems, AFAICT. (closes: Ubuntu#12142)
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Tue, 26 Jul 2005 23:00:21 +1000
+
+libx11 (1:6.2.1+cvs.20050722-1) breezy; urgency=low
+
+  * Fix locales harder: add the old loadable locale modules back.
+  * Although architecture-independent locale data has been moved to
+    /usr/lib/X11/locale because of limitations in the path-parsing code.
+    Argh!
+  * Bump Build-Depends on x11proto-core-dev to today's CVS; -D_XOPEN_SOURCE
+    begone!
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Fri, 22 Jul 2005 22:29:21 +1000
+
+libx11 (1:6.2.1+cvs.20050711-1) breezy; urgency=low
+
+  * New CVS snapshot, incorporating patch #086 from the monolith.
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Mon, 11 Jul 2005 10:10:44 +1000
+
+libx11 (1:6.2.1+cvs.20050615-5) breezy; urgency=low
+
+  * Bump libx11-6 -> xlibs-data Conflicts/Replaces to -34; Tollef's -33 did
+    not change this. 
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Tue,  5 Jul 2005 01:41:19 +1000
+
+libx11 (1:6.2.1+cvs.20050615-4) breezy; urgency=low
+
+  * Make Build-Depends and Depends on x11proto-core-dev explicitly >=
+    6.8.99.8-1 (hi LaMont!).
+  * Add symlinks to X{Error,KeySym}DB from /usr/{X11R6/,}lib/X11.  Bump
+    Conflicts on xlibs-data up to -33.  Add symlinks to locale data in
+    /usr/{X11R6,}lib/X11 (closes: Ubuntu#12081).
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Fri, 17 Jun 2005 15:58:44 +1000
+
+libx11 (1:6.2.1+cvs.20050615-3) breezy; urgency=low
+
+  * Add missing build-depends on:
+    - pkg-config, x11proto-kb-dev, x11proto-input-dev
+
+ -- Adam Conrad <adconrad@ubuntu.com>  Thu, 16 Jun 2005 13:50:14 +0000
+
+libx11 (1:6.2.1+cvs.20050615-2) breezy; urgency=low
+
+  * Move Build-Depends-Indep to Build-Depends to fix FTBFSs.
+
+ -- Adam Conrad <adconrad@ubuntu.com>  Thu, 16 Jun 2005 08:53:59 +0000
+
+libx11 (1:6.2.1+cvs.20050615-1) breezy; urgency=low
+
+  * First libx11 release.
+    + XCB support removed for now.
+
+ -- Daniel Stone <daniel.stone@ubuntu.com>  Mon, 16 May 2005 22:10:17 +1000
