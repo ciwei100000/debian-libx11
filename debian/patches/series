@@ -7,5 +7,4 @@
 007_iso8859-15_Compose_fix.diff
 008_remove_ko_Compose.diff
 009_iso8859-15_Compose_Eurosign.diff
-011_stolen_from_ubuntu_xlocalelibdir.diff
 012_ru_RU_UTF-8_XLC_LOCALE.diff

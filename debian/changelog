@@ -4,13 +4,14 @@ libx11 (2:1.0.3-1) UNRELEASED-experimental; urgency=low
   * New upstream release
   * Dump obsolete patch 10 for manpage fix and 13 for setuid fix
   * Run dh_install with --list-missing
+  * Remove obsolete patch 011
 
   [ Denis Barbier ]
   * Sync patches:
     - 005_Compose_fix_latin1_UTF8.diff
     - 006_tailor_pt_BR.UTF-8_Compose.diff
 
- -- Denis Barbier <barbier@debian.org>  Tue,  4 Jul 2006 00:21:40 +0200
+ -- David Nusinow <dnusinow@debian.org>  Tue,  4 Jul 2006 11:43:17 -0400
 
 libx11 (2:1.0.0-7) unstable; urgency=high
 
