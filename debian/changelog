@@ -1,4 +1,4 @@
-libx11 (2:1.0.3-1) UNRELEASED-experimental; urgency=low
+libx11 (2:1.0.3-1) experimental; urgency=low
 
   [ David Nusinow ]
   * New upstream release
@@ -12,7 +12,7 @@ libx11 (2:1.0.3-1) UNRELEASED-experimental; urgency=low
     - 005_Compose_fix_latin1_UTF8.diff
     - 006_tailor_pt_BR.UTF-8_Compose.diff
 
- -- David Nusinow <dnusinow@debian.org>  Tue,  4 Jul 2006 11:46:11 -0400
+ -- David Nusinow <dnusinow@debian.org>  Tue,  4 Jul 2006 13:25:43 -0400
 
 libx11 (2:1.0.0-7) unstable; urgency=high
 
