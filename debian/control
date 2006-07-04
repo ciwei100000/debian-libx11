@@ -1,0 +1,74 @@
+Source: libx11
+Section: x11
+Priority: optional
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Uploaders: David Nusinow <dnusinow@debian.org>, Branden Robinson <branden@debian.org>, Fabio M. Di Nitto <fabbione@fabbione.net>
+Build-Depends: debhelper (>= 5.0.0), pkg-config, xtrans-dev, x11proto-bigreqs-dev, x11proto-core-dev, x11proto-kb-dev, x11proto-input-dev, x11proto-xext-dev, x11proto-xf86bigfont-dev, libxdmcp-dev (>= 1:1.0.0-1), libxau-dev (>= 1:1.0.0-1), x11proto-xcmisc-dev, quilt
+Standards-Version: 3.7.2.0
+
+Package: libx11-6
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-data
+Pre-Depends: x11-common (>= 1:7.0.0)
+Conflicts: xlibs-data (<< 1:7.0.0)
+Description: X11 client-side library
+ This package provides the main client interface to the X Window System, and is
+ otherwise known as 'Xlib'.  It provides a complete API for the basic functions
+ of the window system.
+ .
+ More information about X.Org can be found at:
+ <URL:http://xorg.freedesktop.org>
+ <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+ .
+ This module can be found as the module 'lib/X11' at
+ :pserver:anoncvs@cvs.freedesktop.org:/cvs/xorg
+
+Package: libx11-data
+Architecture: all
+Depends: ${misc:Depends}
+Pre-Depends: x11-common (>= 1:7.0.0)
+Description: X11 client-side library
+ This package provides the locale data files for libx11.
+ .
+ More information about X.Org can be found at:
+ <URL:http://xorg.freedesktop.org>
+ <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+ .
+ This module can be found as the module 'lib/X11' at
+ :pserver:anoncvs@cvs.freedesktop.org:/cvs/xorg
+
+Package: libx11-6-dbg
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6 (= ${Source-Version})
+Description: X11 client-side library (debug package)
+ This package provides the main client interface to the X Window System, and is
+ otherwise known as 'Xlib'.  It provides a complete API for the basic functions
+ of the window system.
+ .
+ This package contains the debug versions of the library found in libx11-6.
+ Non-developers likely have little use for this package.
+ .
+ More information about X.Org can be found at:
+ <URL:http://xorg.freedesktop.org>
+ <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+ .
+ This module can be found as the module 'lib/X11' at
+ :pserver:anoncvs@cvs.freedesktop.org:/cvs/xorg
+
+Package: libx11-dev
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6 (= ${Source-Version}), libxau-dev (>= 1:1.0.0-1), libxdmcp-dev (>= 1:1.0.0-1), libxext-dev, x11proto-core-dev (>= 6.8.99.8-1), x11proto-input-dev, x11proto-kb-dev, xtrans-dev
+Description: X11 client-side library (development headers)
+ This package provides the main client interface to the X Window System, and is
+ otherwise known as 'Xlib'.  It provides a complete API for the basic functions
+ of the window system.
+ .
+ This package contains the development headers for the library found in 
+ libx11-6. Non-developers likely have little use for this package.
+ .
+ More information about X.Org can be found at:
+ <URL:http://xorg.freedesktop.org>
+ <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+ .
+ This module can be found as the module 'lib/X11' at
+ :pserver:anoncvs@cvs.freedesktop.org:/cvs/xorg

@@ -90,7 +90,7 @@ binary-arch: build install
 	dh_install --sourcedir=debian/tmp -s
 	dh_installchangelogs -s
 	dh_link -s
-	dh_strip --dbg-package=$(PACKAGE) -s
+	dh_strip --dbg-package=$(PACKAGE)-dbg -s
 	dh_compress -s
 	dh_fixperms -s
 	dh_makeshlibs -s
