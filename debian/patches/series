@@ -8,3 +8,4 @@
 008_remove_ko_Compose.diff
 009_iso8859-15_Compose_Eurosign.diff
 012_ru_RU_UTF-8_XLC_LOCALE.diff
+014_add_Khmer_digraphs.diff

@@ -1,0 +1,18 @@
+Index: libx11/nls/en_US.UTF-8/Compose.pre
+===================================================================
+--- libx11.orig/nls/en_US.UTF-8/Compose.pre
++++ libx11/nls/en_US.UTF-8/Compose.pre
+@@ -5598,3 +5598,13 @@
+ <Multi_key> <U1d1b9> <U1d165> <U1d16f>	: "𝆹𝅥𝅯" U1D1BF # MUSICAL SYMBOL FUSA WHITE
+ <Multi_key> <U1d1bc> <U1d16f>	: "𝆺𝅥𝅯" U1D1C0 # MUSICAL SYMBOL FUSA BLACK
+ <Multi_key> <U1d1ba> <U1d165> <U1d16f>	: "𝆺𝅥𝅯" U1D1C0 # MUSICAL SYMBOL FUSA BLACK
++
++XCOMM Khmer digraphs
++XCOMM A keystroke has to generate several characters, so they are defined
++XCOMM in this file
++
++<U17fb>	:	"ុះ"
++<U17fc>	:	"ុំ"
++<U17fd>	:	"េះ"
++<U17fe>	:	"ោះ"
++<U17ff>	:	"ាំ"
