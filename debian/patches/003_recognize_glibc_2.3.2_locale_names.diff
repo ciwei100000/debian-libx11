@@ -55,10 +55,10 @@ Major "forward port" by Nathanael Nerode.
 Partially submitted upstream.  This is so large I don't expect it to all go in at once,
 but any bit would help.  --Nathanael
 
-Index: libx11-1.0.0/nls/compose.dir.pre
+Index: libx11/nls/compose.dir.pre
 ===================================================================
---- libx11-1.0.0.orig/nls/compose.dir.pre	2006-02-27 12:58:05.000000000 +0700
-+++ libx11-1.0.0/nls/compose.dir.pre	2006-02-27 12:58:41.000000000 +0700
+--- libx11.orig/nls/compose.dir.pre
++++ libx11/nls/compose.dir.pre
 @@ -1,14 +1,22 @@
  XCOMM $Xorg: compose.dir,v 1.3 2000/08/17 19:46:48 cpqbld Exp $
  XCOMM
@@ -403,7 +403,7 @@ Index: libx11-1.0.0/nls/compose.dir.pre
  en_US.UTF-8/Compose:		gl_ES.UTF-8
  en_US.UTF-8/Compose:		gu_IN.UTF-8
  en_US.UTF-8/Compose:		gv_GB.UTF-8
-@@ -324,9 +404,11 @@
+@@ -324,9 +404,12 @@
  en_US.UTF-8/Compose:		it_CH.UTF-8
  en_US.UTF-8/Compose:		it_IT.UTF-8
  en_US.UTF-8/Compose:		iu_CA.UTF-8
@@ -411,11 +411,12 @@ Index: libx11-1.0.0/nls/compose.dir.pre
  en_US.UTF-8/Compose:		ja_JP.UTF-8
  en_US.UTF-8/Compose:		ka_GE.UTF-8
  en_US.UTF-8/Compose:		kl_GL.UTF-8
++en_US.UTF-8/Compose:		km_KH.UTF-8
 +en_US.UTF-8/Compose:       kn_IN.UTF-8
  en_US.UTF-8/Compose:		ko_KR.UTF-8
  en_US.UTF-8/Compose:		kw_GB.UTF-8
  en_US.UTF-8/Compose:		ky_KG.UTF-8
-@@ -335,18 +417,30 @@
+@@ -335,18 +418,30 @@
  en_US.UTF-8/Compose:		lv_LV.UTF-8
  en_US.UTF-8/Compose:		mi_NZ.UTF-8
  en_US.UTF-8/Compose:		mk_MK.UTF-8
@@ -449,7 +450,7 @@ Index: libx11-1.0.0/nls/compose.dir.pre
  en_US.UTF-8/Compose:		ph_PH.UTF-8
  en_US.UTF-8/Compose:		pl_PL.UTF-8
  en_US.UTF-8/Compose:		pp_AN.UTF-8
-@@ -356,9 +450,13 @@
+@@ -356,9 +451,13 @@
  en_US.UTF-8/Compose:		ru_RU.UTF-8
  en_US.UTF-8/Compose:		ru_UA.UTF-8
  en_US.UTF-8/Compose:		rw_RW.UTF-8
@@ -463,7 +464,7 @@ Index: libx11-1.0.0/nls/compose.dir.pre
  en_US.UTF-8/Compose:		sq_AL.UTF-8
  en_US.UTF-8/Compose:		sr_YU.UTF-8
  en_US.UTF-8/Compose:		ss_ZA.UTF-8
-@@ -366,8 +464,12 @@
+@@ -366,8 +465,12 @@
  en_US.UTF-8/Compose:		sv_FI.UTF-8
  en_US.UTF-8/Compose:		sv_SE.UTF-8
  en_US.UTF-8/Compose:		ta_IN.UTF-8
@@ -476,10 +477,10 @@ Index: libx11-1.0.0/nls/compose.dir.pre
  en_US.UTF-8/Compose:		tl_PH.UTF-8
  en_US.UTF-8/Compose:		tn_ZA.UTF-8
  en_US.UTF-8/Compose:		tr_TR.UTF-8
-Index: libx11-1.0.0/nls/locale.alias.pre
+Index: libx11/nls/locale.alias.pre
 ===================================================================
---- libx11-1.0.0.orig/nls/locale.alias.pre	2006-02-27 12:58:05.000000000 +0700
-+++ libx11-1.0.0/nls/locale.alias.pre	2006-02-27 12:58:41.000000000 +0700
+--- libx11.orig/nls/locale.alias.pre
++++ libx11/nls/locale.alias.pre
 @@ -323,6 +323,7 @@
  en_US.ISO-8859-1:				en_US.ISO8859-1
  en_US.ISO_8859-1:				en_US.ISO8859-1
@@ -488,7 +489,18 @@ Index: libx11-1.0.0/nls/locale.alias.pre
  en_US.8859-15:					en_US.ISO8859-15
  en_US.ISO8859-15@euro:				en_US.ISO8859-15
  en_US.utf8:					en_US.UTF-8
-@@ -857,7 +858,6 @@
+@@ -689,6 +690,10 @@
+ kl_GL.ISO-8859-1:				kl_GL.ISO8859-1
+ kl_GL.iso885915:				kl_GL.ISO8859-15
+ kl_GL.utf8:					kl_GL.UTF-8
++km:						km_KH.UTF-8
++km_KH:						km_KH.UTF-8
++km_KH.utf8:					km_KH.UTF-8
++km_KH.UTF-8:					km_KH.UTF-8
+ ko:						ko_KR.eucKR
+ ko_KR:						ko_KR.eucKR
+ KO_KR:						ko_KR.eucKR
+@@ -857,7 +862,6 @@
  pt_BR.iso88591:					pt_BR.ISO8859-1
  pt_BR.ISO-8859-1:				pt_BR.ISO8859-1
  pt_BR.ISO_8859-1:				pt_BR.ISO8859-1
@@ -496,7 +508,7 @@ Index: libx11-1.0.0/nls/locale.alias.pre
  pt_BR.utf8:					pt_BR.UTF-8
  pt_PT:						pt_PT.ISO8859-1
  pt_PT.88591:					pt_PT.ISO8859-1
-@@ -905,12 +905,12 @@
+@@ -905,12 +909,12 @@
  se_NO:						se_NO.UTF-8
  se_NO.utf8:					se_NO.UTF-8
  sh:						sh_YU.ISO8859-2
@@ -510,7 +522,7 @@ Index: libx11-1.0.0/nls/locale.alias.pre
  sk:						sk_SK.ISO8859-2
  sk_SK:						sk_SK.ISO8859-2
  sk_SK.iso88592:					sk_SK.ISO8859-2
-@@ -1124,7 +1124,7 @@
+@@ -1124,7 +1128,7 @@
  dutch:						nl_NL.ISO8859-1
  dutch.iso88591:					nl_BE.ISO8859-1
  eesti:						et_EE.ISO8859-1
@@ -519,7 +531,7 @@ Index: libx11-1.0.0/nls/locale.alias.pre
  estonian:					et_EE.ISO8859-1
  finnish:					fi_FI.ISO8859-1
  finnish.iso88591:				fi_FI.ISO8859-1
-@@ -1137,8 +1137,8 @@
+@@ -1137,8 +1141,8 @@
  german.iso88591:				de_CH.ISO8859-1
  greek:						el_GR.ISO8859-7
  greek.iso88597:					el_GR.ISO8859-7
@@ -530,7 +542,7 @@ Index: libx11-1.0.0/nls/locale.alias.pre
  hrvatski:					hr_HR.ISO8859-2
  hungarian:					hu_HU.ISO8859-2
  icelandic.iso88591:				is_IS.ISO8859-1
-@@ -1181,103 +1181,103 @@
+@@ -1181,103 +1185,103 @@
  #ifdef WIN32
  XCOMM Microsoft Windows/NT 4.0 SP3
  XCOMM parser doesn't grok embedded spaces in locale name
@@ -730,10 +742,10 @@ Index: libx11-1.0.0/nls/locale.alias.pre
  #endif
  XCOMM Other miscellaneous locale names
  ISO8859-1:					en_US.ISO8859-1
-Index: libx11-1.0.0/nls/locale.dir.pre
+Index: libx11/nls/locale.dir.pre
 ===================================================================
---- libx11-1.0.0.orig/nls/locale.dir.pre	2006-02-27 12:58:05.000000000 +0700
-+++ libx11-1.0.0/nls/locale.dir.pre	2006-02-27 12:58:41.000000000 +0700
+--- libx11.orig/nls/locale.dir.pre
++++ libx11/nls/locale.dir.pre
 @@ -9,8 +9,13 @@
  XCOMM
  
@@ -968,7 +980,7 @@ Index: libx11-1.0.0/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			gl_ES.UTF-8
  en_US.UTF-8/XLC_LOCALE:			gu_IN.UTF-8
  en_US.UTF-8/XLC_LOCALE:			gv_GB.UTF-8
-@@ -345,9 +391,11 @@
+@@ -345,9 +391,12 @@
  en_US.UTF-8/XLC_LOCALE:			it_CH.UTF-8
  en_US.UTF-8/XLC_LOCALE:			it_IT.UTF-8
  en_US.UTF-8/XLC_LOCALE:			iu_CA.UTF-8
@@ -976,11 +988,12 @@ Index: libx11-1.0.0/nls/locale.dir.pre
  ja_JP.UTF-8/XLC_LOCALE:			ja_JP.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ka_GE.UTF-8
  en_US.UTF-8/XLC_LOCALE:			kl_GL.UTF-8
++en_US.UTF-8/XLC_LOCALE:			km_KH.UTF-8
 +en_US.UTF-8/XLC_LOCALE:			kn_IN.UTF-8
  ko_KR.UTF-8/XLC_LOCALE:			ko_KR.UTF-8
  en_US.UTF-8/XLC_LOCALE:			kw_GB.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ky_KG.UTF-8
-@@ -356,20 +404,30 @@
+@@ -356,20 +405,30 @@
  en_US.UTF-8/XLC_LOCALE:			lv_LV.UTF-8
  en_US.UTF-8/XLC_LOCALE:			mi_NZ.UTF-8
  en_US.UTF-8/XLC_LOCALE:			mk_MK.UTF-8
@@ -1014,7 +1027,7 @@ Index: libx11-1.0.0/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			ph_PH.UTF-8
  en_US.UTF-8/XLC_LOCALE:			pl_PL.UTF-8
  en_US.UTF-8/XLC_LOCALE:			pp_AN.UTF-8
-@@ -380,10 +438,12 @@
+@@ -380,10 +439,12 @@
  en_US.UTF-8/XLC_LOCALE:			ru_UA.UTF-8
  en_US.UTF-8/XLC_LOCALE:         rw_RW.UTF-8
  en_US.UTF-8/XLC_LOCALE:			se_NO.UTF-8
@@ -1027,7 +1040,7 @@ Index: libx11-1.0.0/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			sq_AL.UTF-8
  en_US.UTF-8/XLC_LOCALE:			sr_YU.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ss_ZA.UTF-8
-@@ -391,10 +451,12 @@
+@@ -391,10 +452,12 @@
  en_US.UTF-8/XLC_LOCALE:			sv_FI.UTF-8
  en_US.UTF-8/XLC_LOCALE:			sv_SE.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ta_IN.UTF-8

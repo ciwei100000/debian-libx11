@@ -1,3 +1,13 @@
+libx11 (2:1.0.0-8) UNRELEASED; urgency=low
+
+  * Add 014_add_Khmer_digraphs.diff.  Khmer keyboards have to generate
+    several characters with a single keystroke, so define them in
+    en_US.UTF-8/Compose.  They will be added later to all UTF-8 files.
+    Thanks Paul Wise.  (closes: #355957)
+  * Add support for Khmer locale in 003_recognize_glibc_2.3.2_locale_names.diff
+
+ -- Denis Barbier <barbier@debian.org>  Thu,  6 Jul 2006 21:32:54 +0200
+
 libx11 (2:1.0.0-7) unstable; urgency=high
 
   * Security update. Fix for setuid privledge escalation vulernabilities.
