@@ -51,7 +51,7 @@ build: genscripts patch build-stamp
 build-stamp:
 	dh_testdir
 
-	mkdir obj-$(DEB_BUILD_GNU_TYPE)
+	test -d obj-$(DEB_BUILD_GNU_TYPE) || mkdir obj-$(DEB_BUILD_GNU_TYPE)
 	cd obj-$(DEB_BUILD_GNU_TYPE) && \
 	../configure --prefix=/usr --mandir=\$${prefix}/share/man \
 	             --infodir=\$${prefix}/share/info $(confflags) \

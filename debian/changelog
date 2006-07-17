@@ -1,3 +1,10 @@
+libx11 (2:1.0.3-2) UNRELEASED; urgency=low
+
+  * Test for obj-$(DEB_BUILD_GNU_TYPE) before creating it during build;
+    idempotency fix. 
+
+ -- Andres Salomon <dilinger@debian.org>  Mon, 17 Jul 2006 00:17:50 -0400
+
 libx11 (2:1.0.3-1) experimental; urgency=low
 
   [ David Nusinow ]
