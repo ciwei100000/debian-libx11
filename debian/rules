@@ -51,7 +51,7 @@ build: genscripts patch build-stamp
 build-stamp:
 	dh_testdir
 
-	mkdir obj-$(DEB_BUILD_GNU_TYPE)
+	test -d obj-$(DEB_BUILD_GNU_TYPE) || mkdir obj-$(DEB_BUILD_GNU_TYPE)
 	cd obj-$(DEB_BUILD_GNU_TYPE) && \
 	../configure --prefix=/usr --mandir=\$${prefix}/share/man \
 	             --infodir=\$${prefix}/share/info $(confflags) \
@@ -90,7 +90,7 @@ binary-arch: build install
 	dh_install --sourcedir=debian/tmp -s
 	dh_installchangelogs -s
 	dh_link -s
-	dh_strip --dbg-package=$(PACKAGE) -s
+	dh_strip --dbg-package=$(PACKAGE)-dbg -s
 	dh_compress -s
 	dh_fixperms -s
 	dh_makeshlibs -s
@@ -107,7 +107,7 @@ binary-indep: build install
 
 	dh_installdocs -i
 	dh_installchangelogs -i
-	dh_install --sourcedir=debian/tmp $(dhinstallindepflags)
+	dh_install --sourcedir=debian/tmp $(dhinstallindepflags) --list-missing
 	dh_link -i
 	dh_compress -i
 	dh_fixperms -i
