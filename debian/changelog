@@ -1,4 +1,4 @@
-libx11 (2:1.0.0-8) UNRELEASED; urgency=low
+libx11 (2:1.0.0-8) unstable; urgency=low
 
   [ Denis Barbier ]
   * Add 014_add_Khmer_digraphs.diff.  Khmer keyboards have to generate
@@ -15,7 +15,7 @@ libx11 (2:1.0.0-8) UNRELEASED; urgency=low
   * Test for obj-$(DEB_BUILD_GNU_TYPE) before creating it during build;
     idempotency fix.
 
- -- David Nusinow <dnusinow@debian.org>  Wed,  2 Aug 2006 23:09:51 +0000
+ -- David Nusinow <dnusinow@debian.org>  Wed,  2 Aug 2006 23:25:13 +0000
 
 libx11 (2:1.0.0-7) unstable; urgency=high
 
