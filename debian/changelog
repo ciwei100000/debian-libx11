@@ -18,7 +18,10 @@ libx11 (2:1.0.3-1) DO_NOT_RELEASE; urgency=low
   * Test for obj-$(DEB_BUILD_GNU_TYPE) before creating it during build;
     idempotency fix.
 
- -- David Nusinow <dnusinow@debian.org>  Wed, 16 Aug 2006 20:04:48 +0000
+  [ Drew Parsons ]
+  * dbg package has priority extra.
+
+ -- Drew Parsons <dparsons@debian.org>  Sat, 19 Aug 2006 22:22:01 +1000
 
 libx11 (2:1.0.0-7) unstable; urgency=high
 
