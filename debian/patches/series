@@ -12,3 +12,4 @@
 012_ru_RU_UTF-8_XLC_LOCALE.diff
 013_SECURITY_setuid.diff
 014_add_Khmer_digraphs.diff
+015_russian_locale_alias.diff
