@@ -7,6 +7,9 @@ libx11 (2:1.0.0-9) UNRELEASED; urgency=low
   * Add 016_greek_polytonic_Compose.diff.  Add compose sequences with the
     right breathing signs U0313/U0314 to el_GR.UTF-8/Compose.
     Thanks Jan Willem Stumpel.  (closes: #386471)
+  * Add 017_FTBFS_makekeys.diff.  Fix a FTBFS when compiling with
+    x11proto-core-dev >= 7.0.3, backported from upstream.
+    Thanks Goswin von Brederlow.  (closes: #387133)
 
  -- Denis Barbier <barbier@debian.org>  Wed, 13 Sep 2006 23:01:36 +0200
 

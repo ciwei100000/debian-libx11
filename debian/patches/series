@@ -14,3 +14,4 @@
 014_add_Khmer_digraphs.diff
 015_russian_locale_alias.diff
 016_greek_polytonic_Compose.diff
+017_FTBFS_makekeys.diff
