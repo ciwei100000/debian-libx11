@@ -1,6 +1,5 @@
-libx11 (2:1.0.0-9) UNRELEASED; urgency=low
+libx11 (2:1.0.0-9) unstable; urgency=low
 
-  [ Denis Barbier ]
   * Add 015_russian_locale_alias.diff.  Locale alias for russian was incorrect,
     it should be ru_RU.KOI8-R as in glibc locale.alias.  Thanks Andrei Lahun.
     (closes: #368655)
@@ -11,7 +10,7 @@ libx11 (2:1.0.0-9) UNRELEASED; urgency=low
     x11proto-core-dev >= 7.0.3, backported from upstream.
     Thanks Goswin von Brederlow.  (closes: #387133)
 
- -- Denis Barbier <barbier@debian.org>  Wed, 13 Sep 2006 23:01:36 +0200
+ -- Denis Barbier <barbier@debian.org>  Thu, 14 Sep 2006 01:35:19 +0200
 
 libx11 (2:1.0.0-8) unstable; urgency=low
 
