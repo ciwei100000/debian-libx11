@@ -1,3 +1,10 @@
+libx11 (2:1.0.0-10) unstable; urgency=low
+
+  * Add 18_nonlinux.diff to fix building in gnu environments. Thanks Samuel
+    Thibault, Robert Millan, and Michael Banck. Closes: #358708
+
+ -- David Nusinow <dnusinow@debian.org>  Wed, 27 Sep 2006 21:07:10 -0400
+
 libx11 (2:1.0.0-9) unstable; urgency=low
 
   * Add 015_russian_locale_alias.diff.  Locale alias for russian was incorrect,
