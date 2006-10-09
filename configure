@@ -910,12 +910,14 @@ XKBPROTO_LIBS
 XKBPROTO_REQUIRES
 X11_DATADIR
 X11_LIBDIR
+XLOCALEDATADIR
 X11_LOCALEDATADIR
+XLOCALELIBDIR
 X11_LOCALELIBDIR
+XLOCALEDIR
+X11_LOCALEDIR
 XKEYSYMDB
 XERRORDB
-XLOCALEDIR
-XLOCALELIBDIR
 MALLOC_ZERO_CFLAGS
 XMALLOC_ZERO_CFLAGS
 XTMALLOC_ZERO_CFLAGS
@@ -4498,7 +4500,7 @@ ia64-*-hpux*)
   ;;
 *-*-irix6*)
   # Find out which ABI we are using.
-  echo '#line 4501 "configure"' > conftest.$ac_ext
+  echo '#line 4503 "configure"' > conftest.$ac_ext
   if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
   (eval $ac_compile) 2>&5
   ac_status=$?
@@ -7462,11 +7464,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:7465: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:7467: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:7469: \$? = $ac_status" >&5
+   echo "$as_me:7471: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -7730,11 +7732,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:7733: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:7735: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:7737: \$? = $ac_status" >&5
+   echo "$as_me:7739: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -7834,11 +7836,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:7837: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:7839: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "$as_me:7841: \$? = $ac_status" >&5
+   echo "$as_me:7843: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -10275,7 +10277,7 @@ else
   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
   lt_status=$lt_dlunknown
   cat > conftest.$ac_ext <<EOF
-#line 10278 "configure"
+#line 10280 "configure"
 #include "confdefs.h"
 
 #if HAVE_DLFCN_H
@@ -10375,7 +10377,7 @@ else
   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
   lt_status=$lt_dlunknown
   cat > conftest.$ac_ext <<EOF
-#line 10378 "configure"
+#line 10380 "configure"
 #include "confdefs.h"
 
 #if HAVE_DLFCN_H
@@ -12743,11 +12745,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:12746: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:12748: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:12750: \$? = $ac_status" >&5
+   echo "$as_me:12752: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -12847,11 +12849,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:12850: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:12852: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "$as_me:12854: \$? = $ac_status" >&5
+   echo "$as_me:12856: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -14408,11 +14410,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:14411: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:14413: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:14415: \$? = $ac_status" >&5
+   echo "$as_me:14417: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -14512,11 +14514,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:14515: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:14517: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "$as_me:14519: \$? = $ac_status" >&5
+   echo "$as_me:14521: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -16731,11 +16733,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:16734: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:16736: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:16738: \$? = $ac_status" >&5
+   echo "$as_me:16740: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -16999,11 +17001,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:17002: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:17004: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:17006: \$? = $ac_status" >&5
+   echo "$as_me:17008: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -17103,11 +17105,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:17106: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:17108: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "$as_me:17110: \$? = $ac_status" >&5
+   echo "$as_me:17112: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -24227,7 +24229,44 @@ if test "x$GCC" = "xyes"; then
 fi
 
 X11_DATADIR="${datadir}/X11"
+
+  prefix_NONE=
+  exec_prefix_NONE=
+  test "x$prefix" = xNONE && prefix_NONE=yes && prefix=$ac_default_prefix
+  test "x$exec_prefix" = xNONE && exec_prefix_NONE=yes && exec_prefix=$prefix
+  eval ac_define_dir="\"$X11_DATADIR\""
+  eval ac_define_dir="\"$ac_define_dir\""
+  X11_DATADIR="$ac_define_dir"
+
+
+cat >>confdefs.h <<_ACEOF
+#define X11_DATADIR "$ac_define_dir"
+_ACEOF
+
+  test "$prefix_NONE" && prefix=NONE
+  test "$exec_prefix_NONE" && exec_prefix=NONE
+
+
+
 X11_LIBDIR="${libdir}/X11"
+
+  prefix_NONE=
+  exec_prefix_NONE=
+  test "x$prefix" = xNONE && prefix_NONE=yes && prefix=$ac_default_prefix
+  test "x$exec_prefix" = xNONE && exec_prefix_NONE=yes && exec_prefix=$prefix
+  eval ac_define_dir="\"$X11_LIBDIR\""
+  eval ac_define_dir="\"$ac_define_dir\""
+  X11_LIBDIR="$ac_define_dir"
+
+
+cat >>confdefs.h <<_ACEOF
+#define X11_LIBDIR "$ac_define_dir"
+_ACEOF
+
+  test "$prefix_NONE" && prefix=NONE
+  test "$exec_prefix_NONE" && exec_prefix=NONE
+
+
 
 X11_CFLAGS="$X11_CFLAGS $XPROTO_CFLAGS"
 
@@ -24242,69 +24281,53 @@ X11_CFLAGS="$X11_CFLAGS $XPROTO_CFLAGS"
 #
 
 X11_LOCALEDATADIR="${X11_DATADIR}/locale"
+
+  prefix_NONE=
+  exec_prefix_NONE=
+  test "x$prefix" = xNONE && prefix_NONE=yes && prefix=$ac_default_prefix
+  test "x$exec_prefix" = xNONE && exec_prefix_NONE=yes && exec_prefix=$prefix
+  eval ac_define_dir="\"$X11_LOCALEDATADIR\""
+  eval ac_define_dir="\"$ac_define_dir\""
+  XLOCALEDATADIR="$ac_define_dir"
+
+
+cat >>confdefs.h <<_ACEOF
+#define XLOCALEDATADIR "$ac_define_dir"
+_ACEOF
+
+  test "$prefix_NONE" && prefix=NONE
+  test "$exec_prefix_NONE" && exec_prefix=NONE
+
+
+
 X11_LOCALELIBDIR="${X11_LIBDIR}/locale"
+
+  prefix_NONE=
+  exec_prefix_NONE=
+  test "x$prefix" = xNONE && prefix_NONE=yes && prefix=$ac_default_prefix
+  test "x$exec_prefix" = xNONE && exec_prefix_NONE=yes && exec_prefix=$prefix
+  eval ac_define_dir="\"$X11_LOCALELIBDIR\""
+  eval ac_define_dir="\"$ac_define_dir\""
+  XLOCALELIBDIR="$ac_define_dir"
+
+
+cat >>confdefs.h <<_ACEOF
+#define XLOCALELIBDIR "$ac_define_dir"
+_ACEOF
+
+  test "$prefix_NONE" && prefix=NONE
+  test "$exec_prefix_NONE" && exec_prefix=NONE
+
+
+
 X11_LOCALEDIR="${X11_LOCALEDATADIR}"
-XKEYSYMDB="${X11_DATADIR}/XKeysymDB"
-XERRORDB="${X11_DATADIR}/XErrorDB"
-
-
-
-
-
-
-  prefix_NONE=
-  exec_prefix_NONE=
-  test "x$prefix" = xNONE && prefix_NONE=yes && prefix=$ac_default_prefix
-  test "x$exec_prefix" = xNONE && exec_prefix_NONE=yes && exec_prefix=$prefix
-  eval ac_define_dir="\"$X11_DATADIR\""
-  X11_DATADIR="$ac_define_dir"
-
-
-cat >>confdefs.h <<_ACEOF
-#define X11_DATADIR "$ac_define_dir"
-_ACEOF
-
-  test "$prefix_NONE" && prefix=NONE
-  test "$exec_prefix_NONE" && exec_prefix=NONE
-
-
-  prefix_NONE=
-  exec_prefix_NONE=
-  test "x$prefix" = xNONE && prefix_NONE=yes && prefix=$ac_default_prefix
-  test "x$exec_prefix" = xNONE && exec_prefix_NONE=yes && exec_prefix=$prefix
-  eval ac_define_dir="\"$XKEYSYMDB\""
-  XKEYSYMDB="$ac_define_dir"
-
-
-cat >>confdefs.h <<_ACEOF
-#define XKEYSYMDB "$ac_define_dir"
-_ACEOF
-
-  test "$prefix_NONE" && prefix=NONE
-  test "$exec_prefix_NONE" && exec_prefix=NONE
-
-
-  prefix_NONE=
-  exec_prefix_NONE=
-  test "x$prefix" = xNONE && prefix_NONE=yes && prefix=$ac_default_prefix
-  test "x$exec_prefix" = xNONE && exec_prefix_NONE=yes && exec_prefix=$prefix
-  eval ac_define_dir="\"$XERRORDB\""
-  XERRORDB="$ac_define_dir"
-
-
-cat >>confdefs.h <<_ACEOF
-#define XERRORDB "$ac_define_dir"
-_ACEOF
-
-  test "$prefix_NONE" && prefix=NONE
-  test "$exec_prefix_NONE" && exec_prefix=NONE
-
 
   prefix_NONE=
   exec_prefix_NONE=
   test "x$prefix" = xNONE && prefix_NONE=yes && prefix=$ac_default_prefix
   test "x$exec_prefix" = xNONE && exec_prefix_NONE=yes && exec_prefix=$prefix
   eval ac_define_dir="\"$X11_LOCALEDIR\""
+  eval ac_define_dir="\"$ac_define_dir\""
   XLOCALEDIR="$ac_define_dir"
 
 
@@ -24316,20 +24339,44 @@ _ACEOF
   test "$exec_prefix_NONE" && exec_prefix=NONE
 
 
+
+XKEYSYMDB="${X11_DATADIR}/XKeysymDB"
+
   prefix_NONE=
   exec_prefix_NONE=
   test "x$prefix" = xNONE && prefix_NONE=yes && prefix=$ac_default_prefix
   test "x$exec_prefix" = xNONE && exec_prefix_NONE=yes && exec_prefix=$prefix
-  eval ac_define_dir="\"$X11_LOCALELIBDIR\""
-  XLOCALELIBDIR="$ac_define_dir"
+  eval ac_define_dir="\"$XKEYSYMDB\""
+  eval ac_define_dir="\"$ac_define_dir\""
+  XKEYSYMDB="$ac_define_dir"
 
 
 cat >>confdefs.h <<_ACEOF
-#define XLOCALELIBDIR "$ac_define_dir"
+#define XKEYSYMDB "$ac_define_dir"
 _ACEOF
 
   test "$prefix_NONE" && prefix=NONE
   test "$exec_prefix_NONE" && exec_prefix=NONE
+
+
+XERRORDB="${X11_DATADIR}/XErrorDB"
+
+  prefix_NONE=
+  exec_prefix_NONE=
+  test "x$prefix" = xNONE && prefix_NONE=yes && prefix=$ac_default_prefix
+  test "x$exec_prefix" = xNONE && exec_prefix_NONE=yes && exec_prefix=$prefix
+  eval ac_define_dir="\"$XERRORDB\""
+  eval ac_define_dir="\"$ac_define_dir\""
+  XERRORDB="$ac_define_dir"
+
+
+cat >>confdefs.h <<_ACEOF
+#define XERRORDB "$ac_define_dir"
+_ACEOF
+
+  test "$prefix_NONE" && prefix=NONE
+  test "$exec_prefix_NONE" && exec_prefix=NONE
+
 
 
 
@@ -25415,12 +25462,14 @@ XKBPROTO_LIBS!$XKBPROTO_LIBS$ac_delim
 XKBPROTO_REQUIRES!$XKBPROTO_REQUIRES$ac_delim
 X11_DATADIR!$X11_DATADIR$ac_delim
 X11_LIBDIR!$X11_LIBDIR$ac_delim
+XLOCALEDATADIR!$XLOCALEDATADIR$ac_delim
 X11_LOCALEDATADIR!$X11_LOCALEDATADIR$ac_delim
+XLOCALELIBDIR!$XLOCALELIBDIR$ac_delim
 X11_LOCALELIBDIR!$X11_LOCALELIBDIR$ac_delim
+XLOCALEDIR!$XLOCALEDIR$ac_delim
+X11_LOCALEDIR!$X11_LOCALEDIR$ac_delim
 XKEYSYMDB!$XKEYSYMDB$ac_delim
 XERRORDB!$XERRORDB$ac_delim
-XLOCALEDIR!$XLOCALEDIR$ac_delim
-XLOCALELIBDIR!$XLOCALELIBDIR$ac_delim
 MALLOC_ZERO_CFLAGS!$MALLOC_ZERO_CFLAGS$ac_delim
 XMALLOC_ZERO_CFLAGS!$XMALLOC_ZERO_CFLAGS$ac_delim
 XTMALLOC_ZERO_CFLAGS!$XTMALLOC_ZERO_CFLAGS$ac_delim
@@ -25428,7 +25477,7 @@ LIBOBJS!$LIBOBJS$ac_delim
 LTLIBOBJS!$LTLIBOBJS$ac_delim
 _ACEOF
 
-  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 70; then
+  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 72; then
     break
   elif $ac_last_try; then
     { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5

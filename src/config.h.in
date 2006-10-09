@@ -114,6 +114,9 @@
 /* Location of libX11 data */
 #undef X11_DATADIR
 
+/* Location of libX11 library data */
+#undef X11_LIBDIR
+
 /* Include support for XCMS */
 #undef XCMS
 
@@ -131,6 +134,9 @@
 
 /* support for X Locales */
 #undef XLOCALE
+
+/* Location of libX11 locale data */
+#undef XLOCALEDATADIR
 
 /* Location of libX11 locale data */
 #undef XLOCALEDIR
