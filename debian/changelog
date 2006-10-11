@@ -1,4 +1,4 @@
-libx11 (2:1.0.3-1) DO_NOT_RELEASE; urgency=low
+libx11 (2:1.0.3-1) UNRELEASED; urgency=low
 
   [ David Nusinow ]
   * New upstream release
@@ -6,7 +6,7 @@ libx11 (2:1.0.3-1) DO_NOT_RELEASE; urgency=low
   * Run dh_install with --list-missing
   * Remove obsolete patch 011
   * Bump debhelper compat to 5
-  * Add 18_nonlinux.diff to fix building in gnu environments. Thanks Samuel
+  * Upstream fix allows building in gnu environments. Thanks Samuel
     Thibault, Robert Millan, and Michael Banck. Closes: #358708
   * Add 019_new_autoconf.diff to allow us to not break the server in
     horrendous ways using newer versions of autoconf. Thanks to Jamey Sharp
@@ -31,7 +31,7 @@ libx11 (2:1.0.3-1) DO_NOT_RELEASE; urgency=low
   [ Drew Parsons ]
   * dbg package has priority extra.
 
- -- Drew Parsons <dparsons@debian.org>  Sat, 19 Aug 2006 22:22:01 +1000
+ -- David Nusinow <dnusinow@debian.org>  Tue, 10 Oct 2006 21:04:42 -0400
 
 libx11 (2:1.0.0-9) unstable; urgency=low
 

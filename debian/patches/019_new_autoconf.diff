@@ -1,7 +1,7 @@
 Index: libx11/acinclude.m4
 ===================================================================
---- libx11.orig/acinclude.m4	2006-08-02 18:55:53.000000000 -0400
-+++ libx11/acinclude.m4	2006-10-09 12:28:05.000000000 -0400
+--- libx11.orig/acinclude.m4	2006-10-09 12:30:05.000000000 -0400
++++ libx11/acinclude.m4	2006-10-10 21:03:19.000000000 -0400
 @@ -4,7 +4,10 @@
    exec_prefix_NONE=
    test "x$prefix" = xNONE && prefix_NONE=yes && prefix=$ac_default_prefix
@@ -15,9 +15,9 @@ Index: libx11/acinclude.m4
    test "$prefix_NONE" && prefix=NONE
 Index: libx11/configure.ac
 ===================================================================
---- libx11.orig/configure.ac	2006-10-09 12:27:48.000000000 -0400
-+++ libx11/configure.ac	2006-10-09 12:28:05.000000000 -0400
-@@ -298,7 +298,12 @@
+--- libx11.orig/configure.ac	2006-10-10 21:02:51.000000000 -0400
++++ libx11/configure.ac	2006-10-10 21:03:19.000000000 -0400
+@@ -307,7 +307,12 @@
  fi
  
  X11_DATADIR="${datadir}/X11"
@@ -30,7 +30,7 @@ Index: libx11/configure.ac
  
  X11_CFLAGS="$X11_CFLAGS $XPROTO_CFLAGS"
  AC_SUBST(X11_CFLAGS)
-@@ -313,20 +318,23 @@
+@@ -322,20 +327,23 @@
  #
  
  X11_LOCALEDATADIR="${X11_DATADIR}/locale"
