@@ -1,4 +1,4 @@
-libx11 (2:1.0.3-1) UNRELEASED; urgency=low
+libx11 (2:1.0.3-1) unstable; urgency=low
 
   [ David Nusinow ]
   * New upstream release
@@ -35,7 +35,7 @@ libx11 (2:1.0.3-1) UNRELEASED; urgency=low
   [ Drew Parsons ]
   * dbg package has priority extra.
 
- -- David Nusinow <dnusinow@debian.org>  Tue, 10 Oct 2006 22:33:42 -0400
+ -- David Nusinow <dnusinow@debian.org>  Tue, 10 Oct 2006 22:34:36 -0400
 
 libx11 (2:1.0.0-9) unstable; urgency=low
 
