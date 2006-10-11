@@ -39,6 +39,7 @@ Description: X11 client-side library
 
 Package: libx11-6-dbg
 Architecture: any
+Priority: extra
 Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6 (= ${Source-Version})
 Description: X11 client-side library (debug package)
  This package provides the main client interface to the X Window System, and is

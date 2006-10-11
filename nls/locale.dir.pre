@@ -1,4 +1,4 @@
-XCOMM	$XdotOrg: xc/nls/locale.dir,v 1.6 2005/01/14 04:59:05 gisburn Exp $
+XCOMM	$XdotOrg: lib/X11/nls/locale.dir.pre,v 1.10 2005-09-30 07:52:46 daniels Exp $
 XCOMM	$Xorg: locale.dir,v 1.3 2000/08/17 19:46:48 cpqbld Exp $
 XCOMM
 XCOMM	This file contains locale database file names
@@ -204,6 +204,8 @@ iso8859-2/XLC_LOCALE: 			sk_SK.ISO8859-2
 iso8859-2/XLC_LOCALE: 			sl_SI.ISO8859-2
 iso8859-5/XLC_LOCALE: 			sp_YU.ISO8859-5
 iso8859-2/XLC_LOCALE: 			sq_AL.ISO8859-2
+iso8859-2/XLC_LOCALE:			sr_CS.ISO8859-2
+iso8859-5/XLC_LOCALE:			sr_CS.ISO8859-5
 iso8859-2/XLC_LOCALE:			sr_SP.ISO8859-2
 iso8859-2/XLC_LOCALE:			sr_YU.ISO8859-2
 iso8859-5/XLC_LOCALE:			sr_YU.ISO8859-5
@@ -385,6 +387,7 @@ en_US.UTF-8/XLC_LOCALE:			si_LK.UTF-8
 en_US.UTF-8/XLC_LOCALE:			sk_SK.UTF-8
 en_US.UTF-8/XLC_LOCALE:			sl_SI.UTF-8
 en_US.UTF-8/XLC_LOCALE:			sq_AL.UTF-8
+en_US.UTF-8/XLC_LOCALE:			sr_CS.UTF-8
 en_US.UTF-8/XLC_LOCALE:			sr_YU.UTF-8
 en_US.UTF-8/XLC_LOCALE:			ss_ZA.UTF-8
 en_US.UTF-8/XLC_LOCALE:			st_ZA.UTF-8

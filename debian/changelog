@@ -1,45 +1,27 @@
-libx11 (2:1.0.0-10) UNRELEASED; urgency=low
-
-  * Add 18_nonlinux.diff to fix building in gnu environments. Thanks Samuel
-    Thibault, Robert Millan, and Michael Banck. Closes: #358708
-  * Add 019_new_autoconf.diff to allow us to not break the server in
-    horrendous ways using newer versions of autoconf. Thanks to Jamey Sharp
-    for pointing this patch out in upstream HEAD.
-
- -- David Nusinow <dnusinow@debian.org>  Mon,  9 Oct 2006 13:08:15 -0400
-
-libx11 (2:1.0.0-9) unstable; urgency=low
-
-  * Add 015_russian_locale_alias.diff.  Locale alias for russian was incorrect,
-    it should be ru_RU.KOI8-R as in glibc locale.alias.  Thanks Andrei Lahun.
-    (closes: #368655)
-  * Add 016_greek_polytonic_Compose.diff.  Add compose sequences with the
-    right breathing signs U0313/U0314 to el_GR.UTF-8/Compose.
-    Thanks Jan Willem Stumpel.  (closes: #386471)
-  * Add 017_FTBFS_makekeys.diff.  Fix a FTBFS when compiling with
-    x11proto-core-dev >= 7.0.3, backported from upstream.
-    Thanks Goswin von Brederlow.  (closes: #387133)
-
- -- Denis Barbier <barbier@debian.org>  Thu, 14 Sep 2006 01:35:19 +0200
-
-libx11 (2:1.0.0-8) unstable; urgency=low
-
-  [ Denis Barbier ]
-  * Add 014_add_Khmer_digraphs.diff.  Khmer keyboards have to generate
-    several characters with a single keystroke, so define them in
-    en_US.UTF-8/Compose.  They will be added later to all UTF-8 files.
-    Thanks Paul Wise.  (closes: #355957)
-  * Add support for Khmer locale in 003_recognize_glibc_2.3.2_locale_names.diff
+libx11 (2:1.0.3-1) DO_NOT_RELEASE; urgency=low
 
   [ David Nusinow ]
+  * New upstream release
+  * Dump obsolete patch 10 for manpage fix and 13 for setuid fix
   * Run dh_install with --list-missing
+  * Remove obsolete patch 011
   * Bump debhelper compat to 5
+
+  [ Denis Barbier ]
+  * Sync patches:
+    - 003_recognize_glibc_2.3.2_locale_names.diff
+    - 005_Compose_fix_latin1_UTF8.diff
+    - 006_tailor_pt_BR.UTF-8_Compose.diff
+    - 014_add_Khmer_digraphs.diff
 
   [ Andres Salomon ]
   * Test for obj-$(DEB_BUILD_GNU_TYPE) before creating it during build;
     idempotency fix.
 
- -- David Nusinow <dnusinow@debian.org>  Wed,  2 Aug 2006 23:25:13 +0000
+  [ Drew Parsons ]
+  * dbg package has priority extra.
+
+ -- Drew Parsons <dparsons@debian.org>  Sat, 19 Aug 2006 22:22:01 +1000
 
 libx11 (2:1.0.0-7) unstable; urgency=high
 
@@ -216,7 +198,7 @@ libx11 (1:6.2.1+cvs.20050711-1) breezy; urgency=low
 libx11 (1:6.2.1+cvs.20050615-5) breezy; urgency=low
 
   * Bump libx11-6 -> xlibs-data Conflicts/Replaces to -34; Tollef's -33 did
-    not change this. 
+    not change this.
 
  -- Daniel Stone <daniel.stone@ubuntu.com>  Tue,  5 Jul 2005 01:41:19 +1000
 

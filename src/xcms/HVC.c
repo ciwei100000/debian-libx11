@@ -1,4 +1,4 @@
-/* $XdotOrg: xc/lib/X11/HVC.c,v 1.3 2005/05/13 22:53:43 sandmann Exp $ */
+/* $XdotOrg: lib/X11/src/xcms/HVC.c,v 1.4 2005-07-03 07:00:55 daniels Exp $ */
 /* $Xorg: HVC.c,v 1.3 2000/08/17 19:44:36 cpqbld Exp $ */
 
 /*
@@ -201,7 +201,24 @@ TekHVC_ParseString(
 	    &pColor->spec.TekHVC.H,
 	    &pColor->spec.TekHVC.V,
 	    &pColor->spec.TekHVC.C) != 3) {
-	return(XcmsFailure);
+        char *s; /* Maybe failed due to locale */
+        int f;
+        if ((s = strdup(spec))) {
+            for (f = 0; s[f]; ++f)
+                if (s[f] == '.')
+                    s[f] = ',';
+                else if (s[f] == ',')
+                    s[f] = '.';
+	    if (sscanf(s + n + 1, "%lf/%lf/%lf",
+		       &pColor->spec.TekHVC.H,
+		       &pColor->spec.TekHVC.V,
+		       &pColor->spec.TekHVC.C) != 3) {
+                free(s);
+                return(XcmsFailure);
+            }
+            free(s);
+        } else
+	    return(XcmsFailure);
     }
     pColor->format = XcmsTekHVCFormat;
     pColor->pixel = 0;

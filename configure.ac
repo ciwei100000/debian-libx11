@@ -3,11 +3,11 @@
 
 AC_PREREQ(2.57)
 AC_INIT([libX11],
-        1.0.0,
+        1.0.3,
         [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],
         libX11)
 AC_CONFIG_SRCDIR([Makefile.am])
-AM_INIT_AUTOMAKE([dist-bzip2])
+AM_INIT_AUTOMAKE([dist-bzip2 foreign])
 
 AM_MAINTAINER_MODE
 
@@ -21,14 +21,10 @@ AC_PROG_CC
 XORG_PROG_RAWCPP
 
 # Checks for pkg-config packages
-PKG_CHECK_MODULES(BIGREQS, bigreqsproto)
-AC_SUBST(BIGREQS_CFLAGS)
-AC_SUBST(BIGREQS_LIBS)
-
-PKG_CHECK_MODULES(XPROTO, xproto)
+PKG_CHECK_MODULES(XPROTO, [xproto >= 7.0.6])
 AC_SUBST(XPROTO_CFLAGS)
 
-PKG_CHECK_MODULES(X11, xextproto xtrans xau xcmiscproto)
+PKG_CHECK_MODULES(X11, xextproto xtrans xau xcmiscproto bigreqsproto)
 
 PKG_CHECK_MODULES(XDMCP, xdmcp)
 AC_SUBST(XDMCP_CFLAGS)
@@ -157,10 +153,12 @@ AM_CONDITIONAL(THRSTUBS, test x$thrstubs = xyes)
 dnl XXX incomplete, please fill this in
 if test x$xthreads = xyes ; then
     case $host_os in
-    linux*|openbsd*)
+    linux*|openbsd*|gnu*|k*bsd*-gnu)
         XTHREADLIB=-lpthread ;;
     freebsd*)
         XTHREAD_CFLAGS="-D_THREAD_SAFE"
+        XTHREADLIB="-pthread" ;;
+    dragonfly*)
         XTHREADLIB="-pthread" ;;
     solaris*)
 	XTHREAD_CFLAGS="-D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS" ;;
@@ -290,6 +288,17 @@ else
 fi
 AC_SUBST(XKBPROTO_REQUIRES)
 
+AC_FUNC_MMAP()
+composecache_default=$ac_cv_func_mmap_fixed_mapped
+AC_CHECK_FUNC(nl_langinfo, , [composecache_default=no])
+AC_ARG_ENABLE(composecache, 
+              AC_HELP_STRING([--disable-composecache],
+                [Disable compose table cache support]),
+              [COMPOSECACHE=$enableval],[COMPOSECACHE=$composecache_default])
+if test x"$COMPOSECACHE" = "xyes"; then
+	AC_DEFINE(COMPOSECACHE,1,[Include compose table cache support])
+fi
+
 if test "x$GCC" = "xyes"; then
 	GCC_WARNINGS="-Wall -Wpointer-arith -Wstrict-prototypes \
 	-Wmissing-prototypes -Wmissing-declarations \
@@ -312,8 +321,8 @@ AC_SUBST(X11_LIBS)
 # in ${libdir}
 #
 
-X11_LOCALEDATADIR="${X11_LIBDIR}/locale"
-X11_LOCALELIBDIR="${X11_LIBDIR}/locale/lib"
+X11_LOCALEDATADIR="${X11_DATADIR}/locale"
+X11_LOCALELIBDIR="${X11_LIBDIR}/locale"
 X11_LOCALEDIR="${X11_LOCALEDATADIR}"
 XKEYSYMDB="${X11_DATADIR}/XKeysymDB"
 XERRORDB="${X11_DATADIR}/XErrorDB"
@@ -326,6 +335,7 @@ AC_DEFINE_DIR(X11_DATADIR, X11_DATADIR, [Location of libX11 data])
 AC_DEFINE_DIR(XKEYSYMDB, XKEYSYMDB, [Location of keysym database])
 AC_DEFINE_DIR(XERRORDB, XERRORDB, [Location of error message database])
 AC_DEFINE_DIR(XLOCALEDIR, X11_LOCALEDIR, [Location of libX11 locale data])
+AC_DEFINE_DIR(XLOCALELIBDIR, X11_LOCALELIBDIR, [Location of libX11 locale libraries])
 
 XORG_CHECK_MALLOC_ZERO
 XORG_RELEASE_VERSION
@@ -421,4 +431,5 @@ echo " XF86BigFont support:                     "$XF86BIGFONT
 echo " XKB support:                             "$XKB
 echo " XLOCALEDIR environment variable support: "$ENABLE_XLOCALEDIR
 echo " Manual pages installed:                  "$LIBMAN_SUFFIX
+echo " Compose table cache enabled:             "$COMPOSECACHE
 echo ""
