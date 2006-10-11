@@ -9,3 +9,8 @@
 009_iso8859-15_Compose_Eurosign.diff
 012_ru_RU_UTF-8_XLC_LOCALE.diff
 014_add_Khmer_digraphs.diff
+015_russian_locale_alias.diff
+016_greek_polytonic_Compose.diff
+017_FTBFS_makekeys.diff
+018_nonlinux.diff
+019_new_autoconf.diff
