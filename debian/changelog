@@ -14,6 +14,7 @@ libx11 (2:1.0.3-1) UNRELEASED; urgency=low
   * Add 010_manpage_suffixes.diff to dynamically generate the internal manpage
     section using __libmansuffix__ the same way the actual file suffix is
     generated, so that they match and lintian becomes useful again here
+  * Add pre-depends on x11-common for the -dev package
 
   [ Denis Barbier ]
   * Sync patches:
@@ -34,7 +35,7 @@ libx11 (2:1.0.3-1) UNRELEASED; urgency=low
   [ Drew Parsons ]
   * dbg package has priority extra.
 
- -- David Nusinow <dnusinow@debian.org>  Tue, 10 Oct 2006 21:45:25 -0400
+ -- David Nusinow <dnusinow@debian.org>  Tue, 10 Oct 2006 22:33:42 -0400
 
 libx11 (2:1.0.0-9) unstable; urgency=low
 
