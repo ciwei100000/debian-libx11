@@ -7,6 +7,7 @@
 007_iso8859-15_Compose_fix.diff
 008_remove_ko_Compose.diff
 009_iso8859-15_Compose_Eurosign.diff
+010_manpage_suffixes.diff
 012_ru_RU_UTF-8_XLC_LOCALE.diff
 014_add_Khmer_digraphs.diff
 019_new_autoconf.diff
