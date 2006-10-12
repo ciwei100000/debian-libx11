@@ -42,7 +42,7 @@ else
 	confflags += --build=$(DEB_BUILD_GNU_TYPE) --host=$(DEB_HOST_GNU_TYPE)
 endif
 
-confflags += --enable-man-pages=3 --enable-loadable-i18n
+confflags += --enable-man-pages=3
 
 # so very wrong
 CFLAGS += -DLIBXCURSOR=\\\"libXcursor.so.1\\\"

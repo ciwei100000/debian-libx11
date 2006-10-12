@@ -1,3 +1,11 @@
+libx11 (2:1.0.3-2) UNRELEASED; urgency=low
+
+  [ Denis Barbier ]
+  * Drop --enable-loadable-i18n from confflags, it does not work with 1.0.3.
+    Closes: #392567  Thanks Jérôme Marant
+
+ -- Denis Barbier <barbier@debian.org>  Thu, 12 Oct 2006 23:30:35 +0200
+
 libx11 (2:1.0.3-1) unstable; urgency=low
 
   [ David Nusinow ]
