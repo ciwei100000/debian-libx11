@@ -11,3 +11,4 @@
 012_ru_RU_UTF-8_XLC_LOCALE.diff
 014_add_Khmer_digraphs.diff
 019_new_autoconf.diff
+020_CVE-2006-5397.diff
