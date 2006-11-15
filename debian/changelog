@@ -1,10 +1,11 @@
 libx11 (2:1.0.3-3) unstable; urgency=high
 
+  [ Julien Cristau ]
   * Urgency high for security bugfix (CVE-2006-5397).
   * Add patch 020_CVE-2006-5397 to fix double fopen() of compose file
   (closes: #398460).  Thanks to Stefan Fritsch for the report.
 
- -- Julien Cristau <julien.cristau@ens-lyon.org>  Mon, 13 Nov 2006 23:24:39 +0100
+ -- David Nusinow <dnusinow@debian.org>  Tue, 14 Nov 2006 19:56:01 -0500
 
 libx11 (2:1.0.3-2) unstable; urgency=low
 
