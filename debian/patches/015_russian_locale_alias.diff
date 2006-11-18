@@ -1,6 +1,8 @@
 Fix russian locale.  Closes: #368655.
 
 This aligns with the glibc definition in /usr/share/locale/locale.alias.
+This only applies to Debian's glibc, see bug #62586 and glibc 2.2.5-4.
+
 For the same glib reason, we cannot change ru and ru_RU away from ISO8859-5,
 since that encoding is enshrined in /usr/share/i18n/locales/ru_RU.  Insert 
 appropriate perjorative language here.

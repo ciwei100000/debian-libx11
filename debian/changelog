@@ -3,14 +3,15 @@ libx11 (2:1.0.3-4) UNRELEASED; urgency=low
   * Some patches got lost in the upgrade from 1.0.0 (2:1.0.0-9) to 1.0.3:
     - 015_russian_locale_alias.diff.  Closes: #368655.
       This aligns with the glibc russian definition of ru_RU.KOI8-R in
-      /usr/share/locale/locale.alias.  Because of the 
+      /usr/share/locale/locale.alias.  Note that this only applies to
+      Debian's glibc, see bug #62586 and glibc 2.2.5-4. Because of the
       constraint implosed by glibc in /usr/share/i18n/locales/ru_RU,
-      we cannot likewise change ru and ru_RU away from ISO8859-5.  
+      we cannot likewise change ru and ru_RU away from ISO8859-5. 
       They really should be using ru_RU.UTF-8 anyway.
     - 016_greek_polytonic_Compose.diff. Closes: #386471.
     - 017_FTBFS_makekeys.diff can be left out since it is applied in 1.0.3.
 
- -- Drew Parsons <dparsons@debian.org>  Sat, 18 Nov 2006 23:01:13 +1100
+ -- Drew Parsons <dparsons@debian.org>  Sun, 19 Nov 2006 00:17:22 +1100
 
 libx11 (2:1.0.3-3) unstable; urgency=high
 
