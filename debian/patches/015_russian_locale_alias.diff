@@ -1,0 +1,30 @@
+Fix russian locale.  Closes: #368655.
+
+Suggestion: can the russian default be changed to UTF-8 instead of 
+KOI8-R?  This will make it easier for russians to fit in with the rest of the 
+world.
+
+Index: libx11/nls/locale.alias.pre
+===================================================================
+--- libx11.orig/nls/locale.alias.pre	2006-11-18 19:51:47.000000000 +1100
++++ libx11/nls/locale.alias.pre	2006-11-18 19:53:12.000000000 +1100
+@@ -881,8 +881,8 @@
+ ro_RO.iso88592:					ro_RO.ISO8859-2
+ ro_RO.ISO-8859-2:				ro_RO.ISO8859-2
+ ro_RO.utf8:					ro_RO.UTF-8
+-ru:						ru_RU.ISO8859-5
+-ru_RU:						ru_RU.ISO8859-5
++ru:						ru_RU.KOI8-R
++ru_RU:						ru_RU.KOI8-R
+ ru_RU.iso88595:					ru_RU.ISO8859-5
+ ru_RU.ISO-8859-5:				ru_RU.ISO8859-5
+ ru_RU.koi8r:					ru_RU.KOI8-R
+@@ -1183,7 +1183,7 @@
+ portuguese.iso88591:				pt_PT.ISO8859-1
+ romanian:					ro_RO.ISO8859-2
+ rumanian:					ro_RO.ISO8859-2
+-russian:					ru_RU.ISO8859-5
++russian:					ru_RU.KOI8-R
+ serbocroatian:					sr_CS.ISO8859-2
+ sinhala:					si_LK.UTF-8
+ slovak:						sk_SK.ISO8859-2

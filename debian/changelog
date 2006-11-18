@@ -1,3 +1,15 @@
+libx11 (2:1.0.3-4) UNRELEASED; urgency=low
+
+  * Some patches got lost in the upgrade from 1.0.0 (2:1.0.0-9) to 1.0.3:
+    - 015_russian_locale_alias.diff. For consistency, expand this
+      patch to map the generic ru and ru_RU locales, as well as russian,
+      to ru_RU.KOI8-R instead of ISO8859-5.  But they really should be
+      using UTF-8 you know.  Closes: #368655.
+    - 016_greek_polytonic_Compose.diff. Closes: #386471.
+    - 017_FTBFS_makekeys.diff can be left out since it is applied in 1.0.3.
+
+ -- Drew Parsons <dparsons@debian.org>  Sat, 18 Nov 2006 19:57:42 +1100
+
 libx11 (2:1.0.3-3) unstable; urgency=high
 
   [ Julien Cristau ]
