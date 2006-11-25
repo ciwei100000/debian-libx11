@@ -14,7 +14,7 @@ THIS_SCRIPT=postinst
 
 #INCLUDE_SHELL_LIB#
 
-register_x_lib_dir_with_ld_so
+deregister_x_lib_dir_with_ld_so
 
 #DEBHELPER#
 
