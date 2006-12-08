@@ -2,8 +2,10 @@ libx11 (2:1.0.3-5) UNRELEASED; urgency=low
 
   * Remove /usr/X11R6/lib from /etc/ld.so.conf in postinst if it's no longer
     needed, instead of adding it there.
+  * Add patch 021_compose_fclose.diff to fix file descriptor leak when a
+    Compose file uses the "include" directive.
 
- -- Julien Cristau <julien.cristau@ens-lyon.org>  Sat, 25 Nov 2006 06:01:37 +0100
+ -- Julien Cristau <julien.cristau@ens-lyon.org>  Fri,  8 Dec 2006 02:07:33 +0100
 
 libx11 (2:1.0.3-4) unstable; urgency=low
 

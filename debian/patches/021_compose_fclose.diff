@@ -1,0 +1,15 @@
+Fix file descriptor leak.
+Submitted upstream: see https://bugs.freedesktop.org/show_bug.cgi?id=9279
+
+diff --git a/modules/im/ximcp/imLcPrs.c b/modules/im/ximcp/imLcPrs.c
+index 18147e9..8eb5fa7 100644
+--- a/modules/im/ximcp/imLcPrs.c
++++ b/modules/im/ximcp/imLcPrs.c
+@@ -471,6 +471,7 @@ parseline(
+             if (infp == NULL)
+                 goto error;
+             _XimParseStringFile(infp, im);
++            fclose(infp);
+             return (0);
+ 	} else if ((token == KEY) && (strcmp("None", tokenbuf) == 0)) {
+ 	    modifier = 0;
