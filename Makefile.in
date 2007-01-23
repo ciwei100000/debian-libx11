@@ -36,12 +36,13 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
+@XCB_TRUE@am__append_1 = x11-xcb.pc
 DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
-	$(srcdir)/Makefile.in $(srcdir)/x11.pc.in \
-	$(top_srcdir)/configure \
+	$(srcdir)/Makefile.in $(srcdir)/x11-xcb.pc.in \
+	$(srcdir)/x11.pc.in $(top_srcdir)/configure \
 	$(top_srcdir)/include/X11/XlibConf.h.in AUTHORS COPYING \
 	ChangeLog INSTALL NEWS compile config.guess config.sub depcomp \
-	install-sh ltmain.sh missing mkinstalldirs
+	install-sh ltmain.sh missing
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
@@ -50,10 +51,10 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno configure.status.lineno
-mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/src/config.h \
 	$(top_builddir)/include/X11/XlibConf.h
-CONFIG_CLEAN_FILES = x11.pc
+CONFIG_CLEAN_FILES = x11.pc x11-xcb.pc
 SOURCES =
 DIST_SOURCES =
 RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
@@ -137,6 +138,10 @@ LIBS = @LIBS@
 LIBTOOL = @LIBTOOL@
 LIB_MAN_DIR = @LIB_MAN_DIR@
 LIB_MAN_SUFFIX = @LIB_MAN_SUFFIX@
+LINT = @LINT@
+LINT_FALSE = @LINT_FALSE@
+LINT_FLAGS = @LINT_FLAGS@
+LINT_TRUE = @LINT_TRUE@
 LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
 MAINT = @MAINT@
@@ -173,11 +178,14 @@ VERSION = @VERSION@
 WCHAR32 = @WCHAR32@
 X11_CFLAGS = @X11_CFLAGS@
 X11_DATADIR = @X11_DATADIR@
+X11_EXTRA_DEPS = @X11_EXTRA_DEPS@
 X11_LIBDIR = @X11_LIBDIR@
 X11_LIBS = @X11_LIBS@
 X11_LOCALEDATADIR = @X11_LOCALEDATADIR@
 X11_LOCALEDIR = @X11_LOCALEDIR@
 X11_LOCALELIBDIR = @X11_LOCALELIBDIR@
+XCB_FALSE = @XCB_FALSE@
+XCB_TRUE = @XCB_TRUE@
 XCMS_FALSE = @XCMS_FALSE@
 XCMS_TRUE = @XCMS_TRUE@
 XDMCP_CFLAGS = @XDMCP_CFLAGS@
@@ -255,9 +263,12 @@ target_alias = @target_alias@
 @XLIB_LOADABLE_I18N_TRUE@ORDER = src modules
 SUBDIRS = include $(ORDER) nls man
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = x11.pc
-EXTRA_DIST = x11.pc.in ChangeLog
-CLEANFILES = ChangeLog
+pkgconfig_DATA = x11.pc $(am__append_1)
+EXTRA_DIST = x11.pc.in x11-xcb.pc.in ChangeLog
+MAINTAINERCLEANFILES = ChangeLog
+
+# Check source code with tools like lint & sparse
+@LINT_TRUE@LINT_SUBDIRS = src # modules
 all: all-recursive
 
 .SUFFIXES:
@@ -312,6 +323,8 @@ $(top_srcdir)/include/X11/XlibConf.h.in: @MAINTAINER_MODE_TRUE@ $(am__configure_
 distclean-hdr:
 	-rm -f include/X11/XlibConf.h include/X11/stamp-h2
 x11.pc: $(top_builddir)/config.status $(srcdir)/x11.pc.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+x11-xcb.pc: $(top_builddir)/config.status $(srcdir)/x11-xcb.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 
 mostlyclean-libtool:
@@ -643,7 +656,6 @@ install-strip:
 mostlyclean-generic:
 
 clean-generic:
-	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
 
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
@@ -651,6 +663,7 @@ distclean-generic:
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
+	-test -z "$(MAINTAINERCLEANFILES)" || rm -f $(MAINTAINERCLEANFILES)
 clean: clean-recursive
 
 clean-am: clean-generic clean-libtool mostlyclean-am
@@ -721,10 +734,18 @@ uninstall-info: uninstall-info-recursive
 	uninstall-pkgconfigDATA
 
 
+.PHONY: ChangeLog
+
 ChangeLog:
-	git-log > ChangeLog
+	GIT_DIR=${srcdir}/.git git-log > ChangeLog
 
 dist-hook: ChangeLog
+
+@LINT_TRUE@lint:
+@LINT_TRUE@	@for subdir in $(LINT_SUBDIRS) ; do \
+@LINT_TRUE@		echo "Making $@ in $$subdir"; \
+@LINT_TRUE@		(cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) lint) ; \
+@LINT_TRUE@	done
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:

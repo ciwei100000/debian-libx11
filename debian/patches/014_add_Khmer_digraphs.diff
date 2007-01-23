@@ -1,11 +1,11 @@
 Index: libx11/nls/en_US.UTF-8/Compose.pre
 ===================================================================
---- libx11.orig/nls/en_US.UTF-8/Compose.pre	2006-08-02 22:04:02.000000000 +0000
-+++ libx11/nls/en_US.UTF-8/Compose.pre	2006-08-02 22:07:22.000000000 +0000
-@@ -5592,3 +5592,13 @@
- <Multi_key> <U1001D1B9> <U1001D165> <U1001D16F> 	: "?"   U1D1BF # MUSICAL SYMBOL FUSA WHITE
+--- libx11.orig/nls/en_US.UTF-8/Compose.pre	2006-11-24 21:47:30.000000000 -0800
++++ libx11/nls/en_US.UTF-8/Compose.pre	2006-11-24 21:47:47.000000000 -0800
+@@ -5578,3 +5578,13 @@
+ ##<Multi_key> <U1001D1B9> <U1001D165> <U1001D16F> 	: "?"   U1D1BF # MUSICAL SYMBOL FUSA WHITE
  <Multi_key> <U1001D1BC> <U1001D16F> 	: "?"   U1D1C0 # MUSICAL SYMBOL FUSA BLACK
- <Multi_key> <U1001D1BA> <U1001D165> <U1001D16F> 	: "?"   U1D1C0 # MUSICAL SYMBOL FUSA BLACK
+ ##<Multi_key> <U1001D1BA> <U1001D165> <U1001D16F> 	: "?"   U1D1C0 # MUSICAL SYMBOL FUSA BLACK
 +
 +XCOMM Khmer digraphs
 +XCOMM A keystroke has to generate several characters, so they are defined

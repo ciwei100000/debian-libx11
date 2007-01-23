@@ -17,9 +17,9 @@ Closes: #386471
 
 Index: libx11/nls/el_GR.UTF-8/Compose.pre
 ===================================================================
---- libx11.orig/nls/el_GR.UTF-8/Compose.pre
-+++ libx11/nls/el_GR.UTF-8/Compose.pre
-@@ -411,350 +411,523 @@
+--- libx11.orig/nls/el_GR.UTF-8/Compose.pre	2006-11-02 16:58:01.000000000 -0800
++++ libx11/nls/el_GR.UTF-8/Compose.pre	2006-11-24 21:48:06.000000000 -0800
+@@ -410,350 +410,523 @@
  
  <Multi_key> <greater> <Greek_alpha>                     : "ἀ"  U1f00
  <dead_horn> <Greek_alpha>                               : "ἀ"  U1f00
@@ -542,8 +542,8 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
 +<dead_tilde> <U0314> <Greek_OMEGA>                : "Ὧ"  U1f6f
  <Multi_key> <grave> <Greek_alpha>                       : "ὰ"  U1f70
  <dead_grave> <Greek_alpha>                              : "ὰ"  U1f70
- <Multi_key> <apostrophe> <Greek_alpha>                  : "ά"  U1f71
-@@ -786,11 +959,15 @@
+ <Multi_key> <grave> <Greek_epsilon>                     : "ὲ"  U1f72
+@@ -771,11 +944,15 @@
  <Multi_key> <bar> <greater> <Greek_alpha>               : "ᾀ"  U1f80
  <Multi_key> <greater> <bar> <Greek_alpha>               : "ᾀ"  U1f80
  <dead_iota> <dead_horn> <Greek_alpha>                   : "ᾀ"  U1f80
@@ -559,7 +559,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <grave> <Greek_alpha>       : "ᾂ"  U1f82
  <Multi_key> <bar> <grave> <greater> <Greek_alpha>       : "ᾂ"  U1f82
  <Multi_key> <greater> <bar> <grave> <Greek_alpha>       : "ᾂ"  U1f82
-@@ -798,11 +975,17 @@
+@@ -783,11 +960,17 @@
  <Multi_key> <grave> <bar> <greater> <Greek_alpha>       : "ᾂ"  U1f82
  <Multi_key> <grave> <greater> <bar> <Greek_alpha>       : "ᾂ"  U1f82
  <dead_iota> <dead_horn> <dead_grave> <Greek_alpha>      : "ᾂ"  U1f82
@@ -577,7 +577,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <grave> <Greek_alpha>          : "ᾃ"  U1f83
  <Multi_key> <bar> <grave> <less> <Greek_alpha>          : "ᾃ"  U1f83
  <Multi_key> <less> <bar> <grave> <Greek_alpha>          : "ᾃ"  U1f83
-@@ -810,11 +993,17 @@
+@@ -795,11 +978,17 @@
  <Multi_key> <grave> <bar> <less> <Greek_alpha>          : "ᾃ"  U1f83
  <Multi_key> <grave> <less> <bar> <Greek_alpha>          : "ᾃ"  U1f83
  <dead_iota> <dead_ogonek> <dead_grave> <Greek_alpha>    : "ᾃ"  U1f83
@@ -595,7 +595,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <apostrophe> <Greek_alpha>  : "ᾄ"  U1f84
  <Multi_key> <bar> <apostrophe> <greater> <Greek_alpha>  : "ᾄ"  U1f84
  <Multi_key> <greater> <bar> <apostrophe> <Greek_alpha>  : "ᾄ"  U1f84
-@@ -822,11 +1011,17 @@
+@@ -807,11 +996,17 @@
  <Multi_key> <apostrophe> <bar> <greater> <Greek_alpha>  : "ᾄ"  U1f84
  <Multi_key> <apostrophe> <greater> <bar> <Greek_alpha>  : "ᾄ"  U1f84
  <dead_iota> <dead_horn> <dead_acute> <Greek_alpha>      : "ᾄ"  U1f84
@@ -613,7 +613,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <apostrophe> <Greek_alpha>     : "ᾅ"  U1f85
  <Multi_key> <bar> <apostrophe> <less> <Greek_alpha>     : "ᾅ"  U1f85
  <Multi_key> <less> <bar> <apostrophe> <Greek_alpha>     : "ᾅ"  U1f85
-@@ -834,11 +1029,17 @@
+@@ -819,11 +1014,17 @@
  <Multi_key> <apostrophe> <bar> <less> <Greek_alpha>     : "ᾅ"  U1f85
  <Multi_key> <apostrophe> <less> <bar> <Greek_alpha>     : "ᾅ"  U1f85
  <dead_iota> <dead_ogonek> <dead_acute> <Greek_alpha>    : "ᾅ"  U1f85
@@ -631,7 +631,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <asciitilde> <Greek_alpha>  : "ᾆ"  U1f86
  <Multi_key> <bar> <asciitilde> <greater> <Greek_alpha>  : "ᾆ"  U1f86
  <Multi_key> <greater> <bar> <asciitilde> <Greek_alpha>  : "ᾆ"  U1f86
-@@ -846,11 +1047,17 @@
+@@ -831,11 +1032,17 @@
  <Multi_key> <asciitilde> <bar> <greater> <Greek_alpha>  : "ᾆ"  U1f86
  <Multi_key> <asciitilde> <greater> <bar> <Greek_alpha>  : "ᾆ"  U1f86
  <dead_iota> <dead_horn> <dead_tilde> <Greek_alpha>      : "ᾆ"  U1f86
@@ -649,7 +649,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <asciitilde> <Greek_alpha>     : "ᾇ"  U1f87
  <Multi_key> <bar> <asciitilde> <less> <Greek_alpha>     : "ᾇ"  U1f87
  <Multi_key> <less> <bar> <asciitilde> <Greek_alpha>     : "ᾇ"  U1f87
-@@ -858,19 +1065,29 @@
+@@ -843,19 +1050,29 @@
  <Multi_key> <asciitilde> <bar> <less> <Greek_alpha>     : "ᾇ"  U1f87
  <Multi_key> <asciitilde> <less> <bar> <Greek_alpha>     : "ᾇ"  U1f87
  <dead_iota> <dead_ogonek> <dead_tilde> <Greek_alpha>    : "ᾇ"  U1f87
@@ -679,7 +679,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <grave> <Greek_ALPHA>       : "ᾊ"  U1f8a
  <Multi_key> <bar> <grave> <greater> <Greek_ALPHA>       : "ᾊ"  U1f8a
  <Multi_key> <greater> <bar> <grave> <Greek_ALPHA>       : "ᾊ"  U1f8a
-@@ -878,11 +1095,17 @@
+@@ -863,11 +1080,17 @@
  <Multi_key> <grave> <bar> <greater> <Greek_ALPHA>       : "ᾊ"  U1f8a
  <Multi_key> <grave> <greater> <bar> <Greek_ALPHA>       : "ᾊ"  U1f8a
  <dead_iota> <dead_horn> <dead_grave> <Greek_ALPHA>      : "ᾊ"  U1f8a
@@ -697,7 +697,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <grave> <Greek_ALPHA>          : "ᾋ"  U1f8b
  <Multi_key> <bar> <grave> <less> <Greek_ALPHA>          : "ᾋ"  U1f8b
  <Multi_key> <less> <bar> <grave> <Greek_ALPHA>          : "ᾋ"  U1f8b
-@@ -890,11 +1113,17 @@
+@@ -875,11 +1098,17 @@
  <Multi_key> <grave> <bar> <less> <Greek_ALPHA>          : "ᾋ"  U1f8b
  <Multi_key> <grave> <less> <bar> <Greek_ALPHA>          : "ᾋ"  U1f8b
  <dead_iota> <dead_ogonek> <dead_grave> <Greek_ALPHA>    : "ᾋ"  U1f8b
@@ -715,7 +715,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <apostrophe> <Greek_ALPHA>  : "ᾌ"  U1f8c
  <Multi_key> <bar> <apostrophe> <greater> <Greek_ALPHA>  : "ᾌ"  U1f8c
  <Multi_key> <greater> <bar> <apostrophe> <Greek_ALPHA>  : "ᾌ"  U1f8c
-@@ -902,11 +1131,17 @@
+@@ -887,11 +1116,17 @@
  <Multi_key> <apostrophe> <bar> <greater> <Greek_ALPHA>  : "ᾌ"  U1f8c
  <Multi_key> <apostrophe> <greater> <bar> <Greek_ALPHA>  : "ᾌ"  U1f8c
  <dead_iota> <dead_horn> <dead_acute> <Greek_ALPHA>      : "ᾌ"  U1f8c
@@ -733,7 +733,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <apostrophe> <Greek_ALPHA>     : "ᾍ"  U1f8d
  <Multi_key> <bar> <apostrophe> <less> <Greek_ALPHA>     : "ᾍ"  U1f8d
  <Multi_key> <less> <bar> <apostrophe> <Greek_ALPHA>     : "ᾍ"  U1f8d
-@@ -914,11 +1149,17 @@
+@@ -899,11 +1134,17 @@
  <Multi_key> <apostrophe> <bar> <less> <Greek_ALPHA>     : "ᾍ"  U1f8d
  <Multi_key> <apostrophe> <less> <bar> <Greek_ALPHA>     : "ᾍ"  U1f8d
  <dead_iota> <dead_ogonek> <dead_acute> <Greek_ALPHA>    : "ᾍ"  U1f8d
@@ -751,7 +751,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <asciitilde> <Greek_ALPHA>  : "ᾎ"  U1f8e
  <Multi_key> <bar> <asciitilde> <greater> <Greek_ALPHA>  : "ᾎ"  U1f8e
  <Multi_key> <greater> <bar> <asciitilde> <Greek_ALPHA>  : "ᾎ"  U1f8e
-@@ -926,11 +1167,17 @@
+@@ -911,11 +1152,17 @@
  <Multi_key> <asciitilde> <bar> <greater> <Greek_ALPHA>  : "ᾎ"  U1f8e
  <Multi_key> <asciitilde> <greater> <bar> <Greek_ALPHA>  : "ᾎ"  U1f8e
  <dead_iota> <dead_horn> <dead_tilde> <Greek_ALPHA>      : "ᾎ"  U1f8e
@@ -769,7 +769,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <asciitilde> <Greek_ALPHA>     : "ᾏ"  U1f8f
  <Multi_key> <bar> <asciitilde> <less> <Greek_ALPHA>     : "ᾏ"  U1f8f
  <Multi_key> <less> <bar> <asciitilde> <Greek_ALPHA>     : "ᾏ"  U1f8f
-@@ -938,19 +1185,29 @@
+@@ -923,19 +1170,29 @@
  <Multi_key> <asciitilde> <bar> <less> <Greek_ALPHA>     : "ᾏ"  U1f8f
  <Multi_key> <asciitilde> <less> <bar> <Greek_ALPHA>     : "ᾏ"  U1f8f
  <dead_iota> <dead_ogonek> <dead_tilde> <Greek_ALPHA>    : "ᾏ"  U1f8f
@@ -799,7 +799,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <grave> <Greek_eta>         : "ᾒ"  U1f92
  <Multi_key> <bar> <grave> <greater> <Greek_eta>         : "ᾒ"  U1f92
  <Multi_key> <greater> <bar> <grave> <Greek_eta>         : "ᾒ"  U1f92
-@@ -958,11 +1215,17 @@
+@@ -943,11 +1200,17 @@
  <Multi_key> <grave> <bar> <greater> <Greek_eta>         : "ᾒ"  U1f92
  <Multi_key> <grave> <greater> <bar> <Greek_eta>         : "ᾒ"  U1f92
  <dead_iota> <dead_horn> <dead_grave> <Greek_eta>        : "ᾒ"  U1f92
@@ -817,7 +817,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <grave> <Greek_eta>            : "ᾓ"  U1f93
  <Multi_key> <bar> <grave> <less> <Greek_eta>            : "ᾓ"  U1f93
  <Multi_key> <less> <bar> <grave> <Greek_eta>            : "ᾓ"  U1f93
-@@ -970,11 +1233,17 @@
+@@ -955,11 +1218,17 @@
  <Multi_key> <grave> <bar> <less> <Greek_eta>            : "ᾓ"  U1f93
  <Multi_key> <grave> <less> <bar> <Greek_eta>            : "ᾓ"  U1f93
  <dead_iota> <dead_ogonek> <dead_grave> <Greek_eta>      : "ᾓ"  U1f93
@@ -835,7 +835,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <apostrophe> <Greek_eta>    : "ᾔ"  U1f94
  <Multi_key> <bar> <apostrophe> <greater> <Greek_eta>    : "ᾔ"  U1f94
  <Multi_key> <greater> <bar> <apostrophe> <Greek_eta>    : "ᾔ"  U1f94
-@@ -982,11 +1251,17 @@
+@@ -967,11 +1236,17 @@
  <Multi_key> <apostrophe> <bar> <greater> <Greek_eta>    : "ᾔ"  U1f94
  <Multi_key> <apostrophe> <greater> <bar> <Greek_eta>    : "ᾔ"  U1f94
  <dead_iota> <dead_horn> <dead_acute> <Greek_eta>        : "ᾔ"  U1f94
@@ -853,7 +853,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <apostrophe> <Greek_eta>       : "ᾕ"  U1f95
  <Multi_key> <bar> <apostrophe> <less> <Greek_eta>       : "ᾕ"  U1f95
  <Multi_key> <less> <bar> <apostrophe> <Greek_eta>       : "ᾕ"  U1f95
-@@ -994,11 +1269,17 @@
+@@ -979,11 +1254,17 @@
  <Multi_key> <apostrophe> <bar> <less> <Greek_eta>       : "ᾕ"  U1f95
  <Multi_key> <apostrophe> <less> <bar> <Greek_eta>       : "ᾕ"  U1f95
  <dead_iota> <dead_ogonek> <dead_acute> <Greek_eta>      : "ᾕ"  U1f95
@@ -871,7 +871,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <asciitilde> <Greek_eta>    : "ᾖ"  U1f96
  <Multi_key> <bar> <asciitilde> <greater> <Greek_eta>    : "ᾖ"  U1f96
  <Multi_key> <greater> <bar> <asciitilde> <Greek_eta>    : "ᾖ"  U1f96
-@@ -1006,11 +1287,17 @@
+@@ -991,11 +1272,17 @@
  <Multi_key> <asciitilde> <bar> <greater> <Greek_eta>    : "ᾖ"  U1f96
  <Multi_key> <asciitilde> <greater> <bar> <Greek_eta>    : "ᾖ"  U1f96
  <dead_iota> <dead_horn> <dead_tilde> <Greek_eta>        : "ᾖ"  U1f96
@@ -889,7 +889,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <asciitilde> <Greek_eta>       : "ᾗ"  U1f97
  <Multi_key> <bar> <asciitilde> <less> <Greek_eta>       : "ᾗ"  U1f97
  <Multi_key> <less> <bar> <asciitilde> <Greek_eta>       : "ᾗ"  U1f97
-@@ -1018,19 +1305,29 @@
+@@ -1003,19 +1290,29 @@
  <Multi_key> <asciitilde> <bar> <less> <Greek_eta>       : "ᾗ"  U1f97
  <Multi_key> <asciitilde> <less> <bar> <Greek_eta>       : "ᾗ"  U1f97
  <dead_iota> <dead_ogonek> <dead_tilde> <Greek_eta>      : "ᾗ"  U1f97
@@ -919,7 +919,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <grave> <Greek_ETA>         : "ᾚ"  U1f9a
  <Multi_key> <bar> <grave> <greater> <Greek_ETA>         : "ᾚ"  U1f9a
  <Multi_key> <greater> <bar> <grave> <Greek_ETA>         : "ᾚ"  U1f9a
-@@ -1038,11 +1335,17 @@
+@@ -1023,11 +1320,17 @@
  <Multi_key> <grave> <bar> <greater> <Greek_ETA>         : "ᾚ"  U1f9a
  <Multi_key> <grave> <greater> <bar> <Greek_ETA>         : "ᾚ"  U1f9a
  <dead_iota> <dead_horn> <dead_grave> <Greek_ETA>        : "ᾚ"  U1f9a
@@ -937,7 +937,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <grave> <Greek_ETA>            : "ᾛ"  U1f9b
  <Multi_key> <bar> <grave> <less> <Greek_ETA>            : "ᾛ"  U1f9b
  <Multi_key> <less> <bar> <grave> <Greek_ETA>            : "ᾛ"  U1f9b
-@@ -1050,11 +1353,17 @@
+@@ -1035,11 +1338,17 @@
  <Multi_key> <grave> <bar> <less> <Greek_ETA>            : "ᾛ"  U1f9b
  <Multi_key> <grave> <less> <bar> <Greek_ETA>            : "ᾛ"  U1f9b
  <dead_iota> <dead_ogonek> <dead_grave> <Greek_ETA>      : "ᾛ"  U1f9b
@@ -955,7 +955,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <apostrophe> <Greek_ETA>    : "ᾜ"  U1f9c
  <Multi_key> <bar> <apostrophe> <greater> <Greek_ETA>    : "ᾜ"  U1f9c
  <Multi_key> <greater> <bar> <apostrophe> <Greek_ETA>    : "ᾜ"  U1f9c
-@@ -1062,11 +1371,17 @@
+@@ -1047,11 +1356,17 @@
  <Multi_key> <apostrophe> <bar> <greater> <Greek_ETA>    : "ᾜ"  U1f9c
  <Multi_key> <apostrophe> <greater> <bar> <Greek_ETA>    : "ᾜ"  U1f9c
  <dead_iota> <dead_horn> <dead_acute> <Greek_ETA>        : "ᾜ"  U1f9c
@@ -973,7 +973,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <apostrophe> <Greek_ETA>       : "ᾝ"  U1f9d
  <Multi_key> <bar> <apostrophe> <less> <Greek_ETA>       : "ᾝ"  U1f9d
  <Multi_key> <less> <bar> <apostrophe> <Greek_ETA>       : "ᾝ"  U1f9d
-@@ -1074,11 +1389,17 @@
+@@ -1059,11 +1374,17 @@
  <Multi_key> <apostrophe> <bar> <less> <Greek_ETA>       : "ᾝ"  U1f9d
  <Multi_key> <apostrophe> <less> <bar> <Greek_ETA>       : "ᾝ"  U1f9d
  <dead_iota> <dead_ogonek> <dead_acute> <Greek_ETA>      : "ᾝ"  U1f9d
@@ -991,7 +991,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <asciitilde> <Greek_ETA>    : "ᾞ"  U1f9e
  <Multi_key> <bar> <asciitilde> <greater> <Greek_ETA>    : "ᾞ"  U1f9e
  <Multi_key> <greater> <bar> <asciitilde> <Greek_ETA>    : "ᾞ"  U1f9e
-@@ -1086,11 +1407,17 @@
+@@ -1071,11 +1392,17 @@
  <Multi_key> <asciitilde> <bar> <greater> <Greek_ETA>    : "ᾞ"  U1f9e
  <Multi_key> <asciitilde> <greater> <bar> <Greek_ETA>    : "ᾞ"  U1f9e
  <dead_iota> <dead_horn> <dead_tilde> <Greek_ETA>        : "ᾞ"  U1f9e
@@ -1009,7 +1009,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <asciitilde> <Greek_ETA>       : "ᾟ"  U1f9f
  <Multi_key> <bar> <asciitilde> <less> <Greek_ETA>       : "ᾟ"  U1f9f
  <Multi_key> <less> <bar> <asciitilde> <Greek_ETA>       : "ᾟ"  U1f9f
-@@ -1098,19 +1425,29 @@
+@@ -1083,19 +1410,29 @@
  <Multi_key> <asciitilde> <bar> <less> <Greek_ETA>       : "ᾟ"  U1f9f
  <Multi_key> <asciitilde> <less> <bar> <Greek_ETA>       : "ᾟ"  U1f9f
  <dead_iota> <dead_ogonek> <dead_tilde> <Greek_ETA>      : "ᾟ"  U1f9f
@@ -1039,7 +1039,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <grave> <Greek_omega>       : "ᾢ"  U1fa2
  <Multi_key> <bar> <grave> <greater> <Greek_omega>       : "ᾢ"  U1fa2
  <Multi_key> <greater> <bar> <grave> <Greek_omega>       : "ᾢ"  U1fa2
-@@ -1118,11 +1455,17 @@
+@@ -1103,11 +1440,17 @@
  <Multi_key> <grave> <bar> <greater> <Greek_omega>       : "ᾢ"  U1fa2
  <Multi_key> <grave> <greater> <bar> <Greek_omega>       : "ᾢ"  U1fa2
  <dead_iota> <dead_horn> <dead_grave> <Greek_omega>      : "ᾢ"  U1fa2
@@ -1057,7 +1057,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <grave> <Greek_omega>          : "ᾣ"  U1fa3
  <Multi_key> <bar> <grave> <less> <Greek_omega>          : "ᾣ"  U1fa3
  <Multi_key> <less> <bar> <grave> <Greek_omega>          : "ᾣ"  U1fa3
-@@ -1130,11 +1473,17 @@
+@@ -1115,11 +1458,17 @@
  <Multi_key> <grave> <bar> <less> <Greek_omega>          : "ᾣ"  U1fa3
  <Multi_key> <grave> <less> <bar> <Greek_omega>          : "ᾣ"  U1fa3
  <dead_iota> <dead_ogonek> <dead_grave> <Greek_omega>    : "ᾣ"  U1fa3
@@ -1075,7 +1075,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <apostrophe> <Greek_omega>  : "ᾤ"  U1fa4
  <Multi_key> <bar> <apostrophe> <greater> <Greek_omega>  : "ᾤ"  U1fa4
  <Multi_key> <greater> <bar> <apostrophe> <Greek_omega>  : "ᾤ"  U1fa4
-@@ -1142,11 +1491,17 @@
+@@ -1127,11 +1476,17 @@
  <Multi_key> <apostrophe> <bar> <greater> <Greek_omega>  : "ᾤ"  U1fa4
  <Multi_key> <apostrophe> <greater> <bar> <Greek_omega>  : "ᾤ"  U1fa4
  <dead_iota> <dead_horn> <dead_acute> <Greek_omega>      : "ᾤ"  U1fa4
@@ -1093,7 +1093,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <apostrophe> <Greek_omega>     : "ᾥ"  U1fa5
  <Multi_key> <bar> <apostrophe> <less> <Greek_omega>     : "ᾥ"  U1fa5
  <Multi_key> <less> <bar> <apostrophe> <Greek_omega>     : "ᾥ"  U1fa5
-@@ -1154,11 +1509,17 @@
+@@ -1139,11 +1494,17 @@
  <Multi_key> <apostrophe> <bar> <less> <Greek_omega>     : "ᾥ"  U1fa5
  <Multi_key> <apostrophe> <less> <bar> <Greek_omega>     : "ᾥ"  U1fa5
  <dead_iota> <dead_ogonek> <dead_acute> <Greek_omega>    : "ᾥ"  U1fa5
@@ -1111,7 +1111,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <asciitilde> <Greek_omega>  : "ᾦ"  U1fa6
  <Multi_key> <bar> <asciitilde> <greater> <Greek_omega>  : "ᾦ"  U1fa6
  <Multi_key> <greater> <bar> <asciitilde> <Greek_omega>  : "ᾦ"  U1fa6
-@@ -1166,11 +1527,17 @@
+@@ -1151,11 +1512,17 @@
  <Multi_key> <asciitilde> <bar> <greater> <Greek_omega>  : "ᾦ"  U1fa6
  <Multi_key> <asciitilde> <greater> <bar> <Greek_omega>  : "ᾦ"  U1fa6
  <dead_iota> <dead_horn> <dead_tilde> <Greek_omega>      : "ᾦ"  U1fa6
@@ -1129,7 +1129,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <asciitilde> <Greek_omega>     : "ᾧ"  U1fa7
  <Multi_key> <bar> <asciitilde> <less> <Greek_omega>     : "ᾧ"  U1fa7
  <Multi_key> <less> <bar> <asciitilde> <Greek_omega>     : "ᾧ"  U1fa7
-@@ -1178,19 +1545,29 @@
+@@ -1163,19 +1530,29 @@
  <Multi_key> <asciitilde> <bar> <less> <Greek_omega>     : "ᾧ"  U1fa7
  <Multi_key> <asciitilde> <less> <bar> <Greek_omega>     : "ᾧ"  U1fa7
  <dead_iota> <dead_ogonek> <dead_tilde> <Greek_omega>    : "ᾧ"  U1fa7
@@ -1159,7 +1159,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <grave> <Greek_OMEGA>       : "ᾪ"  U1faa
  <Multi_key> <bar> <grave> <greater> <Greek_OMEGA>       : "ᾪ"  U1faa
  <Multi_key> <greater> <bar> <grave> <Greek_OMEGA>       : "ᾪ"  U1faa
-@@ -1198,11 +1575,17 @@
+@@ -1183,11 +1560,17 @@
  <Multi_key> <grave> <bar> <greater> <Greek_OMEGA>       : "ᾪ"  U1faa
  <Multi_key> <grave> <greater> <bar> <Greek_OMEGA>       : "ᾪ"  U1faa
  <dead_iota> <dead_horn> <dead_grave> <Greek_OMEGA>      : "ᾪ"  U1faa
@@ -1177,7 +1177,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <grave> <Greek_OMEGA>          : "ᾫ"  U1fab
  <Multi_key> <bar> <grave> <less> <Greek_OMEGA>          : "ᾫ"  U1fab
  <Multi_key> <less> <bar> <grave> <Greek_OMEGA>          : "ᾫ"  U1fab
-@@ -1210,11 +1593,17 @@
+@@ -1195,11 +1578,17 @@
  <Multi_key> <grave> <bar> <less> <Greek_OMEGA>          : "ᾫ"  U1fab
  <Multi_key> <grave> <less> <bar> <Greek_OMEGA>          : "ᾫ"  U1fab
  <dead_iota> <dead_ogonek> <dead_grave> <Greek_OMEGA>    : "ᾫ"  U1fab
@@ -1195,7 +1195,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <apostrophe> <Greek_OMEGA>  : "ᾬ"  U1fac
  <Multi_key> <bar> <apostrophe> <greater> <Greek_OMEGA>  : "ᾬ"  U1fac
  <Multi_key> <greater> <bar> <apostrophe> <Greek_OMEGA>  : "ᾬ"  U1fac
-@@ -1222,11 +1611,17 @@
+@@ -1207,11 +1596,17 @@
  <Multi_key> <apostrophe> <bar> <greater> <Greek_OMEGA>  : "ᾬ"  U1fac
  <Multi_key> <apostrophe> <greater> <bar> <Greek_OMEGA>  : "ᾬ"  U1fac
  <dead_iota> <dead_horn> <dead_acute> <Greek_OMEGA>      : "ᾬ"  U1fac
@@ -1213,7 +1213,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <apostrophe> <Greek_OMEGA>     : "ᾭ"  U1fad
  <Multi_key> <bar> <apostrophe> <less> <Greek_OMEGA>     : "ᾭ"  U1fad
  <Multi_key> <less> <bar> <apostrophe> <Greek_OMEGA>     : "ᾭ"  U1fad
-@@ -1234,11 +1629,17 @@
+@@ -1219,11 +1614,17 @@
  <Multi_key> <apostrophe> <bar> <less> <Greek_OMEGA>     : "ᾭ"  U1fad
  <Multi_key> <apostrophe> <less> <bar> <Greek_OMEGA>     : "ᾭ"  U1fad
  <dead_iota> <dead_ogonek> <dead_acute> <Greek_OMEGA>    : "ᾭ"  U1fad
@@ -1231,7 +1231,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <greater> <asciitilde> <Greek_OMEGA>  : "ᾮ"  U1fae
  <Multi_key> <bar> <asciitilde> <greater> <Greek_OMEGA>  : "ᾮ"  U1fae
  <Multi_key> <greater> <bar> <asciitilde> <Greek_OMEGA>  : "ᾮ"  U1fae
-@@ -1246,11 +1647,17 @@
+@@ -1231,11 +1632,17 @@
  <Multi_key> <asciitilde> <bar> <greater> <Greek_OMEGA>  : "ᾮ"  U1fae
  <Multi_key> <asciitilde> <greater> <bar> <Greek_OMEGA>  : "ᾮ"  U1fae
  <dead_iota> <dead_horn> <dead_tilde> <Greek_OMEGA>      : "ᾮ"  U1fae
@@ -1249,7 +1249,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <Multi_key> <bar> <less> <asciitilde> <Greek_OMEGA>     : "ᾯ"  U1faf
  <Multi_key> <bar> <asciitilde> <less> <Greek_OMEGA>     : "ᾯ"  U1faf
  <Multi_key> <less> <bar> <asciitilde> <Greek_OMEGA>     : "ᾯ"  U1faf
-@@ -1258,11 +1665,17 @@
+@@ -1243,11 +1650,17 @@
  <Multi_key> <asciitilde> <bar> <less> <Greek_OMEGA>     : "ᾯ"  U1faf
  <Multi_key> <asciitilde> <less> <bar> <Greek_OMEGA>     : "ᾯ"  U1faf
  <dead_iota> <dead_ogonek> <dead_tilde> <Greek_OMEGA>    : "ᾯ"  U1faf
@@ -1267,7 +1267,7 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
  <dead_breve> <Greek_alpha>                              : "ᾰ"  U1fb0
  <dead_macron> <Greek_alpha>                             : "ᾱ"  U1fb1
  <dead_breve> <Greek_ALPHA>                              : "Ᾰ"  U1fb8
-@@ -1387,22 +1800,37 @@
+@@ -1350,35 +1763,55 @@
  <dead_iota> <Greek_OMEGA>                               : "ῼ"  U1ffc
  <Multi_key> <greater> <Greek_rho>                       : "ῤ"  U1fe4
  <dead_horn> <Greek_rho>                                 : "ῤ"  U1fe4
@@ -1304,8 +1304,6 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
 +<dead_tilde> <U0314> <space>                      : "῟"  U1fdf
  <dead_diaeresis> <dead_grave> <space>                   : "῭"  U1fed
  <dead_grave> <dead_diaeresis> <space>                   : "῭"  U1fed
- <dead_diaeresis> <dead_acute> <space>                   : "΅"  U1fee
-@@ -1410,9 +1838,13 @@
  <dead_diaeresis> <dead_tilde> <space>                   : "῁"  U1fc1
  <dead_tilde> <dead_diaeresis> <space>                   : "῁"  U1fc1
  <dead_horn> <space>                                     : "᾿"  U1fbf
@@ -1318,12 +1316,10 @@ Index: libx11/nls/el_GR.UTF-8/Compose.pre
 +<U0314> <dead_ogonek>                             : "῾"  U1ffe
  <dead_grave> <space>                                    : "`"  U1fef
  <dead_grave> <dead_grave>                               : "`"  U1fef
- <dead_acute> <space>                                    : "´"  U1ffd
-@@ -1420,6 +1852,7 @@
  <dead_tilde> <space>                                    : "῀"  U1fc0
  <dead_tilde> <dead_tilde>                               : "῀"  U1fc0
  <dead_horn> <underscore>                                : "᾽"  U1fbd
 +<U0313> <underscore>                                : "᾽"  U1fbd
  <dead_iota> <underscore>                                : "ι"  U1fbe
- <dead_diaeresis> <space>                                : "¨"  diaeresis
- <dead_diaeresis> <dead_diaeresis>                       : "¨"  diaeresis
+ <dead_iota> <space>                                     : "ͺ"  U037a
+ <dead_iota> <dead_iota>                                 : "ͺ"  U037a

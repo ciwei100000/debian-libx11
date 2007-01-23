@@ -7,6 +7,42 @@ libx11 (2:1.0.3-5) UNRELEASED; urgency=low
 
  -- Julien Cristau <julien.cristau@ens-lyon.org>  Fri,  8 Dec 2006 02:07:33 +0100
 
+libx11 (2:1.1-1) experimental; urgency=low
+
+  [ Josh Triplett, Jamey Sharp ]
+  * New upstream version.
+  * Add ourselves to Uploaders.
+  * Forward-port patches:
+    * 001_no_xkb_in_pc_file.diff: update
+    * 003_recognize_glibc_2.3.2_locale_names.diff: update
+    * 004_en_US.UTF-8_Compose_fix_Unicode_plane_1.diff: update
+    * 005_Compose_fix_latin1_UTF8.diff: update
+    * 010_manpage_suffixes.diff: delete, applied upstream
+    * 012_ru_RU_UTF-8_XLC_LOCALE.diff: update
+    * 014_add_Khmer_digraphs.diff: update
+    * 015_russian_locale_alias.diff: update
+    * 016_greek_polytonic_Compose.diff: update
+    * 019_new_autoconf.diff: delete, applied upstream
+    * 020_CVE-2006-5397.diff: delete, applied upstream
+  * Stop registering /usr/X11R6/lib in /etc/ld.so.conf in the postinst;
+    instead, deregister it if no libraries remain in it.  Remove deregistration
+    in postrm, and remove now-unnecessary postrm.
+  * Add Build-Depends on libxcb1-dev >= 0.9.92 and libxcb-xlib0-dev >= 0.9.92.
+  * Remove Build-Depends not needed with Xlib/XCB: bigreqsproto, xcmiscproto,
+    libxau-dev, and libxdmcp-dev.
+  * libx11-dev has some unnecessary Depends, but other packages currently rely
+    on them, so removal will wait until a later version.
+  * Add library, -dev, and -dbg packages for new library libX11-xcb.  Modify
+    rules to handle these new packages.
+  * libX11-xcb Conflicts: libx11-6 (<< 2:1.1), since it requires a version with
+    Xlib/XCB.
+  * Add a NEWS.Debian to libx11-6, with Xlib/XCB information.
+  * Add XS-Vcs-Git field.
+  * Remove old upstream CVS information from package descriptions.
+  * Reword package descriptions to stop calling Xlib "the" client interface.
+
+ -- Josh Triplett <josh@freedesktop.org>  Fri, 24 Nov 2006 17:36:55 -0800
+
 libx11 (2:1.0.3-4) unstable; urgency=low
 
   * Some patches got lost in the upgrade from 1.0.0 (2:1.0.0-9) to 1.0.3:

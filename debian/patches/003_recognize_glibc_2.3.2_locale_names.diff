@@ -485,7 +485,7 @@ Index: libx11/nls/locale.alias.pre
 ===================================================================
 --- libx11.orig/nls/locale.alias.pre
 +++ libx11/nls/locale.alias.pre
-@@ -324,6 +324,7 @@
+@@ -327,6 +327,7 @@
  en_US.ISO-8859-1:				en_US.ISO8859-1
  en_US.ISO_8859-1:				en_US.ISO8859-1
  en_US.iso885915:				en_US.ISO8859-15
@@ -493,7 +493,7 @@ Index: libx11/nls/locale.alias.pre
  en_US.8859-15:					en_US.ISO8859-15
  en_US.ISO8859-15@euro:				en_US.ISO8859-15
  en_US.utf8:					en_US.UTF-8
-@@ -690,6 +691,10 @@
+@@ -693,6 +694,10 @@
  kl_GL.ISO-8859-1:				kl_GL.ISO8859-1
  kl_GL.iso885915:				kl_GL.ISO8859-15
  kl_GL.utf8:					kl_GL.UTF-8
@@ -501,10 +501,10 @@ Index: libx11/nls/locale.alias.pre
 +km_KH:						km_KH.UTF-8
 +km_KH.utf8:					km_KH.UTF-8
 +km_KH.UTF-8:					km_KH.UTF-8
- ko:						ko_KR.eucKR
- ko_KR:						ko_KR.eucKR
- KO_KR:						ko_KR.eucKR
-@@ -858,7 +863,6 @@
+ kn:						kn_IN.UTF-8
+ kn_IN.utf8:					kn_IN.UTF-8
+ kn_IN.UTF-8:					kn_IN.UTF-8
+@@ -870,7 +875,6 @@
  pt_BR.iso88591:					pt_BR.ISO8859-1
  pt_BR.ISO-8859-1:				pt_BR.ISO8859-1
  pt_BR.ISO_8859-1:				pt_BR.ISO8859-1
@@ -512,7 +512,7 @@ Index: libx11/nls/locale.alias.pre
  pt_BR.utf8:					pt_BR.UTF-8
  pt_PT:						pt_PT.ISO8859-1
  pt_PT.88591:					pt_PT.ISO8859-1
-@@ -909,12 +913,12 @@
+@@ -921,12 +925,12 @@
  XCOMM YU was the old ISO code for Yugoslavia (now CS for Serbia&Montenegro).
  XCOMM These lines should be deleted in the future.
  sh:						sr_CS.ISO8859-2
@@ -526,7 +526,16 @@ Index: libx11/nls/locale.alias.pre
  sk:						sk_SK.ISO8859-2
  sk_SK:						sk_SK.ISO8859-2
  sk_SK.iso88592:					sk_SK.ISO8859-2
-@@ -1145,7 +1149,7 @@
+@@ -1148,7 +1152,7 @@
+ american.iso88591:				en_US.ISO8859-1
+ arabic.iso88596:				ar_AA.ISO8859-6
+ bokmal:						nb_NO.ISO8859-1
+-bokmål:						nb_NO.ISO8859-1
++bokmï¿½:						nb_NO.ISO8859-1
+ bulgarian:					bg_BG.CP1251
+ c-french.iso88591:				fr_CA.ISO8859-1
+ catalan:					ca_ES.ISO8859-1
+@@ -1163,11 +1167,11 @@
  dutch:						nl_NL.ISO8859-1
  dutch.iso88591:					nl_BE.ISO8859-1
  eesti:						et_EE.ISO8859-1
@@ -535,7 +544,12 @@ Index: libx11/nls/locale.alias.pre
  estonian:					et_EE.ISO8859-1
  finnish:					fi_FI.ISO8859-1
  finnish.iso88591:				fi_FI.ISO8859-1
-@@ -1158,8 +1162,8 @@
+-français:					fr_FR.ISO8859-1
++franï¿½is:					fr_FR.ISO8859-1
+ french:						fr_FR.ISO8859-1
+ french.iso88591:				fr_CH.ISO8859-1
+ galego:						gl_ES.ISO8859-1
+@@ -1176,8 +1180,8 @@
  german.iso88591:				de_CH.ISO8859-1
  greek:						el_GR.ISO8859-7
  greek.iso88597:					el_GR.ISO8859-7
@@ -546,7 +560,7 @@ Index: libx11/nls/locale.alias.pre
  hrvatski:					hr_HR.ISO8859-2
  hungarian:					hu_HU.ISO8859-2
  icelandic.iso88591:				is_IS.ISO8859-1
-@@ -1202,103 +1206,103 @@
+@@ -1220,103 +1224,103 @@
  #ifdef WIN32
  XCOMM Microsoft Windows/NT 4.0 SP3
  XCOMM parser doesn't grok embedded spaces in locale name
@@ -726,7 +740,7 @@ Index: libx11/nls/locale.alias.pre
 +Dutch_Belgium.1252:               nl_BE.ISO8859-1
 +Dutch_Netherlands.1252:               nl_NL.ISO8859-1
 +Norwegian (Nynorsk)_Norway.1252:      no_NO.ISO8859-1
-+Norwegian (Bokmål)_Norway.1252:           no_NO.ISO8859-1
++Norwegian (Bokmï¿½)_Norway.1252:           no_NO.ISO8859-1
 +Polish_Poland.1250:               pl_PL.ISO8859-2
 +Portuguese_Brazil.1252:               pt_BR.ISO8859-1
 +Portuguese_Portugal.1252:         pt_PT.ISO8859-1
@@ -912,9 +926,9 @@ Index: libx11/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			ar_IQ.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ar_JO.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ar_KW.UTF-8
-@@ -271,12 +303,12 @@
- en_US.UTF-8/XLC_LOCALE:			ar_TN.UTF-8
+@@ -272,12 +304,12 @@
  en_US.UTF-8/XLC_LOCALE:			ar_YE.UTF-8
+ en_US.UTF-8/XLC_LOCALE:			as_IN.UTF-8
  en_US.UTF-8/XLC_LOCALE:			az_AZ.UTF-8
 -en_US.UTF-8/XLC_LOCALE:			a3_AZ.UTF-8
  en_US.UTF-8/XLC_LOCALE:			be_BY.UTF-8
@@ -926,7 +940,7 @@ Index: libx11/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			ca_ES.UTF-8
  en_US.UTF-8/XLC_LOCALE:			cs_CZ.UTF-8
  en_US.UTF-8/XLC_LOCALE:			cy_GB.UTF-8
-@@ -291,18 +323,27 @@
+@@ -292,18 +324,27 @@
  en_US.UTF-8/XLC_LOCALE:			el_GR.UTF-8
  en_US.UTF-8/XLC_LOCALE:			en_AU.UTF-8
  en_US.UTF-8/XLC_LOCALE:			en_BE.UTF-8
@@ -956,7 +970,7 @@ Index: libx11/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			es_AR.UTF-8
  en_US.UTF-8/XLC_LOCALE:			es_BO.UTF-8
  en_US.UTF-8/XLC_LOCALE:			es_CL.UTF-8
-@@ -320,10 +361,12 @@
+@@ -321,10 +362,12 @@
  en_US.UTF-8/XLC_LOCALE:			es_PR.UTF-8
  en_US.UTF-8/XLC_LOCALE:			es_PY.UTF-8
  en_US.UTF-8/XLC_LOCALE:			es_SV.UTF-8
@@ -969,7 +983,7 @@ Index: libx11/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			fa_IR.UTF-8
  en_US.UTF-8/XLC_LOCALE:			fi_FI.UTF-8
  en_US.UTF-8/XLC_LOCALE:			fo_FO.UTF-8
-@@ -334,6 +377,8 @@
+@@ -335,6 +378,8 @@
  en_US.UTF-8/XLC_LOCALE:			fr_LU.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ga_IE.UTF-8
  en_US.UTF-8/XLC_LOCALE:			gd_GB.UTF-8
@@ -978,7 +992,7 @@ Index: libx11/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			gl_ES.UTF-8
  en_US.UTF-8/XLC_LOCALE:			gu_IN.UTF-8
  en_US.UTF-8/XLC_LOCALE:			gv_GB.UTF-8
-@@ -347,9 +392,12 @@
+@@ -348,9 +393,11 @@
  en_US.UTF-8/XLC_LOCALE:			it_CH.UTF-8
  en_US.UTF-8/XLC_LOCALE:			it_IT.UTF-8
  en_US.UTF-8/XLC_LOCALE:			iu_CA.UTF-8
@@ -987,15 +1001,13 @@ Index: libx11/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			ka_GE.UTF-8
  en_US.UTF-8/XLC_LOCALE:			kl_GL.UTF-8
 +en_US.UTF-8/XLC_LOCALE:			km_KH.UTF-8
-+en_US.UTF-8/XLC_LOCALE:			kn_IN.UTF-8
+ en_US.UTF-8/XLC_LOCALE:			kn_IN.UTF-8
  ko_KR.UTF-8/XLC_LOCALE:			ko_KR.UTF-8
  en_US.UTF-8/XLC_LOCALE:			kw_GB.UTF-8
- en_US.UTF-8/XLC_LOCALE:			ky_KG.UTF-8
-@@ -358,20 +406,30 @@
- en_US.UTF-8/XLC_LOCALE:			lv_LV.UTF-8
+@@ -361,21 +408,30 @@
  en_US.UTF-8/XLC_LOCALE:			mi_NZ.UTF-8
  en_US.UTF-8/XLC_LOCALE:			mk_MK.UTF-8
-+en_US.UTF-8/XLC_LOCALE:            ml_IN.UTF-8
+ en_US.UTF-8/XLC_LOCALE:			ml_IN.UTF-8
 +en_US.UTF-8/XLC_LOCALE:            mn_MN.UTF-8
  en_US.UTF-8/XLC_LOCALE:			mr_IN.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ms_MY.UTF-8
@@ -1014,6 +1026,7 @@ Index: libx11/nls/locale.dir.pre
 -en_US.UTF-8/XLC_LOCALE:			ny_NO.UTF-8
  en_US.UTF-8/XLC_LOCALE:			oc_FR.UTF-8
 +en_US.UTF-8/XLC_LOCALE:            om_ET.UTF-8
+ en_US.UTF-8/XLC_LOCALE:			or_IN.UTF-8
  en_US.UTF-8/XLC_LOCALE:			pa_IN.UTF-8
 -en_US.UTF-8/XLC_LOCALE:			pd_DE.UTF-8
 -en_US.UTF-8/XLC_LOCALE:			pd_US.UTF-8
@@ -1025,7 +1038,7 @@ Index: libx11/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			ph_PH.UTF-8
  en_US.UTF-8/XLC_LOCALE:			pl_PL.UTF-8
  en_US.UTF-8/XLC_LOCALE:			pp_AN.UTF-8
-@@ -382,10 +440,12 @@
+@@ -386,10 +442,12 @@
  en_US.UTF-8/XLC_LOCALE:			ru_UA.UTF-8
  en_US.UTF-8/XLC_LOCALE:         rw_RW.UTF-8
  en_US.UTF-8/XLC_LOCALE:			se_NO.UTF-8
@@ -1038,12 +1051,7 @@ Index: libx11/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			sq_AL.UTF-8
  en_US.UTF-8/XLC_LOCALE:			sr_CS.UTF-8
  en_US.UTF-8/XLC_LOCALE:			sr_YU.UTF-8
-@@ -394,10 +454,12 @@
- en_US.UTF-8/XLC_LOCALE:			sv_FI.UTF-8
- en_US.UTF-8/XLC_LOCALE:			sv_SE.UTF-8
- en_US.UTF-8/XLC_LOCALE:			ta_IN.UTF-8
-+en_US.UTF-8/XLC_LOCALE:            te_IN.UTF-8
- en_US.UTF-8/XLC_LOCALE:			tg_TJ.UTF-8
+@@ -403,6 +461,7 @@
  th_TH.UTF-8/XLC_LOCALE:			th_TH.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ti_ER.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ti_ET.UTF-8

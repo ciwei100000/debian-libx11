@@ -36,25 +36,6 @@ Instead automatic conversion is performed by:
 Update: pt_BR.UTF-8 part removed. We replace it by a simple #include with a 
 couple of additional entries later anyway. (Eugene Konev)
 
-Index: libx11/nls/el_GR.UTF-8/Compose.pre
-===================================================================
---- libx11.orig/nls/el_GR.UTF-8/Compose.pre
-+++ libx11/nls/el_GR.UTF-8/Compose.pre
-@@ -1421,10 +1421,10 @@
- <dead_tilde> <dead_tilde>                               : "῀"  U1fc0
- <dead_horn> <underscore>                                : "᾽"  U1fbd
- <dead_iota> <underscore>                                : "ι"  U1fbe
--<dead_diaeresis> <space>                                : "¨"  U00a8
--<dead_diaeresis> <dead_diaeresis>                       : "¨"  U00a8
--<dead_macron> <space>                                   : "¯"  U00af
--<dead_macron> <dead_macron>                             : "¯"  U00af
-+<dead_diaeresis> <space>                                : "¨"  diaeresis
-+<dead_diaeresis> <dead_diaeresis>                       : "¨"  diaeresis
-+<dead_macron> <space>                                   : "¯"  macron
-+<dead_macron> <dead_macron>                             : "¯"  macron
- <dead_breve> <space>                                    : "˘"  U02d8
- <dead_breve> <dead_breve>                               : "˘"  U02d8
- <dead_iota> <space>                                     : "ͺ"  U037a
 Index: libx11/nls/en_US.UTF-8/Compose.pre
 ===================================================================
 --- libx11.orig/nls/en_US.UTF-8/Compose.pre
@@ -87,7 +68,7 @@ Index: libx11/nls/en_US.UTF-8/Compose.pre
  <Multi_key> <Y> <equal>          	: "¥"   yen # YEN SIGN
  <Multi_key> <equal> <Y>          	: "¥"   yen # YEN SIGN
  
-@@ -428,191 +428,191 @@
+@@ -429,191 +429,191 @@
  <Multi_key> <U100011B7> <U100011BB> 	: "ᇞ"   U11de # HANGUL JONGSEONG MIEUM-SSANGSIOS
  <Multi_key> <U100011BC> <U100011A9> 	: "ᇭ"   U11ed # HANGUL JONGSEONG IEUNG-SSANGKIYEOK
  
