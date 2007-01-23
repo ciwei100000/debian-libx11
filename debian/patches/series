@@ -1,3 +1,6 @@
+000-upstream-0001-Bug-9153-Fix-access-to-freed-memory.txt
+000-upstream-0002-Bug-9154-Always-process-an-event-for-_XReadEvents-even-if-an-error-occurs.txt
+000-upstream-0003-Debian-bug-354315-Clarify-return-value-in-XGetWindowAttributes-man-page.txt
 001_no_xkb_in_pc_file.diff
 002_arm_abi_brain_damage.diff
 003_recognize_glibc_2.3.2_locale_names.diff

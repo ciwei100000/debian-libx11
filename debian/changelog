@@ -7,6 +7,21 @@ libx11 (2:1.0.3-5) UNRELEASED; urgency=low
 
  -- Julien Cristau <julien.cristau@ens-lyon.org>  Fri,  8 Dec 2006 02:07:33 +0100
 
+libx11 (2:1.1-2) experimental; urgency=low
+
+  [ Josh Triplett ]
+  * Include some upstream post-1.1 fixes in debian/patches:
+    * "Bug #9153: Fix access to freed memory."
+    * "Bug #9154: Always process an event for _XReadEvents, even if an error
+       occurs"; fixes an assertion failure, first observed with xcompmgr.
+    * "Debian bug #354315: Clarify return value in XGetWindowAttributes man
+       page" (closes: 354315)
+  * Fix override discrepancies: library packages go in libs, -dbg and -dev
+    packages go in libdevel.  Fix for both the libx11 packages and the new
+    libx11-xcb packages.
+
+ -- Josh Triplett <josh@freedesktop.org>  Sat, 25 Nov 2006 14:37:58 -0800
+
 libx11 (2:1.1-1) experimental; urgency=low
 
   [ Josh Triplett, Jamey Sharp ]

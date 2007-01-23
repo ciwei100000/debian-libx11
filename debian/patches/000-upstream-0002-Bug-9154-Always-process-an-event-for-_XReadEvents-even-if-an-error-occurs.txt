@@ -1,0 +1,73 @@
+From c6a0b0f18ed1242eeb908f5cf767ab8381edd456 Mon Sep 17 00:00:00 2001
+From: Jamey Sharp <jamey@minilop.net>
+Date: Sat, 25 Nov 2006 14:23:45 -0800
+Subject: [PATCH] Bug #9154: Always process an event for _XReadEvents, even if an error occurs
+
+Previously, process_responses (in the wait_for_first_event case called
+from _XReadEvents) considered any return from xcb_wait_for_event
+sufficient to think it had processed an event. If xcb_wait_for_event
+returned an error, and no more events occurred before process_responses
+called xcb_poll_for_event, process_responses would try to return with
+dpy->head NULL, and would fail an assertion for the _XReadEvents
+postcondition. Now, process_responses continues using xcb_wait_for_event
+until it gets an event.
+---
+ src/xcb_io.c |   28 +++++++++++++++++-----------
+ 1 files changed, 17 insertions(+), 11 deletions(-)
+
+diff --git a/src/xcb_io.c b/src/xcb_io.c
+index ba892f8..d40ac10 100644
+--- a/src/xcb_io.c
++++ b/src/xcb_io.c
+@@ -102,6 +102,21 @@ static void call_handlers(Display *dpy,
+ 	    _XError(dpy, (xError *) buf);
+ }
+ 
++static xcb_generic_event_t * wait_or_poll_for_event(Display *dpy, int wait)
++{
++	xcb_connection_t *c = dpy->xcb->connection;
++	xcb_generic_event_t *event;
++	if(wait && !dpy->head)
++	{
++		UnlockDisplay(dpy);
++		event = xcb_wait_for_event(c);
++		LockDisplay(dpy);
++	}
++	else
++		event = xcb_poll_for_event(c);
++	return event;
++}
++
+ static void process_responses(Display *dpy, int wait_for_first_event, xcb_generic_error_t **current_error, unsigned int current_request)
+ {
+ 	void *reply;
+@@ -110,16 +125,7 @@ static void process_responses(Display *d
+ 	PendingRequest *req;
+ 	xcb_connection_t *c = dpy->xcb->connection;
+ 	if(!event && dpy->xcb->event_owner == XlibOwnsEventQueue)
+-	{
+-		if(wait_for_first_event)
+-		{
+-			UnlockDisplay(dpy);
+-			event = xcb_wait_for_event(c);
+-			LockDisplay(dpy);
+-		}
+-		else
+-			event = xcb_poll_for_event(c);
+-	}
++		event = wait_or_poll_for_event(dpy, wait_for_first_event);
+ 
+ 	while(1)
+ 	{
+@@ -134,7 +140,7 @@ static void process_responses(Display *d
+ 				break;
+ 			}
+ 			handle_event(dpy, event);
+-			event = xcb_poll_for_event(c);
++			event = wait_or_poll_for_event(dpy, wait_for_first_event);
+ 		}
+ 		else if(req && req->waiters != -1)
+ 		{
+-- 
+1.4.3.3
+

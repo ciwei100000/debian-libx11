@@ -8,6 +8,7 @@ Standards-Version: 3.7.2
 XS-Vcs-Git: git://anongit.freedesktop.org/git/xorg/lib/libX11
 
 Package: libx11-6
+Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-data
 Pre-Depends: x11-common (>= 1:7.0.0)
@@ -33,6 +34,7 @@ Description: X11 client-side library
  <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
 
 Package: libx11-6-dbg
+Section: libdevel
 Architecture: any
 Priority: extra
 Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6 (= ${Source-Version})
@@ -49,6 +51,7 @@ Description: X11 client-side library (debug package)
  <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
 
 Package: libx11-dev
+Section: libdevel
 Architecture: any
 Pre-Depends: x11-common (>= 1:7.0.0)
 Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6 (= ${Source-Version}), libxau-dev (>= 1:1.0.0-1), libxdmcp-dev (>= 1:1.0.0-1), libxext-dev, x11proto-core-dev (>= 6.8.99.8-1), x11proto-input-dev, x11proto-kb-dev, xtrans-dev
@@ -65,6 +68,7 @@ Description: X11 client-side library (development headers)
  <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
 
 Package: libx11-xcb1
+Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Conflicts: libx11-6 (<< 2:1.1)
@@ -81,6 +85,7 @@ Description: Xlib/XCB interface library
  <URL:http://xcb.freedesktop.org>
 
 Package: libx11-xcb1-dbg
+Section: libdevel
 Architecture: any
 Priority: extra
 Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-xcb1 (= ${Source-Version})
@@ -99,6 +104,7 @@ Description: Xlib/XCB interface library (debug package)
  <URL:http://xcb.freedesktop.org>
 
 Package: libx11-xcb-dev
+Section: libdevel
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-xcb1 (= ${Source-Version}), libxcb1-dev (>= 0.9.92), libx11-dev
 Pre-Depends: x11-common (>= 1:7.0.0)

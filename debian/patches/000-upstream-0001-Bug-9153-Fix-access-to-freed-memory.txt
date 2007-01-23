@@ -1,0 +1,56 @@
+From d56e78acce9b2aa1dd1bf172afedaa3bccd5e1c8 Mon Sep 17 00:00:00 2001
+From: Tilman Sauerbeck <tilman@code-monkey.de>
+Date: Sat, 25 Nov 2006 05:29:31 -0800
+Subject: [PATCH] Bug #9153: Fix access to freed memory.
+
+The fix for bug #8622 introduced a smaller bug where _XReply would
+read memory shortly after freeing it. This patch caches the needed
+value in a stack-allocated variable before the heap-allocated memory
+is freed.
+---
+ src/xcb_io.c |    8 +++++++-
+ 1 files changed, 7 insertions(+), 1 deletions(-)
+
+diff --git a/src/xcb_io.c b/src/xcb_io.c
+index 99bb72f..ba892f8 100644
+--- a/src/xcb_io.c
++++ b/src/xcb_io.c
+@@ -346,6 +346,7 @@ Status _XReply(Display *dpy, xReply *rep
+ 	xcb_connection_t *c = dpy->xcb->connection;
+ 	char *reply;
+ 	PendingRequest *current;
++	unsigned int current_sequence;
+ 
+ 	assert(!dpy->xcb->reply_data);
+ 
+@@ -363,13 +364,18 @@ Status _XReply(Display *dpy, xReply *rep
+ 	check_internal_connections(dpy);
+ 	process_responses(dpy, 0, &error, current->sequence);
+ 
++	current_sequence = current->sequence;
++
+ 	remove_pending_request(dpy, current);
+ 	if(current->waiters)
+ 	{ /* The ConditionBroadcast macro contains an if; braces needed here. */
+ 		ConditionBroadcast(dpy, &current->condition);
+ 	}
+ 	else
++	{
+ 		free(current);
++		current = NULL;
++	}
+ 
+ 	if(error)
+ 	{
+@@ -424,7 +430,7 @@ Status _XReply(Display *dpy, xReply *rep
+ 		return 0;
+ 	}
+ 
+-	dpy->last_request_read = current->sequence;
++	dpy->last_request_read = current_sequence;
+ 
+ 	/* there's no error and we have a reply. */
+ 	dpy->xcb->reply_data = reply;
+-- 
+1.4.3.3
+
