@@ -3,7 +3,7 @@
 
 AC_PREREQ(2.57)
 AC_INIT([libX11],
-        1.1,
+        1.1.1,
         [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],
         libX11)
 AC_CONFIG_SRCDIR([Makefile.am])
@@ -294,8 +294,8 @@ AM_CONDITIONAL(MANPAGES, [ test x$LIBMAN '!=' xno ])
 
 AM_CONDITIONAL(XKB, [ test x$XKB = xyes ])
 if test x"$XKB" = "xyes"; then
-   XKBPROTO_REQUIRES="kbproto inputproto"
-   PKG_CHECK_MODULES(XKBPROTO, $XKBPROTO_REQUIRES)
+   XKBPROTO_REQUIRES="kbproto"
+   PKG_CHECK_MODULES(XKBPROTO, kbproto inputproto)
    AC_DEFINE(XKB,1,[Use XKB])
    X11_CFLAGS="$X11_CFLAGS $XKBPROTO_CFLAGS"
    X11_LIBS="$X11_LIBS $XKBPROTO_LIBS"
