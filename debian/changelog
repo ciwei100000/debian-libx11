@@ -5,8 +5,10 @@ libx11 (2:1.0.3-5) unstable; urgency=high
   * Add patch 021_compose_fclose.diff to fix file descriptor leak when a
     Compose file uses the "include" directive.  Urgency high because this bug
     can have security implications.
+  * Add myself to Uploaders, and remove Fabio and Branden with their
+    permission.
 
- -- Julien Cristau <julien.cristau@ens-lyon.org>  Thu,  1 Feb 2007 12:58:09 +0100
+ -- Julien Cristau <julien.cristau@ens-lyon.org>  Thu,  1 Feb 2007 13:09:20 +0100
 
 libx11 (2:1.0.3-4) unstable; urgency=low
 
