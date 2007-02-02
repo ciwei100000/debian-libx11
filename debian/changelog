@@ -12,8 +12,9 @@ libx11 (2:1.1.1-1) UNRELEASED; urgency=low
   * Install upstream ChangeLog.
   * libx11-dev doesn't seem to need to depend on libxext-dev
     (closes: #366676).
+  * Use dh_installman in debian/rules to replace ".so" links with symlinks.
 
- -- Julien Cristau <julien.cristau@ens-lyon.org>  Thu,  1 Feb 2007 01:19:25 +0100
+ -- Julien Cristau <julien.cristau@ens-lyon.org>  Fri,  2 Feb 2007 16:59:38 +0100
 
 libx11 (2:1.1-2) experimental; urgency=low
 
