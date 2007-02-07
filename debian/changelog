@@ -4,10 +4,6 @@ libx11 (2:1.1.1-1) UNRELEASED; urgency=low
   * libx11-dev Depends: libxcb-xlib0-dev, because x11.pc references xcb-xlib.
 
   [ Julien Cristau ]
-  * Remove /usr/X11R6/lib from /etc/ld.so.conf in postinst if it's no longer
-    needed, instead of adding it there.
-  * Add patch 021_compose_fclose.diff to fix file descriptor leak when a
-    Compose file uses the "include" directive.
   * New upstream release.
   * Install upstream ChangeLog.
   * libx11-dev doesn't seem to need to depend on libxext-dev
@@ -66,6 +62,18 @@ libx11 (2:1.1-1) experimental; urgency=low
   * Reword package descriptions to stop calling Xlib "the" client interface.
 
  -- Josh Triplett <josh@freedesktop.org>  Fri, 24 Nov 2006 17:36:55 -0800
+
+libx11 (2:1.0.3-5) unstable; urgency=high
+
+  * Remove /usr/X11R6/lib from /etc/ld.so.conf in postinst if it's no longer
+    needed, instead of adding it there.
+  * Add patch 021_compose_fclose.diff to fix file descriptor leak when a
+    Compose file uses the "include" directive.  Urgency high because this bug
+    can have security implications.
+  * Add myself to Uploaders, and remove Fabio and Branden with their
+    permission.
+
+ -- Julien Cristau <julien.cristau@ens-lyon.org>  Thu,  1 Feb 2007 13:09:20 +0100
 
 libx11 (2:1.0.3-4) unstable; urgency=low
 
