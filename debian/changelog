@@ -1,7 +1,8 @@
 libx11 (2:1.1.1-1) UNRELEASED; urgency=low
 
   [ Michel Dänzer ]
-  * libx11-dev Depends: libxcb-xlib0-dev, because x11.pc references xcb-xlib.
+  * libx11-dev Depends: libxcb-xlib0-dev, because x11.pc references xcb-xlib
+    (closes: #410117).
 
   [ Julien Cristau ]
   * New upstream release.
