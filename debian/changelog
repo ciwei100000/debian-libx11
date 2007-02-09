@@ -1,4 +1,4 @@
-libx11 (2:1.1.1-1) UNRELEASED; urgency=low
+libx11 (2:1.1.1-1) experimental; urgency=low
 
   [ Michel Dänzer ]
   * libx11-dev Depends: libxcb-xlib0-dev, because x11.pc references xcb-xlib
@@ -11,7 +11,7 @@ libx11 (2:1.1.1-1) UNRELEASED; urgency=low
     (closes: #366676).
   * Use dh_installman in debian/rules to replace ".so" links with symlinks.
 
- -- Julien Cristau <julien.cristau@ens-lyon.org>  Fri,  2 Feb 2007 16:59:38 +0100
+ -- Julien Cristau <jcristau@debian.org>  Fri,  9 Feb 2007 01:17:05 +0100
 
 libx11 (2:1.1-2) experimental; urgency=low
 
