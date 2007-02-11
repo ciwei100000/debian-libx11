@@ -1,3 +1,10 @@
+libx11 (2:1.1.1-2) UNRELEASED; urgency=low
+
+  * Drop -DLIBXCURSOR from CFLAGS since upstream default is now correct
+    (closes: #392618).
+
+ -- Brice Goglin <Brice.Goglin@ens-lyon.org>  Sun, 11 Feb 2007 23:14:22 +0100
+
 libx11 (2:1.1.1-1) experimental; urgency=low
 
   [ Michel Dänzer ]

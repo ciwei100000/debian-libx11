@@ -43,9 +43,6 @@ endif
 
 confflags += --enable-man-pages=3
 
-# so very wrong
-CFLAGS += -DLIBXCURSOR=\\\"libXcursor.so.1\\\"
-
 build: genscripts patch build-stamp
 build-stamp:
 	dh_testdir
