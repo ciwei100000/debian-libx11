@@ -1,3 +1,10 @@
+libx11 (2:1.0.3-6) unstable; urgency=high
+
+  * Add patch by Daniel Kobras <kobras@debian.org> to add more input
+    validation to XInitImage(), to fix security issues (closes: #414045).
+
+ -- Julien Cristau <jcristau@debian.org>  Fri,  9 Mar 2007 02:23:06 +0100
+
 libx11 (2:1.0.3-5) unstable; urgency=high
 
   * Remove /usr/X11R6/lib from /etc/ld.so.conf in postinst if it's no longer

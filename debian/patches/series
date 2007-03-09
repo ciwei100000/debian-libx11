@@ -15,3 +15,4 @@
 019_new_autoconf.diff
 020_CVE-2006-5397.diff
 021_compose_fclose.diff
+022_XInitImage_input_validate.diff

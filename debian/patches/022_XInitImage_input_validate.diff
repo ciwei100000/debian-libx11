@@ -1,0 +1,19 @@
+Add more input validation to XInitImage(), to avoid buffer overflow in
+XGetPixel(), which assumes sane values.
+Debian bug #414045.
+
+This patch by Daniel Kobras <kobras@debian.org>
+
+Index: libx11/src/ImUtil.c
+===================================================================
+--- libx11.orig/src/ImUtil.c	2007-03-09 02:21:29.000000000 +0100
++++ libx11/src/ImUtil.c	2007-03-09 02:22:34.000000000 +0100
+@@ -385,6 +385,8 @@
+     XImage *image;
+ {
+ 	if (image->depth == 0 || image->depth > 32 ||
++	    image->bits_per_pixel > 32 || image->bitmap_unit > 32 ||
++	    image->bits_per_pixel < 0 || image->bitmap_unit < 0 ||
+ 	    (image->format != XYBitmap &&
+ 	     image->format != XYPixmap &&
+ 	     image->format != ZPixmap) ||
