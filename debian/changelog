@@ -1,3 +1,10 @@
+libx11 (2:1.0.3-7) unstable; urgency=high
+
+  * Grab patch from upstream git to fix CVE-2007-1667 (the patch included in
+    2:1.0.3-6 was incomplete).  This closes: #414045.
+
+ -- Julien Cristau <jcristau@debian.org>  Tue, 03 Apr 2007 18:45:51 +0200
+
 libx11 (2:1.0.3-6) unstable; urgency=high
 
   * Add patch by Daniel Kobras <kobras@debian.org> to add more input
