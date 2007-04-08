@@ -11,3 +11,4 @@
 015_russian_locale_alias.diff
 016_greek_polytonic_Compose.diff
 021_compose_fclose.diff
+022_CVE-2007-1667.diff
