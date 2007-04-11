@@ -6,7 +6,7 @@ Uploaders: David Nusinow <dnusinow@debian.org>, Josh Triplett <josh@freedesktop.
 Build-Depends: debhelper (>= 5.0.0), pkg-config, xtrans-dev, x11proto-core-dev, x11proto-kb-dev, x11proto-input-dev, x11proto-xext-dev, x11proto-xf86bigfont-dev, libxcb1-dev (>= 0.9.92), libxcb-xlib0-dev (>= 0.9.92), quilt
 Standards-Version: 3.7.2
 XS-Vcs-Git: git://git.debian.org/git/pkg-xorg/lib/libx11
-XS-Vcs-Browse: http://git.debian.org/?p=pkg-xorg/lib/libx11.git
+XS-Vcs-Browser: http://git.debian.org/?p=pkg-xorg/lib/libx11.git
 
 Package: libx11-6
 Section: libs
