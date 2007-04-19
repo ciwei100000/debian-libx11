@@ -3,11 +3,13 @@ libx11 (2:1.1.1-2) UNRELEASED; urgency=low
   [ Brice Goglin ]
   * Drop -DLIBXCURSOR from CFLAGS since upstream default is now correct
     (closes: #392618).
+  * Add en_DK.ISO-8859-15 to 003_recognize_glibc_2.3.2_locale_names.diff
+    Thanks Kaare Hviid. (closes: #419192).
 
   [ Julien Cristau ]
   * Add XS-Vcs-Git and XS-Vcs-Browser in debian/control.
 
- -- Julien Cristau <jcristau@debian.org>  Sat, 07 Apr 2007 16:40:20 +0200
+ -- Brice Goglin <Brice.Goglin@ens-lyon.org>  Thu, 19 Apr 2007 22:47:12 +0200
 
 libx11 (2:1.1.1-1) experimental; urgency=low
 
