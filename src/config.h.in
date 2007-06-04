@@ -72,6 +72,9 @@
 /* Support IPv6 for TCP connections */
 #undef IPv6
 
+/* Support os-specific local connections */
+#undef LOCALCONN
+
 /* Disable XLOCALEDIR environment variable */
 #undef NO_XLOCALEDIR
 
@@ -92,6 +95,15 @@
 
 /* Define to the version of this package. */
 #undef PACKAGE_VERSION
+
+/* Major version of this package */
+#undef PACKAGE_VERSION_MAJOR
+
+/* Minor version of this package */
+#undef PACKAGE_VERSION_MINOR
+
+/* Patch version of this package */
+#undef PACKAGE_VERSION_PATCHLEVEL
 
 /* Define as the return type of signal handlers (`int' or `void'). */
 #undef RETSIGTYPE
@@ -161,3 +173,6 @@
 
 /* Whether libX11 needs to use MT safe API's */
 #undef XUSE_MTSAFE_API
+
+/* Enable GNU and other extensions to the C environment for glibc */
+#undef _GNU_SOURCE

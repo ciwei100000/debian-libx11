@@ -14,6 +14,9 @@
 
 @SET_MAKE@
 
+# Have to fake out automake by calling our man pages "DATA" since "MANS" won't
+# accept .3x as a valid man page suffix
+
 #							-*- Makefile -*-
 # Rules for generating files using the C pre-processor
 # (Replaces CppFileTarget from Imake)
@@ -40,10 +43,9 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-DIST_COMMON = $(dist_x11thislocale_DATA) $(srcdir)/Makefile.am \
-	$(srcdir)/Makefile.in $(top_srcdir)/cpprules.in \
-	$(top_srcdir)/nls/localerules.in
-subdir = nls/tatar-cyr
+DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+	$(top_srcdir)/cpprules.in
+subdir = man/xkb
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
 	$(top_srcdir)/configure.ac
@@ -61,11 +63,9 @@ am__vpath_adj = case $$p in \
     *) f=$$p;; \
   esac;
 am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
-am__installdirs = "$(DESTDIR)$(x11thislocaledir)" \
-	"$(DESTDIR)$(x11thislocaledir)"
-dist_x11thislocaleDATA_INSTALL = $(INSTALL_DATA)
-x11thislocaleDATA_INSTALL = $(INSTALL_DATA)
-DATA = $(dist_x11thislocale_DATA) $(x11thislocale_DATA)
+am__installdirs = "$(DESTDIR)$(libmandir)"
+libmanDATA_INSTALL = $(INSTALL_DATA)
+DATA = $(libman_DATA)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 ADMIN_MAN_DIR = @ADMIN_MAN_DIR@
@@ -240,9 +240,217 @@ sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 sysconfdir = @sysconfdir@
 target_alias = @target_alias@
-x11thislocaledir = $(X11_LOCALEDATADIR)/tatar-cyr
+libmandir = $(LIB_MAN_DIR)
+LIB_MAN_DIR_SUFFIX = $(LIB_MAN_DIR:@mandir@/man%=%)
+libman_PRE = \
+	XkbActionCtrls.man                      \
+	XkbAddDeviceLedInfo.man                 \
+	XkbAddGeomColor.man                     \
+	XkbAddGeomDoodad.man                    \
+	XkbAddGeomKey.man                       \
+	XkbAddGeomKeyAlias.man                  \
+	XkbAddGeomOutline.man                   \
+	XkbAddGeomOverlay.man                   \
+	XkbAddGeomOverlayKey.man                \
+	XkbAddGeomOverlayRow.man                \
+	XkbAddGeomProperty.man                  \
+	XkbAddGeomRow.man                       \
+	XkbAddGeomSection.man                   \
+	XkbAddGeomShape.man                     \
+	XkbAddSymInterpret.man                  \
+	XkbAllocClientMap.man                   \
+	XkbAllocCompatMap.man                   \
+	XkbAllocControls.man                    \
+	XkbAllocDeviceInfo.man                  \
+	XkbAllocDeviceLedInfo.man               \
+	XkbAllocGeomColors.man                  \
+	XkbAllocGeomDoodads.man                 \
+	XkbAllocGeomKeyAliases.man              \
+	XkbAllocGeomKeys.man                    \
+	XkbAllocGeomOutlines.man                \
+	XkbAllocGeomOverlayKey.man              \
+	XkbAllocGeomOverlayRows.man             \
+	XkbAllocGeomOverlays.man                \
+	XkbAllocGeomPoints.man                  \
+	XkbAllocGeomProps.man                   \
+	XkbAllocGeomRows.man                    \
+	XkbAllocGeomSectionDoodads.man          \
+	XkbAllocGeomSections.man                \
+	XkbAllocGeomShapes.man                  \
+	XkbAllocGeometry.man                    \
+	XkbAllocIndicatorMaps.man               \
+	XkbAllocKeyboard.man                    \
+	XkbAllocNames.man                       \
+	XkbAllocServerMap.man                   \
+	XkbApplyCompatMapToKey.man              \
+	XkbBell.man                             \
+	XkbBellEvent.man                        \
+	XkbChangeControls.man                   \
+	XkbChangeDeviceInfo.man                 \
+	XkbChangeEnabledControls.man            \
+	XkbChangeIndicators.man                 \
+	XkbChangeMap.man                        \
+	XkbChangeNames.man                      \
+	XkbChangeTypesOfKey.man                 \
+	XkbComputeRowBounds.man                 \
+	XkbComputeSectionBounds.man             \
+	XkbComputeShapeBounds.man               \
+	XkbComputeShapeTop.man                  \
+	XkbCopyKeyType.man                      \
+	XkbCopyKeyTypes.man                     \
+	XkbDeviceBell.man                       \
+	XkbDeviceBellEvent.man                  \
+	XkbFindOverlayForKey.man                \
+	XkbForceBell.man                        \
+	XkbForceDeviceBell.man                  \
+	XkbFreeClientMap.man                    \
+	XkbFreeCompatMap.man                    \
+	XkbFreeComponentList.man                \
+	XkbFreeControls.man                     \
+	XkbFreeDeviceInfo.man                   \
+	XkbFreeGeomColors.man                   \
+	XkbFreeGeomDoodads.man                  \
+	XkbFreeGeomKeyAliases.man               \
+	XkbFreeGeomKeys.man                     \
+	XkbFreeGeomOutlines.man                 \
+	XkbFreeGeomOverlayKeys.man              \
+	XkbFreeGeomOverlayRows.man              \
+	XkbFreeGeomOverlays.man                 \
+	XkbFreeGeomPoints.man                   \
+	XkbFreeGeomProperties.man               \
+	XkbFreeGeomRows.man                     \
+	XkbFreeGeomSections.man                 \
+	XkbFreeGeomShapes.man                   \
+	XkbFreeGeometry.man                     \
+	XkbFreeIndicatorMaps.man                \
+	XkbFreeKeyboard.man                     \
+	XkbFreeNames.man                        \
+	XkbFreeServerMap.man                    \
+	XkbGetAccessXTimeout.man                \
+	XkbGetAutoRepeatRate.man                \
+	XkbGetAutoResetControls.man             \
+	XkbGetBounceKeysDelay.man               \
+	XkbGetCompatMap.man                     \
+	XkbGetControls.man                      \
+	XkbGetControlsChanges.man               \
+	XkbGetDetectableAutorepeat.man          \
+	XkbGetDeviceButtonActions.man           \
+	XkbGetDeviceInfo.man                    \
+	XkbGetDeviceInfoChanges.man             \
+	XkbGetDeviceLedInfo.man                 \
+	XkbGetGeometry.man                      \
+	XkbGetIndicatorChanges.man              \
+	XkbGetIndicatorMap.man                  \
+	XkbGetIndicatorState.man                \
+	XkbGetKeyActions.man                    \
+	XkbGetKeyBehaviors.man                  \
+	XkbGetKeyExplicitComponents.man         \
+	XkbGetKeyModifierMap.man                \
+	XkbGetKeySyms.man                       \
+	XkbGetKeyTypes.man                      \
+	XkbGetKeyVirtualModMap.man              \
+	XkbGetKeyboard.man                      \
+	XkbGetKeyboardByName.man                \
+	XkbGetMap.man                           \
+	XkbGetNameChanges.man                   \
+	XkbGetNamedGeometry.man                 \
+	XkbGetNamedIndicator.man                \
+	XkbGetNames.man                         \
+	XkbGetSlowKeysDelay.man                 \
+	XkbGetState.man                         \
+	XkbGetStickyKeysOptions.man             \
+	XkbGetUpdatedMap.man                    \
+	XkbGetVirtualMods.man                   \
+	XkbGetXlibControls.man                  \
+	XkbIgnoreExtension.man                  \
+	XkbInitCanonicalKeyTypes.man            \
+	XkbKeyAction.man                        \
+	XkbKeyActionEntry.man                   \
+	XkbKeyActionsPtr.man                    \
+	XkbKeyGroupInfo.man                     \
+	XkbKeyGroupWidth.man                    \
+	XkbKeyGroupsWidth.man                   \
+	XkbKeyHasActions.man                    \
+	XkbKeyNumActions.man                    \
+	XkbKeyNumGroups.man                     \
+	XkbKeyNumSyms.man                       \
+	XkbKeySymEntry.man                      \
+	XkbKeySymsOffset.man                    \
+	XkbKeySymsPtr.man                       \
+	XkbKeyType.man                          \
+	XkbKeyTypeIndex.man                     \
+	XkbKeyTypesForCoreSymbols.man           \
+	XkbKeycodeToKeysym.man                  \
+	XkbKeysymToModifiers.man                \
+	XkbLatchGroup.man                       \
+	XkbLatchModifiers.man                   \
+	XkbLibraryVersion.man                   \
+	XkbListComponents.man                   \
+	XkbLockGroup.man                        \
+	XkbLockModifiers.man                    \
+	XkbLookupKeyBinding.man                 \
+	XkbLookupKeySym.man                     \
+	XkbModActionVMods.man                   \
+	XkbNoteControlsChanges.man              \
+	XkbNoteDeviceChanges.man                \
+	XkbNoteIndicatorChanges.man             \
+	XkbNoteNameChanges.man                  \
+	XkbOpenDisplay.man                      \
+	XkbOutOfRangeGroupInfo.man              \
+	XkbOutOfRangeGroupNumber.man            \
+	XkbPtrActionX.man                       \
+	XkbPtrActionY.man                       \
+	XkbQueryExtension.man                   \
+	XkbRefreshKeyboardMapping.man           \
+	XkbResizeDeviceButtonActions.man        \
+	XkbResizeKeyActions.man                 \
+	XkbResizeKeySyms.man                    \
+	XkbResizeKeyType.man                    \
+	XkbSAActionSetCtrls.man                 \
+	XkbSAGroup.man                          \
+	XkbSAPtrDfltValue.man                   \
+	XkbSARedirectSetVMods.man               \
+	XkbSARedirectSetVModsMask.man           \
+	XkbSARedirectVMods.man                  \
+	XkbSARedirectVModsMask.man              \
+	XkbSAScreen.man                         \
+	XkbSASetGroup.man                       \
+	XkbSASetPtrDfltValue.man                \
+	XkbSASetScreen.man                      \
+	XkbSelectEventDetails.man               \
+	XkbSelectEvents.man                     \
+	XkbSetAccessXTimeout.man                \
+	XkbSetAutoRepeatRate.man                \
+	XkbSetAutoResetControls.man             \
+	XkbSetBounceKeysDelay.man               \
+	XkbSetCompatMap.man                     \
+	XkbSetControls.man                      \
+	XkbSetDebuggingFlags.man                \
+	XkbSetDetectableAutorepeat.man          \
+	XkbSetDeviceButtonActions.man           \
+	XkbSetDeviceInfo.man                    \
+	XkbSetIgnoreLockMods.man                \
+	XkbSetIndicatorMap.man                  \
+	XkbSetMap.man                           \
+	XkbSetModActionVMods.man                \
+	XkbSetNamedIndicator.man                \
+	XkbSetNames.man                         \
+	XkbSetPtrActionX.man                    \
+	XkbSetPtrActionY.man                    \
+	XkbSetServerInternalMods.man            \
+	XkbSetXlibControls.man                  \
+	XkbTranslateKeyCode.man                 \
+	XkbTranslateKeySym.man                  \
+	XkbUpdateMapFromCore.man                \
+	XkbVirtualModsToReal.man                
+
+
+# What we actually install 
+@MANPAGES_TRUE@libman_DATA = $(libman_PRE:man=@LIB_MAN_SUFFIX@)
+EXTRA_DIST = $(libman_PRE)
+CLEANFILES = $(libman_DATA)
 SED = sed
-SUFFIXES = .pre
+SUFFIXES = .pre .$(LIB_MAN_SUFFIX) .man
 WCHAR32_FLAGS = -DWCHAR32=@WCHAR32@
 CPP_FILES_FLAGS = $(WCHAR32_FLAGS)
 
@@ -259,15 +467,17 @@ CPP_SED_MAGIC = $(SED) -e '/^\#  *[0-9][0-9]*  *.*$$/d' \
                        -e '/^[         ]*XHASH/s/XHASH/\#/' \
                        -e '/\@\@$$/s/\@\@$$/\\/'
 
-EXTRA_DIST = XLC_LOCALE.pre Compose.pre
-dist_x11thislocale_DATA = XI18N_OBJS
-x11thislocale_DATA = XLC_LOCALE Compose
-CLEANFILES = XLC_LOCALE Compose
+XORGRELSTRING = @PACKAGE_STRING@
+XORGMANNAME = X Version 11
+MANDEFS = -D__libmansuffix__=$(LIB_MAN_SUFFIX) \
+	-D__xorgversion__="\"$(XORGRELSTRING)\" \"$(XORGMANNAME)\""
+
+CPP_MAN_FLAGS = $(MANDEFS) $(EXTRAMANDEFS)
 all: all-am
 
 .SUFFIXES:
-.SUFFIXES: .pre
-$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/nls/localerules.in $(top_srcdir)/cpprules.in $(am__configure_deps)
+.SUFFIXES: .pre .$(LIB_MAN_SUFFIX) .man
+$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/cpprules.in $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -276,9 +486,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign  nls/tatar-cyr/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign  man/xkb/Makefile'; \
 	cd $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign  nls/tatar-cyr/Makefile
+	  $(AUTOMAKE) --foreign  man/xkb/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
@@ -306,39 +516,22 @@ clean-libtool:
 distclean-libtool:
 	-rm -f libtool
 uninstall-info-am:
-install-dist_x11thislocaleDATA: $(dist_x11thislocale_DATA)
+install-libmanDATA: $(libman_DATA)
 	@$(NORMAL_INSTALL)
-	test -z "$(x11thislocaledir)" || $(mkdir_p) "$(DESTDIR)$(x11thislocaledir)"
-	@list='$(dist_x11thislocale_DATA)'; for p in $$list; do \
+	test -z "$(libmandir)" || $(mkdir_p) "$(DESTDIR)$(libmandir)"
+	@list='$(libman_DATA)'; for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 	  f=$(am__strip_dir) \
-	  echo " $(dist_x11thislocaleDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(x11thislocaledir)/$$f'"; \
-	  $(dist_x11thislocaleDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(x11thislocaledir)/$$f"; \
+	  echo " $(libmanDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(libmandir)/$$f'"; \
+	  $(libmanDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(libmandir)/$$f"; \
 	done
 
-uninstall-dist_x11thislocaleDATA:
+uninstall-libmanDATA:
 	@$(NORMAL_UNINSTALL)
-	@list='$(dist_x11thislocale_DATA)'; for p in $$list; do \
+	@list='$(libman_DATA)'; for p in $$list; do \
 	  f=$(am__strip_dir) \
-	  echo " rm -f '$(DESTDIR)$(x11thislocaledir)/$$f'"; \
-	  rm -f "$(DESTDIR)$(x11thislocaledir)/$$f"; \
-	done
-install-x11thislocaleDATA: $(x11thislocale_DATA)
-	@$(NORMAL_INSTALL)
-	test -z "$(x11thislocaledir)" || $(mkdir_p) "$(DESTDIR)$(x11thislocaledir)"
-	@list='$(x11thislocale_DATA)'; for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  f=$(am__strip_dir) \
-	  echo " $(x11thislocaleDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(x11thislocaledir)/$$f'"; \
-	  $(x11thislocaleDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(x11thislocaledir)/$$f"; \
-	done
-
-uninstall-x11thislocaleDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(x11thislocale_DATA)'; for p in $$list; do \
-	  f=$(am__strip_dir) \
-	  echo " rm -f '$(DESTDIR)$(x11thislocaledir)/$$f'"; \
-	  rm -f "$(DESTDIR)$(x11thislocaledir)/$$f"; \
+	  echo " rm -f '$(DESTDIR)$(libmandir)/$$f'"; \
+	  rm -f "$(DESTDIR)$(libmandir)/$$f"; \
 	done
 tags: TAGS
 TAGS:
@@ -348,7 +541,7 @@ CTAGS:
 
 
 distdir: $(DISTFILES)
-	$(mkdir_p) $(distdir)/../.. $(distdir)/../../nls
+	$(mkdir_p) $(distdir)/../..
 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
 	topsrcdirstrip=`echo "$(top_srcdir)" | sed 's|.|.|g'`; \
 	list='$(DISTFILES)'; for file in $$list; do \
@@ -379,7 +572,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(DATA)
 installdirs:
-	for dir in "$(DESTDIR)$(x11thislocaledir)" "$(DESTDIR)$(x11thislocaledir)"; do \
+	for dir in "$(DESTDIR)$(libmandir)"; do \
 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
 	done
 install: install-am
@@ -425,8 +618,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-dist_x11thislocaleDATA \
-	install-x11thislocaleDATA
+install-data-am: install-libmanDATA
 
 install-exec-am:
 
@@ -452,25 +644,25 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-dist_x11thislocaleDATA uninstall-info-am \
-	uninstall-x11thislocaleDATA
+uninstall-am: uninstall-info-am uninstall-libmanDATA
 
 .PHONY: all all-am check check-am clean clean-generic clean-libtool \
 	distclean distclean-generic distclean-libtool distdir dvi \
 	dvi-am html html-am info info-am install install-am \
-	install-data install-data-am install-dist_x11thislocaleDATA \
-	install-exec install-exec-am install-info install-info-am \
-	install-man install-strip install-x11thislocaleDATA \
-	installcheck installcheck-am installdirs maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-generic \
-	mostlyclean-libtool pdf pdf-am ps ps-am uninstall uninstall-am \
-	uninstall-dist_x11thislocaleDATA uninstall-info-am \
-	uninstall-x11thislocaleDATA
+	install-data install-data-am install-exec install-exec-am \
+	install-info install-info-am install-libmanDATA install-man \
+	install-strip installcheck installcheck-am installdirs \
+	maintainer-clean maintainer-clean-generic mostlyclean \
+	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
+	uninstall uninstall-am uninstall-info-am uninstall-libmanDATA
 
 
 # Allow people to comment out lines by starting them with '##'
 .pre:
 	$(SED) -e '/^\#\#/d' $< | $(RAWCPP) $(RAWCPPFLAGS) $(CPP_FILES_FLAGS) | $(CPP_SED_MAGIC) > $@
+
+.man.$(LIB_MAN_SUFFIX):
+	$(RAWCPP) $(RAWCPPFLAGS) $(CPP_MAN_FLAGS) < $< | $(CPP_SED_MAGIC) > $@
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:
