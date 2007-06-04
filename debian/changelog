@@ -1,4 +1,4 @@
-libx11 (2:1.1.1-2) UNRELEASED; urgency=low
+libx11 (2:1.1.2-1) UNRELEASED; urgency=low
 
   [ Brice Goglin ]
   * Drop -DLIBXCURSOR from CFLAGS since upstream default is now correct
@@ -8,8 +8,17 @@ libx11 (2:1.1.1-2) UNRELEASED; urgency=low
 
   [ Julien Cristau ]
   * Add XS-Vcs-Git and XS-Vcs-Browser in debian/control.
+  * New upstream release:
+    + typo in XRecolorCursor.man fixed, closes: #225839;
+    + XRegisterIMInstantiateCallback manpage fixed, closes: #232133;
+    + XGetVisualInfo manpage fixed, closes: 399094;
+    + greek Compose file updated, patch 016_greek_polytonic_Compose.diff
+      dropped;
+    + file descriptor leak in modules/im/ximcp/imLcPrs.c:parseline() fixed,
+      patch 021_compose_fclose.diff dropped;
+    + fix for CVE-2007-1667 included, patch 022_CVE-2007-1667.diff dropped.
 
- -- Brice Goglin <Brice.Goglin@ens-lyon.org>  Thu, 19 Apr 2007 22:47:12 +0200
+ -- Julien Cristau <jcristau@debian.org>  Mon, 04 Jun 2007 11:01:57 +0200
 
 libx11 (2:1.1.1-1) experimental; urgency=low
 

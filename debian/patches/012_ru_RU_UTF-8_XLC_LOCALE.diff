@@ -1,8 +1,8 @@
 Index: libx11/nls/locale.dir.pre
 ===================================================================
---- libx11.orig/nls/locale.dir.pre	2006-11-24 21:47:27.000000000 -0800
-+++ libx11/nls/locale.dir.pre	2006-11-24 21:47:36.000000000 -0800
-@@ -438,7 +438,7 @@
+--- libx11.orig/nls/locale.dir.pre	2007-06-04 11:56:37.000000000 +0200
++++ libx11/nls/locale.dir.pre	2007-06-04 11:56:48.000000000 +0200
+@@ -439,7 +439,7 @@
  pt_BR.UTF-8/XLC_LOCALE:			pt_BR.UTF-8
  en_US.UTF-8/XLC_LOCALE:			pt_PT.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ro_RO.UTF-8
@@ -14,7 +14,7 @@ Index: libx11/nls/locale.dir.pre
 Index: libx11/nls/ru_RU.UTF-8/XLC_LOCALE.pre
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ libx11/nls/ru_RU.UTF-8/XLC_LOCALE.pre	2006-11-24 21:47:36.000000000 -0800
++++ libx11/nls/ru_RU.UTF-8/XLC_LOCALE.pre	2007-06-04 11:56:48.000000000 +0200
 @@ -0,0 +1,169 @@
 +XCOMM
 +XCOMM	XLocale Database Sample for ru_RU.UTF-8
@@ -188,7 +188,7 @@ Index: libx11/nls/ru_RU.UTF-8/XLC_LOCALE.pre
 Index: libx11/nls/ru_RU.UTF-8/XI18N_OBJS
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ libx11/nls/ru_RU.UTF-8/XI18N_OBJS	2006-11-24 21:47:36.000000000 -0800
++++ libx11/nls/ru_RU.UTF-8/XI18N_OBJS	2007-06-04 11:56:48.000000000 +0200
 @@ -0,0 +1,7 @@
 +# CATEGORY(XLC|XIM|OM)	SHARED_LIBRARY_NAME	FUNCTION_NAME
 +#
@@ -199,9 +199,9 @@ Index: libx11/nls/ru_RU.UTF-8/XI18N_OBJS
 +XOM	common/xomGeneric 	_XomGenericOpenOM	# XOM_open
 Index: libx11/configure.ac
 ===================================================================
---- libx11.orig/configure.ac	2006-11-23 07:15:35.000000000 -0800
-+++ libx11/configure.ac	2006-11-24 21:47:36.000000000 -0800
-@@ -428,6 +428,7 @@
+--- libx11.orig/configure.ac	2007-06-04 11:56:19.000000000 +0200
++++ libx11/configure.ac	2007-06-04 11:56:48.000000000 +0200
+@@ -440,6 +440,7 @@
  	   nls/mulelao-1/Makefile
  	   nls/nokhchi-1/Makefile
  	   nls/pt_BR.UTF-8/Makefile
@@ -211,8 +211,8 @@ Index: libx11/configure.ac
  	   nls/th_TH.UTF-8/Makefile
 Index: libx11/nls/Makefile.am
 ===================================================================
---- libx11.orig/nls/Makefile.am	2006-10-07 21:18:18.000000000 -0700
-+++ libx11/nls/Makefile.am	2006-11-24 21:47:36.000000000 -0800
+--- libx11.orig/nls/Makefile.am	2007-06-04 11:56:19.000000000 +0200
++++ libx11/nls/Makefile.am	2007-06-04 11:56:48.000000000 +0200
 @@ -52,6 +52,7 @@
  	mulelao-1		\
  	nokhchi-1		\
@@ -224,13 +224,13 @@ Index: libx11/nls/Makefile.am
 Index: libx11/nls/ru_RU.UTF-8/Compose.pre
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ libx11/nls/ru_RU.UTF-8/Compose.pre	2006-11-24 21:47:36.000000000 -0800
++++ libx11/nls/ru_RU.UTF-8/Compose.pre	2007-06-04 11:56:48.000000000 +0200
 @@ -0,0 +1 @@
 +include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 Index: libx11/nls/ru_RU.UTF-8/Makefile.am
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ libx11/nls/ru_RU.UTF-8/Makefile.am	2006-11-24 21:47:36.000000000 -0800
++++ libx11/nls/ru_RU.UTF-8/Makefile.am	2007-06-04 11:56:48.000000000 +0200
 @@ -0,0 +1,3 @@
 +x11thislocaledir = $(X11_LOCALEDATADIR)/ru_RU.UTF-8
 +
