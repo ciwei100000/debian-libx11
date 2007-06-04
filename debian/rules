@@ -91,7 +91,7 @@ binary-arch: build install
 	           --exclude=usr/share/man/man3/XGetXCBConnection.3 \
 	           --exclude=usr/share/man/man3/XSetEventQueueOwner.3
 	dh_install --sourcedir=debian/tmp -Nlibx11-dev -s
-	dh_installchangelogs -s ChangeLog
+	dh_installchangelogs -s ChangeLog NEWS
 	dh_installman -s
 	dh_link -s
 	dh_strip -plibx11-6 --dbg-package=libx11-6-dbg
@@ -111,8 +111,8 @@ binary-indep: build install
 	dh_testroot
 
 	dh_installdocs -i
-	dh_installchangelogs -i ChangeLog
-	dh_install --sourcedir=debian/tmp $(dhinstallindepflags) --list-missing
+	dh_installchangelogs -i ChangeLog NEWS
+	dh_install --sourcedir=debian/tmp -i
 	dh_link -i
 	dh_installman -i
 	dh_compress -i
