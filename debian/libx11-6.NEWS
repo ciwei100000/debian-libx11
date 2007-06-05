@@ -1,3 +1,18 @@
+libx11 (2:1.1.2-1) experimental; urgency=low
+
+  The Sun Java virtual machine (and possibly others) trigger an assertion
+  in the Xlib/XCB code, which can be worked around with the following
+  commands:
+  - For sun-java5-bin:
+    sed -i 's/XINERAMA/FAKEEXTN/g' \
+      /usr/lib/jvm/java-1.5.0-sun-1.5.0.11/jre/lib/i386/xawt/libmawt.so
+  - For sun-java6-bin:
+    sed -i 's/XINERAMA/FAKEEXTN/g' \
+      /usr/lib/jvm/java-6-sun-1.6.0.00/jre/lib/i386/xawt/libmawt.so
+  Using these commands may violate the java license, though.
+
+ -- Julien Cristau <jcristau@debian.org>  Tue, 05 Jun 2007 23:04:49 +0200
+
 libx11 (2:1.1-1) experimental; urgency=low
 
   [ Josh Triplett, Jamey Sharp ]
