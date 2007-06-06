@@ -21,8 +21,9 @@ libx11 (2:1.1.2-1) experimental; urgency=low
   * Don't run dh_install with --list-missing in binary-indep, there are too
     many false positives for it to be useful.
   * Document workarounds for sun-java5-bin and sun-java6-bin in libx11-6.NEWS.
+  * Strip all packages, not just the shared libs.
 
- -- Julien Cristau <jcristau@debian.org>  Tue, 05 Jun 2007 23:13:14 +0200
+ -- Julien Cristau <jcristau@debian.org>  Wed, 06 Jun 2007 04:46:09 +0200
 
 libx11 (2:1.1.1-1) experimental; urgency=low
 

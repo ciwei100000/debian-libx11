@@ -96,6 +96,7 @@ binary-arch: build install
 	dh_link -s
 	dh_strip -plibx11-6 --dbg-package=libx11-6-dbg
 	dh_strip -plibx11-xcb1 --dbg-package=libx11-xcb1-dbg
+	dh_strip -Nlibx11-6 -Nlibx11-xcb1
 	dh_compress -s
 	dh_fixperms -s
 	dh_makeshlibs -s
