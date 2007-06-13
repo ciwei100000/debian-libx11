@@ -1,3 +1,24 @@
+commit 8e76bcf3cafda85058ce5f35f1f81929f4772f72
+Author: Olivier Blin <blino@mandriva.org>
+Date:   Mon Jun 11 18:32:09 2007 +1000
+
+    fix XGetMotionEvents arguments order - Fixes bug 11222
+
+commit c2f88cdf5cd9c94b77e5bfdac572b5ac06ab4aa8
+Author: Jamey Sharp <jamey@minilop.net>
+Date:   Sun Jun 10 16:19:59 2007 -0700
+
+    Fix locking in _XimGetWindowEventmask.
+    
+    Now that XFilterEvent drops the Display lock before invoking callback
+    functions, _XimGetWindowEventmask is called without the lock held. So
+    when it called _XGetWindowAttributes, a variant of XGetWindowAttributes
+    that does not lock the Display, Xlib/XCB would assert:
+    
+    xcb_xlib.c:50: xcb_xlib_unlock: Assertion `c->xlib.lock' failed.
+    
+    Should fix Gentoo #156367, Ubuntu #87947, Debian #427296. And others?
+
 commit 65f0ab5d46d80d55fc04d4eb14fa05f130eb8b9c
 Author: Jamey Sharp <jamey@minilop.net>
 Date:   Sun Jun 3 21:41:47 2007 -0700

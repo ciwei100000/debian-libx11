@@ -1,3 +1,11 @@
+libx11 (2:1.1.2-2) UNRELEASED; urgency=low
+
+  * Pull two fixes from upstream git:
+    + Fix locking in _XimGetWindowEventmask (closes: #427296).
+    + fix XGetMotionEvents arguments order.
+
+ -- Julien Cristau <jcristau@debian.org>  Wed, 13 Jun 2007 20:10:57 +0200
+
 libx11 (2:1.1.2-1) experimental; urgency=low
 
   [ Brice Goglin ]
