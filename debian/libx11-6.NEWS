@@ -1,8 +1,10 @@
 libx11 (2:1.1.2-1) experimental; urgency=low
 
-  The Sun Java virtual machine (and possibly others) trigger an assertion
-  in the Xlib/XCB code, which can be worked around with the following
-  commands:
+  The Sun Java virtual machine (and possibly others) or a library it statically
+  links has a locking bug that triggers a locking correctness assertion in the
+  Xlib/XCB code.  This locking bug occurs when attempting to use the Xinerama
+  extension.  The following commands patch Sun Java to work around this bug by
+  preventing it from finding the Xinerama extension:
   - For sun-java5-bin:
     sed -i 's/XINERAMA/FAKEEXTN/g' \
       /usr/lib/jvm/java-1.5.0-sun-1.5.0.11/jre/lib/i386/xawt/libmawt.so
@@ -10,10 +12,10 @@ libx11 (2:1.1.2-1) experimental; urgency=low
     sed -i 's/XINERAMA/FAKEEXTN/g' \
       /usr/lib/jvm/java-6-sun-1.6.0.00/jre/lib/i386/xawt/libmawt.so
 
-  Thanks to Josh Triplett and Christoph Pfister for their work to find this
-  workaround.
+  Bug analysis and workaround by Julien Cristau, Josh Triplett and Christoph
+  Pfister.
 
- -- Julien Cristau <jcristau@debian.org>  Tue, 05 Jun 2007 23:04:49 +0200
+ -- Josh Triplett <josh@freedesktop.org  Wed, 13 Jun 2007 12:11:04 -0700
 
 libx11 (2:1.1-1) experimental; urgency=low
 

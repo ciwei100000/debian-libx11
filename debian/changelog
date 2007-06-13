@@ -1,11 +1,15 @@
 libx11 (2:1.1.2-2) UNRELEASED; urgency=low
 
+  [ Julien Cristau ]
   * Pull two fixes from upstream git:
     + Fix locking in _XimGetWindowEventmask (closes: #427296).
     + fix XGetMotionEvents arguments order.
   * Install the upstream NEWS file rather than the git changelog.
+  
+  [ Josh Triplett ]
+  * Expand the description of the problem with Sun Java in libx11-6.NEWS.
 
- -- Julien Cristau <jcristau@debian.org>  Wed, 13 Jun 2007 20:15:02 +0200
+ -- Josh Triplett <josh@freedesktop.org>  Wed, 13 Jun 2007 12:14:51 -0700
 
 libx11 (2:1.1.2-1) experimental; urgency=low
 
