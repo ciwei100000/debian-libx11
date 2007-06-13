@@ -9,7 +9,9 @@ libx11 (2:1.1.2-1) experimental; urgency=low
   - For sun-java6-bin:
     sed -i 's/XINERAMA/FAKEEXTN/g' \
       /usr/lib/jvm/java-6-sun-1.6.0.00/jre/lib/i386/xawt/libmawt.so
-  Using these commands may violate the java license, though.
+
+  Thanks to Josh Triplett and Christoph Pfister for their work to find this
+  workaround.
 
  -- Julien Cristau <jcristau@debian.org>  Tue, 05 Jun 2007 23:04:49 +0200
 
