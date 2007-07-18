@@ -38,7 +38,7 @@ Package: libx11-6-dbg
 Section: libdevel
 Architecture: any
 Priority: extra
-Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6 (= ${Source-Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6 (= ${binary:Version})
 Description: X11 client-side library (debug package)
  This package provides a client interface to the X Window System, otherwise
  known as 'Xlib'.  It provides a complete API for the basic functions of the
@@ -55,7 +55,7 @@ Package: libx11-dev
 Section: libdevel
 Architecture: any
 Pre-Depends: x11-common (>= 1:7.0.0)
-Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6 (= ${Source-Version}), libxau-dev (>= 1:1.0.0-1), libxdmcp-dev (>= 1:1.0.0-1), x11proto-core-dev (>= 6.8.99.8-1), x11proto-input-dev, x11proto-kb-dev, xtrans-dev, libxcb-xlib0-dev
+Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6 (= ${binary:Version}), libxau-dev (>= 1:1.0.0-1), libxdmcp-dev (>= 1:1.0.0-1), x11proto-core-dev (>= 6.8.99.8-1), x11proto-input-dev, x11proto-kb-dev, xtrans-dev, libxcb-xlib0-dev
 Description: X11 client-side library (development headers)
  This package provides a client interface to the X Window System, otherwise
  known as 'Xlib'.  It provides a complete API for the basic functions of the
@@ -89,7 +89,7 @@ Package: libx11-xcb1-dbg
 Section: libdevel
 Architecture: any
 Priority: extra
-Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-xcb1 (= ${Source-Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-xcb1 (= ${binary:Version})
 Description: Xlib/XCB interface library (debug package)
  libX11-xcb provides functions needed by clients which take advantage of
  Xlib/XCB to mix calls to both Xlib and XCB over the same X connection.
@@ -107,7 +107,7 @@ Description: Xlib/XCB interface library (debug package)
 Package: libx11-xcb-dev
 Section: libdevel
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-xcb1 (= ${Source-Version}), libxcb1-dev (>= 0.9.92), libx11-dev
+Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-xcb1 (= ${binary:Version}), libxcb1-dev (>= 0.9.92), libx11-dev
 Pre-Depends: x11-common (>= 1:7.0.0)
 Description: Xlib/XCB interface library (development headers)
  libX11-xcb provides functions needed by clients which take advantage of
