@@ -1,3 +1,11 @@
+commit d334665e619e9db657a2ea2764a8b852401d4a3f
+Author: Kean Johnston <kean@armory.com>
+Date:   Tue Jul 17 16:34:30 2007 -0700
+
+    LOCALCONN fallback changes DisplayString() output, breaks KDE
+    
+    See <http://lists.freedesktop.org/archives/xorg/2007-July/026443.html>
+
 commit 8e76bcf3cafda85058ce5f35f1f81929f4772f72
 Author: Olivier Blin <blino@mandriva.org>
 Date:   Mon Jun 11 18:32:09 2007 +1000
