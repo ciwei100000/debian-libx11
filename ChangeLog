@@ -1,3 +1,49 @@
+commit ac00a44b4875de70382da5a40dd87f976e5b9327
+Author: Tilman Sauerbeck <tilman@code-monkey.de>
+Date:   Wed Aug 1 20:36:03 2007 +0200
+
+    Bumped version to 1.1.3.
+
+commit 76fae9cba1e9bdf7f0eb2ff2b90153d622136cf0
+Author: Joerg Sonnenberger <joerg@netbsd.org>
+Date:   Fri Jul 27 11:15:47 2007 -0700
+
+    Fail properly on errors in recursive make.
+
+commit 1a18319b3bde08dd9ef69c7cd735a76000cf3177
+Author: Brice Goglin <Brice.Goglin@ens-lyon.org>
+Date:   Thu Jul 26 23:31:15 2007 +0200
+
+    Add missing override parameter in XrmCombineDatabase prototype in the manpage
+    
+    Reported by Arnaud Giersch <arnaud.giersch@iut-bm.univ-fcomte.fr>
+    in http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=393434
+    and https://bugs.freedesktop.org/show_bug.cgi?id=9948
+    
+    Also add the type of the second argument in XrmMergeDatabases.
+
+commit 6f0764d4b56f64786b4980839ca262f10a51af6f
+Author: Brice Goglin <Brice.Goglin@ens-lyon.org>
+Date:   Thu Jul 26 22:53:52 2007 +0200
+
+    Clarify return value of XGetCommand in case of error in the manpage
+    
+    Reported by Sean Perry <shalehperry@attbi.com>
+    in http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=133348
+    and https://bugs.freedesktop.org/show_bug.cgi?id=9828
+
+commit b8bef57342632cc2d25580bb7daa3839bae04d89
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Wed Jul 25 17:44:06 2007 -0700
+
+    Include comment/copyright/license for AC_DEFINE_DIR in acinclude.m4
+
+commit 590cde811a79375231c59ed8583e02b111ed567c
+Author: Kean Johnston <kean@armory.com>
+Date:   Thu Jul 19 16:44:20 2007 -0700
+
+    Reset hostname when falling back from :0 to hostname/localhost:0 as well
+
 commit d334665e619e9db657a2ea2764a8b852401d4a3f
 Author: Kean Johnston <kean@armory.com>
 Date:   Tue Jul 17 16:34:30 2007 -0700

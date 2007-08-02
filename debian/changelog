@@ -1,16 +1,18 @@
-libx11 (2:1.1.2-2) UNRELEASED; urgency=low
+libx11 (2:1.1.3-1) UNRELEASED; urgency=low
 
   [ Julien Cristau ]
-  * Pull fixes from upstream git, among which:
+  * New upstream release.
     + Fix locking in _XimGetWindowEventmask (closes: #427296).
     + fix XGetMotionEvents arguments order (closes: #431421).
+    + XGetCommand(3) clarified (closes: #133348).
+    + XrmCombineDatabase(3) fixed (closes: #393434).
   * Install the upstream NEWS file rather than the git changelog.
   * Use binary:Version instead of Source-Version in debian/control.
 
   [ Josh Triplett ]
   * Expand the description of the problem with Sun Java in libx11-6.NEWS.
 
- -- Julien Cristau <jcristau@debian.org>  Wed, 18 Jul 2007 02:52:34 +0200
+ -- Julien Cristau <jcristau@debian.org>  Thu, 02 Aug 2007 03:49:44 +0200
 
 libx11 (2:1.1.2-1) experimental; urgency=low
 
