@@ -1,4 +1,4 @@
-libx11 (2:1.1.3-1) UNRELEASED; urgency=low
+libx11 (2:1.1.3-1) experimental; urgency=low
 
   [ Julien Cristau ]
   * New upstream release.
@@ -6,13 +6,14 @@ libx11 (2:1.1.3-1) UNRELEASED; urgency=low
     + fix XGetMotionEvents arguments order (closes: #431421).
     + XGetCommand(3) clarified (closes: #133348).
     + XrmCombineDatabase(3) fixed (closes: #393434).
-  * Install the upstream NEWS file rather than the git changelog.
+  * Install the upstream NEWS file in libx11-6 in addition to the git
+    changelog.
   * Use binary:Version instead of Source-Version in debian/control.
 
   [ Josh Triplett ]
   * Expand the description of the problem with Sun Java in libx11-6.NEWS.
 
- -- Julien Cristau <jcristau@debian.org>  Thu, 02 Aug 2007 03:49:44 +0200
+ -- Julien Cristau <jcristau@debian.org>  Thu, 02 Aug 2007 04:13:46 +0200
 
 libx11 (2:1.1.2-1) experimental; urgency=low
 

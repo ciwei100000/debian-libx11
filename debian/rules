@@ -82,7 +82,7 @@ binary-arch: build install
 	dh_testdir
 	dh_testroot
 
-	dh_installdocs -s
+	dh_installdocs -s NEWS
 	# Using exclusions here allows libx11-6.install to use wildcards for
 	# headers and manpages, rather than listing every header and manpage
 	# other than these.
@@ -91,7 +91,7 @@ binary-arch: build install
 	           --exclude=usr/share/man/man3/XGetXCBConnection.3 \
 	           --exclude=usr/share/man/man3/XSetEventQueueOwner.3
 	dh_install --sourcedir=debian/tmp -Nlibx11-dev -s
-	dh_installchangelogs -s NEWS
+	dh_installchangelogs -s ChangeLog
 	dh_installman -s
 	dh_link -s
 	dh_strip -plibx11-6 --dbg-package=libx11-6-dbg
