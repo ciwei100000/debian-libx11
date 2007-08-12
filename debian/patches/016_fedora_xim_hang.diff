@@ -1,0 +1,66 @@
+- Fix XIM hangs when switching input context (Soren Sandmann)
+ 
+RedHat #201284, Debian #437437, fd.o #7869
+
+--- libX11-1.0.3/modules/im/ximcp/imDefLkup.c.bug-201284	2006-10-30 23:58:41.000000000 -0500
++++ libX11-1.0.3/modules/im/ximcp/imDefLkup.c	2006-10-30 23:58:41.000000000 -0500
+@@ -216,8 +216,13 @@
+     Xic		 ic,
+     BITMASK16	 mode)
+ {
+-    if (mode & XimSYNCHRONUS) /* SYNC Request */
+-	MARK_NEED_SYNC_REPLY(ic);
++    if (mode & XimSYNCHRONUS) /* SYNC Request */ {
++	if (IS_FOCUSED(ic))
++	    MARK_NEED_SYNC_REPLY(ic);
++	else
++	    _XimProcSyncReply(ic->core.im, ic);
++    }
++    
+     return True;
+ }
+ 
+--- libX11-1.0.3/modules/im/ximcp/imDefIc.c.bug-201284	2006-06-22 17:22:22.000000000 -0400
++++ libX11-1.0.3/modules/im/ximcp/imDefIc.c	2006-10-30 23:58:41.000000000 -0500
+@@ -949,6 +949,8 @@
+     (void)_XimWrite(im, len, (XPointer)buf);
+     _XimFlush(im);
+ 
++    MARK_FOCUSED(ic);
++
+     _XimRegisterFilter(ic);
+     return;
+ }
+@@ -994,6 +996,8 @@
+     (void)_XimWrite(im, len, (XPointer)buf);
+     _XimFlush(im);
+ 
++    UNMARK_FOCUSED(ic);
++    
+     _XimUnregisterFilter(ic);
+     return;
+ }
+--- libX11-1.0.3/src/xlibi18n/XimintP.h.bug-201284	2006-06-22 17:22:23.000000000 -0400
++++ libX11-1.0.3/src/xlibi18n/XimintP.h	2006-10-31 00:01:30.000000000 -0500
+@@ -244,6 +244,7 @@
+ #define IC_CONNECTED		(1L)
+ #define FABLICATED		(1L << 1)
+ #define	NEED_SYNC_REPLY		(1L << 2)
++#define FOCUSED			(1L << 3)
+ 
+ /*
+  * macro for the flag of XICPrivateRec
+@@ -269,6 +270,13 @@
+ #define	UNMARK_NEED_SYNC_REPLY(ic) \
+ 		(((Xic)ic)->private.proto.flag &= ~NEED_SYNC_REPLY)
+ 
++#define IS_FOCUSED(ic) \
++		(((Xic)ic)->private.proto.flag & FOCUSED)
++#define MARK_FOCUSED(ic) \
++		(((Xic)ic)->private.proto.flag |= FOCUSED)
++#define UNMARK_FOCUSED(ic) \
++		(((Xic)ic)->private.proto.flag &= ~FOCUSED)
++
+ /*
+  * macro for the filter_event_mask of XICPrivateRec
+  */
