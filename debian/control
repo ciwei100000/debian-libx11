@@ -27,6 +27,7 @@ Package: libx11-data
 Architecture: all
 Depends: ${misc:Depends}
 Pre-Depends: x11-common (>= 1:7.0.0)
+Replaces: libx11-6 (<= 2:1.0.0-1)
 Description: X11 client-side library
  This package provides the locale data files for libx11.
  .
