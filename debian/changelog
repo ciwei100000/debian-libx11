@@ -1,7 +1,24 @@
 libx11 (2:1.1.3-2) UNRELEASED; urgency=low
 
+  [ Timo Aaltonen ]
   * control: libx11-data Replaces old versions of libx11-6 to enable
     upgrades from Ubuntu 6.06.
+
+  [ Julien Cristau ]
+  * New upstream release
+  * Update patch stack:
+    + 003_recognize_glibc_2.3.2_locale_names.diff: fixup; drop the hunk
+      under #ifdef WIN32, as I don't care enough to fix it
+    + 004_en_US.UTF-8_Compose_fix_Unicode_plane_1.diff: remove, applied
+      upstream
+    + 005_Compose_fix_latin1_UTF8.diff: remove, applied upstream
+    + 006_tailor_pt_BR.UTF-8_Compose.diff: fixup
+    + 007_iso8859-15_Compose_fix.diff: refresh
+    + 008_remove_ko_Compose.diff: refresh
+    + 009_iso8859-15_Compose_Eurosign.diff: remove, applied upstream
+    + 012_ru_RU_UTF-8_XLC_LOCALE.diff: refresh
+    + 014_add_Khmer_digraphs.diff: fixup
+    + 015_russian_locale_alias.diff: refresh
 
  -- Timo Aaltonen <tjaalton@cc.hut.fi>  Thu, 29 Nov 2007 21:39:23 +0200
 

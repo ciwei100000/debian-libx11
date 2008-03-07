@@ -1,11 +1,8 @@
 002_arm_abi_brain_damage.diff
 003_recognize_glibc_2.3.2_locale_names.diff
-004_en_US.UTF-8_Compose_fix_Unicode_plane_1.diff
-005_Compose_fix_latin1_UTF8.diff
 006_tailor_pt_BR.UTF-8_Compose.diff
 007_iso8859-15_Compose_fix.diff
 008_remove_ko_Compose.diff
-009_iso8859-15_Compose_Eurosign.diff
 012_ru_RU_UTF-8_XLC_LOCALE.diff
 014_add_Khmer_digraphs.diff
 015_russian_locale_alias.diff
