@@ -15,7 +15,7 @@ libx11 (2:1.1.2-1) experimental; urgency=low
   Bug analysis and workaround by Julien Cristau, Josh Triplett and Christoph
   Pfister.
 
- -- Josh Triplett <josh@freedesktop.org  Wed, 13 Jun 2007 12:11:04 -0700
+ -- Josh Triplett <josh@freedesktop.org>  Wed, 13 Jun 2007 12:11:04 -0700
 
 libx11 (2:1.1-1) experimental; urgency=low
 
