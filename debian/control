@@ -12,7 +12,6 @@ Package: libx11-6
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-data
-Pre-Depends: x11-common (>= 1:7.0.0)
 Conflicts: xlibs-data (<< 1:7.0.0)
 Description: X11 client-side library
  This package provides a client interface to the X Window System, otherwise
@@ -26,7 +25,6 @@ Description: X11 client-side library
 Package: libx11-data
 Architecture: all
 Depends: ${misc:Depends}
-Pre-Depends: x11-common (>= 1:7.0.0)
 Replaces: libx11-6 (<= 2:1.0.0-1)
 Description: X11 client-side library
  This package provides the locale data files for libx11.
@@ -74,7 +72,6 @@ Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Conflicts: libx11-6 (<< 2:1.1)
-Pre-Depends: x11-common (>= 1:7.0.0)
 Description: Xlib/XCB interface library
  libX11-xcb provides functions needed by clients which take advantage of
  Xlib/XCB to mix calls to both Xlib and XCB over the same X connection.

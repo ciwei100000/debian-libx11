@@ -1,3 +1,9 @@
+libx11 (2:1.1.4-2) UNRELEASED; urgency=low
+
+  * Drop Pre-Depends on x11-common from libx11-6, libx11-data and libx11-xcb1.
+
+ -- Julien Cristau <jcristau@debian.org>  Mon, 17 Mar 2008 17:58:33 +0100
+
 libx11 (2:1.1.4-1) experimental; urgency=low
 
   [ Timo Aaltonen ]
