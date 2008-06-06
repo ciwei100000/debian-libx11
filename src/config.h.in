@@ -48,6 +48,9 @@
 /* Use shl_load to load shared libraries */
 #undef HAVE_SHL_LOAD
 
+/* Define to 1 if the system has the type `socklen_t'. */
+#undef HAVE_SOCKLEN_T
+
 /* Define to 1 if you have the <stdint.h> header file. */
 #undef HAVE_STDINT_H
 
