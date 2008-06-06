@@ -193,7 +193,7 @@
 +XOM	common/xomGeneric 	_XomGenericOpenOM	# XOM_open
 --- libx11.orig/configure.ac
 +++ libx11/configure.ac
-@@ -458,6 +458,7 @@
+@@ -441,6 +441,7 @@
  	   nls/mulelao-1/Makefile
  	   nls/nokhchi-1/Makefile
  	   nls/pt_BR.UTF-8/Makefile

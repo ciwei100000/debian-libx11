@@ -9,7 +9,7 @@ Not submitted upstream to X.Org.
 
 --- libx11.orig/nls/pt_BR.UTF-8/Compose.pre
 +++ libx11/nls/pt_BR.UTF-8/Compose.pre
-@@ -1,5547 +1,3 @@
+@@ -1,5550 +1,3 @@
 -XCOMM UTF-8 (Unicode) compose sequence
 -XCOMM David.Monniaux@ens.fr
 -XCOMM
@@ -196,6 +196,9 @@ Not submitted upstream to X.Org.
 -<Multi_key> <x> <o>		: "¤" currency
 -
 -<Multi_key> <P> <P>		: "¶" paragraph # PILCROW SIGN (PARAGRAPH SIGN)
+-
+-<Multi_key> <question> <exclam>         : "‽"   U203D # INTERROBANG
+-<Multi_key> <exclam> <question>         : "‽"   U203D # INTERROBANG
 -
 -XCOMM Part 2
 -
