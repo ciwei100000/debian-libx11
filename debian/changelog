@@ -1,6 +1,10 @@
 libx11 (2:1.1.4-2) UNRELEASED; urgency=low
 
   * Drop Pre-Depends on x11-common from libx11-6, libx11-data and libx11-xcb1.
+  * Pull from upstream libX11-1.1-branch
+    + fixes Compose sequences for finnish keyboards (closes: #467142)
+    + interrobang has been added to the en_US.UTF-8 Compose file
+      (closes: #300160)
 
  -- Julien Cristau <jcristau@debian.org>  Mon, 17 Mar 2008 17:58:33 +0100
 

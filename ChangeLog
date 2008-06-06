@@ -1,3 +1,153 @@
+commit a7f85567a3e850fba0c44571453d2852ab1a09be
+Author: Adam Jackson <ajax@redhat.com>
+Date:   Tue May 13 10:28:39 2008 -0400
+
+    Bug #15884: Remove useless sleep()'s from the connection code.
+    
+    For network transports, there's enough delay in the network layer
+    already without adding more.  For local transports, just hurry up
+    and fail if the server isn't there.
+
+commit 9129057bdbff0ec9cd8bb780cf7f85f134a291eb
+Author: Teemu Likonen <tlikonen@iki.fi>
+Date:   Wed May 7 21:44:22 2008 +0300
+
+    Change <dead_belowdot> to <dead_belowring> for U+1E00 and U+U1E01
+    
+    Commit 6b6caeea830a977bdb54688cfb648d879821e752 added <dead_belowdot>
+    <A> and <dead_belowdot> <a> compose sequences for letters U+1E00 and
+    U+U1E01 (LATIN CAPITAL/SMALL LETTER A WITH RING BELOW). This caused
+    duplicate compose sequences since these have already been defined. Also,
+    using <dead_belowring> is more logical since the diacritic is indeed
+    a "RING BELOW".
+
+commit 01a9cb58888d290cc3d319feec4ee4a0297a844c
+Author: Daniel Stone <daniel@fooishbar.org>
+Date:   Wed May 7 20:04:44 2008 +0300
+
+    NLS: Make UTF-8 the default for Russian
+    
+    No-one uses 8859-5 anymore, so make the default for Russian UTF-8; the
+    only other possible answer would be KOI8-R.
+    
+    Signed-off-by: Sergey V. Udaltsov <sergey.udaltsov@gmail.com>
+
+commit 407b81bfbbabf6feb565d6da22f9ef9a69016ab8
+Author: Ross Burton <ross@burtonini.com>
+Date:   Tue Apr 29 13:38:10 2008 +0300
+
+    NLS: Add interrobang to UTF-8 compose tables (bug #15653)
+    
+    It is what it says on the box.
+
+commit 0b6682303e9c61fefc3818acfda616b1e3691abf
+Author: Theppitak Karoonboonyanan <thep@linux.thai.net>
+Date:   Mon Apr 28 11:51:25 2008 +0300
+
+    IM: Respect XMODIFIERS for Thai locale (bug #15719)
+    
+    When looking at Thai input methods, make sure XMODIFIERS is checked
+    before jumping straight into built-in Thai processing, so external XIM
+    servers such as SCIM can be used with Thai.
+
+commit c13aded1b2f830ba5004abb0ec5518f9ea16087e
+Author: Colin Harrison <colin.harrison-at-virgin.net>
+Date:   Sat Apr 26 18:56:05 2008 +0100
+
+    Fix missing error condition
+
+commit f5c5ffc175cb383c92ea0fa8c08cfb087c5f3083
+Author: Colin Harrison <colin.harrison-at-virgin.net>
+Date:   Mon Apr 21 17:24:33 2008 +0100
+
+    Xlib warning fixes
+
+commit 6b6caeea830a977bdb54688cfb648d879821e752
+Author: James Cloos <cloos@jhcloos.com>
+Date:   Fri Apr 18 02:50:55 2008 -0400
+
+    Add some dead_key sequences to en_US.UTF-8 Compose table
+    
+    Make use of the new dead key symbols added to x11proto’s
+    commit 44e24a27bca023cf7b799f191fe6d52e12efbe5f (which
+    was in responce to bug #15446).
+
+commit 8f9b039580deaf658e464b7d6254064fcf183df6
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Mon Apr 14 19:09:42 2008 -0700
+
+    Update ac_define_dir macro in acinclude.m4 to 2008-04-12 version
+
+commit 9f5e96eb91ab55dd441c3e94b75caf48c588778f
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Mon Apr 14 18:21:14 2008 -0700
+
+    Fix mismatched brace indenting
+
+commit a19f9c65ee9e5e5d783feaa84998c36439b0288b
+Author: Bart Massey <bart@cs.pdx.edu>
+Date:   Fri Apr 4 18:58:45 2008 -0700
+
+    added error check in Xcms color file parser; closes bug #15305
+
+commit 12e8d0d01dd72ce98e7683ddb1bde181b7ed246f
+Author: Christian Weisgerber <naddy@mips.inka.de>
+Date:   Tue Mar 18 07:30:05 2008 +0100
+
+    ConnDis: properly cast 'addr' before accessing it as a byte array.
+    
+    If you use XDM-AUTHORIZATION-1 authorization keys for remote X11
+    clients over IPv6, the clients are liable to segfaults.
+
+commit 64325f38bab082a8e0e9ce779a8e582de5c8588e
+Author: Josh Triplett <josh@freedesktop.org>
+Date:   Sat Mar 15 12:29:33 2008 -0700
+
+    Fix fd.o bug 15023: make Xlib sync correctly given many void requests
+    
+    If given many requests without replies, Xlib may not sync until it flushes
+    the output buffer.  Thus, if Xlib can fit enough requests in the buffer to
+    pass by the number of requests it would normally sync after (65536 -
+    BUFSIZE/sizeof(xReq)), it will sync too late.  The test case in bug 15023
+    demonstrated this by issuing a request with a reply (ListExtensions) at
+    just the right time to get confused with the GetInputFocus reply issued in
+    response to the sync 65,536 requests later; the test case used an async
+    handler to watch the replies, since otherwise it could not issue a request
+    without waiting for the response.  When the test case failed, Xlib's sync
+    handler would eat the ListExtensions reply, and the test case's async
+    handler would see the GetInputFocus reply.
+    
+    Fix this by replacing SEQLIMIT with a function sync_hazard() that uses the
+    buffer size to figure out when the sequence numbers could potentially wrap
+    before the next flush.
+    
+    With this commit, the test case consistently passed, and the async reply
+    handler always saw the ListExtensions reply.
+    
+    Commit by Jamey Sharp and Josh Triplett.
+
+commit a5395563bbee15fabe1e8fd7aa86f9f314d8d30e
+Author: Colin Harrison <colin.harrison@virgin.net>
+Date:   Sat Mar 15 13:39:13 2008 -0400
+
+    Fix typo
+    
+    Signed-off-by: James Cloos <cloos@jhcloos.com>
+
+commit f07585ca27a8487bc66dfe41486c823f0fdcea7d
+Author: Daniel Stone <daniel@fooishbar.org>
+Date:   Sat Mar 15 17:32:57 2008 +0200
+
+    configure.ac: Don't search for legacy X11 headers
+    
+    This can actually break cross-compiles, so don't do it anymore.
+
+commit bf69541238c7df6606340c0f389e5c47149b29c7
+Author: Matthieu Herrb <matthieu.herrb@laas.fr>
+Date:   Sun Mar 9 09:08:07 2008 +0100
+
+    nuke RCS Ids
+
 commit 5e98aed13e529638df744e45893c471d5f2014fb
 Author: Adam Jackson <ajax@redhat.com>
 Date:   Thu Mar 6 16:10:33 2008 -0500
