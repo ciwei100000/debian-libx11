@@ -1,4 +1,4 @@
-libx11 (2:1.1.4-2) UNRELEASED; urgency=low
+libx11 (2:1.1.4-2) unstable; urgency=low
 
   * Drop Pre-Depends on x11-common from libx11-6, libx11-data and libx11-xcb1.
   * Pull from upstream libX11-1.1-branch
@@ -8,8 +8,9 @@ libx11 (2:1.1.4-2) UNRELEASED; urgency=low
   * Update patch 006_tailor_pt_BR.UTF-8_Compose.diff, refresh others.
   * Drop the NEWS entry about sun java.  sun-java6 is now fixed, and libxcb
     doesn't abort() anymore on the locking error.
+  * (Finally) upload Xlib/XCB to unstable.
 
- -- Julien Cristau <jcristau@debian.org>  Mon, 17 Mar 2008 17:58:33 +0100
+ -- Julien Cristau <jcristau@debian.org>  Mon, 09 Jun 2008 16:27:23 +0200
 
 libx11 (2:1.1.4-1) experimental; urgency=low
 
