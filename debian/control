@@ -19,8 +19,12 @@ Description: X11 client-side library
  window system.
  .
  More information about X.Org can be found at:
+ <URL:http://www.X.org>
  <URL:http://xorg.freedesktop.org>
  <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libX11
 
 Package: libx11-data
 Architecture: all
@@ -30,8 +34,12 @@ Description: X11 client-side library
  This package provides the locale data files for libx11.
  .
  More information about X.Org can be found at:
+ <URL:http://www.X.org>
  <URL:http://xorg.freedesktop.org>
  <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libX11
 
 Package: libx11-6-dbg
 Section: libdevel
@@ -47,8 +55,12 @@ Description: X11 client-side library (debug package)
  Non-developers likely have little use for this package.
  .
  More information about X.Org can be found at:
+ <URL:http://www.X.org>
  <URL:http://xorg.freedesktop.org>
  <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libX11
 
 Package: libx11-dev
 Section: libdevel
@@ -64,8 +76,12 @@ Description: X11 client-side library (development headers)
  libx11-6. Non-developers likely have little use for this package.
  .
  More information about X.Org can be found at:
+ <URL:http://www.X.org>
  <URL:http://xorg.freedesktop.org>
  <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libX11
 
 Package: libx11-xcb1
 Section: libs
@@ -77,11 +93,15 @@ Description: Xlib/XCB interface library
  Xlib/XCB to mix calls to both Xlib and XCB over the same X connection.
  .
  More information about X.Org can be found at:
+ <URL:http://www.X.org>
  <URL:http://xorg.freedesktop.org>
  <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
  .
  More information about XCB can be found at:
  <URL:http://xcb.freedesktop.org>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libX11
 
 Package: libx11-xcb1-dbg
 Section: libdevel
@@ -96,11 +116,15 @@ Description: Xlib/XCB interface library (debug package)
  libx11-xcb1.  Non-developers likely have little use for this package.
  .
  More information about X.Org can be found at:
+ <URL:http://www.X.org>
  <URL:http://xorg.freedesktop.org>
  <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
  .
  More information about XCB can be found at:
  <URL:http://xcb.freedesktop.org>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libX11
 
 Package: libx11-xcb-dev
 Section: libdevel
@@ -115,8 +139,12 @@ Description: Xlib/XCB interface library (development headers)
  libx11-xcb1. Non-developers likely have little use for this package.
  .
  More information about X.Org can be found at:
+ <URL:http://www.X.org>
  <URL:http://xorg.freedesktop.org>
  <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
  .
  More information about XCB can be found at:
  <URL:http://xcb.freedesktop.org>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libX11
