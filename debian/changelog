@@ -1,4 +1,4 @@
-libx11 (2:1.1.5-1) UNRELEASED; urgency=low
+libx11 (2:1.1.5-1) unstable; urgency=low
 
   [ Brice Goglin ]
   * Add upstream URL to debian/copyright.
@@ -13,7 +13,7 @@ libx11 (2:1.1.5-1) UNRELEASED; urgency=low
   * 014_add_Khmer_digraphs.diff: remove, applied upstream
   * 006_tailor_pt_BR.UTF-8_Compose.diff: update
 
- -- Timo Aaltonen <tepsipakki@ubuntu.com>  Fri, 12 Sep 2008 15:49:40 +0300
+ -- Julien Cristau <jcristau@debian.org>  Sun, 14 Sep 2008 19:09:33 +0200
 
 libx11 (2:1.1.4-2) unstable; urgency=low
 
