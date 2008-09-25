@@ -1,3 +1,10 @@
+libx11 (2:1.1.5-2) unstable; urgency=medium
+
+  * Cherry-picked from upstream git: Fix an XCB leak when the client has a
+    non-fatal error handler.
+
+ -- Julien Cristau <jcristau@debian.org>  Thu, 25 Sep 2008 17:45:25 +0200
+
 libx11 (2:1.1.5-1) unstable; urgency=low
 
   [ Brice Goglin ]
