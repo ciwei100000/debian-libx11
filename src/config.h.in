@@ -81,6 +81,9 @@
 /* Support os-specific local connections */
 #undef LOCALCONN
 
+/* preference sorted list of transport types to try for local connections */
+#undef LOCAL_TRANSPORT_LIST
+
 /* Disable XLOCALEDIR environment variable */
 #undef NO_XLOCALEDIR
 

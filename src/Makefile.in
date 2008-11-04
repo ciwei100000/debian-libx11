@@ -41,7 +41,6 @@ host_triplet = @host@
 @UDC_TRUE@am__append_2 = udcInf.c
 @THRSTUBS_TRUE@am__append_3 = UIThrStubs.c
 @XCB_TRUE@am__append_4 = \
-@XCB_TRUE@                  xcb_lock.c \
 @XCB_TRUE@                  xcb_disp.c \
 @XCB_TRUE@                  xcb_io.c \
 @XCB_TRUE@                  Xxcbint.h
@@ -132,13 +131,13 @@ am__libX11_la_SOURCES_DIST = AllCells.c AllowEv.c AllPlanes.c \
 	UngrabSvr.c UninsCmap.c UnldFont.c UnmapSubs.c UnmapWin.c \
 	VisUtil.c WarpPtr.c Window.c WinEvent.c Withdraw.c WMGeom.c \
 	WMProps.c WrBitF.c Xatomtype.h Xintatom.h Xintconn.h \
-	XlibAsync.c XlibInt.c XomGeneric.h Xresinternal.h Xrm.c XrmI.h \
-	os2Stubs.c udcInf.c UIThrStubs.c xcb_lock.c xcb_disp.c \
+	XlibAsync.c XlibInt.c Xprivate.h XomGeneric.h Xresinternal.h \
+	Xrm.c XrmI.h os2Stubs.c udcInf.c UIThrStubs.c xcb_disp.c \
 	xcb_io.c Xxcbint.h ConnDis.c x11_trans.c
 @OS2_TRUE@am__objects_1 = os2Stubs.lo
 @UDC_TRUE@am__objects_2 = udcInf.lo
 @THRSTUBS_TRUE@am__objects_3 = UIThrStubs.lo
-@XCB_TRUE@am__objects_4 = xcb_lock.lo xcb_disp.lo xcb_io.lo
+@XCB_TRUE@am__objects_4 = xcb_disp.lo xcb_io.lo
 @XCB_FALSE@am__objects_5 = ConnDis.lo x11_trans.lo
 am_libX11_la_OBJECTS = AllCells.lo AllowEv.lo AllPlanes.lo AutoRep.lo \
 	Backgnd.lo BdrWidth.lo Bell.lo Border.lo ChAccCon.lo \
@@ -203,9 +202,6 @@ depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
-	--mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
-	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 CCLD = $(CC)
 LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
@@ -244,6 +240,7 @@ BIGFONT_CFLAGS = @BIGFONT_CFLAGS@
 BIGFONT_LIBS = @BIGFONT_LIBS@
 CC = @CC@
 CCDEPMODE = @CCDEPMODE@
+CC_FOR_BUILD = @CC_FOR_BUILD@
 CFLAGS = @CFLAGS@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
@@ -254,6 +251,7 @@ CXXFLAGS = @CXXFLAGS@
 CYGPATH_W = @CYGPATH_W@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
+DOLT_BASH = @DOLT_BASH@
 DRIVER_MAN_DIR = @DRIVER_MAN_DIR@
 DRIVER_MAN_SUFFIX = @DRIVER_MAN_SUFFIX@
 DSYMUTIL = @DSYMUTIL@
@@ -290,6 +288,8 @@ LINT = @LINT@
 LINTLIB = @LINTLIB@
 LINT_FLAGS = @LINT_FLAGS@
 LN_S = @LN_S@
+LTCOMPILE = @LTCOMPILE@
+LTCXXCOMPILE = @LTCXXCOMPILE@
 LTLIBOBJS = @LTLIBOBJS@
 MAINT = @MAINT@
 MAKEINFO = @MAKEINFO@
@@ -485,8 +485,8 @@ libX11_la_SOURCES = AllCells.c AllowEv.c AllPlanes.c AutoRep.c \
 	UngrabSvr.c UninsCmap.c UnldFont.c UnmapSubs.c UnmapWin.c \
 	VisUtil.c WarpPtr.c Window.c WinEvent.c Withdraw.c WMGeom.c \
 	WMProps.c WrBitF.c Xatomtype.h Xintatom.h Xintconn.h \
-	XlibAsync.c XlibInt.c XomGeneric.h Xresinternal.h Xrm.c XrmI.h \
-	$(am__append_1) $(am__append_2) $(am__append_3) \
+	XlibAsync.c XlibInt.c Xprivate.h XomGeneric.h Xresinternal.h \
+	Xrm.c XrmI.h $(am__append_1) $(am__append_2) $(am__append_3) \
 	$(am__append_4) $(am__append_6)
 x11datadir = @X11_DATADIR@
 x11data_DATA = XKeysymDB XErrorDB
@@ -874,7 +874,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/x11_xcb.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xcb_disp.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xcb_io.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xcb_lock.Plo@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
