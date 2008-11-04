@@ -3,7 +3,17 @@ Section: x11
 Priority: optional
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Uploaders: David Nusinow <dnusinow@debian.org>, Josh Triplett <josh@freedesktop.org>, Jamey Sharp <sharpone@debian.org>, Julien Cristau <jcristau@debian.org>
-Build-Depends: debhelper (>= 5.0.0), pkg-config, xtrans-dev, x11proto-core-dev, x11proto-kb-dev, x11proto-input-dev, x11proto-xext-dev, x11proto-xf86bigfont-dev, libxcb1-dev (>= 1.1.92), quilt
+Build-Depends:
+ debhelper (>= 5.0.0),
+ pkg-config,
+ xtrans-dev,
+ x11proto-core-dev (>= 7.0.13),
+ x11proto-kb-dev,
+ x11proto-input-dev,
+ x11proto-xext-dev,
+ x11proto-xf86bigfont-dev,
+ libxcb1-dev (>= 1.1.92),
+ quilt
 Standards-Version: 3.7.3
 Vcs-Git: git://git.debian.org/git/pkg-xorg/lib/libx11
 Vcs-Browser: http://git.debian.org/?p=pkg-xorg/lib/libx11.git

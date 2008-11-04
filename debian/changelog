@@ -3,6 +3,7 @@ libx11 (2:1.1.99.2-1) UNRELEASED; urgency=low
   * New upstream release.
   * Use new xcb socket handoff mechanism, update (build-)dependencies.
   * Refresh patches.
+  * Build-dep on x11proto-core-dev >= 7.0.13.
 
  -- Julien Cristau <jcristau@debian.org>  Tue, 04 Nov 2008 21:01:50 +0100
 
