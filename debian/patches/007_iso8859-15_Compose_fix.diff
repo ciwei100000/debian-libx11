@@ -6,6 +6,8 @@ Account for lack of spacing diaeresis key and codepoint.
 
 http://bugs.debian.org/97433
 
+Index: libx11/nls/iso8859-15/Compose.pre
+===================================================================
 --- libx11.orig/nls/iso8859-15/Compose.pre
 +++ libx11/nls/iso8859-15/Compose.pre
 @@ -157,8 +157,7 @@
@@ -36,7 +38,7 @@ http://bugs.debian.org/97433
  <Multi_key> <a> <asterisk>		: "\345"	aring
  <Multi_key> <asterisk> <a>		: "\345"	aring
  <Multi_key> <a> <a>			: "\345"	aring
-@@ -229,8 +224,6 @@
+@@ -233,8 +228,6 @@
  <Multi_key> <greater> <E>		: "\312"	Ecircumflex
  <Multi_key> <E> <quotedbl>		: "\313"	Ediaeresis
  <Multi_key> <quotedbl> <E>		: "\313"	Ediaeresis
@@ -45,7 +47,7 @@ http://bugs.debian.org/97433
  <Multi_key> <e> <grave>			: "\350"	egrave
  <Multi_key> <grave> <e>			: "\350"	egrave
  <Multi_key> <e> <acute>			: "\351"	eacute
-@@ -243,8 +236,6 @@
+@@ -247,8 +240,6 @@
  <Multi_key> <greater> <e>		: "\352"	ecircumflex
  <Multi_key> <e> <quotedbl>		: "\353"	ediaeresis
  <Multi_key> <quotedbl> <e>		: "\353"	ediaeresis
@@ -54,7 +56,7 @@ http://bugs.debian.org/97433
  <Multi_key> <I> <grave>			: "\314"	Igrave
  <Multi_key> <grave> <I>			: "\314"	Igrave
  <Multi_key> <I> <acute>			: "\315"	Iacute
-@@ -257,8 +248,6 @@
+@@ -261,8 +252,6 @@
  <Multi_key> <greater> <I>		: "\316"	Icircumflex
  <Multi_key> <I> <quotedbl>		: "\317"	Idiaeresis
  <Multi_key> <quotedbl> <I>		: "\317"	Idiaeresis
@@ -63,7 +65,7 @@ http://bugs.debian.org/97433
  <Multi_key> <i> <grave>			: "\354"	igrave
  <Multi_key> <grave> <i>			: "\354"	igrave
  <Multi_key> <i> <acute>			: "\355"	iacute
-@@ -271,8 +260,6 @@
+@@ -275,8 +264,6 @@
  <Multi_key> <greater> <i>		: "\356"	icircumflex
  <Multi_key> <i> <quotedbl>		: "\357"	idiaeresis
  <Multi_key> <quotedbl> <i>		: "\357"	idiaeresis
@@ -72,7 +74,7 @@ http://bugs.debian.org/97433
  <Multi_key> <N> <asciitilde>		: "\321"	Ntilde
  <Multi_key> <asciitilde> <N>		: "\321"	Ntilde
  <Multi_key> <N> <minus>			: "\321"	Ntilde
-@@ -297,8 +284,6 @@
+@@ -301,8 +288,6 @@
  <Multi_key> <minus> <O>			: "\325"	Otilde
  <Multi_key> <O> <quotedbl>		: "\326"	Odiaeresis
  <Multi_key> <quotedbl> <O>		: "\326"	Odiaeresis
@@ -81,7 +83,7 @@ http://bugs.debian.org/97433
  <Multi_key> <O> <slash>			: "\330"	Ooblique
  <Multi_key> <slash> <O>			: "\330"	Ooblique
  <Multi_key> <O> <E>			: "\274"	OE
-@@ -318,8 +303,6 @@
+@@ -322,8 +307,6 @@
  <Multi_key> <minus> <o>			: "\365"	otilde
  <Multi_key> <o> <quotedbl>		: "\366"	odiaeresis
  <Multi_key> <quotedbl> <o>		: "\366"	odiaeresis
@@ -90,7 +92,7 @@ http://bugs.debian.org/97433
  <Multi_key> <o> <slash>			: "\370"	oslash
  <Multi_key> <slash> <o>			: "\370"	oslash
  <Multi_key> <o> <e>			: "\275"	oe
-@@ -339,8 +322,6 @@
+@@ -343,8 +326,6 @@
  <Multi_key> <greater> <U>		: "\333"	Ucircumflex
  <Multi_key> <U> <quotedbl>		: "\334"	Udiaeresis
  <Multi_key> <quotedbl> <U>		: "\334"	Udiaeresis
@@ -99,7 +101,7 @@ http://bugs.debian.org/97433
  <Multi_key> <u> <grave>			: "\371"	ugrave
  <Multi_key> <grave> <u>			: "\371"	ugrave
  <Multi_key> <u> <acute>			: "\372"	uacute
-@@ -353,8 +334,6 @@
+@@ -357,8 +338,6 @@
  <Multi_key> <greater> <u>		: "\373"	ucircumflex
  <Multi_key> <u> <quotedbl>		: "\374"	udiaeresis
  <Multi_key> <quotedbl> <u>		: "\374"	udiaeresis
@@ -108,7 +110,7 @@ http://bugs.debian.org/97433
  <Multi_key> <s> <s>			: "\337"	ssharp
  <Multi_key> <T> <H>			: "\336"	THORN
  <Multi_key> <t> <h>			: "\376"	thorn
-@@ -364,16 +343,12 @@
+@@ -368,16 +347,12 @@
  <Multi_key> <apostrophe> <Y>		: "\335"	Yacute
  <Multi_key> <Y> <quotedbl>		: "\276"	Ydiaeresis
  <Multi_key> <quotedbl> <Y>		: "\276"	Ydiaeresis
@@ -125,7 +127,7 @@ http://bugs.debian.org/97433
  <Multi_key> <Z> <less>			: "\264"	Zcaron
  <Multi_key> <less> <Z>			: "\264"	Zcaron
  <Multi_key> <z> <less>			: "\270"	zcaron
-@@ -402,8 +377,7 @@
+@@ -406,8 +381,7 @@
  <dead_cedilla> <minus>			: "\254"	notsign
  <dead_circumflex> <minus>		: "\257"	macron
  <dead_circumflex> <underscore>		: "\257"	macron

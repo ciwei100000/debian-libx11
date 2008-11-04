@@ -1,3 +1,5 @@
+Index: libx11/nls/locale.dir.pre
+===================================================================
 --- libx11.orig/nls/locale.dir.pre
 +++ libx11/nls/locale.dir.pre
 @@ -448,7 +448,7 @@
@@ -9,6 +11,8 @@
  en_US.UTF-8/XLC_LOCALE:			ru_UA.UTF-8
  en_US.UTF-8/XLC_LOCALE:         rw_RW.UTF-8
  en_US.UTF-8/XLC_LOCALE:			se_NO.UTF-8
+Index: libx11/nls/ru_RU.UTF-8/XLC_LOCALE.pre
+===================================================================
 --- /dev/null
 +++ libx11/nls/ru_RU.UTF-8/XLC_LOCALE.pre
 @@ -0,0 +1,169 @@
@@ -181,6 +185,8 @@
 +}
 +
 +END XLC_XLOCALE
+Index: libx11/nls/ru_RU.UTF-8/XI18N_OBJS
+===================================================================
 --- /dev/null
 +++ libx11/nls/ru_RU.UTF-8/XI18N_OBJS
 @@ -0,0 +1,7 @@
@@ -191,9 +197,11 @@
 +XLC	common/xlcUTF8Load	_XlcUtf8Loader	# XLC_open
 +XIM	common/ximcp	_XimOpenIM _XimRegisterIMInstantiateCallback  _XimUnRegisterIMInstantiateCallback # XIM_open	XIM_register XIM_unregister
 +XOM	common/xomGeneric 	_XomGenericOpenOM	# XOM_open
+Index: libx11/configure.ac
+===================================================================
 --- libx11.orig/configure.ac
 +++ libx11/configure.ac
-@@ -441,6 +441,7 @@
+@@ -477,6 +477,7 @@
  	   nls/mulelao-1/Makefile
  	   nls/nokhchi-1/Makefile
  	   nls/pt_BR.UTF-8/Makefile
@@ -201,6 +209,8 @@
  	   nls/tatar-cyr/Makefile
  	   nls/th_TH/Makefile
  	   nls/th_TH.UTF-8/Makefile
+Index: libx11/nls/Makefile.am
+===================================================================
 --- libx11.orig/nls/Makefile.am
 +++ libx11/nls/Makefile.am
 @@ -53,6 +53,7 @@
@@ -211,10 +221,14 @@
  	tatar-cyr		\
  	th_TH			\
  	th_TH.UTF-8		\
+Index: libx11/nls/ru_RU.UTF-8/Compose.pre
+===================================================================
 --- /dev/null
 +++ libx11/nls/ru_RU.UTF-8/Compose.pre
 @@ -0,0 +1 @@
 +include "/usr/share/X11/locale/en_US.UTF-8/Compose"
+Index: libx11/nls/ru_RU.UTF-8/Makefile.am
+===================================================================
 --- /dev/null
 +++ libx11/nls/ru_RU.UTF-8/Makefile.am
 @@ -0,0 +1,3 @@

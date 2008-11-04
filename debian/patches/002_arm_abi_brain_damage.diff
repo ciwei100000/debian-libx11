@@ -8,11 +8,11 @@ For extensive discussion and rationale, please see
 
 Not submitted upstream to XFree86 or X.Org.
 
-Index: libx11-1.0.0/include/X11/Xlib.h
+Index: libx11/include/X11/Xlib.h
 ===================================================================
---- libx11-1.0.0.orig/include/X11/Xlib.h	2006-02-27 12:58:06.000000000 +0700
-+++ libx11-1.0.0/include/X11/Xlib.h	2006-02-27 12:58:27.000000000 +0700
-@@ -1067,7 +1067,12 @@
+--- libx11.orig/include/X11/Xlib.h
++++ libx11/include/X11/Xlib.h
+@@ -1083,7 +1083,12 @@
  typedef struct {		/* normal 16 bit characters are two bytes */
      unsigned char byte1;
      unsigned char byte2;
