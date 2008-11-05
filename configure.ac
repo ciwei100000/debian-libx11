@@ -3,7 +3,7 @@
 
 AC_PREREQ(2.57)
 AC_INIT([libX11],
-        1.1.5,
+        1.1.99.2,
         [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],
         libX11)
 AC_CONFIG_SRCDIR([Makefile.am])
@@ -20,7 +20,17 @@ XORG_MACROS_VERSION(1.1)
 
 # Checks for programs.
 AC_PROG_LIBTOOL
+DOLT
 AC_PROG_CC
+
+if test x"$CC_FOR_BUILD" = x; then
+	if test x"$cross_compiling" = xyes; then
+	       AC_CHECK_PROGS(CC_FOR_BUILD, gcc cc)
+	else
+	       CC_FOR_BUILD="$CC"
+	fi
+fi
+AC_SUBST([CC_FOR_BUILD])
 
 XORG_PROG_RAWCPP
 
@@ -32,7 +42,7 @@ AC_CACHE_CHECK([whether to use XCB], [ac_cv_use_xcb], [ac_cv_use_xcb=yes])
 AM_CONDITIONAL(XCB, test x$ac_cv_use_xcb != xno)
 
 # Checks for pkg-config packages
-PKG_CHECK_MODULES(XPROTO, [xproto >= 7.0.6])
+PKG_CHECK_MODULES(XPROTO, [xproto >= 7.0.13])
 AC_SUBST(XPROTO_CFLAGS)
 
 case "$ac_cv_use_xcb" in
@@ -43,8 +53,8 @@ no)
 	AC_DEFINE(USE_XCB, 0, [Use XCB for low-level protocol implementation])
 	;;
 *)
-	X11_REQUIRES="xcb-xlib >= 0.9.92"
-	X11_EXTRA_DEPS="xcb-xlib"
+	X11_REQUIRES="xcb >= 1.1.92"
+	X11_EXTRA_DEPS="xcb >= 1.1.92"
 	xdmauth="no" # XCB handles all auth
 	AC_DEFINE(USE_XCB, 1, [Use XCB for low-level protocol implementation])
 	;;
@@ -66,6 +76,32 @@ XTRANS_CONNECTION_FLAGS
 
 # Secure RPC detection macro from xtrans.m4
 XTRANS_SECURE_RPC_FLAGS
+
+# Preferred order to try transports for local connections
+AC_MSG_CHECKING([what order to try transports in for local connections])
+case $host_os in
+	solaris*)
+		# On Solaris 2.6 through 9, named pipes (LOCAL_TRANS) were
+		# faster than Unix domain sockets, but on Solaris 10 & later,
+		# Unix domain sockets are faster now.
+		DEFAULT_LOCAL_TRANS="UNIX_TRANS,LOCAL_TRANS,TCP_TRANS"
+		;;
+	*)
+		if test "$LOCALCONN" = "yes"; then
+			DEFAULT_LOCAL_TRANS="LOCAL_TRANS,UNIX_TRANS,TCP_TRANS"
+		else
+			DEFAULT_LOCAL_TRANS="UNIX_TRANS,TCP_TRANS"
+		fi
+		;;
+esac
+
+AC_ARG_WITH(local-transport-order,
+	AC_HELP_STRING([--with-local-transport-order=LIST], [preference sorted list of transport types to try for local connections]),
+	[LOCAL_TRANSPORT_LIST=$withval],
+	[LOCAL_TRANSPORT_LIST=$DEFAULT_LOCAL_TRANS])
+AC_DEFINE_UNQUOTED([LOCAL_TRANSPORT_LIST], [$LOCAL_TRANSPORT_LIST],
+   [preference sorted list of transport types to try for local connections])
+AC_MSG_RESULT([$LOCAL_TRANSPORT_LIST])
 
 # Check for dlopen
 AC_MSG_CHECKING([if run-time linking is supported])
@@ -103,7 +139,7 @@ if test x$XLIB_LOADABLE_I18N = xyes; then
 	AC_SUBST(I18N_MODULE_LIBS,'${top_builddir}/src/libX11.la')
 fi
 AC_MSG_RESULT($XLIB_LOADABLE_I18N)
-	       
+
 AM_CONDITIONAL(XLIB_LOADABLE_I18N, test x$XLIB_LOADABLE_I18N = xyes)
 
 AC_MSG_CHECKING([if loadable Xcursor library support should be enabled])
@@ -117,7 +153,7 @@ if test x$XLIB_LOADABLE_XCURSOR = xyes; then
 		  [Use the X cursor library to load cursors])
 fi
 AC_MSG_RESULT($XLIB_LOADABLE_XCURSOR)
-		  
+
 # Checks for header files.
 AC_HEADER_STDC
 dnl AC_CHECK_HEADERS([stdio.h stdlib.h math.h])
@@ -232,7 +268,7 @@ AC_SUBST(KEYSYMDEF)
 
 AM_CONDITIONAL(UDC, test xfalse = xtrue)
 
-AC_ARG_ENABLE(xcms, 
+AC_ARG_ENABLE(xcms,
               AC_HELP_STRING([--disable-xcms],
                 [Disable Xlib support for CMS *EXPERIMENTAL*]),
               [XCMS=$enableval],[XCMS=yes])
@@ -275,18 +311,18 @@ if test "x$XF86BIGFONT" = "xyes"; then
     AC_SUBST(BIGFONT_LIBS)
 fi
 
-AC_ARG_ENABLE(xkb, 
+AC_ARG_ENABLE(xkb,
               AC_HELP_STRING([--disable-xkb],
                 [Disable XKB support *EXPERIMENTAL*]),
               [XKB=$enableval],[XKB=yes])
 
 XORG_MANPAGE_SECTIONS
 
-AC_ARG_ENABLE(man-pages, 
-	      AC_HELP_STRING([--enable-man-pages=section], 
+AC_ARG_ENABLE(man-pages,
+	      AC_HELP_STRING([--enable-man-pages=section],
 			     [Choose manual section for installing man pages]),
 		[LIBMAN=$enableval],[LIBMAN=yes])
-		
+
 if test "x$LIBMAN" != "xyes"; then
 	LIB_MAN_SUFFIX=$LIBMAN
 fi
@@ -308,7 +344,7 @@ AC_SUBST(XKBPROTO_REQUIRES)
 AC_FUNC_MMAP()
 composecache_default=$ac_cv_func_mmap_fixed_mapped
 AC_CHECK_FUNC(nl_langinfo, , [composecache_default=no])
-AC_ARG_ENABLE(composecache, 
+AC_ARG_ENABLE(composecache,
               AC_HELP_STRING([--disable-composecache],
                 [Disable compose table cache support]),
               [COMPOSECACHE=$enableval],[COMPOSECACHE=$composecache_default])
@@ -382,7 +418,7 @@ XORG_RELEASE_VERSION
 AC_OUTPUT([Makefile
            include/Makefile
 	   man/Makefile
-           man/xkb/Makefile	   
+           man/xkb/Makefile
            src/Makefile
            src/util/Makefile
 	   src/xcms/Makefile
