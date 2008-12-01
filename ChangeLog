@@ -1,12 +1,334 @@
-commit 5b7f3b98079ab730b037b33893521dbaa61f5234
-Author: Daniel Stone <daniel@fooishbar.org>
-Date:   Fri Sep 5 00:39:01 2008 +0300
+commit ae23c25b9349ab1d7ff81f3075c000cf35fc442b
+Author: Julien Cristau <jcristau@debian.org>
+Date:   Wed Nov 5 22:09:37 2008 +0100
 
-    Update to 1.1.5
+    Bump to 1.1.99.2
+
+commit d31e644c65c52828ea3e7abd94a8cf9aee12265c
+Author: Julien Cristau <jcristau@debian.org>
+Date:   Wed Nov 5 21:33:13 2008 +0100
+
+    Fix distcheck
+
+commit e6a7b70cdb2ae8b713012839a0a0bbb93817b8ef
+Author: Jamey Sharp <jamey@minilop.net>
+Date:   Wed Oct 29 14:00:33 2008 -0700
+
+    Support multiple independent internal sync handlers
     
-    Small bugfix and i18n-improvement release.
+    Xlib has several independent tasks that need to be performed with the
+    display unlocked. It does this by replacing the existing sync handler with
+    one of a variety of internal sync handlers. However, if multiple internal
+    sync handlers need to run, then the last one registering wins and
+    previously registered internal sync handlers are never invoked. This
+    manifested as a bug with DRI applications on Xlib/XCB as that requires
+    both an XID handler after every XID allocation, and the periodic sequence
+    number handler. The XID handler would win, and the sequence number handler
+    would never be invoked.
+    
+    Fix this by unifying the internal sync handler mechanism into a single
+    function that calls all of the known internal sync handlers. They all need
+    to deal with being called when not strictly necessary now.
+    
+    Signed-off-by: Keith Packard <keithp@keithp.com>
+    Signed-off-by: Jamey Sharp <jamey@minilop.net>
+    Signed-off-by: Josh Triplett <josh@freedesktop.org>
 
-commit 8c1dfc976a29f981f601503b9768d3414a70ba50
+commit 2dbaaab9c4e3894b33dcae850551dee5473431d5
+Author: Keith Packard <keithp@keithp.com>
+Date:   Sat Oct 11 21:44:21 2008 -0700
+
+    Ensure that _XReadEvents always leaves an event in the queue on return
+    
+    XNextEvent assumes that the event queue will be non-empty on return from
+    _XReadEvents, but with multiple event readers running, the previous change
+    could leave the queue empty on return from process_responses. Re-invoke
+    process_responses until the queue is non-empty.
+    
+    Signed-off-by: Keith Packard <keithp@keithp.com>
+
+commit bedfe68259037c5564fe52758c92b9c97729640a
+Author: Keith Packard <keithp@keithp.com>
+Date:   Sat Oct 11 21:10:23 2008 -0700
+
+    Permit only one Xlib thread to block waiting for events
+    
+    As Xlib queues events internally, we must prevent multiple Xlib threads from
+    entering XCB to wait for an event in case the queued event is to be
+    delivered to the thread which didn't manage to read it. In other words, let
+    only one Xlib thread into xcb_wait_for_event at a time.
+    
+    Jamey Sharp looked over my shoulder while making this fix and, while hating
+    my whitespace conventions, appears happy enough with the actual code.
+    
+    Signed-off-by: Keith Packard <keithp@keithp.com>
+
+commit cc19618d2eb3ed92a0b574aee26a7da8b4aed5d2
+Author: Jamey Sharp <jamey@minilop.net>
+Date:   Sun Mar 23 16:33:50 2008 -0700
+
+    Fix XAllocID race: hold the user display lock until we have a new XID.
+    
+    Xlib built --without-xcb is also vulnerable to this race, and a similar
+    fix might work there too.
+    
+    Also, use an XID that's truly invalid while waiting for the next XID to be
+    requested.
+
+commit 54e5c0941b0ded1628d559a9f0a3451ea96c299b
+Author: Josh Triplett <josh@freedesktop.org>
+Date:   Sat Mar 15 17:22:23 2008 -0700
+
+    Use XCB's new socket handoff mechanism rather than the old XCB Xlib lock.
+    
+    Previously, Xlib/XCB used XCB's Xlib lock to prevent XCB from sending
+    requests between calls to Xlib's LockDisplay and UnlockDisplay macros.
+    Xlib/XCB then sent all of its requests using XCB's xcb_send_request, and
+    had to flush its requests when unlocking the display.
+    
+    XCB 1.2 adds a new socket handoff mechanism, xcb_take_socket.  Replace
+    much of the existing Xlib/XCB implementation with the use of
+    xcb_take_socket to take ownership of the write side of the X connection
+    socket, and a return_socket callback which writes any outstanding requests
+    with xcb_writev.  This approach allows Xlib/XCB to use the same buffering
+    as traditional Xlib did.  In particular, programs which use Xlib/XCB and
+    never make XCB calls will never need to hand the socket back to XCB, and
+    vice versa.
+    
+    This allows us to discard large quantities of synchronization code from
+    Xlib/XCB, together with the synchronization bugs present in that code.
+    Several test cases which previously failed now work perfectly, including
+    multi-threaded ico.  In addition, the infamous locking correctness
+    assertions, triggered when double-locking or when unlocking without a
+    previous lock, no longer exist, because Xlib/XCB no longer has any reason
+    to care more about application locking than traditional Xlib does.
+    
+    Furthermore, the handoff approach provides great improvements to
+    performance.  Results from x11perf's XNoOp test, which represented the
+    worst case for the lock-based Xlib/XCB:
+    
+    Traditional Xlib:       average 19100000/sec
+    Lock-based Xlib/XCB:    average  3350000/sec
+    Handoff-based Xlib/XCB: average 17400000/sec
+    
+    Thus, for no-ops, the handoff mechanism provides more than a 4x speedup to
+    Xlib/XCB, bringing Xlib/XCB within 9% of traditional Xlib no-op
+    performance.  Of course, real-world workloads do not use no-op, so your
+    mileage may vary.  In particular, since no-ops represent the worst case,
+    we expect real workloads to more closely match the performance of
+    traditional Xlib.
+    
+    While removing synchronization code, we changed _XReply to not drop any
+    locks when calling xcb_wait_for_reply; previously, we had to carefully
+    avoid a deadlock between the Display lock and the XCB Xlib lock. Holding
+    the locks reduces implementation complexity and should not impact
+    applications.
+    
+    Commit by Jamey Sharp and Josh Triplett.
+    XCB's handoff mechanism inspired by Keith Packard.
+
+commit 5a19ac473f7a8046b0421fbd5d53da160c22ed75
+Author: Chris Ball <cjb@laptop.org>
+Date:   Mon Nov 3 22:57:29 2008 -0500
+
+    Remove configure check for xcb-xlib.
+    
+    xcb-xlib has been intentionally removed from libxcb; stop checking for
+    it at configure-time.
+
+commit 34b35dda0bb7f3cf0ad9ab95ad7953d35d24f71b
+Author: Josh Triplett <josh@freedesktop.org>
+Date:   Wed Oct 29 14:37:44 2008 -0700
+
+    .gitignore: Add dolt files
+
+commit 1290cccf2d90083eba852f5f413f7e3dff48ccd2
+Author: Peter Hutterer <peter.hutterer@redhat.com>
+Date:   Tue Oct 28 11:56:55 2008 +1030
+
+    man: fix formatting error in XkbGetIndicatorState man page.
+
+commit b1022fa6d7e97640049e93ffa108083fc8d71b05
+Author: James Cloos <cloos@jhcloos.com>
+Date:   Sat Oct 25 09:13:08 2008 -0400
+
+    Increase size of working arrays in the makekeys utility program.
+    
+    Makekeys is used to create an optimal hash of the keysyms defined
+    in x11proto’s keysymdef.h.
+    
+    The recent addition of new keysyms there has triggered a bug in
+    makekeys where it tries to use a zero on the rhs of the % (mod)
+    operator (resulting in a divide by zero error) whenever it fails
+    to find a solution within its constraints.
+    
+    Increasing the size of the arrays allows it to find a solution for
+    the current set of keysyms.
+    
+    Makekeys is only run durring the build process, so this has no impact
+    on users of libX11, only on the amount of VM needed to build it.
+    
+    It still needs a more complete fix, but this allows compiles to
+    progress until that is completed.
+
+commit 3e9afd501e40d76040635bd9a3045bcaf5a03b60
+Author: James Cloos <cloos@jhcloos.com>
+Date:   Sat Oct 11 01:03:14 2008 -0400
+
+    Dolt-ify
+    
+    Add dolt to acinclude.m4 and call it it configure.ac to speed compiles.
+
+commit 39c0b266cac8cbc15bf501d7869186862f01d823
+Author: Peter Hutterer <peter.hutterer@redhat.com>
+Date:   Wed Oct 15 14:30:20 2008 +1030
+
+    Add more keysyms for PS3 BD remotes, Ericsson Phones #16519
+    
+    X.Org Bug 16519 <https://bugs.freedesktop.org/show_bug.cgi?id=16519>
+
+commit d23aad31338e7d869d878d5aa1b6b91d20287005
+Author: Peter Hutterer <peter.hutterer@redhat.com>
+Date:   Mon Oct 13 09:41:59 2008 +1030
+
+    Add XF86Battery, XF86Bluetooth, XF86WLAN, XF86UWB to keysymdb.
+
+commit 214ea6f5fd6aeaa7303ea4a69f9aedabf219ec4c
+Author: Peter Hutterer <peter.hutterer@who-t.net>
+Date:   Thu Jul 24 15:44:26 2008 +0930
+
+    xkb: fix out-by-1 error in _XkbWriteKeyExplicit.
+    
+    Thanks to Michael Meeks, Novell Bug 369263.
+    https://bugzilla.novell.com/show_bug.cgi?id=369263
+
+commit e7ece39afc8e0adc3b6b1e70b337b98376754462
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Tue Oct 7 15:41:38 2008 -0700
+
+    Sun bug #6739431: double free in _X11TransConnectDisplay()
+    
+    Double free() introduced in bf53987eaf0fbd7f7627783fc39e7ee99e8361ba
+    After copying original_hostname to phostname, set original_hostname
+    to NULL, so we don't free the same pointer twice when we free both
+    original_hostname and phostname.
+    
+    <http://bugs.opensolaris.org/bugdatabase/view_bug.do?bug_id=6739431>
+
+commit 0877bc916afbd1ff8f1833edc930b765ea783576
+Author: Daniel Stone <daniel@fooishbar.org>
+Date:   Tue Sep 23 19:02:02 2008 +0300
+
+    configure.ac: Fix CC_FOR_BUILD logic error
+    
+    Turns out we were accidentally smashing it so that you couldn't set it
+    externally at all.  Oops.
+
+commit 58bf3aa746908f01c37be7045699e43a4e270944
+Author: John Tapsell <johnflux@gmail.com>
+Date:   Tue Sep 23 17:30:13 2008 +0300
+
+    Build: Use native compiler for makekeys
+    
+    makekeys needs to be run during the build process, as opposed to on the
+    target, so build it with either of gcc or cc to fix cross-compiling.
+    This can be overridden by setting $CC_FOR_BUILD.
+
+commit 340422a5c7a413faef18666cada27cee14615250
+Author: Adam Jackson <ajax@redhat.com>
+Date:   Wed Sep 17 12:54:34 2008 -0400
+
+    Fix the previous patch for the BadFont case.
+
+commit 2335eafe4b53c27f6f9ee1bab3e1f5842f896428
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Wed Sep 17 10:43:52 2008 -0400
+
+    Bug #17616: Fix an XCB leak when the client has a non-fatal error handler.
+
+commit db0b85db29699be6bf7e78dede655d59ba926dfc
+Author: Rafael Ávila de Espíndola <rafael.espindola@gmail.com>
+Date:   Sun Sep 14 19:15:26 2008 -0400
+
+    Fix problem with <dead_acute> <c> in pt_BR.UTF-8
+    
+    The <dead_acute> <C> and <dead_acute> <c> lines in the pt_BR UTF-8
+    Compose file show "Ç" and "ç" (c with cedilla accent) (akin to the
+    ISO 8859 pt_BR Compose file) as the string but specify the keysym
+    and comment for Ć and ć (c with acute accent).
+    
+    This commit normalizes those two lines to match the specified string.
+    
+    Fixes: https://bugs.freedesktop.org/show_bug.cgi?id=4671
+    
+    Signed-off-by: James Cloos <cloos@jhcloos.com>
+
+commit b065c011baa69b69e3ea77c30d5e153c0d103e2d
+Author: Michael Verret <michael.verret@gmail.com>
+Date:   Mon Sep 8 16:33:35 2008 -0400
+
+    Fix documentation typo
+    
+    Signed-off-by: James Cloos <cloos@jhcloos.com>
+
+commit 4213ea95185377bdd1b51e82933f331fc0f52e5b
+Author: James Cloos <cloos@jhcloos.com>
+Date:   Sat Sep 6 04:19:19 2008 -0400
+
+    Remove extraneous <angle brackets> from the Ethiopic Compose file.
+    
+    The am_ET.UTF-8 Compose file submitted in:
+    
+    https://bugs.freedesktop.org/show_bug.cgi?id=11307
+    
+    for the OLCP project used incorrect syntax.  (It has angle brackets around the
+    Uxxxx symbols on the right hand side rather than only on the left hand side).
+    
+    This bug is noted in OLPC’s ticket:
+    
+    http://dev.laptop.org/ticket/7474
+    http://dev.laptop.org/attachment/ticket/7474/olpc_7474_dead_vowels_libX11.patch
+
+commit 9df84b513dd2b6e65e6d528cfac6d4cc3ea46918
+Author: James Cloos <cloos@jhcloos.com>
+Date:   Mon Sep 1 17:49:33 2008 -0400
+
+    Complete the set of vulgar fractions
+    
+    Unicode 1.1 added thirds, fifths, sixths and eights;
+    we might as well catch up.
+    
+    (Unicode and ISO 10646 have 1/7 (U2150), 1/9 (U2151), 1/10 (U2152)
+    and 0/3 (U2189) in their pipelines, but those four can be added
+    here after they are published.)
+
+commit a788792e9de95f8db0639557859722a35087481d
+Author: James Cloos <cloos@jhcloos.com>
+Date:   Wed Aug 20 15:28:07 2008 -0400
+
+    nls (en_US) Re-remove long compositions that override shorter
+    
+    As reported in <https://bugs.freedesktop.org/show_bug.cgi?id=17228>:
+    
+      Commit a6f4bbf7
+        nls (en_US): remove long compositions that override shorter [...]
+        removed some longer compose sequences because there are shorter
+        ones which take preference over the longer. For example the
+        sequences:
+    
+          <Multi_key> <apostrophe> <comma> <c>   : U1E09 # ḉ
+          <Multi_key> <apostrophe> <comma> <C>   : U1E08 # Ḉ
+    
+        were removed becase there already was:
+    
+          <Multi_key> <apostrophe> <comma>       : U201A # ‚
+    
+      Then commit 4ba09125
+        Work on making the en_US and pt_BR UTF-8 Compose as similar as
+        possible added exactly the same key sequences again. Obviusly
+        they won't work.
+
+commit 55248e5c84c3fd8c349a3bb4cb15a1ec86989d74
 Author: James Cloos <cloos@jhcloos.com>
 Date:   Thu Jul 17 21:01:42 2008 -0400
 
@@ -21,9 +343,8 @@ Date:   Thu Jul 17 21:01:42 2008 -0400
     for Ç or ç.)
     
     This is further work on bug 10397.
-    (cherry picked from commit 55248e5c84c3fd8c349a3bb4cb15a1ec86989d74)
 
-commit b11ea7ab3a436745e5244599048516600e47ab5d
+commit 4ba091255bb953d53078ba5619d6751052c739f7
 Author: James Cloos <cloos@jhcloos.com>
 Date:   Thu Jul 17 17:16:50 2008 -0400
 
@@ -31,9 +352,8 @@ Date:   Thu Jul 17 17:16:50 2008 -0400
     
     The eventual goal here is to have a single primary UTF-8 Compose
     file which the locale-specific UTF-8 Compose.pre files can #include.
-    (cherry picked from commit 4ba091255bb953d53078ba5619d6751052c739f7)
 
-commit 04828f15866aa7cf43a03b399ac12a393f14f4f7
+commit 254522d3c24e0590732fc03cdd61ff4564819d94
 Author: James Cloos <cloos@jhcloos.com>
 Date:   Thu Jul 17 17:13:36 2008 -0400
 
@@ -44,9 +364,8 @@ Date:   Thu Jul 17 17:13:36 2008 -0400
     support for using <cedilla> instead of <comma> in said sequences.
     
     This commit makes both styles work.
-    (cherry picked from commit 254522d3c24e0590732fc03cdd61ff4564819d94)
 
-commit 685933616eb0d80644d26f092fd0a82339fe23da
+commit 7dc907f6032e1d5cbe4da0e414bdf2c569c04b44
 Author: James Cloos <cloos@jhcloos.com>
 Date:   Sat Jun 28 15:25:23 2008 -0400
 
@@ -54,9 +373,25 @@ Date:   Sat Jun 28 15:25:23 2008 -0400
     
     The new block was added twice to the en_US.UTF-8 Compose.pre;
     delete the duplicate.
-    (cherry picked from commit 7dc907f6032e1d5cbe4da0e414bdf2c569c04b44)
 
-commit 692f6ecc691e83c2601b90e32b1dc395e9dbe8c6
+commit 596e081b7457dcd1c4ad555ac140e6999239bc0d
+Author: Peter Hutterer <peter@cs.unisa.edu.au>
+Date:   Sat Jun 28 20:14:05 2008 +0930
+
+    Fix unbalanced parenthesis in XKBlib.h # 16551
+    
+    X.Org Bug 16551 <http://bugs.freedesktop.org/show_bug.cgi?id=16551>
+
+commit f6af6dd2f76c12b56ec166bb771457b9f08fe246
+Author: Adam Jackson <ajax@redhat.com>
+Date:   Tue Jun 24 13:16:53 2008 -0400
+
+    Bug #14898: Don't abuse the sprintf() implementation.
+    
+    The thing you're printing into should not itself appear in the list of
+    things to print from, that's bad juju.  Just use strcat().
+
+commit 21e464ec682ab23ba20ddf6bd72c6db214cfbe01
 Author: Khaled Hosny <khaledhosny@eglug.org>
 Date:   Thu Jun 19 18:26:11 2008 -0400
 
@@ -65,23 +400,75 @@ Date:   Thu Jun 19 18:26:11 2008 -0400
     Add some Arabic digraphs to utf-8 locales with a Compose.pre
     
     Signed-off-by: James Cloos <cloos@jhcloos.com>
-    (cherry picked from commit 21e464ec682ab23ba20ddf6bd72c6db214cfbe01)
 
-commit 9b2ab1130e273f6e25cb58d5a2aa7a87e909759e
+commit bf53987eaf0fbd7f7627783fc39e7ee99e8361ba
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Wed Jun 18 20:00:25 2008 -0700
+
+    Rework code to choose local connection types and fallback to others
+    
+    Adds --with-local-transport-order configure flag if you don't like the
+    default ordering (which is platform dependent)
+    
+    Includes fixes for these Sun/Solaris bug ids:
+    6678250 X Commands returning incorrect display value unix:0.0 not <system>:0.0
+    <http://bugs.opensolaris.org/bugdatabase/view_bug.do?bug_id=6678250>
+    6716481 libX11 should prefer Unix domain sockets over named pipes on Solaris
+    <http://bugs.opensolaris.org/bugdatabase/view_bug.do?bug_id=6716481>
+
+commit cf49e537014c3cb5aaee07e57400933e0bb72b6b
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Tue Jun 17 14:41:17 2008 -0700
+
+    Strip whitespace from end of lines in source files
+
+commit f76fd81dfbbd5cfae75c87ce0511e88e08529cf3
+Author: Jeff Smith <whydoubt@yahoo.com>
+Date:   Sun Jun 15 23:52:20 2008 -0500
+
+    Fix memory leak in XOpenDisplay
+    
+    Signed-off-by: Peter Hutterer <peter@cs.unisa.edu.au>
+
+commit fca0b0ba3f72b7284601d4690bba99fc80a92614
 Author: Jens Herden <jens@khmeros.info>
 Date:   Tue Jun 10 20:07:30 2008 +0300
 
     NLS: Add Khmer compose sequences (bug #5706)
     
     Add some Khmer digraphs to all locales with a Compose.pre.
-    (cherry picked from commit fca0b0ba3f72b7284601d4690bba99fc80a92614)
 
-commit 30f37e249d148c5dd557f114c9b44616a0b12b32
+commit e54cffb649b1622c17457e470cfab8cc56d38c97
+Merge: 19802cc... 721b574...
+Author: Daniel Stone <daniel@fooishbar.org>
+Date:   Tue Jun 10 20:04:30 2008 +0300
+
+    Merge branch 'master' of ssh://git.freedesktop.org/git/xorg/lib/libX11
+
+commit 721b574d36f1884c3f1bf7bd933646e2ed6680b5
+Author: Peter Hutterer <peter@cs.unisa.edu.au>
+Date:   Thu May 29 10:57:21 2008 +0930
+
+    Bump to 1.1.99.1
+
+commit 631d32d13247d1cf52c0833d438c5b38b01b17a4
+Author: Peter Hutterer <peter@cs.unisa.edu.au>
+Date:   Wed May 28 17:31:59 2008 +0930
+
+    Require xproto 7.0.13 and libxcb 1.1.90 (for GenericEvents)
+
+commit e9195db7257e418f83707233baeeb84b225caf4f
+Merge: c34f76f... a7f8556...
+Author: Peter Hutterer <peter@cs.unisa.edu.au>
+Date:   Thu May 22 12:14:28 2008 +0930
+
+    Merge branch 'master' into xge
+
+commit 19802ccd3909145e3ba2f6c073271cb5f3701685
 Author: Daniel Stone <daniel@fooishbar.org>
 Date:   Mon May 19 19:22:31 2008 +0300
 
     gitignore: Update with loads more bits from server
-    (cherry picked from commit 19802ccd3909145e3ba2f6c073271cb5f3701685)
 
 commit a7f85567a3e850fba0c44571453d2852ab1a09be
 Author: Adam Jackson <ajax@redhat.com>
@@ -92,6 +479,26 @@ Date:   Tue May 13 10:28:39 2008 -0400
     For network transports, there's enough delay in the network layer
     already without adding more.  For local transports, just hurry up
     and fail if the server isn't there.
+
+commit c34f76f475bc632490122e67b5a82575d69d5569
+Author: Peter Hutterer <peter@cs.unisa.edu.au>
+Date:   Mon May 12 21:46:24 2008 +0930
+
+    Pull down extra bytes when reading a GenericEvent (non-xcb).
+    
+    I refuse to take any responsibily for this code. It works, I guess.
+    But - all the flushing is done somewhere before that, so we might need to
+    flush here. Under some circumstances anyway. Don't ask me, I'm an optical
+    illusion.
+    
+    Build with xcb as transport layer highly recommended.
+
+commit c9b2ff1e6a607463993afa4a8d085857d97cc2f3
+Merge: 17d7dcb... 9129057...
+Author: Peter Hutterer <peter@cs.unisa.edu.au>
+Date:   Mon May 12 17:58:37 2008 +0930
+
+    Merge branch 'master' into xge
 
 commit 9129057bdbff0ec9cd8bb780cf7f85f134a291eb
 Author: Teemu Likonen <tlikonen@iki.fi>
@@ -323,6 +730,24 @@ Author: Jeremy Huddleston <jeremy@yuffie.local>
 Date:   Mon Dec 10 23:00:44 2007 -0800
 
     Added launchd support.
+
+commit 17d7dcbfced4a9417b33507bd3fd9b7dd8268242
+Merge: 5dfefd3... 13ac804...
+Author: Peter Hutterer <peter@cs.unisa.edu.au>
+Date:   Thu Dec 6 14:08:29 2007 +1030
+
+    Merge branch 'master' into xge
+
+commit 5dfefd3829d3ba7e41d5db0ad28e9dfee92fadd5
+Merge: a68a1cd... eff33ae...
+Author: Peter Hutterer <peter@cs.unisa.edu.au>
+Date:   Thu Dec 6 13:57:09 2007 +1030
+
+    Merge branch 'master' into xge
+    
+    Conflicts:
+    
+    	src/xcb_io.c
 
 commit 13ac80469f6958cabac596834e203bd9cb6d4c94
 Author: James Cloos <cloos@jhcloos.com>
@@ -960,6 +1385,12 @@ Author: Tilman Sauerbeck <tilman@code-monkey.de>
 Date:   Wed May 16 18:01:23 2007 +0200
 
     Constified error list.
+
+commit a68a1cd7cb990ba276fbc36a7591044d78b3d3c1
+Author: Peter Hutterer <peter@cs.unisa.edu.au>
+Date:   Tue May 15 16:54:01 2007 +0930
+
+    Add XGenericEvent definition and handling for long events.
 
 commit c76d30253f1483ac8200ad5c032a818907e65030
 Author: Jan Willem Stumpel <jstumpel@planet.nl>
