@@ -2,6 +2,8 @@ libx11 (2:1.2-1) UNRELEASED; urgency=low
 
   * New upstream release.
   * Remove obsolete ld.so.conf handling from libx11-6 postinst.
+  * Run autoreconf on build; add build-deps on automake, libtool, xutils-dev.
+  * Handle parallel builds.
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 21 Dec 2008 18:09:12 +0100
 

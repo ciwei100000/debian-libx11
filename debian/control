@@ -13,7 +13,10 @@ Build-Depends:
  x11proto-xext-dev,
  x11proto-xf86bigfont-dev,
  libxcb1-dev (>= 1.1.92),
- quilt
+ quilt,
+ automake,
+ libtool,
+ xutils-dev (>= 1:7.4+4)
 Standards-Version: 3.7.3
 Vcs-Git: git://git.debian.org/git/pkg-xorg/lib/libx11
 Vcs-Browser: http://git.debian.org/?p=pkg-xorg/lib/libx11.git

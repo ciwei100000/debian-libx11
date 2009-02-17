@@ -12,13 +12,14 @@
 include debian/xsfbs/xsfbs.mk
 
 CFLAGS = -Wall -g
-ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+ifneq (,$(filter noopt,$(DEB_BUILD_OPTIONS)))
 	CFLAGS += -O0
 else
 	CFLAGS += -O2
 endif
-ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
-	INSTALL_PROGRAM += -s
+ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+	MAKEFLAGS += -j$(NUMJOBS)
 endif
 
 # This is for maintainer's convenience. It really should be always on option
@@ -43,18 +44,21 @@ endif
 
 confflags += --enable-man-pages=3
 
-build: genscripts patch build-stamp
-build-stamp:
+configure: $(STAMP_DIR)/patch
+	dh_testdir
+	autoreconf -vfi
+
+build: build-stamp
+build-stamp: configure $(STAMP_DIR)/genscripts
 	dh_testdir
 
-	test -d obj-$(DEB_BUILD_GNU_TYPE) || mkdir obj-$(DEB_BUILD_GNU_TYPE)
+	mkdir -p obj-$(DEB_BUILD_GNU_TYPE)
 	cd obj-$(DEB_BUILD_GNU_TYPE) && \
 	../configure --prefix=/usr --mandir=\$${prefix}/share/man \
 	             --infodir=\$${prefix}/share/info $(confflags) \
 	             CFLAGS="$(CFLAGS)" 
 	cd obj-$(DEB_BUILD_GNU_TYPE) && $(MAKE)
-
-	touch build-stamp
+	>$@
 
 clean: xsfclean
 	dh_testdir
@@ -66,6 +70,10 @@ clean: xsfclean
 	rm -f conftest* */conftest*
 	rm -rf autom4te.cache */autom4te.cache
 	rm -rf obj-*
+	rm -f aclocal.m4 compile config.guess config.sub configure
+	rm -f depcomp install-sh ltmain.sh missing mkinstalldirs
+	rm -f src/config.h.in
+	rm -f $$(find -name Makefile.in)
 
 	dh_clean
 
