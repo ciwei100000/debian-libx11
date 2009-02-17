@@ -358,6 +358,7 @@ _XimXGetReadData(
 	    (void)memcpy(buf, prop_ret, (int)nitems);
 	    *ret_len  = (int)nitems;
 	    if (bytes_after_ret > 0) {
+		XFree(prop_ret);
 	        XGetWindowProperty(im->core.display,
 		    spec->lib_connect_wid, prop, 0L,
 		    ((length + bytes_after_ret + 3)/ 4), True, AnyPropertyType,
@@ -438,7 +439,7 @@ _XimXRead(Xim im, XPointer recv_buf, int buf_len, int *ret_len)
 {
     XEvent	*ev;
     XEvent	 event;
-    int		 len;
+    int		 len = 0;
     XSpecRec	*spec = (XSpecRec *)im->private.proto.spec;
     XPointer	  arg = spec->ev;
 
@@ -464,9 +465,7 @@ _XimXFlush(Xim im)
 }
 
 Public Bool
-_XimXConf(im, address)
-    Xim		 im;
-    char	*address;
+_XimXConf(Xim im, char *address)
 {
     XSpecRec	*spec;
 

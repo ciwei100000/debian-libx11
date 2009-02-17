@@ -1,21 +1,20 @@
 XCOMM UTF-8 (Unicode) compose sequence
 XCOMM David.Monniaux@ens.fr
 XCOMM
-XCOMM $XFree86: xc/nls/Compose/en_US.UTF-8,v 1.11 2004/01/06 13:14:04 pascal Exp $
 
 XCOMM Part 1 - Manual definitions
 
 XCOMM Spacing versions of dead accents
 <dead_tilde> <space>             	: "~"   asciitilde # TILDE
 <dead_tilde> <dead_tilde>        	: "~"   asciitilde # TILDE
-<dead_acute> <space>             	: "'"   apostrophe # APOSTROPHE
+<dead_acute> <space>             	: "´"   acute # ACUTE ACCENT
 <dead_acute> <dead_acute>        	: "´"   acute # ACUTE ACCENT
 <dead_grave> <space>             	: "`"   grave # GRAVE ACCENT
 <dead_grave> <dead_grave>        	: "`"   grave # GRAVE ACCENT
 <dead_circumflex> <space>        	: "^"   asciicircum # CIRCUMFLEX ACCENT
 <dead_circumflex> <dead_circumflex> 	: "^"   asciicircum # CIRCUMFLEX ACCENT
 <dead_abovering> <space>         	: "°"   degree # DEGREE SIGN
-<dead_abovering> <dead_abovering> 	: "°"   degree # DEGREE SIGN
+<dead_abovering> <dead_abovering> 	: "˚"   U02DA  # RING ABOVE
 <dead_macron> <space>            	: "¯"   macron # MACRON
 <dead_macron> <dead_macron>      	: "¯"   macron # MACRON
 <dead_breve> <space>             	: "˘"   breve # BREVE
@@ -23,7 +22,7 @@ XCOMM Spacing versions of dead accents
 <dead_abovedot> <space>          	: "˙"   abovedot # DOT ABOVE
 <dead_abovedot> <dead_abovedot>  	: "˙"   abovedot # DOT ABOVE
 <dead_diaeresis> <dead_diaeresis> 	: "¨"   diaeresis # DIAERESIS
-<dead_diaeresis> <space>         	: "\""   quotedbl # REVERSE SOLIDUS
+<dead_diaeresis> <space>         	: "¨"   diaeresis # DIAERESIS
 <dead_doubleacute> <space>       	: "˝"   U2dd # DOUBLE ACUTE ACCENT
 <dead_doubleacute> <dead_doubleacute> 	: "˝"   U2dd # DOUBLE ACUTE ACCENT
 <dead_caron> <space>             	: "ˇ"   caron # CARON
@@ -214,9 +213,6 @@ XCOMM Other symbols
 
 <Multi_key> <question> <exclam>         : "‽"   U203D # INTERROBANG
 <Multi_key> <exclam> <question>         : "‽"   U203D # INTERROBANG
-
-<Multi_key> <C> <C> <C> <P>             : "☭"   U262D # HAMMER AND SICKLE
-<Multi_key> <less> <3>                  : "♥"   U2665 # BLACK HEART SUIT
 
 XCOMM Part 2
 

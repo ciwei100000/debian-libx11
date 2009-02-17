@@ -2881,10 +2881,7 @@ int _XDefaultError(
 }
 
 /*ARGSUSED*/
-Bool _XDefaultWireError(display, he, we)
-    Display     *display;
-    XErrorEvent *he;
-    xError      *we;
+Bool _XDefaultWireError(Display *display, XErrorEvent *he, xError *we)
 {
     return True;
 }
@@ -3216,7 +3213,7 @@ static doData32(
 void _XData32(
     Display *dpy,
     long *data,
-    unsigned len,
+    unsigned len)
 {
     char packbuffer[PACKBUFFERSIZE];
     unsigned nunits = PACKBUFFERSIZE >> 2;
@@ -3280,9 +3277,7 @@ int _XGetHostname (
  * _XScreenOfWindow - get the Screen of a given window
  */
 
-Screen *_XScreenOfWindow (dpy, w)
-    Display *dpy;
-    Window w;
+Screen *_XScreenOfWindow(Display *dpy, Window w)
 {
     register int i;
     Window root;

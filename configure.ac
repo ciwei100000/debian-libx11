@@ -3,7 +3,7 @@
 
 AC_PREREQ(2.57)
 AC_INIT([libX11],
-        1.1.99.2,
+        1.2,
         [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],
         libX11)
 AC_CONFIG_SRCDIR([Makefile.am])
@@ -14,14 +14,15 @@ AM_MAINTAINER_MODE
 AM_CONFIG_HEADER([src/config.h])
 AC_CONFIG_HEADER([include/X11/XlibConf.h])
 
-# Require xorg-macros version 1.1.0 or newer for XORG_WITH_LINT macro
-m4_ifndef([XORG_MACROS_VERSION], [AC_FATAL([must install xorg-macros 1.1 or later before running autoconf/autogen])])
-XORG_MACROS_VERSION(1.1)
+# Require xorg-macros: XORG_CWARNFLAGS, XORG_CHANGELOG, XORG_WITH_LINT
+m4_ifndef([XORG_MACROS_VERSION], [AC_FATAL([must install xorg-macros 1.2 or later before running autoconf/autogen])])
+XORG_MACROS_VERSION(1.2)
 
 # Checks for programs.
 AC_PROG_LIBTOOL
 DOLT
 AC_PROG_CC
+XORG_CWARNFLAGS
 
 if test x"$CC_FOR_BUILD" = x; then
 	if test x"$cross_compiling" = xyes; then
@@ -204,17 +205,15 @@ AC_CHECK_LIB(c, getpwuid_r, [mtsafeapi="yes"], [mtsafeapi="no"])
 
 case x$xthreads in
 xyes)
-	AC_DEFINE(XTHREADS,[],[Whether libX11 is compiled with thread support])
+	AC_DEFINE(XTHREADS,1,[Whether libX11 is compiled with thread support])
 	if test x$mtsafeapi = xyes
 	then
-	AC_DEFINE(XUSE_MTSAFE_API,[],[Whether libX11 needs to use MT safe API's])
+	AC_DEFINE(XUSE_MTSAFE_API,1,[Whether libX11 needs to use MT safe API's])
 	fi
 	;;
 *)
 	;;
 esac
-AC_SUBST(XTHREADS)
-AC_SUBST(XUSE_MTSAFE_API)
 
 AC_CHECK_LIB(c, pthread_self, [thrstubs="no"], [thrstubs="yes"])
 AM_CONDITIONAL(THRSTUBS, test x$thrstubs = xyes)
@@ -380,8 +379,7 @@ X11_LIBDIR="${libdir}/X11"
 AC_DEFINE_DIR(X11_LIBDIR, X11_LIBDIR, [Location of libX11 library data])
 AC_SUBST(X11_LIBDIR)
 
-X11_CFLAGS="$X11_CFLAGS $XPROTO_CFLAGS"
-
+X11_CFLAGS="$CWARNFLAGS $X11_CFLAGS $XPROTO_CFLAGS"
 AC_SUBST(X11_CFLAGS)
 AC_SUBST(X11_LIBS)
 
@@ -414,6 +412,7 @@ AC_DEFINE_DIR(XERRORDB, XERRORDB, [Location of error message database])
 
 XORG_CHECK_MALLOC_ZERO
 XORG_RELEASE_VERSION
+XORG_CHANGELOG
 
 AC_OUTPUT([Makefile
            include/Makefile

@@ -40,11 +40,7 @@ PERFORMANCE OF THIS SOFTWARE.
 #include "Ximint.h"
 
 Bool
-_XimLocalFilter(d, w, ev, client_data)
-    Display	*d;
-    Window	 w;
-    XEvent	*ev;
-    XPointer	 client_data;
+_XimLocalFilter(Display *d, Window w, XEvent *ev, XPointer client_data)
 {
     Xic		 ic = (Xic)client_data;
     KeySym	 keysym;
@@ -104,7 +100,7 @@ _XimLocalFilter(d, w, ev, client_data)
 	    ic->private.local.brl_committed = 0;
 	    /* return back to client KeyPressEvent keycode == 0 */
 	    ev->xkey.keycode = 0;
-	    _XPutBackEvent(d, ev);
+	    XPutBackEvent(d, ev);
 	    /* initialize internal state for next key sequence */
 	    ic->private.local.context = ((Xim)ic->core.im)->private.local.top;
 	    return(True);
