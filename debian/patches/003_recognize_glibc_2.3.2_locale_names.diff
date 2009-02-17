@@ -55,6 +55,8 @@ Major "forward port" by Nathanael Nerode.
 Partially submitted upstream.  This is so large I don't expect it to all go in at once,
 but any bit would help.  --Nathanael
 
+Index: libx11/nls/compose.dir.pre
+===================================================================
 --- libx11.orig/nls/compose.dir.pre
 +++ libx11/nls/compose.dir.pre
 @@ -1,14 +1,22 @@
@@ -395,7 +397,7 @@ but any bit would help.  --Nathanael
  en_US.UTF-8/Compose:		eu_ES.UTF-8
 +en_US.UTF-8/Compose:		eu_FR.UTF-8
  en_US.UTF-8/Compose:		fa_IR.UTF-8
- en_US.UTF-8/Compose:		fi_FI.UTF-8
+ fi_FI.UTF-8/Compose:		fi_FI.UTF-8
  en_US.UTF-8/Compose:		fo_FO.UTF-8
 @@ -322,6 +403,8 @@
  en_US.UTF-8/Compose:		fr_LU.UTF-8
@@ -480,6 +482,8 @@ but any bit would help.  --Nathanael
  en_US.UTF-8/Compose:		tl_PH.UTF-8
  en_US.UTF-8/Compose:		tn_ZA.UTF-8
  en_US.UTF-8/Compose:		tr_TR.UTF-8
+Index: libx11/nls/locale.alias.pre
+===================================================================
 --- libx11.orig/nls/locale.alias.pre
 +++ libx11/nls/locale.alias.pre
 @@ -301,6 +301,12 @@
@@ -570,6 +574,8 @@ but any bit would help.  --Nathanael
  hrvatski:					hr_HR.ISO8859-2
  hungarian:					hu_HU.ISO8859-2
  icelandic.iso88591:				is_IS.ISO8859-1
+Index: libx11/nls/locale.dir.pre
+===================================================================
 --- libx11.orig/nls/locale.dir.pre
 +++ libx11/nls/locale.dir.pre
 @@ -9,8 +9,13 @@
@@ -790,7 +796,7 @@ but any bit would help.  --Nathanael
  en_US.UTF-8/XLC_LOCALE:			eu_ES.UTF-8
 +en_US.UTF-8/XLC_LOCALE:			eu_FR.UTF-8
  en_US.UTF-8/XLC_LOCALE:			fa_IR.UTF-8
- en_US.UTF-8/XLC_LOCALE:			fi_FI.UTF-8
+ fi_FI.UTF-8/XLC_LOCALE:			fi_FI.UTF-8
  en_US.UTF-8/XLC_LOCALE:			fo_FO.UTF-8
 @@ -344,6 +388,8 @@
  en_US.UTF-8/XLC_LOCALE:			fr_LU.UTF-8
