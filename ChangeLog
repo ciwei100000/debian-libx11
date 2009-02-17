@@ -1,3 +1,361 @@
+commit d497301707962f3b94542e999a36abffcfbd303d
+Author: Julien Cristau <jcristau@debian.org>
+Date:   Tue Feb 17 16:09:41 2009 +0100
+
+    Bump to 1.2
+
+commit 990e71361d1d7b79bf07b1dc93e4e905d4f1bdaf
+Author: Julien Cristau <jcristau@debian.org>
+Date:   Tue Feb 17 15:23:40 2009 +0100
+
+    Check Xmalloc return value in _XConnectXCB
+    
+    X.Org bug#19137 <http://bugs.freedesktop.org/show_bug.cgi?id=19137>
+    
+    Signed-off-by: Julien Cristau <jcristau@debian.org>
+
+commit b4b5893f69419ff577bbaa4d18f78e4ffd729a0c
+Author: James Cloos <cloos@jhcloos.com>
+Date:   Sat Feb 14 12:35:56 2009 -0500
+
+    dolt: allow older versions of bash to compile the library
+    
+    Cf xserver commit 7be6520d and bugzilla #19031.
+
+commit 20982d6866e24453642b0b592fa0f13a88aa747c
+Author: Will Thompson <will@willthompson.co.uk>
+Date:   Thu Feb 5 02:53:06 2009 +1100
+
+    NLS: Compose: Non-aliasing CCCP
+    
+    Oops, cccp aliased cc for question mark.  Upper-case it to avoid fail.
+    
+    Signed-off-by: Will Thompson <will@willthompson.co.uk>
+    Signed-off-by: Daniel Stone <daniel@fooishbar.org> (sorry)
+
+commit f052665394f3f0319e93a98f1d5d4ea287e1dd07
+Author: Will Thompson <will@willthompson.co.uk>
+Date:   Wed Feb 4 14:51:11 2009 +0000
+
+    Add two essential compose sequences
+    
+    Signed-off-by: Will Thompson <will@willthompson.co.uk>
+    Signed-off-by: Daniel Stone <daniel@fooishbar.org>
+
+commit d7bea6fa909bf34c43efe0ca8239ab0f9f3a415f
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Mon Feb 2 20:34:31 2009 -0800
+
+    Add README with pointers to mailing list, bugzilla & git repos
+    
+    Signed-off-by: Alan Coopersmith <alan.coopersmith@sun.com>
+
+commit f682c27e93512773122887d2cbabb1657af45d2e
+Author: Paulo Cesar Pereira de Andrade <pcpa@mandriva.com.br>
+Date:   Mon Feb 2 16:36:39 2009 -0200
+
+    Check if a function argument is NULL.
+    
+      This was an addition to patch (also by me)
+    https://bugs.freedesktop.org/attachment.cgi?id=14660
+    that was not added when rediscovering/correcting the problem.
+
+commit 427e9d45d424b84efd9fc499aebf8d72392844c5
+Author: Paulo Cesar Pereira de Andrade <pcpa@mandriva.com.br>
+Date:   Thu Feb 28 15:58:12 2008 -0300
+
+    Allow multiple inclusions of cursorfont.h, cosmetic patch.
+
+commit b91524a53e691f6a5d278fd8972b48a14ebeedeb
+Author: Paulo Cesar Pereira de Andrade <pcpa@mandriva.com.br>
+Date:   Thu Feb 28 15:54:43 2008 -0300
+
+    Don't add prototypes for functions that don't exist.
+    
+    Note that a full review was not done, only for functions that receive
+    char/short arguments, or one of it's parameters is a function pointer
+    that requires char/short arguments.
+
+commit 537eb52fe266ac439c4b383bb04a70017b709911
+Author: Paulo Cesar Pereira de Andrade <pcpa@mandriva.com.br>
+Date:   Thu Feb 28 15:50:27 2008 -0300
+
+    WORD64 compile fix. This bug catched on a overview of the code.
+    
+    The code is wrong since the first git revision, so it seens that it has
+    not been compiled with WORD64 for quite some time, there is also another
+    interesting code in xkb/XKBRdBuf.c:
+      <hash>ifdef WORD64
+      _XkbWriteCopyData32 Not Implemented Yet for sizeof(int)==8
+      <hash>endif
+    and possibly there are other similar problems.
+
+commit ffd0300fb74c6183208ae599133f2ded09e08d97
+Author: Brian Rogers <brian@xyzw.org>
+Date:   Sat Jan 31 10:37:51 2009 -0800
+
+    Initialize event_notify after allocating the memory for it.
+    
+    An uninitialized or otherwise invalid condition variable can apparently
+    cause a hang in pthread_cond_broadcast. Ekiga, openoffice, and xine
+    at least are freezing as a result of event_notify never being initialized.
+    
+    Signed-off-by: Brian Rogers <brian@xyzw.org>
+    Signed-off-by: Bart Massey <bart@cs.pdx.edu>
+
+commit 97fc6babd4ccaf300e25708868aa2a738893dc30
+Author: James Cloos <cloos@jhcloos.com>
+Date:   Thu Jan 29 20:10:41 2009 -0500
+
+    NLS: Add UTF-8 compose file for Finnish
+    
+    From bug report:
+    
+      https://bugs.freedesktop.org/show_bug.cgi?id=18747
+
+commit 1bd2966ed88f83479a066c6ca7da23a515979550
+Author: Paulo Cesar Pereira de Andrade <pcpa@mandriva.com.br>
+Date:   Thu Jan 29 20:25:15 2009 -0200
+
+    patches to avoid gcc warnings for libX11 (#4)
+    
+    Author is Peter Breitenlohner <peb@mppmu.mpg.de>
+    Bug #17946, attachment #19443
+    
+    This patch avoids the gcc warning
+    	../../../../libX11-1.1.5/modules/im/ximcp/imDefLkup.c:223: warning: passing arg 1 of `_XimProcSyncReply' from incompatible pointer type
+    (same as already done at other places)
+    
+    BTW: what is the difference between XIM (the type of ic->core.im)
+    and Xim ?
+
+commit f16dd6af3eb17a25b8ee03d6617a7acc6e919fb0
+Author: Paulo Cesar Pereira de Andrade <pcpa@mandriva.com.br>
+Date:   Thu Jan 29 20:22:21 2009 -0200
+
+    patches to avoid gcc warnings for libX11 (#3)
+    
+    Author is Peter Breitenlohner <peb@mppmu.mpg.de>
+    Bug #17946, attachment #19441
+    
+    This patch avoids the two gcc warnings
+    	../../../../libX11-1.1.5/modules/im/ximcp/imRm.c:413: warning: assignment discards qualifiers from pointer target type
+    	../../../../libX11-1.1.5/modules/im/ximcp/imRm.c:450: warning: assignment discards qualifiers from pointer target type
+    
+    Note, that this as a rather crude fix of the problem (and it is really a
+    shame to cast name_table to non-const).
+    
+    The right solution would be to declare XIMValuesList.supported_values
+    (in include/X11/Xlib.h) as 'const char **' (or '_Xconst char **').
+    This will, however, require extensive modifications in various places.
+
+commit cce75c5dce73fe1f8626ed9e6798138ada09a860
+Author: Paulo Cesar Pereira de Andrade <pcpa@mandriva.com.br>
+Date:   Thu Jan 29 20:20:18 2009 -0200
+
+    patches to avoid gcc warnings for libX11 (#2)
+    
+    Author is Peter Breitenlohner <peb@mppmu.mpg.de>
+    Bug #17946, attachment #19440
+    
+    Avoid a preprocessor message
+    	<stdin>:194: warning: no newline at end of file
+    
+    Two more such warnings (in XkbSAGroup.man and XkbSASetGroup.man)
+    seem to be caused by a truncated (or otherwise incomplete)
+    manpage.
+
+commit 692baebcc50f1e952800bfe4e2e6bc42f54e62fe
+Author: Paulo Cesar Pereira de Andrade <pcpa@mandriva.com.br>
+Date:   Thu Jan 29 20:12:24 2009 -0200
+
+    patches to avoid gcc warnings for libX11 (#1)
+    
+    Author is Peter Breitenlohner <peb@mppmu.mpg.de>
+    Bug #17946, attachment #19439
+    
+    Define as 1 (one) as done by autoconf and the command line
+    option, e.g. -DX11_t, not as empty.
+    
+    This avoids the gcc (3.4.6) warnings:
+    	../../libX11-1.1.5/src/x11_trans.c:27:1: warning: "X11_t" redefined
+    	<command line>:7:1: warning: this is the location of the previous definition
+    	../../libX11-1.1.5/src/x11_trans.c:28:1: warning: "TRANS_CLIENT" redefined
+    	<command line>:8:1: warning: this is the location of the previous definition
+    
+    Similarly, follow the autoconf convention to define XTHREADS
+    and XUSE_MTSAFE_API as one.
+    
+    This avoids analogous warnings when compiling libXcomposite,
+    libXcursor, and libXdamage.
+    
+    No reason to AC_SUBST XTHREADS and XUSE_MTSAFE_API (unused).
+
+commit a1977883c9f5ef0e515569d6e2ebccb07411f98c
+Author: Paulo Cesar Pereira de Andrade <pcpa@mandriva.com.br>
+Date:   Thu Jan 29 15:01:06 2009 -0200
+
+    Janitor: Correct some gcc/sparse warnings.
+    
+      Most remaining warnings are about XIM/Xim to/from conversion
+    and discarding const from pointers.
+
+commit 8ba0ca32a63c532f128bdca7f1bf982cab8e12be
+Author: Paulo Cesar Pereira de Andrade <pcpa@mandriva.com.br>
+Date:   Wed Jan 28 20:31:42 2009 -0200
+
+    Janitor: ansification, make distcheck, compiler warnings.
+    
+      Only convert to use "ansi prototypes" the functions warned from
+    compilation with "./autogen.sh --prefix=/usr", on a Linux computer.
+    
+      Also, only address "trivial" compiler warning fixes in this commit.
+    
+      The new .gitignore is the output of a command like:
+    % find . -name .gitignore -exec cat {} \; | sort | uniq
+    and only the toplevel .gitignore file was kept.
+
+commit 091c1624fd2f9d933329d6152e4ecd865aa7903a
+Author: Peter Hutterer <peter.hutterer@who-t.net>
+Date:   Tue Jan 13 12:05:54 2009 +1000
+
+    Fix wrong implies symbol.
+    
+    Quote Simos Xenitellis:
+    > I checked the gtk+ commit logs that go back to 2000, and I see that still it
+    > was
+    >
+    >   { 0x08ce, 0x21d2 }, /*                     implies ⇒ RIGHTWARDS
+    > DOUBLE ARROW */
+    >
+    > In XFree86, it appears there was an error when they converted the
+    > original table to
+    > http://cvsweb.xfree86.org/cvsweb/xc/lib/X11/imKStoUCS.c?rev=1.1&content-type=text/vnd.viewcvs-markup
+    > and the problem still shows up there (November 2000).
+    
+    http://lists.freedesktop.org/archives/xorg/2008-October/039743.html
+    
+    Reported by Erik Streb del Toro.
+
+commit e32521f19e0b07649b7e3a03d56a2bd556b138fb
+Author: James Cloos <cloos@jhcloos.com>
+Date:   Sun Dec 7 04:13:34 2008 -0500
+
+    [i18n] s/U00DC/Udiaeresis/g
+    
+    The xkeyboard-config keyboards generate the symbol Udiaeresis, not
+    U00DC.  Make sure the relevant Compose sequences expect the symbol
+    which the keyboards actually send.
+
+commit b7502abfe22f8dc009b21cda1172af221d8f9f32
+Author: James Cloos <cloos@jhcloos.com>
+Date:   Sun Dec 7 04:09:46 2008 -0500
+
+    Revert "For nls/*.pre, allow people to comment lines by starting them with '##'."
+    
+    As of commit c9d20e3 the initial double-hashes are replaced with proper C comments.
+    
+    This reverts commit a225a0be48770beb689d5ac5da97073634f7deab.
+
+commit c9d20e3f697c9cfae5511412023362c1db7449b1
+Author: James Cloos <cloos@jhcloos.com>
+Date:   Sun Dec 7 04:08:23 2008 -0500
+
+    Use C comments rather than initial doubled hashes to exclude lines from .pre files
+
+commit c34ce54d9eac2d8052dc5f205a2ab09866ef5d25
+Author: vehemens <vehemens@verizon.net>
+Date:   Sun Dec 7 01:18:26 2008 -0500
+
+    [i18n] Distribute new headers which were added for gb18030 support.
+    
+    big5hkscs.h and gbk.h, added in 67e34d7a, need to be in SOURCES to
+    make it into the tar.
+    
+    Completes 67e34d7a82ccd31f1208c0c43a6d58c3c05bf51.
+    
+    Signed-off-by: James Cloos <cloos@jhcloos.com>
+
+commit 418819558d2c60e58b4e3022ce0fadf2143488ac
+Author: Stefan Dirsch <sndirsch@suse.de>
+Date:   Sat Nov 22 22:01:07 2008 +0100
+
+    Fixed strange font mixups, when fontsets are still used (#2676, Novell #74299).
+
+commit 67e34d7a82ccd31f1208c0c43a6d58c3c05bf51a
+Author: Stefan Dirsch <sndirsch@suse.de>
+Date:   Sat Nov 22 19:40:54 2008 +0100
+
+    Added remaining xlib patch required for gb18030 support (#1573).
+
+commit 55782a0a1fe1560f1a9c0ed78bc7f2575c15abcf
+Author: Stefan Dirsch <sndirsch@suse.de>
+Date:   Sat Nov 22 17:53:06 2008 +0100
+
+    Added remaining hunk of Egbert's patch to prevent XIM deadlocks (#1182).
+
+commit c859446c500c883a67f7a86cab1a44844e24dade
+Author: Ken Thomases <ken@codeweavers.com>
+Date:   Fri Nov 21 13:58:10 2008 -0500
+
+    [i18n] Provide translation from XK_partialderivative (8ef) to Unicode (U2202)
+    
+    Signed-off-by: James Cloos <cloos@jhcloos.com>
+
+commit 5e68e94d852c730ef9264fc0d8ca61a2ffe98b53
+Author: Jeremy Huddleston <jeremyhu@freedesktop.org>
+Date:   Mon Nov 17 20:47:26 2008 -0800
+
+    Force local transport when using the launchd socket.
+    
+    Fixes a regression due to
+    bf53987eaf0fbd7f7627783fc39e7ee99e8361ba
+
+commit 7aca689ce14d314b5c8c72c8df76f53f76ab467c
+Author: Peter Hutterer <peter.hutterer@redhat.com>
+Date:   Fri Nov 14 10:32:50 2008 +1000
+
+    Add XF86Suspend, XF86Hibernate to KeysymDB.
+
+commit d16b11f25f8265e651def8d80bcd430c0448e664
+Author: James Cloos <cloos@jhcloos.com>
+Date:   Tue Nov 11 19:43:39 2008 -0500
+
+    [nls] Annotate the Bépo compose sequences
+    
+    Add comments with the UCS names.
+    Add utf-8 strings for each result.
+    Format for easy reading.
+
+commit 730298464240be6f65b32416b3f9b20062c61825
+Author: James Cloos <cloos@jhcloos.com>
+Date:   Tue Nov 11 16:41:34 2008 -0500
+
+    [nls]  Add some UTF-8 Compose sequences
+    
+    As requested for the Bépo keyboard layout (http://clavier-dvorak.org/wiki/).
+    
+    Cf. bugs:
+    
+      https://bugs.freedesktop.org/show_bug.cgi?id=17821
+      https://bugs.freedesktop.org/show_bug.cgi?id=17822
+
+commit ad6008a0c92733826983eb93f063d3d6276007d8
+Author: Colin Harrison <colin.harrison@virgin.net>
+Date:   Thu Nov 6 17:48:21 2008 -0500
+
+    Fix copy/paste typo in imLcPrs
+    
+    Signed-off-by: James Cloos <cloos@jhcloos.com>
+
+commit 0f0168ad18f8a280fc5a689eb02cfaa62d022ea6
+Author: Adam Jackson <ajax@redhat.com>
+Date:   Thu Nov 6 14:54:13 2008 -0500
+
+    Fix leak in _XimXGetReadData
+    
+    Spotted by Denis Dzyubenko
+
 commit ae23c25b9349ab1d7ff81f3075c000cf35fc442b
 Author: Julien Cristau <jcristau@debian.org>
 Date:   Wed Nov 5 22:09:37 2008 +0100

@@ -1,5 +1,6 @@
-libx11 (2:1.1.99.2-2) UNRELEASED; urgency=low
+libx11 (2:1.2-1) UNRELEASED; urgency=low
 
+  * New upstream release.
   * Remove obsolete ld.so.conf handling from libx11-6 postinst.
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 21 Dec 2008 18:09:12 +0100
