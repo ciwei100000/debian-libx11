@@ -6,6 +6,8 @@ libx11 (2:1.2-1) UNRELEASED; urgency=low
   * Handle parallel builds.
   * Refresh patches 003_recognize_glibc_2.3.2_locale_names.diff and
     012_ru_RU_UTF-8_XLC_LOCALE.diff.
+  * Use a wildcard for usr/share/X11/locale instead of listing every single
+    file.
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 21 Dec 2008 18:09:12 +0100
 
