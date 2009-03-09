@@ -1,4 +1,4 @@
-libx11 (2:1.2-1) UNRELEASED; urgency=low
+libx11 (2:1.2-1) unstable; urgency=low
 
   * New upstream release.
   * Remove obsolete ld.so.conf handling from libx11-6 postinst.
@@ -9,7 +9,7 @@ libx11 (2:1.2-1) UNRELEASED; urgency=low
   * Use a wildcard for usr/share/X11/locale instead of listing every single
     file.
 
- -- Julien Cristau <jcristau@debian.org>  Sun, 21 Dec 2008 18:09:12 +0100
+ -- Julien Cristau <jcristau@debian.org>  Mon, 09 Mar 2009 16:36:09 +0100
 
 libx11 (2:1.1.99.2-1) experimental; urgency=low
 
