@@ -95,13 +95,11 @@ Index: libx11/nls/compose.dir.pre
  iso8859-6/Compose:		ar_YE.ISO8859-6
  iso8859-9e/Compose:		az_AZ.ISO8859-9E
 -koi8-c/Compose:			a3_AZ.KOI8-C
--microsoft-cp1251/Compose:	be_BY.CP1251
 +koi8-c/Compose:			az_AZ.KOI8-C
 +iso8859-5/Compose:     be_BY.ISO8859-5
-+XCOMM microsoft-cp1251/Compose:    be_BY.CP1251
+ microsoft-cp1251/Compose:	be_BY.CP1251
  iso8859-5/Compose:		bg_BG.ISO8859-5
--microsoft-cp1251/Compose:	bg_BG.CP1251
-+XCOMM microsoft-cp1251/Compose:    bg_BG.CP1251
+ microsoft-cp1251/Compose:	bg_BG.CP1251
 +koi8-r/Compose:            bg_BG.KOI8-R
  iso8859-1/Compose:		br_FR.ISO8859-1
  iso8859-14/Compose:		br_FR.ISO8859-14
@@ -172,14 +170,7 @@ Index: libx11/nls/compose.dir.pre
  isiri-3342/Compose:		fa_IR.ISIRI-3342
  iso8859-1/Compose:		fi_FI.ISO8859-1
  iso8859-15/Compose:		fi_FI.ISO8859-15
-@@ -127,17 +159,15 @@
- iso8859-14/Compose:		gv_GB.ISO8859-14
- iso8859-15/Compose:		gv_GB.ISO8859-15
- iso8859-8/Compose:		he_IL.ISO8859-8
--microsoft-cp1255/Compose:	he_IL.CP1255
-+XCOMM microsoft-cp1255/Compose:	he_IL.CP1255
- iscii-dev/Compose:		hi_IN.ISCII-DEV
- iso8859-2/Compose:		hr_HR.ISO8859-2
+@@ -133,11 +165,9 @@
  iso8859-2/Compose:		hu_HU.ISO8859-2
  armscii-8/Compose:		hy_AM.ARMSCII-8
  iso8859-1/Compose:		id_ID.ISO8859-1
@@ -214,16 +205,7 @@ Index: libx11/nls/compose.dir.pre
  iso8859-4/Compose:		lt_LT.ISO8859-4
  iso8859-13/Compose:		lt_LT.ISO8859-13
  iso8859-4/Compose:		lv_LV.ISO8859-4
-@@ -161,7 +197,7 @@
- iso8859-13/Compose:		mi_NZ.ISO8859-13
- iso8859-5/Compose:		mk_MK.ISO8859-5
- XCOMM mk_MK.UTF-8/Compose:		mk_MK.UTF-8
--microsoft-cp1251/Compose:	mk_MK.CP1251
-+XCOMM microsoft-cp1251/Compose:	mk_MK.CP1251
- iso8859-1/Compose:		ms_MY.ISO8859-1
- iso8859-3/Compose:		mt_MT.ISO8859-3
- iso8859-1/Compose:		nl_BE.ISO8859-1
-@@ -180,30 +216,38 @@
+@@ -180,25 +216,33 @@
  iso8859-15/Compose:		ny_NO.ISO8859-15
  iso8859-1/Compose:		oc_FR.ISO8859-1
  iso8859-15/Compose:		oc_FR.ISO8859-15
@@ -245,11 +227,10 @@ Index: libx11/nls/compose.dir.pre
  iso8859-1/Compose:		pt_PT.ISO8859-1
  iso8859-15/Compose:		pt_PT.ISO8859-15
  iso8859-2/Compose:		ro_RO.ISO8859-2
-+XCOMM microsoft-cp1251/Compose:    ru_RU.CP1251
  koi8-r/Compose:			ru_RU.KOI8-R
--iso8859-5/Compose:		ru_RU.ISO8859-5
--microsoft-cp1251/Compose:	ru_RU.CP1251
-+XCOMM microsoft-cp1251/Compose:    ru_UA.CP1251
+ iso8859-5/Compose:		ru_RU.ISO8859-5
+ microsoft-cp1251/Compose:	ru_RU.CP1251
++microsoft-cp1251/Compose:	ru_UA.CP1251
  koi8-u/Compose:			ru_UA.KOI8-U
  iso8859-1/Compose:		rw_RW.ISO8859-1
  iso8859-2/Compose:		sh_YU.ISO8859-2
@@ -262,13 +243,7 @@ Index: libx11/nls/compose.dir.pre
  iso8859-2/Compose:		sq_AL.ISO8859-2
  iso8859-2/Compose:		sr_CS.ISO8859-2
  iso8859-5/Compose:		sr_CS.ISO8859-5
- iso8859-2/Compose:		sr_YU.ISO8859-2
- iso8859-5/Compose:		sr_YU.ISO8859-5
-+XCOMM microsoft-cp1251/Compose:    sr_YU.CP1251
- iso8859-1/Compose:		ss_ZA.ISO8859-1
- iso8859-1/Compose:		st_ZA.ISO8859-1
- iso8859-1/Compose:		sv_FI.ISO8859-1
-@@ -212,38 +256,59 @@
+@@ -212,38 +256,57 @@
  iso8859-15/Compose:		sv_SE.ISO8859-15
  tscii-0/Compose:		ta_IN.TSCII-0
  koi8-c/Compose:			tg_TJ.KOI8-C
@@ -284,17 +259,15 @@ Index: libx11/nls/compose.dir.pre
  koi8-c/Compose:			tt_RU.KOI8-C
 +iso8859-5/Compose:     uk_UA.ISO8859-5
  koi8-u/Compose:			uk_UA.KOI8-U
--microsoft-cp1256/Compose:	ur_PK.CP1256
-+XCOMM microsoft-cp1251/Compose:    uk_UA.CP1251
-+XCOMM microsoft-cp1256/Compose:    ur_PK.CP1256
+ microsoft-cp1256/Compose:	ur_PK.CP1256
 +iso8859-1/Compose:     uz_UZ.ISO8859-1
  vi_VN.viscii/Compose:		vi_VN.VISCII
  vi_VN.tcvn/Compose:		vi_VN.TCVN
  iso8859-1/Compose:		wa_BE.ISO8859-1
 +iso8859-15/Compose:        wa_BE.ISO8859-15
  iso8859-1/Compose:		xh_ZA.ISO8859-1
-+XCOMM microsoft-cp1255/Compose:    yi_US.CP1255
- microsoft-cp1255/Compose:	yi_US.CP1256
+-microsoft-cp1255/Compose:	yi_US.CP1256
++microsoft-cp1255/Compose:	yi_US.CP1255
  zh_CN/Compose:			zh_CN.eucCN
 -zh_CN/Compose:			zh_CN.GB2312
 -zh_CN.gbk/Compose:		zh_CN.GBK
@@ -334,7 +307,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		ar_IQ.UTF-8
  en_US.UTF-8/Compose:		ar_JO.UTF-8
  en_US.UTF-8/Compose:		ar_KW.UTF-8
-@@ -253,15 +318,18 @@
+@@ -253,15 +316,18 @@
  en_US.UTF-8/Compose:		ar_OM.UTF-8
  en_US.UTF-8/Compose:		ar_QA.UTF-8
  en_US.UTF-8/Compose:		ar_SA.UTF-8
@@ -354,7 +327,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		ca_AD.UTF-8
  en_US.UTF-8/Compose:		ca_ES.UTF-8
  en_US.UTF-8/Compose:		ca_FR.UTF-8
-@@ -279,18 +347,29 @@
+@@ -279,18 +345,29 @@
  el_GR.UTF-8/Compose:		el_CY.UTF-8
  el_GR.UTF-8/Compose:		el_GR.UTF-8
  en_US.UTF-8/Compose:		en_AU.UTF-8
@@ -385,7 +358,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		es_AR.UTF-8
  en_US.UTF-8/Compose:		es_BO.UTF-8
  en_US.UTF-8/Compose:		es_CL.UTF-8
-@@ -313,6 +392,7 @@
+@@ -313,6 +390,7 @@
  en_US.UTF-8/Compose:		es_VE.UTF-8
  en_US.UTF-8/Compose:		et_EE.UTF-8
  en_US.UTF-8/Compose:		eu_ES.UTF-8
@@ -393,7 +366,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		fa_IR.UTF-8
  fi_FI.UTF-8/Compose:		fi_FI.UTF-8
  en_US.UTF-8/Compose:		fo_FO.UTF-8
-@@ -323,6 +403,8 @@
+@@ -323,6 +401,8 @@
  en_US.UTF-8/Compose:		fr_LU.UTF-8
  en_US.UTF-8/Compose:		ga_IE.UTF-8
  en_US.UTF-8/Compose:		gd_GB.UTF-8
@@ -402,7 +375,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		gl_ES.UTF-8
  en_US.UTF-8/Compose:		gu_IN.UTF-8
  en_US.UTF-8/Compose:		gv_GB.UTF-8
-@@ -336,10 +418,13 @@
+@@ -336,10 +416,13 @@
  en_US.UTF-8/Compose:		it_CH.UTF-8
  en_US.UTF-8/Compose:		it_IT.UTF-8
  en_US.UTF-8/Compose:		iu_CA.UTF-8
@@ -416,7 +389,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		ko_KR.UTF-8
  en_US.UTF-8/Compose:		kw_GB.UTF-8
  en_US.UTF-8/Compose:		ky_KG.UTF-8
-@@ -348,8 +433,12 @@
+@@ -348,8 +431,12 @@
  en_US.UTF-8/Compose:		lv_LV.UTF-8
  en_US.UTF-8/Compose:		mi_NZ.UTF-8
  en_US.UTF-8/Compose:		mk_MK.UTF-8
@@ -429,7 +402,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		nl_BE.UTF-8
  en_US.UTF-8/Compose:		nl_NL.UTF-8
  en_US.UTF-8/Compose:		nn_NO.UTF-8
-@@ -357,11 +446,17 @@
+@@ -357,11 +444,17 @@
  en_US.UTF-8/Compose:		nb_NO.UTF-8
  en_US.UTF-8/Compose:		nr_ZA.UTF-8
  en_US.UTF-8/Compose:		nso_ZA.UTF-8
@@ -450,7 +423,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		ph_PH.UTF-8
  en_US.UTF-8/Compose:		pl_PL.UTF-8
  en_US.UTF-8/Compose:		pp_AN.UTF-8
-@@ -371,10 +466,14 @@
+@@ -371,10 +464,14 @@
  en_US.UTF-8/Compose:		ru_RU.UTF-8
  en_US.UTF-8/Compose:		ru_UA.UTF-8
  en_US.UTF-8/Compose:		rw_RW.UTF-8
@@ -465,7 +438,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		sq_AL.UTF-8
  en_US.UTF-8/Compose:		sr_CS.UTF-8
  en_US.UTF-8/Compose:		sr_ME.UTF-8
-@@ -385,8 +484,12 @@
+@@ -385,8 +482,12 @@
  en_US.UTF-8/Compose:		sv_FI.UTF-8
  en_US.UTF-8/Compose:		sv_SE.UTF-8
  en_US.UTF-8/Compose:		ta_IN.UTF-8
