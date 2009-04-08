@@ -15,6 +15,9 @@ libx11 (2:1.2.1-1) UNRELEASED; urgency=low
   * 003_recognize_glibc_2.3.2_locale_names.diff: don't comment out the eo_XX
     entries from compose.dir and locale.dir (closes: #479058).  Thanks, Luiz
     Portella!
+  * 009_remove_th_Compose.diff: new patch, comment out the th_TH.UTF-8 entry
+    from compose.dir, to allow Thai XIM as default for X apps
+    (closes: #520509).  Thanks, Theppitak Karoonboonyanan!
 
  -- Julien Cristau <jcristau@debian.org>  Wed, 08 Apr 2009 02:37:36 +0200
 
