@@ -3,7 +3,7 @@
 
 AC_PREREQ(2.57)
 AC_INIT([libX11],
-        1.2,
+        1.2.1,
         [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],
         libX11)
 AC_CONFIG_SRCDIR([Makefile.am])
@@ -49,6 +49,7 @@ AC_SUBST(XPROTO_CFLAGS)
 case "$ac_cv_use_xcb" in
 no)
 	X11_REQUIRES="xau xcmiscproto bigreqsproto"
+	X11_EXTRA_DEPS="xau xdmcp"
 	PKG_CHECK_MODULES(XDMCP, xdmcp)
 	AC_CHECK_LIB(Xdmcp, XdmcpWrap, [xdmauth="yes"], [xdmauth="no"], [$XDMCP_LIBS])
 	AC_DEFINE(USE_XCB, 0, [Use XCB for low-level protocol implementation])
@@ -395,7 +396,10 @@ X11_LOCALEDATADIR="${X11_DATADIR}/locale"
 AC_DEFINE_DIR(XLOCALEDATADIR, X11_LOCALEDATADIR, [Location of libX11 locale data])
 AC_SUBST(X11_LOCALEDATADIR)
 
-X11_LOCALELIBDIR="${X11_LIBDIR}/locale"
+AC_ARG_WITH(locale-lib-dir,	AS_HELP_STRING([--with-locale-lib-dir=DIR],
+ [Directory where locale libraries files are installed (default: $libdir/X11/locale)]),
+				[ X11_LOCALELIBDIR="$withval" ],
+				[ X11_LOCALELIBDIR="${X11_LIBDIR}/locale" ])
 AC_DEFINE_DIR(XLOCALELIBDIR, X11_LOCALELIBDIR, [Location of libX11 locale libraries])
 AC_SUBST(X11_LOCALELIBDIR)
 
@@ -439,6 +443,7 @@ AC_OUTPUT([Makefile
 	   nls/C/Makefile
 	   nls/el_GR.UTF-8/Makefile
 	   nls/en_US.UTF-8/Makefile
+	   nls/fi_FI.UTF-8/Makefile
 	   nls/georgian-academy/Makefile
 	   nls/georgian-ps/Makefile
 	   nls/ibm-cp1133/Makefile
@@ -476,6 +481,7 @@ AC_OUTPUT([Makefile
 	   nls/mulelao-1/Makefile
 	   nls/nokhchi-1/Makefile
 	   nls/pt_BR.UTF-8/Makefile
+	   nls/ru_RU.UTF-8/Makefile
 	   nls/tatar-cyr/Makefile
 	   nls/th_TH/Makefile
 	   nls/th_TH.UTF-8/Makefile
