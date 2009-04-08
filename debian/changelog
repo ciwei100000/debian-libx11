@@ -1,4 +1,4 @@
-libx11 (2:1.2.1-1) UNRELEASED; urgency=low
+libx11 (2:1.2.1-1) unstable; urgency=low
 
   * New upstream release.
     + fixes fi_FI.UTF-8 locale (closes: #519474)
@@ -19,7 +19,7 @@ libx11 (2:1.2.1-1) UNRELEASED; urgency=low
     from compose.dir, to allow Thai XIM as default for X apps
     (closes: #520509).  Thanks, Theppitak Karoonboonyanan!
 
- -- Julien Cristau <jcristau@debian.org>  Wed, 08 Apr 2009 02:37:36 +0200
+ -- Julien Cristau <jcristau@debian.org>  Wed, 08 Apr 2009 12:31:21 +0100
 
 libx11 (2:1.2-1) unstable; urgency=low
 
