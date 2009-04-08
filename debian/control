@@ -55,7 +55,7 @@ Description: X11 client-side library
  git://anongit.freedesktop.org/git/xorg/lib/libX11
 
 Package: libx11-6-dbg
-Section: libdevel
+Section: debug
 Architecture: any
 Priority: extra
 Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6 (= ${binary:Version})
@@ -117,7 +117,7 @@ Description: Xlib/XCB interface library
  git://anongit.freedesktop.org/git/xorg/lib/libX11
 
 Package: libx11-xcb1-dbg
-Section: libdevel
+Section: debug
 Architecture: any
 Priority: extra
 Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-xcb1 (= ${binary:Version})
