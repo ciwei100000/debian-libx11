@@ -12,6 +12,9 @@ libx11 (2:1.2.1-1) UNRELEASED; urgency=low
   * 003_recognize_glibc_2.3.2_locale_names.diff: don't comment out the
     microsoft-cp* entries from compose.dir (closes: #511354).  Thanks, Sergei
     Golovan!
+  * 003_recognize_glibc_2.3.2_locale_names.diff: don't comment out the eo_XX
+    entries from compose.dir and locale.dir (closes: #479058).  Thanks, Luiz
+    Portella!
 
  -- Julien Cristau <jcristau@debian.org>  Wed, 08 Apr 2009 02:37:36 +0200
 
