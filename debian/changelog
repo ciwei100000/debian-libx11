@@ -2,6 +2,8 @@ libx11 (2:1.2.1-1) UNRELEASED; urgency=low
 
   * New upstream release.
   * Patch 012_ru_RU_UTF-8_XLC_LOCALE.diff removed, applied upstream.
+  * Update patches 003_recognize_glibc_2.3.2_locale_names.diff,
+    006_tailor_pt_BR.UTF-8_Compose.diff and 015_russian_locale_alias.diff.
 
  -- Julien Cristau <jcristau@debian.org>  Wed, 08 Apr 2009 02:37:36 +0200
 
