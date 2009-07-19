@@ -9,8 +9,9 @@ libx11 (2:1.2.2-1) UNRELEASED; urgency=low
   * New upstream release.
     + Fix fi_FI.UTF-8, closes: #519474.
     + Fix thai XIM filtering keys when NumLock/CapsLock is on, closes: #443800.
+  * Add myself to Uploaders.
 
- -- Brice Goglin <bgoglin@debian.org>  Sun, 19 Jul 2009 19:19:30 +0200
+ -- Brice Goglin <bgoglin@debian.org>  Sun, 19 Jul 2009 19:20:22 +0200
 
 libx11 (2:1.2.1-1) unstable; urgency=low
 
