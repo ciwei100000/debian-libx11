@@ -8,8 +8,8 @@ http://bugs.debian.org/97433
 
 Index: libx11/nls/iso8859-15/Compose.pre
 ===================================================================
---- libx11.orig/nls/iso8859-15/Compose.pre
-+++ libx11/nls/iso8859-15/Compose.pre
+--- libx11.orig/nls/iso8859-15/Compose.pre	2009-07-19 20:21:38.000000000 +0200
++++ libx11/nls/iso8859-15/Compose.pre	2009-07-19 20:36:47.000000000 +0200
 @@ -157,8 +157,7 @@
  <Multi_key> <minus> <colon>		: "\367"	division
  <Multi_key> <colon> <minus>		: "\367"	division

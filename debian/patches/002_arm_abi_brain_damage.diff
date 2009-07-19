@@ -10,9 +10,9 @@ Not submitted upstream to XFree86 or X.Org.
 
 Index: libx11/include/X11/Xlib.h
 ===================================================================
---- libx11.orig/include/X11/Xlib.h
-+++ libx11/include/X11/Xlib.h
-@@ -1083,7 +1083,12 @@
+--- libx11.orig/include/X11/Xlib.h	2009-07-19 20:36:43.000000000 +0200
++++ libx11/include/X11/Xlib.h	2009-07-19 20:36:47.000000000 +0200
+@@ -1062,7 +1062,12 @@
  typedef struct {		/* normal 16 bit characters are two bytes */
      unsigned char byte1;
      unsigned char byte2;
