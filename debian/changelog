@@ -1,10 +1,16 @@
-libx11 (2:1.2.1-2) UNRELEASED; urgency=low
+libx11 (2:1.2.2-1) UNRELEASED; urgency=low
 
+  [ Julien Cristau ]
   * Move dbg packages to new debug section.
   * Kill preinst which handled upgrades from early Ubuntu versions (before
     breezy).  This is long obsolete.
 
- -- Julien Cristau <jcristau@debian.org>  Wed, 08 Apr 2009 13:23:47 +0100
+  [ Brice Goglin ]
+  * New upstream release.
+    + Fix fi_FI.UTF-8, closes: #519474.
+    + Fix thai XIM filtering keys when NumLock/CapsLock is on, closes: #443800.
+
+ -- Brice Goglin <bgoglin@debian.org>  Sun, 19 Jul 2009 19:19:30 +0200
 
 libx11 (2:1.2.1-1) unstable; urgency=low
 
