@@ -1,6 +1,10 @@
 libx11 (2:1.2.2-2) UNRELEASED; urgency=low
 
+  [ Brice Goglin ]
   * Bump Standards-Version to 3.8.2.
+
+  [ Julien Cristau ]
+  * Drop 002_arm_abi_brain_damage.diff, the old ABI arm port is gone.
 
  -- Brice Goglin <bgoglin@debian.org>  Sun, 19 Jul 2009 22:32:52 +0200
 
