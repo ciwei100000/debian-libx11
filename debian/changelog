@@ -8,6 +8,7 @@ libx11 (2:1.2.99.901-1) UNRELEASED; urgency=low
   * Use a glob in libx11-6.install.
   * Add tentative symbols file for libX11.so.6.  Many private symbols still
     included.
+  * Build-depend on dpkg 1.15.3, to get support for tags in the symbols file.
   * New upstream release candidate
     + add {left,right}wards arrow to en_US.UTF-8 compose table
       (closes: #532117).  Thanks, Filippo Giunchedi!
