@@ -5,7 +5,7 @@ libx11 (2:1.2.99.901-1) UNRELEASED; urgency=low
 
   [ Julien Cristau ]
   * Drop 002_arm_abi_brain_damage.diff, the old ABI arm port is gone.
-  * Use a glob in libx11-6.install.
+  * Use a glob in libx11-6.install and libx11-xcb1.install.
   * Add tentative symbols file for libX11.so.6.  Many private symbols still
     included.
   * Build-depend on dpkg 1.15.3, to get support for tags in the symbols file.
