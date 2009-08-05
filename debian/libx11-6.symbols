@@ -134,6 +134,7 @@ libX11.so.6 libx11-6 #MINVER#
  XEHeadOfExtensionList@Base 0
  XESetBeforeFlush@Base 0
  XESetCloseDisplay@Base 0
+ XESetCopyEventCookie@Base 2:1.2.99.901
  XESetCopyGC@Base 0
  XESetCreateFont@Base 0
  XESetCreateGC@Base 0
@@ -146,6 +147,7 @@ libX11.so.6 libx11-6 #MINVER#
  XESetPrintErrorValues@Base 0
  XESetWireToError@Base 0
  XESetWireToEvent@Base 0
+ XESetWireToEventCookie@Base 2:1.2.99.901
  XEmptyRegion@Base 0
  XEnableAccessControl@Base 0
  XEqualRegion@Base 0
@@ -172,6 +174,7 @@ libX11.so.6 libx11-6 #MINVER#
  XFreeColormap@Base 0
  XFreeColors@Base 0
  XFreeCursor@Base 0
+ XFreeEventData@Base 2:1.2.99.901
  XFreeExtensionList@Base 0
  XFreeFont@Base 0
  XFreeFontInfo@Base 0
@@ -191,6 +194,7 @@ libX11.so.6 libx11-6 #MINVER#
  XGetDefault@Base 0
  XGetErrorDatabaseText@Base 0
  XGetErrorText@Base 0
+ XGetEventData@Base 2:1.2.99.901
  XGetFontPath@Base 0
  XGetFontProperty@Base 0
  XGetGCValues@Base 0
@@ -784,6 +788,7 @@ libX11.so.6 libx11-6 #MINVER#
  (optional)_XCloseLC@Base 0 1
  (optional)_XColor_to_XcmsRGB@Base 0 1
  (optional)_XConnectXCB@Base 0 1
+ _XCopyEventCookie@Base 2:1.2.99.901
  (optional)_XCopyToArg@Base 0 1
  _XCreateMutex_fn@Base 0
  (arch=alpha amd64 ia64)_XData32@Base 0
@@ -802,11 +807,13 @@ libX11.so.6 libx11-6 #MINVER#
  _XEventsQueued@Base 0
  (optional)_XF86BigfontFreeFontMetrics@Base 0 1
  _XF86LoadQueryLocaleFont@Base 0
+ _XFetchEventCookie@Base 2:1.2.99.901
  _XFlush@Base 0
  _XFlushGCCache@Base 0
  (optional)_XFreeAtomTable@Base 0 1
  (optional)_XFreeDisplayLock_fn@Base 0 1
  (optional)_XFreeDisplayStructure@Base 0 1
+ _XFreeEventCookies@Base 2:1.2.99.901
  _XFreeExtData@Base 0
  _XFreeMutex_fn@Base 0
  _XFreeTemp@Base 0
@@ -828,6 +835,7 @@ libX11.so.6 libx11-6 #MINVER#
  _XInitImageFuncPtrs@Base 0
  (optional)_XInitKeysymDB@Base 0 1
  (optional)_XInitOM@Base 0 1
+ _XIsEventCookie@Base 2:1.2.99.901
  (optional)_XKeyInitialize@Base 0 1
  (optional)_XKeycodeToKeysym@Base 0 1
  (optional)_XKeysymToKeycode@Base 0 1
@@ -862,13 +870,16 @@ libX11.so.6 libx11-6 #MINVER#
  _XSetLastRequestRead@Base 0
  (optional)_XSetPrivSyncFunction@Base 0 1
  (optional)_XSetSeqSyncFunction@Base 0 1
+ _XStoreEventCookie@Base 2:1.2.99.901
  _XTextHeight16@Base 0
  _XTextHeight@Base 0
  (optional)_XTranslateKey@Base 0 1
  (optional)_XTranslateKeySym@Base 0 1
  (optional)_XTryShapeBitmapCursor@Base 0 1
+ _XUnknownCopyEventCookie@Base 2:1.2.99.901
  _XUnknownNativeEvent@Base 0
  _XUnknownWireEvent@Base 0
+ _XUnknownWireEventCookie@Base 2:1.2.99.901
  _XUnlockMutex_fn@Base 0
  _XUnregisterFilter@Base 0
  _XUnregisterInternalConnection@Base 0
