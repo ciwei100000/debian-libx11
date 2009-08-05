@@ -822,7 +822,7 @@ libX11.so.6 libx11-6 #MINVER#
  _XGetAsyncReply@Base 0
  _XGetBitsPerPixel@Base 0
  _XGetHostname@Base 0
- _XGetLCValues@Base 0
+ (optional)_XGetLCValues@Base 0 1
  _XGetScanlinePad@Base 0
  _XGetWindowAttributes@Base 0
  (optional)_XHeadOfDisplayList@Base 0 1
@@ -881,217 +881,217 @@ libX11.so.6 libx11-6 #MINVER#
  _XUnknownWireEvent@Base 0
  _XUnknownWireEventCookie@Base 2:1.2.99.901
  _XUnlockMutex_fn@Base 0
- _XUnregisterFilter@Base 0
+ (optional)_XUnregisterFilter@Base 0 1
  _XUnregisterInternalConnection@Base 0
  (optional)_XUnresolveColor@Base 0 1
  (optional)_XUpdateAtomCache@Base 0 1
  (optional)_XUpdateGCCache@Base 0 1
  _XVIDtoVisual@Base 0
  _XWireToEvent@Base 0
- _XcmsAddCmapRec@Base 0
- _XcmsArcTangent@Base 0
- _XcmsCIELabQueryMaxLCRGB@Base 0
- _XcmsCIELab_prefix@Base 0
- _XcmsCIELuvQueryMaxLCRGB@Base 0
- _XcmsCIELuv_prefix@Base 0
- _XcmsCIEXYZ_ValidSpec@Base 0
- _XcmsCIEXYZ_prefix@Base 0
- _XcmsCIEuvY_ValidSpec@Base 0
- _XcmsCIEuvY_prefix@Base 0
- _XcmsCIExyY_prefix@Base 0
- _XcmsConvertColorsWithWhitePt@Base 0
- _XcmsCopyCmapRecAndFree@Base 0
- _XcmsCopyISOLatin1Lowered@Base 0
- _XcmsCopyPointerArray@Base 0
- _XcmsCosine@Base 0
- _XcmsCubeRoot@Base 0
- _XcmsDDColorSpaces@Base 0
- _XcmsDDColorSpacesInit@Base 0
- _XcmsDDConvertColors@Base 0
- _XcmsDIColorSpaces@Base 0
- _XcmsDIColorSpacesInit@Base 0
- _XcmsDIConvertColors@Base 0
- _XcmsDeleteCmapRec@Base 0
- _XcmsEqualWhitePts@Base 0
- _XcmsFreeIntensityMaps@Base 0
- _XcmsFreePointerArray@Base 0
- _XcmsGetElement@Base 0
- _XcmsGetIntensityMap@Base 0
- _XcmsGetProperty@Base 0
- _XcmsInitDefaultCCCs@Base 0
- _XcmsInitScrnInfo@Base 0
- _XcmsLRGB_InitScrnDefault@Base 0
- _XcmsPushPointerArray@Base 0
- _XcmsRGB_prefix@Base 0
- _XcmsRGB_to_XColor@Base 0
- _XcmsRGBi_prefix@Base 0
- _XcmsRegColorSpaces@Base 0
- _XcmsRegFormatOfPrefix@Base 0
- _XcmsResolveColor@Base 0
- _XcmsResolveColorString@Base 0
- _XcmsSCCFuncSets@Base 0
- _XcmsSCCFuncSetsInit@Base 0
- _XcmsSetGetColor@Base 0
- _XcmsSetGetColors@Base 0
- _XcmsSine@Base 0
- _XcmsSquareRoot@Base 0
- _XcmsTekHVCQueryMaxVCRGB@Base 0
- _XcmsTekHVC_CheckModify@Base 0
- _XcmsTekHVC_prefix@Base 0
- _XcmsUnresolveColor@Base 0
+ (optional)_XcmsAddCmapRec@Base 0 1
+ (optional)_XcmsArcTangent@Base 0 1
+ (optional)_XcmsCIELabQueryMaxLCRGB@Base 0 1
+ (optional)_XcmsCIELab_prefix@Base 0 1
+ (optional)_XcmsCIELuvQueryMaxLCRGB@Base 0 1
+ (optional)_XcmsCIELuv_prefix@Base 0 1
+ (optional)_XcmsCIEXYZ_ValidSpec@Base 0 1
+ (optional)_XcmsCIEXYZ_prefix@Base 0 1
+ (optional)_XcmsCIEuvY_ValidSpec@Base 0 1
+ (optional)_XcmsCIEuvY_prefix@Base 0 1
+ (optional)_XcmsCIExyY_prefix@Base 0 1
+ (optional)_XcmsConvertColorsWithWhitePt@Base 0 1
+ (optional)_XcmsCopyCmapRecAndFree@Base 0 1
+ (optional)_XcmsCopyISOLatin1Lowered@Base 0 1
+ (optional)_XcmsCopyPointerArray@Base 0 1
+ (optional)_XcmsCosine@Base 0 1
+ (optional)_XcmsCubeRoot@Base 0 1
+ (optional)_XcmsDDColorSpaces@Base 0 1
+ (optional)_XcmsDDColorSpacesInit@Base 0 1
+ (optional)_XcmsDDConvertColors@Base 0 1
+ (optional)_XcmsDIColorSpaces@Base 0 1
+ (optional)_XcmsDIColorSpacesInit@Base 0 1
+ (optional)_XcmsDIConvertColors@Base 0 1
+ (optional)_XcmsDeleteCmapRec@Base 0 1
+ (optional)_XcmsEqualWhitePts@Base 0 1
+ (optional)_XcmsFreeIntensityMaps@Base 0 1
+ (optional)_XcmsFreePointerArray@Base 0 1
+ (optional)_XcmsGetElement@Base 0 1
+ (optional)_XcmsGetIntensityMap@Base 0 1
+ (optional)_XcmsGetProperty@Base 0 1
+ (optional)_XcmsInitDefaultCCCs@Base 0 1
+ (optional)_XcmsInitScrnInfo@Base 0 1
+ (optional)_XcmsLRGB_InitScrnDefault@Base 0 1
+ (optional)_XcmsPushPointerArray@Base 0 1
+ (optional)_XcmsRGB_prefix@Base 0 1
+ (optional)_XcmsRGB_to_XColor@Base 0 1
+ (optional)_XcmsRGBi_prefix@Base 0 1
+ (optional)_XcmsRegColorSpaces@Base 0 1
+ (optional)_XcmsRegFormatOfPrefix@Base 0 1
+ (optional)_XcmsResolveColor@Base 0 1
+ (optional)_XcmsResolveColorString@Base 0 1
+ (optional)_XcmsSCCFuncSets@Base 0 1
+ (optional)_XcmsSCCFuncSetsInit@Base 0 1
+ (optional)_XcmsSetGetColor@Base 0 1
+ (optional)_XcmsSetGetColors@Base 0 1
+ (optional)_XcmsSine@Base 0 1
+ (optional)_XcmsSquareRoot@Base 0 1
+ (optional)_XcmsTekHVCQueryMaxVCRGB@Base 0 1
+ (optional)_XcmsTekHVC_CheckModify@Base 0 1
+ (optional)_XcmsTekHVC_prefix@Base 0 1
+ (optional)_XcmsUnresolveColor@Base 0 1
  _Xdebug@Base 0
  (optional)_Xevent_to_mask@Base 0 1
  _Xglobal_lock@Base 0
- _Xi18n_lock@Base 0
- _XimCbDispatch@Base 0
- _XimCheckCreateICValues@Base 0
- _XimCheckDataSize@Base 0
- _XimCheckICMode@Base 0
- _XimCheckIMMode@Base 0
- _XimCheckIfLocalProcessing@Base 0
- _XimCheckIfThaiProcessing@Base 0
- _XimCheckLocalInputStyle@Base 0
- _XimCommitCallback@Base 0
- _XimConnect@Base 0
- _XimDecodeICATTRIBUTE@Base 0
- _XimDecodeIMATTRIBUTE@Base 0
- _XimDecodeLocalICAttr@Base 0
- _XimDecodeLocalIMAttr@Base 0
- _XimDestroyIMStructureList@Base 0
- _XimDispatchInit@Base 0
- _XimEncodeICATTRIBUTE@Base 0
- _XimEncodeIMATTRIBUTE@Base 0
- _XimEncodeLocalICAttr@Base 0
- _XimEncodeLocalIMAttr@Base 0
- _XimError@Base 0
- _XimErrorCallback@Base 0
- _XimExtension@Base 0
- _XimFilterWaitEvent@Base 0
- _XimFlush@Base 0
- _XimForwardEvent@Base 0
- _XimForwardEventCallback@Base 0
- _XimFreeCommitInfo@Base 0
- _XimFreeProtoIntrCallback@Base 0
- _XimFreeTransIntrCallback@Base 0
- _XimGetAttributeID@Base 0
- _XimGetCharCode@Base 0
- _XimGetCurrentICValues@Base 0
- _XimGetCurrentIMValues@Base 0
- _XimGetICValueData@Base 0
- _XimGetIMValueData@Base 0
- _XimGetLocaleCode@Base 0
- _XimGetMyEndian@Base 0
- _XimGetResourceListRec@Base 0
- _XimGetResourceListRecByQuark@Base 0
- _XimGetWindowEventmask@Base 0
- _XimICOfXICID@Base 0
- _XimImSportRec@Base 0
- _XimInitialResourceInfo@Base 0
- _XimLcctstombs@Base 0
- _XimLcctstoutf8@Base 0
- _XimLcctstowcs@Base 0
- _XimLocalCreateIC@Base 0
- _XimLocalFilter@Base 0
- _XimLocalGetICValues@Base 0
- _XimLocalGetIMValues@Base 0
- _XimLocalIMFree@Base 0
- _XimLocalMbLookupString@Base 0
- _XimLocalOpenIM@Base 0
- _XimLocalSetICValues@Base 0
- _XimLocalSetIMValues@Base 0
- _XimLocalUtf8LookupString@Base 0
- _XimLocalWcLookupString@Base 0
- _XimLookupMBText@Base 0
- _XimLookupUTF8Text@Base 0
- _XimLookupWCText@Base 0
- _XimMakeICAttrIDList@Base 0
- _XimMakeIMAttrIDList@Base 0
- _XimOpenIM@Base 0
- _XimParseStringFile@Base 0
- _XimProcError@Base 0
- _XimProcSyncReply@Base 0
- _XimProtoCreateIC@Base 0
- _XimProtoEventToWire@Base 0
- _XimProtoIMFree@Base 0
- _XimProtoMbLookupString@Base 0
- _XimProtoOpenIM@Base 0
- _XimProtoUtf8LookupString@Base 0
- _XimProtoWcLookupString@Base 0
- _XimProtoWireToEvent@Base 0
- _XimRead@Base 0
- _XimRegProtoIntrCallback@Base 0
- _XimRegisterDispatcher@Base 0
- _XimRegisterFilter@Base 0
- _XimRegisterIMInstantiateCallback@Base 0
- _XimRegisterServerFilter@Base 0
- _XimRegisterTriggerKeysCallback@Base 0
- _XimReregisterFilter@Base 0
- _XimResetIMInstantiateCallback@Base 0
- _XimRespSyncReply@Base 0
- _XimServerDestroy@Base 0
- _XimSetCurrentICValues@Base 0
- _XimSetCurrentIMValues@Base 0
- _XimSetEventMaskCallback@Base 0
- _XimSetHeader@Base 0
- _XimSetICDefaults@Base 0
- _XimSetICMode@Base 0
- _XimSetICResourceList@Base 0
- _XimSetICValueData@Base 0
- _XimSetIMMode@Base 0
- _XimSetIMResourceList@Base 0
- _XimSetIMValueData@Base 0
- _XimSetInnerICResourceList@Base 0
- _XimSetInnerIMResourceList@Base 0
- _XimSetLocalIMDefaults@Base 0
- _XimShutdown@Base 0
- _XimSync@Base 0
- _XimSyncCallback@Base 0
- _XimThaiCloseIM@Base 0
- _XimThaiCreateIC@Base 0
- _XimThaiFilter@Base 0
- _XimThaiIMFree@Base 0
- _XimThaiOpenIM@Base 0
- _XimTransCallDispatcher@Base 0
- _XimTransConf@Base 0
- _XimTransFilterWaitEvent@Base 0
- _XimTransFlush@Base 0
- _XimTransInternalConnection@Base 0
- _XimTransRead@Base 0
- _XimTransRegisterDispatcher@Base 0
- _XimTransWrite@Base 0
- _XimTransportRec@Base 0
- _XimTriggerNotify@Base 0
- _XimUnRegisterIMInstantiateCallback@Base 0
- _XimUnregisterFilter@Base 0
- _XimUnregisterServerFilter@Base 0
- _XimWrite@Base 0
- _XimXConf@Base 0
- _XimXTransBytesReadable@Base 0
- _XimXTransClose@Base 0
- _XimXTransCloseForCloning@Base 0
- _XimXTransConnect@Base 0
- _XimXTransDisconnect@Base 0
- _XimXTransFreeConnInfo@Base 0
- _XimXTransGetConnectionNumber@Base 0
- _XimXTransGetHostname@Base 0
- _XimXTransGetMyAddr@Base 0
- _XimXTransGetPeerAddr@Base 0
- _XimXTransIsLocal@Base 0
- _XimXTransOpenCLTSClient@Base 0
- _XimXTransOpenCOTSClient@Base 0
- _XimXTransRead@Base 0
- _XimXTransReadv@Base 0
- _XimXTransSetOption@Base 0
- _XimXTransSocketINET6Funcs@Base 0
- _XimXTransSocketINETFuncs@Base 0
- _XimXTransSocketLocalFuncs@Base 0
- _XimXTransSocketTCPFuncs@Base 0
- _XimXTransSocketUNIXFuncs@Base 0
- _XimXTransWrite@Base 0
- _XimXTransWritev@Base 0
- _Ximctstombs@Base 0
- _Ximctstoutf8@Base 0
- _Ximctstowcs@Base 0
+ (optional)_Xi18n_lock@Base 0 1
+ (optional)_XimCbDispatch@Base 0 1
+ (optional)_XimCheckCreateICValues@Base 0 1
+ (optional)_XimCheckDataSize@Base 0 1
+ (optional)_XimCheckICMode@Base 0 1
+ (optional)_XimCheckIMMode@Base 0 1
+ (optional)_XimCheckIfLocalProcessing@Base 0 1
+ (optional)_XimCheckIfThaiProcessing@Base 0 1
+ (optional)_XimCheckLocalInputStyle@Base 0 1
+ (optional)_XimCommitCallback@Base 0 1
+ (optional)_XimConnect@Base 0 1
+ (optional)_XimDecodeICATTRIBUTE@Base 0 1
+ (optional)_XimDecodeIMATTRIBUTE@Base 0 1
+ (optional)_XimDecodeLocalICAttr@Base 0 1
+ (optional)_XimDecodeLocalIMAttr@Base 0 1
+ (optional)_XimDestroyIMStructureList@Base 0 1
+ (optional)_XimDispatchInit@Base 0 1
+ (optional)_XimEncodeICATTRIBUTE@Base 0 1
+ (optional)_XimEncodeIMATTRIBUTE@Base 0 1
+ (optional)_XimEncodeLocalICAttr@Base 0 1
+ (optional)_XimEncodeLocalIMAttr@Base 0 1
+ (optional)_XimError@Base 0 1
+ (optional)_XimErrorCallback@Base 0 1
+ (optional)_XimExtension@Base 0 1
+ (optional)_XimFilterWaitEvent@Base 0 1
+ (optional)_XimFlush@Base 0 1
+ (optional)_XimForwardEvent@Base 0 1
+ (optional)_XimForwardEventCallback@Base 0 1
+ (optional)_XimFreeCommitInfo@Base 0 1
+ (optional)_XimFreeProtoIntrCallback@Base 0 1
+ (optional)_XimFreeTransIntrCallback@Base 0 1
+ (optional)_XimGetAttributeID@Base 0 1
+ (optional)_XimGetCharCode@Base 0 1
+ (optional)_XimGetCurrentICValues@Base 0 1
+ (optional)_XimGetCurrentIMValues@Base 0 1
+ (optional)_XimGetICValueData@Base 0 1
+ (optional)_XimGetIMValueData@Base 0 1
+ (optional)_XimGetLocaleCode@Base 0 1
+ (optional)_XimGetMyEndian@Base 0 1
+ (optional)_XimGetResourceListRec@Base 0 1
+ (optional)_XimGetResourceListRecByQuark@Base 0 1
+ (optional)_XimGetWindowEventmask@Base 0 1
+ (optional)_XimICOfXICID@Base 0 1
+ (optional)_XimImSportRec@Base 0 1
+ (optional)_XimInitialResourceInfo@Base 0 1
+ (optional)_XimLcctstombs@Base 0 1
+ (optional)_XimLcctstoutf8@Base 0 1
+ (optional)_XimLcctstowcs@Base 0 1
+ (optional)_XimLocalCreateIC@Base 0 1
+ (optional)_XimLocalFilter@Base 0 1
+ (optional)_XimLocalGetICValues@Base 0 1
+ (optional)_XimLocalGetIMValues@Base 0 1
+ (optional)_XimLocalIMFree@Base 0 1
+ (optional)_XimLocalMbLookupString@Base 0 1
+ (optional)_XimLocalOpenIM@Base 0 1
+ (optional)_XimLocalSetICValues@Base 0 1
+ (optional)_XimLocalSetIMValues@Base 0 1
+ (optional)_XimLocalUtf8LookupString@Base 0 1
+ (optional)_XimLocalWcLookupString@Base 0 1
+ (optional)_XimLookupMBText@Base 0 1
+ (optional)_XimLookupUTF8Text@Base 0 1
+ (optional)_XimLookupWCText@Base 0 1
+ (optional)_XimMakeICAttrIDList@Base 0 1
+ (optional)_XimMakeIMAttrIDList@Base 0 1
+ (optional)_XimOpenIM@Base 0 1
+ (optional)_XimParseStringFile@Base 0 1
+ (optional)_XimProcError@Base 0 1
+ (optional)_XimProcSyncReply@Base 0 1
+ (optional)_XimProtoCreateIC@Base 0 1
+ (optional)_XimProtoEventToWire@Base 0 1
+ (optional)_XimProtoIMFree@Base 0 1
+ (optional)_XimProtoMbLookupString@Base 0 1
+ (optional)_XimProtoOpenIM@Base 0 1
+ (optional)_XimProtoUtf8LookupString@Base 0 1
+ (optional)_XimProtoWcLookupString@Base 0 1
+ (optional)_XimProtoWireToEvent@Base 0 1
+ (optional)_XimRead@Base 0 1
+ (optional)_XimRegProtoIntrCallback@Base 0 1
+ (optional)_XimRegisterDispatcher@Base 0 1
+ (optional)_XimRegisterFilter@Base 0 1
+ (optional)_XimRegisterIMInstantiateCallback@Base 0 1
+ (optional)_XimRegisterServerFilter@Base 0 1
+ (optional)_XimRegisterTriggerKeysCallback@Base 0 1
+ (optional)_XimReregisterFilter@Base 0 1
+ (optional)_XimResetIMInstantiateCallback@Base 0 1
+ (optional)_XimRespSyncReply@Base 0 1
+ (optional)_XimServerDestroy@Base 0 1
+ (optional)_XimSetCurrentICValues@Base 0 1
+ (optional)_XimSetCurrentIMValues@Base 0 1
+ (optional)_XimSetEventMaskCallback@Base 0 1
+ (optional)_XimSetHeader@Base 0 1
+ (optional)_XimSetICDefaults@Base 0 1
+ (optional)_XimSetICMode@Base 0 1
+ (optional)_XimSetICResourceList@Base 0 1
+ (optional)_XimSetICValueData@Base 0 1
+ (optional)_XimSetIMMode@Base 0 1
+ (optional)_XimSetIMResourceList@Base 0 1
+ (optional)_XimSetIMValueData@Base 0 1
+ (optional)_XimSetInnerICResourceList@Base 0 1
+ (optional)_XimSetInnerIMResourceList@Base 0 1
+ (optional)_XimSetLocalIMDefaults@Base 0 1
+ (optional)_XimShutdown@Base 0 1
+ (optional)_XimSync@Base 0 1
+ (optional)_XimSyncCallback@Base 0 1
+ (optional)_XimThaiCloseIM@Base 0 1
+ (optional)_XimThaiCreateIC@Base 0 1
+ (optional)_XimThaiFilter@Base 0 1
+ (optional)_XimThaiIMFree@Base 0 1
+ (optional)_XimThaiOpenIM@Base 0 1
+ (optional)_XimTransCallDispatcher@Base 0 1
+ (optional)_XimTransConf@Base 0 1
+ (optional)_XimTransFilterWaitEvent@Base 0 1
+ (optional)_XimTransFlush@Base 0 1
+ (optional)_XimTransInternalConnection@Base 0 1
+ (optional)_XimTransRead@Base 0 1
+ (optional)_XimTransRegisterDispatcher@Base 0 1
+ (optional)_XimTransWrite@Base 0 1
+ (optional)_XimTransportRec@Base 0 1
+ (optional)_XimTriggerNotify@Base 0 1
+ (optional)_XimUnRegisterIMInstantiateCallback@Base 0 1
+ (optional)_XimUnregisterFilter@Base 0 1
+ (optional)_XimUnregisterServerFilter@Base 0 1
+ (optional)_XimWrite@Base 0 1
+ (optional)_XimXConf@Base 0 1
+ (optional)_XimXTransBytesReadable@Base 0 1
+ (optional)_XimXTransClose@Base 0 1
+ (optional)_XimXTransCloseForCloning@Base 0 1
+ (optional)_XimXTransConnect@Base 0 1
+ (optional)_XimXTransDisconnect@Base 0 1
+ (optional)_XimXTransFreeConnInfo@Base 0 1
+ (optional)_XimXTransGetConnectionNumber@Base 0 1
+ (optional)_XimXTransGetHostname@Base 0 1
+ (optional)_XimXTransGetMyAddr@Base 0 1
+ (optional)_XimXTransGetPeerAddr@Base 0 1
+ (optional)_XimXTransIsLocal@Base 0 1
+ (optional)_XimXTransOpenCLTSClient@Base 0 1
+ (optional)_XimXTransOpenCOTSClient@Base 0 1
+ (optional)_XimXTransRead@Base 0 1
+ (optional)_XimXTransReadv@Base 0 1
+ (optional)_XimXTransSetOption@Base 0 1
+ (optional)_XimXTransSocketINET6Funcs@Base 0 1
+ (optional)_XimXTransSocketINETFuncs@Base 0 1
+ (optional)_XimXTransSocketLocalFuncs@Base 0 1
+ (optional)_XimXTransSocketTCPFuncs@Base 0 1
+ (optional)_XimXTransSocketUNIXFuncs@Base 0 1
+ (optional)_XimXTransWrite@Base 0 1
+ (optional)_XimXTransWritev@Base 0 1
+ (optional)_Ximctstombs@Base 0 1
+ (optional)_Ximctstoutf8@Base 0 1
+ (optional)_Ximctstowcs@Base 0 1
  (optional)_XkbCopyFromReadBuffer@Base 0 1
  (optional)_XkbFreeReadBuffer@Base 0 1
  (optional)_XkbGetAtomNameFunc@Base 0 1
@@ -1116,7 +1116,7 @@ libX11.so.6 libx11-6 #MINVER#
  (optional)_XkeyTable@Base 0 1
  (optional)_XlcAddCT@Base 0 1
  (optional)_XlcAddCharSet@Base 0 1
- _XlcAddGB18030LocaleConverters@Base 2:1.2
+ (optional)_XlcAddGB18030LocaleConverters@Base 0 1
  (optional)_XlcAddLoader@Base 0 1
  (optional)_XlcAddUtf8Converters@Base 0 1
  (optional)_XlcAddUtf8LocaleConverters@Base 0 1
@@ -1170,64 +1170,64 @@ libX11.so.6 libx11-6 #MINVER#
  (optional)_Xlcmbtowc@Base 0 1
  (optional)_Xlcwcstombs@Base 0 1
  (optional)_Xlcwctomb@Base 0 1
- _XmbDefaultDrawImageString@Base 0
- _XmbDefaultDrawString@Base 0
- _XmbDefaultTextEscapement@Base 0
- _XmbDefaultTextExtents@Base 0
- _XmbDefaultTextPerCharExtents@Base 0
- _XmbGenericDrawImageString@Base 0
- _XmbGenericDrawString@Base 0
- _XmbGenericTextEscapement@Base 0
- _XmbGenericTextExtents@Base 0
- _XmbGenericTextPerCharExtents@Base 0
- _XmbTextListToTextProperty@Base 0
- _XmbTextPropertyToTextList@Base 0
+ (optional)_XmbDefaultDrawImageString@Base 0 1
+ (optional)_XmbDefaultDrawString@Base 0 1
+ (optional)_XmbDefaultTextEscapement@Base 0 1
+ (optional)_XmbDefaultTextExtents@Base 0 1
+ (optional)_XmbDefaultTextPerCharExtents@Base 0 1
+ (optional)_XmbGenericDrawImageString@Base 0 1
+ (optional)_XmbGenericDrawString@Base 0 1
+ (optional)_XmbGenericTextEscapement@Base 0 1
+ (optional)_XmbGenericTextExtents@Base 0 1
+ (optional)_XmbGenericTextPerCharExtents@Base 0 1
+ (optional)_XmbTextListToTextProperty@Base 0 1
+ (optional)_XmbTextPropertyToTextList@Base 0 1
  _Xmblen@Base 0
- _Xmbstoutf8@Base 0
- _Xmbstowcs@Base 0
+ (optional)_Xmbstoutf8@Base 0 1
+ (optional)_Xmbstowcs@Base 0 1
  _Xmbtowc@Base 0
- _XomConvert@Base 0
- _XomGenericDrawString@Base 0
- _XomGenericOpenOM@Base 0
- _XomGenericTextExtents@Base 0
- _XomGetFontDataFromFontSet@Base 0
- _XomInitConverter@Base 0
- _XrmDefaultInitParseInfo@Base 0
- _XrmInitParseInfo@Base 0
- _XrmInternalStringToQuark@Base 0
- _Xthread_self_fn@Base 0
- _Xutf8DefaultDrawImageString@Base 0
- _Xutf8DefaultDrawString@Base 0
- _Xutf8DefaultTextEscapement@Base 0
- _Xutf8DefaultTextExtents@Base 0
- _Xutf8DefaultTextPerCharExtents@Base 0
- _Xutf8GenericDrawImageString@Base 0
- _Xutf8GenericDrawString@Base 0
- _Xutf8GenericTextEscapement@Base 0
- _Xutf8GenericTextExtents@Base 0
- _Xutf8GenericTextPerCharExtents@Base 0
- _Xutf8TextListToTextProperty@Base 0
- _Xutf8TextPropertyToTextList@Base 0
- _XwcDefaultDrawImageString@Base 0
- _XwcDefaultDrawString@Base 0
- _XwcDefaultTextEscapement@Base 0
- _XwcDefaultTextExtents@Base 0
- _XwcDefaultTextPerCharExtents@Base 0
- _XwcFreeStringList@Base 0
- _XwcGenericDrawImageString@Base 0
- _XwcGenericDrawString@Base 0
- _XwcGenericTextEscapement@Base 0
- _XwcGenericTextExtents@Base 0
- _XwcGenericTextPerCharExtents@Base 0
- _XwcTextListToTextProperty@Base 0
- _XwcTextPropertyToTextList@Base 0
- _Xwcscmp@Base 0
- _Xwcscpy@Base 0
- _Xwcslen@Base 0
- _Xwcsncmp@Base 0
- _Xwcsncpy@Base 0
- _Xwcstombs@Base 0
+ (optional)_XomConvert@Base 0 1
+ (optional)_XomGenericDrawString@Base 0 1
+ (optional)_XomGenericOpenOM@Base 0 1
+ (optional)_XomGenericTextExtents@Base 0 1
+ (optional)_XomGetFontDataFromFontSet@Base 0 1
+ (optional)_XomInitConverter@Base 0 1
+ (optional)_XrmDefaultInitParseInfo@Base 0 1
+ (optional)_XrmInitParseInfo@Base 0 1
+ (optional)_XrmInternalStringToQuark@Base 0 1
+ (optional)_Xthread_self_fn@Base 0 1
+ (optional)_Xutf8DefaultDrawImageString@Base 0 1
+ (optional)_Xutf8DefaultDrawString@Base 0 1
+ (optional)_Xutf8DefaultTextEscapement@Base 0 1
+ (optional)_Xutf8DefaultTextExtents@Base 0 1
+ (optional)_Xutf8DefaultTextPerCharExtents@Base 0 1
+ (optional)_Xutf8GenericDrawImageString@Base 0 1
+ (optional)_Xutf8GenericDrawString@Base 0 1
+ (optional)_Xutf8GenericTextEscapement@Base 0 1
+ (optional)_Xutf8GenericTextExtents@Base 0 1
+ (optional)_Xutf8GenericTextPerCharExtents@Base 0 1
+ (optional)_Xutf8TextListToTextProperty@Base 0 1
+ (optional)_Xutf8TextPropertyToTextList@Base 0 1
+ (optional)_XwcDefaultDrawImageString@Base 0 1
+ (optional)_XwcDefaultDrawString@Base 0 1
+ (optional)_XwcDefaultTextEscapement@Base 0 1
+ (optional)_XwcDefaultTextExtents@Base 0 1
+ (optional)_XwcDefaultTextPerCharExtents@Base 0 1
+ (optional)_XwcFreeStringList@Base 0 1
+ (optional)_XwcGenericDrawImageString@Base 0 1
+ (optional)_XwcGenericDrawString@Base 0 1
+ (optional)_XwcGenericTextEscapement@Base 0 1
+ (optional)_XwcGenericTextExtents@Base 0 1
+ (optional)_XwcGenericTextPerCharExtents@Base 0 1
+ (optional)_XwcTextListToTextProperty@Base 0 1
+ (optional)_XwcTextPropertyToTextList@Base 0 1
+ (optional)_Xwcscmp@Base 0 1
+ (optional)_Xwcscpy@Base 0 1
+ (optional)_Xwcslen@Base 0 1
+ (optional)_Xwcsncmp@Base 0 1
+ (optional)_Xwcsncpy@Base 0 1
+ (optional)_Xwcstombs@Base 0 1
  _Xwctomb@Base 0
- _qfree@Base 0
+ (optional)_qfree@Base 0 1
  in6addr_any@Base 0
- read_EncodingInfo@Base 0
+ (optional)read_EncodingInfo@Base 0 1
