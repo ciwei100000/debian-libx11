@@ -2,6 +2,8 @@ libx11 (2:1.2.99.901-2) UNRELEASED; urgency=low
 
   * libx11-6.symbols: mark some more stuff as private.
   * libx11-6.symbols: add kfreebsd-amd64 tag for 64-bit symbols.
+  * Run dpkg-gensymbols with -c4 to catch mismatches between the symbols file
+    and the library.
 
  -- Julien Cristau <jcristau@debian.org>  Wed, 05 Aug 2009 21:18:06 +0200
 
