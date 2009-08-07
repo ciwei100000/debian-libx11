@@ -791,7 +791,7 @@ libX11.so.6 libx11-6 #MINVER#
  _XCopyEventCookie@Base 2:1.2.99.901
  (optional)_XCopyToArg@Base 0 1
  _XCreateMutex_fn@Base 0
- (arch=alpha amd64 ia64)_XData32@Base 0
+ (arch=alpha amd64 kfreebsd-amd64 ia64)_XData32@Base 0
  _XDefaultError@Base 0
  _XDefaultIOError@Base 0
  (optional)_XDefaultOpenIM@Base 0 1
@@ -853,7 +853,7 @@ libX11.so.6 libx11-6 #MINVER#
  _XProcessInternalConnection@Base 0
  _XProcessWindowAttributes@Base 0
  _XPutBackEvent@Base 0
- (arch=alpha amd64 ia64)_XRead32@Base 0
+ (arch=alpha amd64 kfreebsd-amd64 ia64)_XRead32@Base 0
  _XRead@Base 0
  _XReadEvents@Base 0
  _XReadPad@Base 0
