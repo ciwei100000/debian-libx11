@@ -27,7 +27,7 @@ endif
 # much crap to bother specifying it through --exclude arguments.
 # It alters dh_install call in binary_indep, as it is the first one called
 # from binary target.
-ifneq (,$(findstring checkinstall,$(DEB_BUILD_OPTIONS)))
+ifneq (,$(filter checkinstall,$(DEB_BUILD_OPTIONS)))
 	dhinstallindepflags := --fail-missing
 else
 	dhinstallindepflags := -i
