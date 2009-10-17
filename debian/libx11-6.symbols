@@ -833,7 +833,7 @@ libX11.so.6 libx11-6 #MINVER#
  (optional)_XInitDisplayLock_fn@Base 0 1
  (optional)_XInitIM@Base 0 1
  _XInitImageFuncPtrs@Base 0
- (optional)_XInitKeysymDB@Base 0 1
+ _XInitKeysymDB@Base 0
  (optional)_XInitOM@Base 0 1
  _XIsEventCookie@Base 2:1.2.99.901
  (optional)_XKeyInitialize@Base 0 1
@@ -858,8 +858,8 @@ libX11.so.6 libx11-6 #MINVER#
  _XReadEvents@Base 0
  _XReadPad@Base 0
  (optional)_XRefreshKeyboardMapping@Base 0 1
- (optional)_XRegisterFilterByMask@Base 0 1
- (optional)_XRegisterFilterByType@Base 0 1
+ _XRegisterFilterByMask@Base 0
+ _XRegisterFilterByType@Base 0
  _XRegisterInternalConnection@Base 0
  _XReply@Base 0
  _XReverse_Bytes@Base 0
@@ -881,7 +881,7 @@ libX11.so.6 libx11-6 #MINVER#
  _XUnknownWireEvent@Base 0
  _XUnknownWireEventCookie@Base 2:1.2.99.901
  _XUnlockMutex_fn@Base 0
- (optional)_XUnregisterFilter@Base 0 1
+ _XUnregisterFilter@Base 0
  _XUnregisterInternalConnection@Base 0
  (optional)_XUnresolveColor@Base 0 1
  (optional)_XUpdateAtomCache@Base 0 1
@@ -940,7 +940,7 @@ libX11.so.6 libx11-6 #MINVER#
  (optional)_XcmsTekHVC_prefix@Base 0 1
  (optional)_XcmsUnresolveColor@Base 0 1
  _Xdebug@Base 0
- (optional)_Xevent_to_mask@Base 0 1
+ _Xevent_to_mask@Base 0
  _Xglobal_lock@Base 0
  (optional)_Xi18n_lock@Base 0 1
  (optional)_XimCbDispatch@Base 0 1
