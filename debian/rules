@@ -54,9 +54,13 @@ build-stamp: configure $(STAMP_DIR)/genscripts
 
 	mkdir -p obj-$(DEB_BUILD_GNU_TYPE)
 	cd obj-$(DEB_BUILD_GNU_TYPE) && \
-	../configure --prefix=/usr --mandir=\$${prefix}/share/man \
-	             --infodir=\$${prefix}/share/info $(confflags) \
-	             CFLAGS="$(CFLAGS)" 
+	../configure \
+		--prefix=/usr \
+		--mandir=\$${prefix}/share/man \
+		--infodir=\$${prefix}/share/info \
+		--enable-specs \
+		$(confflags) \
+		CFLAGS="$(CFLAGS)"
 	cd obj-$(DEB_BUILD_GNU_TYPE) && $(MAKE)
 	>$@
 
@@ -74,6 +78,8 @@ clean: xsfclean
 	rm -f depcomp install-sh ltmain.sh missing mkinstalldirs
 	rm -f src/config.h.in
 	rm -f $$(find -name Makefile.in)
+	# leftovers from the specs build
+	rm -f specs/*.png
 
 	dh_clean
 

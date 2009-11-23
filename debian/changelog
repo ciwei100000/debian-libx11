@@ -9,6 +9,7 @@ libx11 (2:1.3.2-1) UNRELEASED; urgency=low
     - _XUnregisterFilter
     - _XInitKeysymDB
     - _Xevent_to_mask
+  * Build the Xlib specs and install them in libx11-dev.
 
   [ Timo Aaltonen ]
   * New upstream release.
