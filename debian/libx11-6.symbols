@@ -1232,5 +1232,4 @@ libX11.so.6 libx11-6 #MINVER#
  (optional)_Xwcstombs@Base 0 1
  _Xwctomb@Base 0
  (optional)_qfree@Base 0 1
- in6addr_any@Base 0
  (optional)read_EncodingInfo@Base 0 1
