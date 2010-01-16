@@ -57,19 +57,11 @@ but any bit would help.  --Nathanael
 
 Index: libx11/nls/compose.dir.pre
 ===================================================================
---- libx11.orig/nls/compose.dir.pre	2009-07-19 20:36:43.000000000 +0200
-+++ libx11/nls/compose.dir.pre	2009-07-19 20:37:07.000000000 +0200
-@@ -1,14 +1,22 @@
- XCOMM $Xorg: compose.dir,v 1.3 2000/08/17 19:46:48 cpqbld Exp $
+--- libx11.orig/nls/compose.dir.pre
++++ libx11/nls/compose.dir.pre
+@@ -4,9 +4,17 @@
+ XCOMM	the second word is full locale name.
  XCOMM
--XCOMM	This file contains compose table file name.
--XCOMM	The first word is the compose table file name and
--XCOMM	the second word is full locale name.
-+XCOMM	This file contains compose table file names.  The first word is the
-+XCOMM	compose table file name and the second word is the full locale
-+XCOMM	name.
- XCOMM
- XCOMM $XFree86: xc/nls/compose.dir,v 1.24 2003/08/06 14:04:00 eich Exp $
  XCOMM
 +XCOMM Note that no Compose tables exist for ISO 8859-11, Microsoft code
 +XCOMM pages, Fujitsu's S90 or U90 character sets, or TIS620 yet.
@@ -85,7 +77,7 @@ Index: libx11/nls/compose.dir.pre
  iso8859-6/Compose:		ar_BH.ISO8859-6
  iso8859-6/Compose:		ar_DZ.ISO8859-6
  iso8859-6/Compose:		ar_EG.ISO8859-6
-@@ -21,13 +29,17 @@
+@@ -19,13 +27,17 @@
  iso8859-6/Compose:		ar_OM.ISO8859-6
  iso8859-6/Compose:		ar_QA.ISO8859-6
  iso8859-6/Compose:		ar_SA.ISO8859-6
@@ -104,7 +96,7 @@ Index: libx11/nls/compose.dir.pre
  iso8859-1/Compose:		br_FR.ISO8859-1
  iso8859-14/Compose:		br_FR.ISO8859-14
  iso8859-15/Compose:		br_FR.ISO8859-15
-@@ -48,6 +60,8 @@
+@@ -46,6 +58,8 @@
  iso8859-15/Compose:		da_DK.ISO8859-15
  iso8859-1/Compose:		de_AT.ISO8859-1
  iso8859-15/Compose:		de_AT.ISO8859-15
@@ -113,7 +105,7 @@ Index: libx11/nls/compose.dir.pre
  iso8859-1/Compose:		de_CH.ISO8859-1
  iso8859-15/Compose:		de_CH.ISO8859-15
  iso8859-1/Compose:		de_DE.ISO8859-1
-@@ -57,15 +71,26 @@
+@@ -55,15 +69,26 @@
  iso8859-1/Compose:		de_LU.ISO8859-1
  iso8859-15/Compose:		de_LU.ISO8859-15
  iso8859-7/Compose:		el_GR.ISO8859-7
@@ -140,7 +132,7 @@ Index: libx11/nls/compose.dir.pre
  iso8859-1/Compose:		en_TT.ISO8859-1
  iso8859-1/Compose:		en_UK.ISO8859-1
  iso8859-15/Compose:		en_UK.ISO8859-15
-@@ -73,6 +98,7 @@
+@@ -71,6 +96,7 @@
  iso8859-15/Compose:		en_US.ISO8859-15
  iso8859-1/Compose:		en_ZA.ISO8859-1
  iso8859-15/Compose:		en_ZA.ISO8859-15
@@ -148,7 +140,7 @@ Index: libx11/nls/compose.dir.pre
  iso8859-3/Compose:		eo_XX.ISO8859-3
  iso8859-1/Compose:		es_AR.ISO8859-1
  iso8859-1/Compose:		es_BO.ISO8859-1
-@@ -92,6 +118,7 @@
+@@ -90,6 +116,7 @@
  iso8859-1/Compose:		es_PR.ISO8859-1
  iso8859-1/Compose:		es_PY.ISO8859-1
  iso8859-1/Compose:		es_SV.ISO8859-1
@@ -156,7 +148,7 @@ Index: libx11/nls/compose.dir.pre
  iso8859-1/Compose:		es_UY.ISO8859-1
  iso8859-1/Compose:		es_VE.ISO8859-1
  iso8859-1/Compose:		et_EE.ISO8859-1
-@@ -100,6 +127,8 @@
+@@ -98,6 +125,8 @@
  iso8859-15/Compose:		et_EE.ISO8859-15
  iso8859-1/Compose:		eu_ES.ISO8859-1
  iso8859-15/Compose:		eu_ES.ISO8859-15
@@ -165,7 +157,7 @@ Index: libx11/nls/compose.dir.pre
  isiri-3342/Compose:		fa_IR.ISIRI-3342
  iso8859-1/Compose:		fi_FI.ISO8859-1
  iso8859-15/Compose:		fi_FI.ISO8859-15
-@@ -133,11 +162,9 @@
+@@ -131,11 +160,9 @@
  iso8859-2/Compose:		hu_HU.ISO8859-2
  armscii-8/Compose:		hy_AM.ARMSCII-8
  iso8859-1/Compose:		id_ID.ISO8859-1
@@ -177,7 +169,7 @@ Index: libx11/nls/compose.dir.pre
  iso8859-1/Compose:		it_IT.ISO8859-1
  iso8859-15/Compose:		it_IT.ISO8859-15
  ja/Compose:			ja_JP.eucJP
-@@ -146,14 +173,20 @@
+@@ -144,14 +171,20 @@
  georgian-academy/Compose:	ka_GE.GEORGIAN-ACADEMY
  georgian-ps/Compose:		ka_GE.GEORGIAN-PS
  iso8859-1/Compose:		kl_GL.ISO8859-1
@@ -200,7 +192,7 @@ Index: libx11/nls/compose.dir.pre
  iso8859-4/Compose:		lt_LT.ISO8859-4
  iso8859-13/Compose:		lt_LT.ISO8859-13
  iso8859-4/Compose:		lv_LV.ISO8859-4
-@@ -180,25 +213,33 @@
+@@ -178,25 +211,33 @@
  iso8859-15/Compose:		ny_NO.ISO8859-15
  iso8859-1/Compose:		oc_FR.ISO8859-1
  iso8859-15/Compose:		oc_FR.ISO8859-15
@@ -238,7 +230,7 @@ Index: libx11/nls/compose.dir.pre
  iso8859-2/Compose:		sq_AL.ISO8859-2
  iso8859-2/Compose:		sr_CS.ISO8859-2
  iso8859-5/Compose:		sr_CS.ISO8859-5
-@@ -212,35 +253,53 @@
+@@ -210,35 +251,53 @@
  iso8859-15/Compose:		sv_SE.ISO8859-15
  tscii-0/Compose:		ta_IN.TSCII-0
  koi8-c/Compose:			tg_TJ.KOI8-C
@@ -298,7 +290,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		ar_BH.UTF-8
  en_US.UTF-8/Compose:		ar_DZ.UTF-8
  en_US.UTF-8/Compose:		ar_EG.UTF-8
-@@ -254,16 +313,19 @@
+@@ -252,16 +311,19 @@
  en_US.UTF-8/Compose:		ar_OM.UTF-8
  en_US.UTF-8/Compose:		ar_QA.UTF-8
  en_US.UTF-8/Compose:		ar_SA.UTF-8
@@ -319,7 +311,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		ca_AD.UTF-8
  en_US.UTF-8/Compose:		ca_ES.UTF-8
  en_US.UTF-8/Compose:		ca_FR.UTF-8
-@@ -281,17 +343,25 @@
+@@ -279,17 +341,25 @@
  el_GR.UTF-8/Compose:		el_CY.UTF-8
  el_GR.UTF-8/Compose:		el_GR.UTF-8
  en_US.UTF-8/Compose:		en_AU.UTF-8
@@ -345,7 +337,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		eo_XX.UTF-8
  en_US.UTF-8/Compose:		es_AR.UTF-8
  en_US.UTF-8/Compose:		es_BO.UTF-8
-@@ -315,6 +385,7 @@
+@@ -313,6 +383,7 @@
  en_US.UTF-8/Compose:		es_VE.UTF-8
  en_US.UTF-8/Compose:		et_EE.UTF-8
  en_US.UTF-8/Compose:		eu_ES.UTF-8
@@ -353,7 +345,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		fa_IR.UTF-8
  fi_FI.UTF-8/Compose:		fi_FI.UTF-8
  en_US.UTF-8/Compose:		fo_FO.UTF-8
-@@ -325,6 +396,8 @@
+@@ -323,6 +394,8 @@
  en_US.UTF-8/Compose:		fr_LU.UTF-8
  en_US.UTF-8/Compose:		ga_IE.UTF-8
  en_US.UTF-8/Compose:		gd_GB.UTF-8
@@ -362,7 +354,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		gl_ES.UTF-8
  en_US.UTF-8/Compose:		gu_IN.UTF-8
  en_US.UTF-8/Compose:		gv_GB.UTF-8
-@@ -339,10 +412,12 @@
+@@ -337,10 +410,12 @@
  en_US.UTF-8/Compose:		it_CH.UTF-8
  en_US.UTF-8/Compose:		it_IT.UTF-8
  en_US.UTF-8/Compose:		iu_CA.UTF-8
@@ -375,7 +367,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		kn_IN.UTF-8
  en_US.UTF-8/Compose:		ko_KR.UTF-8
  en_US.UTF-8/Compose:		ks_IN.UTF-8
-@@ -356,9 +431,11 @@
+@@ -354,9 +429,11 @@
  en_US.UTF-8/Compose:		mi_NZ.UTF-8
  en_US.UTF-8/Compose:		mk_MK.UTF-8
  en_US.UTF-8/Compose:		ml_IN.UTF-8
@@ -387,7 +379,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		nl_BE.UTF-8
  en_US.UTF-8/Compose:		nl_NL.UTF-8
  en_US.UTF-8/Compose:		nn_NO.UTF-8
-@@ -366,13 +443,19 @@
+@@ -364,13 +441,19 @@
  en_US.UTF-8/Compose:		nb_NO.UTF-8
  en_US.UTF-8/Compose:		nr_ZA.UTF-8
  en_US.UTF-8/Compose:		nso_ZA.UTF-8
@@ -410,7 +402,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		ph_PH.UTF-8
  en_US.UTF-8/Compose:		pl_PL.UTF-8
  en_US.UTF-8/Compose:		pp_AN.UTF-8
-@@ -385,10 +468,14 @@
+@@ -383,10 +466,14 @@
  en_US.UTF-8/Compose:		sa_IN.UTF-8
  en_US.UTF-8/Compose:		sd_IN.UTF-8
  en_US.UTF-8/Compose:		sd_IN@devanagari.UTF-8
@@ -425,7 +417,7 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		sq_AL.UTF-8
  en_US.UTF-8/Compose:		sr_CS.UTF-8
  en_US.UTF-8/Compose:		sr_ME.UTF-8
-@@ -402,6 +489,9 @@
+@@ -400,6 +487,9 @@
  en_US.UTF-8/Compose:		te_IN.UTF-8
  en_US.UTF-8/Compose:		tg_TJ.UTF-8
  en_US.UTF-8/Compose:		th_TH.UTF-8
@@ -437,9 +429,9 @@ Index: libx11/nls/compose.dir.pre
  en_US.UTF-8/Compose:		tr_TR.UTF-8
 Index: libx11/nls/locale.alias.pre
 ===================================================================
---- libx11.orig/nls/locale.alias.pre	2009-07-19 20:36:43.000000000 +0200
-+++ libx11/nls/locale.alias.pre	2009-07-19 20:37:00.000000000 +0200
-@@ -309,6 +309,12 @@
+--- libx11.orig/nls/locale.alias.pre
++++ libx11/nls/locale.alias.pre
+@@ -306,6 +306,12 @@
  en_CA.ISO-8859-1:				en_CA.ISO8859-1
  en_CA.ISO_8859-1:				en_CA.ISO8859-1
  en_CA.utf8:					en_CA.UTF-8
@@ -452,7 +444,7 @@ Index: libx11/nls/locale.alias.pre
  en_GB:						en_GB.ISO8859-1
  en_GB.88591:					en_GB.ISO8859-1
  en_GB.88591.en:					en_GB.ISO8859-1
-@@ -357,6 +363,16 @@
+@@ -354,6 +360,16 @@
  en_US.ISO8859-15@euro:				en_US.ISO8859-15
  en_US.utf8:					en_US.UTF-8
  EN_US.UTF-8:					en_US.UTF-8
@@ -469,7 +461,7 @@ Index: libx11/nls/locale.alias.pre
  en_ZA:						en_ZA.ISO8859-1
  en_ZA.88591:					en_ZA.ISO8859-1
  en_ZA.88591.en:					en_ZA.ISO8859-1
-@@ -728,6 +744,10 @@
+@@ -725,6 +741,10 @@
  kl_GL.ISO-8859-1:				kl_GL.ISO8859-1
  kl_GL.iso885915:				kl_GL.ISO8859-15
  kl_GL.utf8:					kl_GL.UTF-8
@@ -480,7 +472,7 @@ Index: libx11/nls/locale.alias.pre
  kn:						kn_IN.UTF-8
  kn_IN.utf8:					kn_IN.UTF-8
  kn_IN.UTF-8:					kn_IN.UTF-8
-@@ -926,7 +946,6 @@
+@@ -923,7 +943,6 @@
  pt_BR.iso88591:					pt_BR.ISO8859-1
  pt_BR.ISO-8859-1:				pt_BR.ISO8859-1
  pt_BR.ISO_8859-1:				pt_BR.ISO8859-1
@@ -488,7 +480,7 @@ Index: libx11/nls/locale.alias.pre
  pt_BR.utf8:					pt_BR.UTF-8
  pt_PT:						pt_PT.ISO8859-1
  pt_PT.88591:					pt_PT.ISO8859-1
-@@ -987,11 +1006,11 @@
+@@ -984,11 +1003,11 @@
  XCOMM These lines should be deleted in the future.
  sh:						sr_RS.UTF-8@latin
  sh_BA.ISO8859-2@bosnia:				sr_CS.ISO8859-2
@@ -501,7 +493,7 @@ Index: libx11/nls/locale.alias.pre
  sk:						sk_SK.ISO8859-2
  sk_SK:						sk_SK.ISO8859-2
  sk_SK.iso88592:					sk_SK.ISO8859-2
-@@ -1200,7 +1219,7 @@
+@@ -1197,7 +1216,7 @@
  american.iso88591:				en_US.ISO8859-1
  arabic.iso88596:				ar_AA.ISO8859-6
  bokmal:						nb_NO.ISO8859-1
@@ -510,7 +502,7 @@ Index: libx11/nls/locale.alias.pre
  bulgarian:					bg_BG.CP1251
  c-french.iso88591:				fr_CA.ISO8859-1
  catalan:					ca_ES.ISO8859-1
-@@ -1215,11 +1234,11 @@
+@@ -1212,11 +1231,11 @@
  dutch:						nl_NL.ISO8859-1
  dutch.iso88591:					nl_BE.ISO8859-1
  eesti:						et_EE.ISO8859-1
@@ -524,7 +516,7 @@ Index: libx11/nls/locale.alias.pre
  french:						fr_FR.ISO8859-1
  french.iso88591:				fr_CH.ISO8859-1
  galego:						gl_ES.ISO8859-1
-@@ -1228,8 +1247,8 @@
+@@ -1225,8 +1244,8 @@
  german.iso88591:				de_CH.ISO8859-1
  greek:						el_GR.ISO8859-7
  greek.iso88597:					el_GR.ISO8859-7
@@ -537,9 +529,9 @@ Index: libx11/nls/locale.alias.pre
  icelandic.iso88591:				is_IS.ISO8859-1
 Index: libx11/nls/locale.dir.pre
 ===================================================================
---- libx11.orig/nls/locale.dir.pre	2009-07-19 20:36:43.000000000 +0200
-+++ libx11/nls/locale.dir.pre	2009-07-19 20:36:47.000000000 +0200
-@@ -9,8 +9,13 @@
+--- libx11.orig/nls/locale.dir.pre
++++ libx11/nls/locale.dir.pre
+@@ -6,8 +6,13 @@
  XCOMM
  
  C/XLC_LOCALE:				C
@@ -553,7 +545,7 @@ Index: libx11/nls/locale.dir.pre
  iso8859-6/XLC_LOCALE:			ar_BH.ISO8859-6
  iso8859-6/XLC_LOCALE:			ar_DZ.ISO8859-6
  iso8859-6/XLC_LOCALE:			ar_EG.ISO8859-6
-@@ -38,6 +43,7 @@
+@@ -35,6 +40,7 @@
  iso8859-1/XLC_LOCALE:			br_FR.ISO8859-1
  iso8859-14/XLC_LOCALE:			br_FR.ISO8859-14
  iso8859-15/XLC_LOCALE:			br_FR.ISO8859-15
@@ -561,7 +553,7 @@ Index: libx11/nls/locale.dir.pre
  iso8859-1/XLC_LOCALE:			ca_AD.ISO8859-1
  iso8859-15/XLC_LOCALE:			ca_AD.ISO8859-15
  iso8859-1/XLC_LOCALE:			ca_ES.ISO8859-1
-@@ -50,7 +56,6 @@
+@@ -47,7 +53,6 @@
  iso8859-1/XLC_LOCALE:			cy_GB.ISO8859-1
  iso8859-14/XLC_LOCALE:			cy_GB.ISO8859-14
  iso8859-15/XLC_LOCALE:			cy_GB.ISO8859-15
@@ -569,7 +561,7 @@ Index: libx11/nls/locale.dir.pre
  iso8859-1/XLC_LOCALE:			da_DK.ISO8859-1
  iso8859-15/XLC_LOCALE:			da_DK.ISO8859-15
  iso8859-1/XLC_LOCALE:			de_AT.ISO8859-1
-@@ -62,20 +67,25 @@
+@@ -59,20 +64,25 @@
  iso8859-1/XLC_LOCALE:			de_DE.ISO8859-1
  iso8859-15/XLC_LOCALE:			de_DE.ISO8859-15
  iso8859-1/XLC_LOCALE:			de_LI.ISO8859-1
@@ -596,7 +588,7 @@ Index: libx11/nls/locale.dir.pre
  iso8859-15/XLC_LOCALE:			en_IN.ISO8859-15
  iso8859-1/XLC_LOCALE:			en_JM.ISO8859-1
  iso8859-1/XLC_LOCALE:			en_NZ.ISO8859-1
-@@ -88,7 +98,9 @@
+@@ -85,7 +95,9 @@
  iso8859-15/XLC_LOCALE:			en_US.ISO8859-15
  iso8859-1/XLC_LOCALE:			en_ZA.ISO8859-1
  iso8859-15/XLC_LOCALE:			en_ZA.ISO8859-15
@@ -607,7 +599,7 @@ Index: libx11/nls/locale.dir.pre
  iso8859-3/XLC_LOCALE:			eo_XX.ISO8859-3
  iso8859-1/XLC_LOCALE:			es_AR.ISO8859-1
  iso8859-1/XLC_LOCALE:			es_BO.ISO8859-1
-@@ -117,6 +129,8 @@
+@@ -114,6 +126,8 @@
  iso8859-15/XLC_LOCALE:			et_EE.ISO8859-15
  iso8859-1/XLC_LOCALE:			eu_ES.ISO8859-1
  iso8859-15/XLC_LOCALE:			eu_ES.ISO8859-15
@@ -616,7 +608,7 @@ Index: libx11/nls/locale.dir.pre
  isiri-3342/XLC_LOCALE:			fa_IR.ISIRI-3342
  iso8859-1/XLC_LOCALE:			fi_FI.ISO8859-1
  iso8859-15/XLC_LOCALE:			fi_FI.ISO8859-15
-@@ -165,6 +179,7 @@
+@@ -162,6 +176,7 @@
  iso8859-1/XLC_LOCALE:			kw_GB.ISO8859-1
  iso8859-14/XLC_LOCALE:			kw_GB.ISO8859-14
  iso8859-15/XLC_LOCALE:			kw_GB.ISO8859-15
@@ -624,7 +616,7 @@ Index: libx11/nls/locale.dir.pre
  ibm-cp1133/XLC_LOCALE:			lo_LA.IBM-CP1133
  mulelao-1/XLC_LOCALE:			lo_LA.MULELAO-1
  iso8859-4/XLC_LOCALE:			lt_LT.ISO8859-4
-@@ -192,8 +207,12 @@
+@@ -189,8 +204,12 @@
  iso8859-1/XLC_LOCALE:			ny_NO.ISO8859-15
  iso8859-1/XLC_LOCALE:			oc_FR.ISO8859-1
  iso8859-15/XLC_LOCALE:			oc_FR.ISO8859-15
@@ -639,7 +631,7 @@ Index: libx11/nls/locale.dir.pre
  iso8859-2/XLC_LOCALE:			pl_PL.ISO8859-2
  iso8859-1/XLC_LOCALE:			pp_AN.ISO8859-1
  iso8859-1/XLC_LOCALE:			pt_BR.ISO8859-1
-@@ -203,11 +222,15 @@
+@@ -200,11 +219,15 @@
  iso8859-5/XLC_LOCALE: 			ru_RU.ISO8859-5
  microsoft-cp1251/XLC_LOCALE: 		ru_RU.CP1251
  koi8-r/XLC_LOCALE: 			ru_RU.KOI8-R
@@ -655,7 +647,7 @@ Index: libx11/nls/locale.dir.pre
  iso8859-2/XLC_LOCALE: 			sq_AL.ISO8859-2
  iso8859-2/XLC_LOCALE:			sr_CS.ISO8859-2
  iso8859-5/XLC_LOCALE:			sr_CS.ISO8859-5
-@@ -222,8 +245,8 @@
+@@ -219,8 +242,8 @@
  iso8859-15/XLC_LOCALE:			sv_SE.ISO8859-15
  tscii-0/XLC_LOCALE:			ta_IN.TSCII-0
  koi8-c/XLC_LOCALE:			tg_TJ.KOI8-C
@@ -665,7 +657,7 @@ Index: libx11/nls/locale.dir.pre
  iso8859-1/XLC_LOCALE: 			tl_PH.ISO8859-1
  iso8859-15/XLC_LOCALE:			tn_ZA.ISO8859-15
  iso8859-9/XLC_LOCALE:			tr_TR.ISO8859-9
-@@ -234,6 +257,7 @@
+@@ -231,6 +254,7 @@
  microsoft-cp1251/XLC_LOCALE: 		uk_UA.CP1251
  koi8-u/XLC_LOCALE:			uk_UA.KOI8-U
  microsoft-cp1256/XLC_LOCALE:		ur_PK.CP1256
@@ -673,7 +665,7 @@ Index: libx11/nls/locale.dir.pre
  vi_VN.tcvn/XLC_LOCALE:			vi_VN.TCVN
  vi_VN.viscii/XLC_LOCALE:		vi_VN.VISCII
  iso8859-1/XLC_LOCALE:			wa_BE.ISO8859-1
-@@ -249,10 +273,17 @@
+@@ -246,10 +270,17 @@
  zh_HK.big5hkscs/XLC_LOCALE:		zh_HK.Big5-HKSCS
  zh_HK.big5hkscs/XLC_LOCALE:		zh_HK.big5hkscs
  zh_HK.big5hkscs/XLC_LOCALE:		zh_HK.Big5HKSCS
@@ -691,7 +683,7 @@ Index: libx11/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			af_ZA.UTF-8
  en_US.UTF-8/XLC_LOCALE:			am_ET.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ar_AA.UTF-8
-@@ -277,13 +308,13 @@
+@@ -274,13 +305,13 @@
  en_US.UTF-8/XLC_LOCALE:			ar_YE.UTF-8
  en_US.UTF-8/XLC_LOCALE:			as_IN.UTF-8
  en_US.UTF-8/XLC_LOCALE:			az_AZ.UTF-8
@@ -706,7 +698,7 @@ Index: libx11/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			ca_AD.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ca_ES.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ca_FR.UTF-8
-@@ -302,18 +333,26 @@
+@@ -299,18 +330,26 @@
  en_US.UTF-8/XLC_LOCALE:			el_GR.UTF-8
  en_US.UTF-8/XLC_LOCALE:			en_AU.UTF-8
  en_US.UTF-8/XLC_LOCALE:			en_BE.UTF-8
@@ -734,7 +726,7 @@ Index: libx11/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			eo_XX.UTF-8
  en_US.UTF-8/XLC_LOCALE:			es_AR.UTF-8
  en_US.UTF-8/XLC_LOCALE:			es_BO.UTF-8
-@@ -337,6 +376,7 @@
+@@ -334,6 +373,7 @@
  en_US.UTF-8/XLC_LOCALE:			es_VE.UTF-8
  en_US.UTF-8/XLC_LOCALE:			et_EE.UTF-8
  en_US.UTF-8/XLC_LOCALE:			eu_ES.UTF-8
@@ -742,7 +734,7 @@ Index: libx11/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			fa_IR.UTF-8
  en_US.UTF-8/XLC_LOCALE:			fi_FI.UTF-8
  en_US.UTF-8/XLC_LOCALE:			fo_FO.UTF-8
-@@ -347,6 +387,8 @@
+@@ -344,6 +384,8 @@
  en_US.UTF-8/XLC_LOCALE:			fr_LU.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ga_IE.UTF-8
  en_US.UTF-8/XLC_LOCALE:			gd_GB.UTF-8
@@ -751,7 +743,7 @@ Index: libx11/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			gl_ES.UTF-8
  en_US.UTF-8/XLC_LOCALE:			gu_IN.UTF-8
  en_US.UTF-8/XLC_LOCALE:			gv_GB.UTF-8
-@@ -361,10 +403,12 @@
+@@ -358,10 +400,12 @@
  en_US.UTF-8/XLC_LOCALE:			it_CH.UTF-8
  en_US.UTF-8/XLC_LOCALE:			it_IT.UTF-8
  en_US.UTF-8/XLC_LOCALE:			iu_CA.UTF-8
@@ -764,7 +756,7 @@ Index: libx11/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			kn_IN.UTF-8
  en_US.UTF-8/XLC_LOCALE:                 ks_IN.UTF-8
  en_US.UTF-8/XLC_LOCALE:                 ks_IN@devanagari.UTF-8
-@@ -378,23 +422,31 @@
+@@ -375,23 +419,31 @@
  en_US.UTF-8/XLC_LOCALE:			mi_NZ.UTF-8
  en_US.UTF-8/XLC_LOCALE:			mk_MK.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ml_IN.UTF-8
@@ -799,7 +791,7 @@ Index: libx11/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			ph_PH.UTF-8
  en_US.UTF-8/XLC_LOCALE:			pl_PL.UTF-8
  en_US.UTF-8/XLC_LOCALE:			pp_AN.UTF-8
-@@ -408,11 +460,13 @@
+@@ -405,11 +457,13 @@
  en_US.UTF-8/XLC_LOCALE:                 sd_IN.UTF-8
  en_US.UTF-8/XLC_LOCALE:                 sd_IN@devanagari.UTF-8
  en_US.UTF-8/XLC_LOCALE:			se_NO.UTF-8
@@ -813,7 +805,7 @@ Index: libx11/nls/locale.dir.pre
  en_US.UTF-8/XLC_LOCALE:			sq_AL.UTF-8
  en_US.UTF-8/XLC_LOCALE:			sr_CS.UTF-8
  en_US.UTF-8/XLC_LOCALE:			sr_ME.UTF-8
-@@ -428,6 +482,7 @@
+@@ -425,6 +479,7 @@
  th_TH.UTF-8/XLC_LOCALE:			th_TH.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ti_ER.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ti_ET.UTF-8
