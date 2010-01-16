@@ -52,8 +52,8 @@ build: build-stamp
 build-stamp: configure $(STAMP_DIR)/genscripts
 	dh_testdir
 
-	mkdir -p obj-$(DEB_BUILD_GNU_TYPE)
-	cd obj-$(DEB_BUILD_GNU_TYPE) && \
+	mkdir -p build
+	cd build && \
 	../configure \
 		--prefix=/usr \
 		--mandir=\$${prefix}/share/man \
@@ -61,7 +61,7 @@ build-stamp: configure $(STAMP_DIR)/genscripts
 		--enable-specs \
 		$(confflags) \
 		CFLAGS="$(CFLAGS)"
-	cd obj-$(DEB_BUILD_GNU_TYPE) && $(MAKE)
+	cd build && $(MAKE)
 	>$@
 
 clean: xsfclean
@@ -73,7 +73,7 @@ clean: xsfclean
 	rm -f */config.cache */config.log */config.status
 	rm -f conftest* */conftest*
 	rm -rf autom4te.cache */autom4te.cache
-	rm -rf obj-*
+	rm -rf build
 	rm -f aclocal.m4 compile config.guess config.sub configure
 	rm -f depcomp install-sh ltmain.sh missing mkinstalldirs
 	rm -f src/config.h.in
@@ -89,7 +89,7 @@ install: build
 	dh_clean -k
 	dh_installdirs
 
-	cd obj-$(DEB_BUILD_GNU_TYPE) && $(MAKE) DESTDIR=$(CURDIR)/debian/tmp install
+	cd build && $(MAKE) DESTDIR=$(CURDIR)/debian/tmp install
 	# groff seems to produce ugly html, so only include the pdf and txt
 	# versions
 	rm -f debian/tmp/usr/share/doc/libX11/*.html
