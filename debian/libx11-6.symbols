@@ -1233,3 +1233,4 @@ libX11.so.6 libx11-6 #MINVER#
  _Xwctomb@Base 0
  (optional)_qfree@Base 0 1
  (optional)read_EncodingInfo@Base 0 1
+ (optional)xlocaledir@Base 0 1
