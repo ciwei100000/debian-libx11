@@ -1,7 +1,11 @@
 libx11 (2:1.3.3-2) UNRELEASED; urgency=low
 
+  [ Julien Cristau ]
   * Update debian/copyright from upstream COPYING.
   * Remove myself from Uploaders
+
+  [ Brice Goglin ]
+  * Remove Jamey Sharp and Josh Triplett from Uploaders, closes: #568274.
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 17 Jan 2010 10:09:53 +0000
 
