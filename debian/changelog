@@ -7,6 +7,9 @@ libx11 (2:1.3.3-2) UNRELEASED; urgency=low
   [ Brice Goglin ]
   * Remove Jamey Sharp and Josh Triplett from Uploaders, closes: #568274.
 
+  [ Cyril Brulebois ]
+  * Add udeb needed for the graphical installer: libx11-6-udeb.
+
  -- Julien Cristau <jcristau@debian.org>  Sun, 17 Jan 2010 10:09:53 +0000
 
 libx11 (2:1.3.3-1) unstable; urgency=low

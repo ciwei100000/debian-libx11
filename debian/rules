@@ -116,7 +116,8 @@ binary-arch: build install
 	dh_strip -Nlibx11-6 -Nlibx11-xcb1
 	dh_compress -s
 	dh_fixperms -s
-	dh_makeshlibs -s -- -c4
+	dh_makeshlibs -s -plibx11-6 --add-udeb=libx11-6-udeb -- -c4
+	dh_makeshlibs -s -Nlibx11-6 -- -c4
 	dh_shlibdeps -s
 	dh_installdeb -s
 	dh_gencontrol -s
