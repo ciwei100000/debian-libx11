@@ -9,6 +9,7 @@ libx11 (2:1.3.3-3) UNRELEASED; urgency=low
   * Cherry-pick patch from upstream to run user's synchandlers as well as
     any internal synchandlers: 75ea8c3793. This fixes xnee issues when
     RECORD extension is enabled (Closes: #536491).
+  * Merge xsfbs/debian-unstable to fix double autoreconf runs.
 
  -- Cyril Brulebois <kibi@debian.org>  Tue, 13 Apr 2010 13:41:13 +0200
 
