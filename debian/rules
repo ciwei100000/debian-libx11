@@ -77,9 +77,7 @@ clean: xsfclean
 	rm -f aclocal.m4 compile config.guess config.sub configure
 	rm -f depcomp install-sh ltmain.sh missing mkinstalldirs
 	rm -f src/config.h.in
-	rm -f $$(find -name Makefile.in)
-	# leftovers from the specs build
-	rm -f specs/*.png
+	find -name Makefile.in -delete
 
 	dh_clean
 
