@@ -1,0 +1,30 @@
+From beab7e3add14c78b236f5f1a5bbf49513740df94 Mon Sep 17 00:00:00 2001
+From: Julien Cristau <jcristau@debian.org>
+Date: Fri, 4 Jun 2010 13:57:45 +0200
+Subject: [PATCH libX11] Hide _XSeqSyncFunction
+
+Commit a6d974dc59f2722b36e2df9d4f07aeee4f83ce43 made _XSeqSyncFunction
+non-static, but we don't need to export it.
+
+Cc: Jamey Sharp <jamey@minilop.net>
+Signed-off-by: Julien Cristau <jcristau@debian.org>
+---
+ src/Xprivate.h |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/src/Xprivate.h b/src/Xprivate.h
+index ebe51c1..c32e59c 100644
+--- a/src/Xprivate.h
++++ b/src/Xprivate.h
+@@ -9,7 +9,7 @@
+ #define XPRIVATE_H
+ 
+ extern void _XIDHandler(Display *dpy);
+-extern void _XSeqSyncFunction(Display *dpy);
++extern _X_HIDDEN void _XSeqSyncFunction(Display *dpy);
+ extern void _XSetPrivSyncFunction(Display *dpy);
+ extern void _XSetSeqSyncFunction(Display *dpy);
+ 
+-- 
+1.7.1
+

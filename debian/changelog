@@ -3,6 +3,7 @@ libx11 (2:1.3.4-1) UNRELEASED; urgency=low
   * New upstream release.
     - lots of fixes for multithreaded apps
     - X11 users can now compose anarchism (closes: #555938)
+  * Hide _XSeqSyncFunction.
 
  -- Julien Cristau <jcristau@debian.org>  Fri, 04 Jun 2010 13:28:19 +0200
 
