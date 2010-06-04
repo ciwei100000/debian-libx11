@@ -92,7 +92,8 @@ install: build
 	cd build && $(MAKE) DESTDIR=$(CURDIR)/debian/tmp install
 	# groff seems to produce ugly html, so only include the pdf and txt
 	# versions
-	rm -f debian/tmp/usr/share/doc/libX11/*.html
+	rm -rf debian/tmp/usr/share/doc/libX11/specs/*/*.html \
+		debian/tmp/usr/share/doc/libX11/specs/*/images
 
 # Build architecture-dependent files here.
 binary-arch: build install
