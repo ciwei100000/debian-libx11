@@ -239,8 +239,9 @@ static xcb_generic_reply_t *poll_for_response(Display *dpy)
 	{
 		assert(XLIB_SEQUENCE_COMPARE(req->sequence, <=, dpy->request));
 		dpy->last_request_read = req->sequence;
-		if(!response)
-			dequeue_pending_request(dpy, req);
+		if(response)
+			break;
+		dequeue_pending_request(dpy, req);
 		if(error)
 			return (xcb_generic_reply_t *) error;
 	}
@@ -579,7 +580,7 @@ Status _XReply(Display *dpy, xReply *rep, int extra, Bool discard)
 		xcb_generic_event_t *event = dpy->xcb->next_event;
 		unsigned long event_sequence = dpy->last_request_read;
 		widen(&event_sequence, event->full_sequence);
-		if(event_sequence == current->sequence)
+		if(event_sequence == dpy->last_request_read)
 		{
 			error = (xcb_generic_error_t *) event;
 			dpy->xcb->next_event = NULL;

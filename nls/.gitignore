@@ -1,4 +1,3 @@
-#		Add & Override for this directory and it's subdirectories
 Compose
 XLC_LOCALE
 compose.dir
@@ -10,4 +9,4 @@ locale.alias.l2
 locale.dir
 locale.dir.l1
 locale.dir.l2
-
+xorg.css
