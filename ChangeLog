@@ -1,3 +1,174 @@
+commit a9228fcc676aacf9a760dd94891c89f9bc82b20d
+Author: Alan Coopersmith <alan.coopersmith@oracle.com>
+Date:   Tue Jan 11 17:55:22 2011 -0800
+
+    libX11 1.4.1
+    
+    Signed-off-by: Alan Coopersmith <alan.coopersmith@oracle.com>
+
+commit 92fa96451af37a7a0f2592de07643fdaed7a9efd
+Author: Pauli Nieminen <ext-pauli.nieminen@nokia.com>
+Date:   Mon Jan 3 12:25:28 2011 -0500
+
+    Initialize event type
+    
+    If we receive unsupported event closing connection triggers valgrind
+    error.
+    
+    ==12017== Conditional jump or move depends on uninitialised value(s)
+    ==12017==    at 0x487D454: _XFreeDisplayStructure (OpenDis.c:607)
+    ==12017==    by 0x486857B: XCloseDisplay (ClDisplay.c:72)
+    *snip*
+    ==12017==  Uninitialised value was created by a heap allocation
+    ==12017==    at 0x4834C48: malloc (vg_replace_malloc.c:236)
+    ==12017==    by 0x4894147: _XEnq (XlibInt.c:877)
+    ==12017==    by 0x4891BF3: handle_response (xcb_io.c:335)
+    ==12017==    by 0x4892263: _XReply (xcb_io.c:626)
+    *snip*
+    
+    Problem is that XFreeDisplaySturture is checking for qelt->event.type ==
+    GenericEvent while _XUnknownWireEvent doesn't store the type.
+    
+    Reviewed-by: Adam Jackson <ajax@redhat.com>
+    Reviewed-by: Peter Hutterer <peter.hutterer@who-t.net>
+    Signed-off-by: Pauli Nieminen <ext-pauli.nieminen@nokia.com>
+
+commit fa9747b9d4443eef9b1687b8b1208801f5c585da
+Author: Fernando Carrijo <fcarrijo.lists@gmail.com>
+Date:   Tue Dec 28 16:18:57 2010 -0500
+
+    specs: convert images from gif to svg format.
+    
+    Signed-off-by: Gaetan Nadon <memsize@videotron.ca>
+
+commit 0012e2a4eaddc0840617b4758931ad976ca2eb7c
+Author: Philipp Reh <sefi@s-e-f-i.de>
+Date:   Wed Dec 22 15:14:05 2010 +0000
+
+    Events: Store event cookie when dequeuing event
+    
+    When we dequeue an event in XCheckTypedEvent or XCheckTypedWindowEvent,
+    make sure to store the corresponding cookie too.
+    
+    Signed-off-by: Philipp Reh <sefi@s-e-f-i.de>
+    Reviewed-by: Daniel Stone <daniel@fooishbar.org>
+
+commit d2714d65e85b44abedf5f82e1a31506dba397ef2
+Author: Alan Coopersmith <alan.coopersmith@oracle.com>
+Date:   Tue Dec 21 18:47:16 2010 -0800
+
+    Revert "Mark atom names argument to XInternAtoms as const"
+    
+    This reverts commit c8701115462b482d99ecff24d9de0f2806084ba5.
+    
+    The constification of a pointer to a pointer caused unexpected issues,
+    and xorg-devel was unable to come up with a clean, safe, reasonable way
+    to handle them, so we're chalking this up for now as yet another mistake
+    in the Xlib API definition we'll be living with.
+    
+    See https://bugs.freedesktop.org/show_bug.cgi?id=32098 for details.
+    
+    Signed-off-by: Alan Coopersmith <alan.coopersmith@oracle.com>
+
+commit 6459f9a48a82de3bc0235bd36acab2df11e436d5
+Author: Alan Coopersmith <alan.coopersmith@oracle.com>
+Date:   Mon Dec 20 20:54:07 2010 -0800
+
+    specs/XKB: make acknowlegement section <preface> instead of <chapter>
+    
+    Fixes numbering of actual chapters to match their filenames and to
+    make the table/figure numbering match the references in the text.
+    
+    Reported-by: jelmd on freenode irc
+    Signed-off-by: Alan Coopersmith <alan.coopersmith@oracle.com>
+
+commit 42c653d5413fc5870486a9cf51dd28d1e88f7c69
+Author: Alan Coopersmith <alan.coopersmith@oracle.com>
+Date:   Sun Dec 19 23:53:02 2010 -0800
+
+    Add XKBlib spec images to dist_spec_DATA for distribution & installation
+    
+    Signed-off-by: Alan Coopersmith <alan.coopersmith@oracle.com>
+    Reviewed-by: Gaetan Nadon <memsize@videotron.ca>
+
+commit 8f8a3c8c42af82976d261ac2447cfbb0f90fa77d
+Author: Matt Dew <matt@osource.org>
+Date:   Tue Nov 30 10:52:07 2010 -0500
+
+    specs: convert XKBlib spec from Framemaker to DocBook.xml
+    
+    Signed-off-by: Gaetan Nadon <memsize@videotron.ca>
+
+commit c8701115462b482d99ecff24d9de0f2806084ba5
+Author: Alan Coopersmith <alan.coopersmith@oracle.com>
+Date:   Sun Nov 21 20:49:05 2010 -0800
+
+    Mark atom names argument to XInternAtoms as const
+    
+    Updates code & docs for XInternAtoms.
+    
+    The single atom name argument to XInternAtom was already const char *
+    in the code, but not the docs, so updated it in the docs too.
+    
+    Signed-off-by: Alan Coopersmith <alan.coopersmith@oracle.com>
+    Reviewed-by: Peter Hutterer <peter.hutterer@who-t.net>
+
+commit 24db5b5ff0d51b0ed9d9701a792c5f14f23b638d
+Author: Alan Coopersmith <alan.coopersmith@oracle.com>
+Date:   Sun Nov 21 14:04:32 2010 -0800
+
+    libX11 1.4.0
+    
+    Signed-off-by: Alan Coopersmith <alan.coopersmith@oracle.com>
+
+commit 18d3c3e9de19e936281b111d5a82acfb3a3f552e
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Sat Nov 6 21:58:10 2010 +0000
+
+    config: Check host string when deciding architecture to build for
+    
+    When checking for the OS/2 platform, $target_os is used. However, unless
+    building a cross compiler, the $host* strings contain the platform
+    details for the build system. See:
+    
+    http://www.gnu.org/software/automake/manual/automake.html#Cross_002dCompilation
+    
+    $host_os is already being used to determine the transport and threading
+    options.
+    
+    Signed-off-by: Dan Nicholson <dbn.lists@gmail.com>
+    Reviewed-by: Julien Cristau <jcristau@debian.org>
+    Signed-off-by: Alan Coopersmith <alan.coopersmith@oracle.com>
+
+commit affc2488a7f2660a74dc8354fc3e0bff2c4f879c
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Sat Nov 6 21:58:09 2010 +0000
+
+    config: Fix architecture check for OS/2 to skip nios2 cpu
+    
+    The OS/2 platform requires some utility functions as well as having a
+    non-32 bit wchar_t. Fix the configure check so that it doesn't also
+    affect the nios2 cpu, which wouldn't influence these operating system
+    issues.
+    
+    Signed-off-by: Dan Nicholson <dbn.lists@gmail.com>
+    Tested-by: Frans Meulenbroeks <fransmeulenbroeks@gmail.com>
+    Reviewed-by: Alan Coopersmith <alan.coopersmith@oracle.com>
+    Reviewed-by: Julien Cristau <jcristau@debian.org>
+    Signed-off-by: Alan Coopersmith <alan.coopersmith@oracle.com>
+
+commit 8cbca8a10761d1ea75a75bafa647632d6c0dac71
+Author: Gaetan Nadon <memsize@videotron.ca>
+Date:   Tue Nov 9 13:04:44 2010 -0500
+
+    config: HTML file generation: use the installed copy of xorg.css
+    
+    Currenlty the xorg.css file is copied in each location
+    where a DocBook/XML file resides. This produces about
+    70 copies in the $(docdir) install tree.
+    
+    Signed-off-by: Gaetan Nadon <memsize@videotron.ca>
+
 commit 3e8907305e1818369aef5a5c0da61f09e20de4f8
 Author: Alan Coopersmith <alan.coopersmith@oracle.com>
 Date:   Fri Oct 29 22:02:10 2010 -0700
