@@ -19,6 +19,10 @@ Build-Depends:
  libtool,
  xutils-dev (>= 1:7.5+5),
 # specs
+ xmlto,
+ xorg-sgml-doctools (>= 1:1.5),
+ w3m,
+# specs (might be outdated now)
  groff,
  ghostscript,
  netpbm,

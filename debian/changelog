@@ -24,6 +24,7 @@ libx11 (2:1.4.1-1) UNRELEASED; urgency=low
     - _XSetSeqSyncFunction@Base
   * Drop obsolete --enable-man-pages=3 from configure flags.
   * Pass --with-xmlto and --without-fop for the documentation generation.
+  * Add xmlto, xorg-sgml-doctools, w3m build-dep accordingly.
 
  -- Robert Hooker <sarvatt@ubuntu.com>  Fri, 12 Nov 2010 21:23:09 -0500
 
