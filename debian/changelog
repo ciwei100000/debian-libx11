@@ -13,6 +13,8 @@ libx11 (2:1.4.1-1) UNRELEASED; urgency=low
 
   [ Cyril Brulebois ]
   * New new (new) upstream release.
+  * As a temporary measure, add 020_keep_xorg_css.diff to avoid having to
+    depend on xorg-sgml-doctools just for xorg.css.
 
  -- Robert Hooker <sarvatt@ubuntu.com>  Fri, 12 Nov 2010 21:23:09 -0500
 
