@@ -21,4 +21,58 @@
 # DEALINGS IN THE SOFTWARE.
 #
 
-SUBDIRS=libX11 i18n XIM XKB
+if ENABLE_SPECS
+
+specdir = $(docdir)/$(subdir)
+doc_sources = xkblib.xml
+dist_spec_DATA = 		\
+	$(doc_sources)		\
+	acknowledgement.xml	\
+	ch01.xml		\
+	ch02.xml		\
+	ch03.xml		\
+	ch04.xml		\
+	ch05.xml		\
+	ch06.xml		\
+	ch07.xml		\
+	ch08.xml		\
+	ch09.xml		\
+	ch10.xml		\
+	ch11.xml		\
+	ch12.xml		\
+	ch13.xml		\
+	ch14.xml		\
+	ch15.xml		\
+	ch16.xml		\
+	ch17.xml		\
+	ch18.xml		\
+	ch19.xml		\
+	ch20.xml		\
+	ch21.xml		\
+	ch22.xml		\
+	glossary.xml		\
+	XKBlib-1.svg		\
+	XKBlib-2.svg		\
+	XKBlib-3.svg		\
+	XKBlib-4.svg		\
+	XKBlib-5.svg		\
+	XKBlib-6.svg		\
+	XKBlib-7.svg		\
+	XKBlib-8.svg		\
+	XKBlib-9.svg		\
+	XKBlib-10.svg		\
+	XKBlib-11.svg		\
+	XKBlib-12.svg		\
+	XKBlib-13.svg		\
+	XKBlib-14.svg		\
+	XKBlib-15.svg		\
+	XKBlib-16.svg		\
+	XKBlib-17.svg		\
+	XKBlib-18.svg		\
+	XKBlib-19.svg		\
+	XKBlib-20.svg		\
+	XKBlib-21.svg
+
+include $(top_srcdir)/specs/xmlrules.in
+
+endif ENABLE_SPECS

@@ -3,7 +3,7 @@
 
 AC_PREREQ(2.60)
 AC_INIT([libX11],
-        [1.3.99.903],
+        [1.4.1],
         [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],
         libX11)
 AC_CONFIG_SRCDIR([Makefile.am])
@@ -246,8 +246,8 @@ dnl AC_PATH_XTRA
 
 # arch specific things
 WCHAR32="1"
-case $target_alias in
-  *os2*) os2="true" ; WCHAR32="0" ;;
+case $host_os in
+  os2*) os2="true" ; WCHAR32="0" ;;
   *) ;;
 esac
 AC_SUBST(WCHAR32)
@@ -469,6 +469,7 @@ AC_OUTPUT([Makefile
 	   specs/i18n/trans/Makefile
 	   specs/libX11/Makefile
 	   specs/XIM/Makefile
+	   specs/XKB/Makefile
 	   x11.pc
 	   x11-xcb.pc])
 
