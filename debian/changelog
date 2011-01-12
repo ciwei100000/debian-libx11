@@ -4,7 +4,6 @@ libx11 (2:1.4.1-1) UNRELEASED; urgency=low
   * New upstream release.
     - lots of fixes for multithreaded apps
     - X11 users can now compose anarchism (closes: #555938)
-  * Hide _XSeqSyncFunction.
 
   [ Robert Hooker ]
   * New upstream release.
@@ -16,6 +15,13 @@ libx11 (2:1.4.1-1) UNRELEASED; urgency=low
   * As a temporary measure, add 020_keep_xorg_css.diff to avoid having to
     depend on xorg-sgml-doctools just for xorg.css.
   * Refresh all patches.
+  * Some functions got hidden by upstream in aebbf36238, since “none of
+    the functions in Xprivate.h should have any callers outside of Xlib,
+    by definition”. As a consequence, drop the following symbols from
+    libx11-6.symbols:
+    - _XIDHandler@Base
+    - _XSetPrivSyncFunction@Base
+    - _XSetSeqSyncFunction@Base
 
  -- Robert Hooker <sarvatt@ubuntu.com>  Fri, 12 Nov 2010 21:23:09 -0500
 

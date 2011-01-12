@@ -826,7 +826,6 @@ libX11.so.6 libx11-6 #MINVER#
  _XGetScanlinePad@Base 0
  _XGetWindowAttributes@Base 0
  (optional)_XHeadOfDisplayList@Base 0 1
- (optional)_XIDHandler@Base 0 1
  (optional)_XIMCompileResourceList@Base 0 1
  _XIOError@Base 0
  _XIOErrorFunction@Base 0
@@ -868,8 +867,6 @@ libX11.so.6 libx11-6 #MINVER#
  _XSetClipRectangles@Base 0
  _XSetImage@Base 0
  _XSetLastRequestRead@Base 0
- (optional)_XSetPrivSyncFunction@Base 0 1
- (optional)_XSetSeqSyncFunction@Base 0 1
  _XStoreEventCookie@Base 2:1.2.99.901
  _XTextHeight16@Base 0
  _XTextHeight@Base 0
