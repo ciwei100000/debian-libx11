@@ -99,6 +99,8 @@ binary-arch: build install
 	dh_testroot
 
 	dh_installdocs -s NEWS
+	# Kill *.xml files, we don't need them:
+	find debian/tmp -name '*.xml' -delete
 	# Using exclusions here allows libx11-6.install to use wildcards for
 	# headers and manpages, rather than listing every header and manpage
 	# other than these.
