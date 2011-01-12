@@ -57,6 +57,8 @@ build-stamp: configure $(STAMP_DIR)/genscripts
 		--mandir=\$${prefix}/share/man \
 		--infodir=\$${prefix}/share/info \
 		--enable-specs \
+		--with-xmlto \
+		--without-fop \
 		$(confflags) \
 		CFLAGS="$(CFLAGS)"
 	cd build && $(MAKE)
