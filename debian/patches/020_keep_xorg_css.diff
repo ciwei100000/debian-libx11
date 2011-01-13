@@ -8,21 +8,12 @@ probably not a package we want to make all our packages depend on.
 
 So, as an interim measure, keep the local copy of that file.
 
-This reverts commit 8cbca8a10761d1ea75a75bafa647632d6c0dac71.
+This reverts commit 8cbca8a10761d1ea75a75bafa647632d6c0dac71 partially.
+Partially because specs/.gitignore is left out, since it's shipped in
+the tarball, trying to apply this patch with the hunk touching this file
+would lead to failure.
 ---
- specs/.gitignore  |    1 +
- specs/xmlrules.in |    9 +++++----
- 2 files changed, 6 insertions(+), 4 deletions(-)
 
-diff --git a/specs/.gitignore b/specs/.gitignore
-index 6fa5c31..09b6a89 100644
---- a/specs/.gitignore
-+++ b/specs/.gitignore
-@@ -2,3 +2,4 @@
- *.ps
- *.pdf
- *.txt
-+*.css
 diff --git a/specs/xmlrules.in b/specs/xmlrules.in
 index 7687860..2af4130 100644
 --- a/specs/xmlrules.in
