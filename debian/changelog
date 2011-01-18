@@ -1,3 +1,11 @@
+libx11 (2:1.4.1-2) UNRELEASED; urgency=low
+
+  * Make libx11-data break earlier versions of libx11-6, since those rely
+    on XKeysymDB, resulting in a non-functional keyboard and plenty of
+    such messages: “Internal error: Could not resolve keysym *”.
+
+ -- Cyril Brulebois <kibi@debian.org>  Tue, 18 Jan 2011 18:14:47 +0100
+
 libx11 (2:1.4.1-1) experimental; urgency=low
 
   [ Julien Cristau ]
