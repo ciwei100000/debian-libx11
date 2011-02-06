@@ -1,4 +1,4 @@
-libx11 (2:1.4.1-3) UNRELEASED; urgency=low
+libx11 (2:1.4.1-3) unstable; urgency=low
 
   * Remove David Nusinow and Brice Goglin from Uploaders.  Thanks for all your
     work!
@@ -6,8 +6,9 @@ libx11 (2:1.4.1-3) UNRELEASED; urgency=low
     Pre-Depends on x11-common (needed for upgrades from sarge), and Conflicts
     against pre-XCB libx11-6.
   * Wrap debian/control Depends fields.
+  * Upload to unstable.
 
- -- Julien Cristau <jcristau@debian.org>  Sun, 06 Feb 2011 22:33:49 +0100
+ -- Julien Cristau <jcristau@debian.org>  Sun, 06 Feb 2011 22:42:28 +0100
 
 libx11 (2:1.4.1-2) experimental; urgency=low
 
