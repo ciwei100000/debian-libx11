@@ -34,7 +34,10 @@ Vcs-Browser: http://git.debian.org/?p=pkg-xorg/lib/libx11.git
 Package: libx11-6
 Section: libs
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-data
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ libx11-data,
 Description: X11 client-side library
  This package provides a client interface to the X Window System, otherwise
  known as 'Xlib'.  It provides a complete API for the basic functions of the
@@ -50,13 +53,16 @@ Package: libx11-6-udeb
 XC-Package-Type: udeb
 Section: debian-installer
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
 Description: X11 client-side library
  This is a udeb, or a microdeb, for the debian-installer.
 
 Package: libx11-data
 Architecture: all
-Depends: ${misc:Depends}
+Depends:
+ ${misc:Depends},
 Breaks: libx11-6 (<< 2:1.4.1)
 Description: X11 client-side library
  This package provides the locale data files for libx11.
@@ -71,7 +77,10 @@ Package: libx11-6-dbg
 Section: debug
 Architecture: any
 Priority: extra
-Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6 (= ${binary:Version})
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ libx11-6 (= ${binary:Version}),
 Description: X11 client-side library (debug package)
  This package provides a client interface to the X Window System, otherwise
  known as 'Xlib'.  It provides a complete API for the basic functions of the
@@ -89,7 +98,17 @@ Description: X11 client-side library (debug package)
 Package: libx11-dev
 Section: libdevel
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-6 (= ${binary:Version}), libxau-dev (>= 1:1.0.0-1), libxdmcp-dev (>= 1:1.0.0-1), x11proto-core-dev (>= 6.8.99.8-1), x11proto-input-dev, x11proto-kb-dev, xtrans-dev, libxcb1-dev
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ libx11-6 (= ${binary:Version}),
+ libxau-dev (>= 1:1.0.0-1),
+ libxdmcp-dev (>= 1:1.0.0-1),
+ x11proto-core-dev (>= 6.8.99.8-1),
+ x11proto-input-dev,
+ x11proto-kb-dev,
+ xtrans-dev,
+ libxcb1-dev,
 Description: X11 client-side library (development headers)
  This package provides a client interface to the X Window System, otherwise
  known as 'Xlib'.  It provides a complete API for the basic functions of the
@@ -107,7 +126,9 @@ Description: X11 client-side library (development headers)
 Package: libx11-xcb1
 Section: libs
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
 Description: Xlib/XCB interface library
  libX11-xcb provides functions needed by clients which take advantage of
  Xlib/XCB to mix calls to both Xlib and XCB over the same X connection.
@@ -125,7 +146,10 @@ Package: libx11-xcb1-dbg
 Section: debug
 Architecture: any
 Priority: extra
-Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-xcb1 (= ${binary:Version})
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ libx11-xcb1 (= ${binary:Version}),
 Description: Xlib/XCB interface library (debug package)
  libX11-xcb provides functions needed by clients which take advantage of
  Xlib/XCB to mix calls to both Xlib and XCB over the same X connection.
@@ -145,7 +169,12 @@ Description: Xlib/XCB interface library (debug package)
 Package: libx11-xcb-dev
 Section: libdevel
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libx11-xcb1 (= ${binary:Version}), libxcb1-dev (>= 0.9.92), libx11-dev
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ libx11-xcb1 (= ${binary:Version}),
+ libxcb1-dev (>= 0.9.92),
+ libx11-dev,
 Description: Xlib/XCB interface library (development headers)
  libX11-xcb provides functions needed by clients which take advantage of
  Xlib/XCB to mix calls to both Xlib and XCB over the same X connection.
