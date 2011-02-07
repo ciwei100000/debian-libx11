@@ -1,6 +1,8 @@
 libx11 (2:1.4.1-4) UNRELEASED; urgency=low
 
   * Bump Standards-Version to 3.9.1.
+  * specs were converted from groff to xml, so we can ship the html version
+    now.
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 06 Feb 2011 23:07:12 +0100
 
