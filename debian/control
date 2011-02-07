@@ -22,11 +22,6 @@ Build-Depends:
  xmlto,
  xorg-sgml-doctools (>= 1:1.5),
  w3m,
-# specs (might be outdated now)
- groff,
- ghostscript,
- netpbm,
- psutils,
 Standards-Version: 3.9.1
 Vcs-Git: git://git.debian.org/git/pkg-xorg/lib/libx11
 Vcs-Browser: http://git.debian.org/?p=pkg-xorg/lib/libx11.git
