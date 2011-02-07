@@ -1,4 +1,4 @@
-libx11 (2:1.4.1-4) UNRELEASED; urgency=low
+libx11 (2:1.4.1-4) unstable; urgency=low
 
   * Bump Standards-Version to 3.9.1.
   * specs were converted from groff to xml, so we can ship the html version
@@ -6,7 +6,7 @@ libx11 (2:1.4.1-4) UNRELEASED; urgency=low
   * Drop Build-Dependencies on groff/ghostscript/... since the docs were
     converted to xml.
 
- -- Julien Cristau <jcristau@debian.org>  Sun, 06 Feb 2011 23:07:12 +0100
+ -- Julien Cristau <jcristau@debian.org>  Mon, 07 Feb 2011 12:36:09 +0100
 
 libx11 (2:1.4.1-3) unstable; urgency=low
 
