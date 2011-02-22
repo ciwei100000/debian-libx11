@@ -59,6 +59,7 @@ Architecture: all
 Depends:
  ${misc:Depends},
 Breaks: libx11-6 (<< 2:1.4.1)
+Multi-Arch: foreign
 Description: X11 client-side library
  This package provides the locale data files for libx11.
  .
