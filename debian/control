@@ -5,7 +5,7 @@ Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Uploaders: Cyril Brulebois <kibi@debian.org>
 Build-Depends:
  debhelper (>= 5.0.0),
- dpkg-dev (>= 1.15.8.10ubuntu1+multiarch.1),
+ dpkg-dev (>= 1.16.0),
  pkg-config,
  xtrans-dev,
  x11proto-core-dev (>= 7.0.13),
@@ -33,6 +33,7 @@ Depends:
  ${shlibs:Depends},
  ${misc:Depends},
  libx11-data,
+Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
 Description: X11 client-side library
  This package provides a client interface to the X Window System, otherwise
@@ -127,6 +128,7 @@ Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
+Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
 Description: Xlib/XCB interface library
  libX11-xcb provides functions needed by clients which take advantage of
