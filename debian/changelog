@@ -1,6 +1,10 @@
 libx11 (2:1.4.2-1) UNRELEASED; urgency=low
 
+  [ Timo Aaltonen ]
   * New upstream release. (closes: #463159)
+
+  [ Cyril Brulebois ]
+  * Bump x11proto-xf86bigfont-dev build-dep.
 
  -- Timo Aaltonen <tjaalton@ubuntu.com>  Fri, 18 Mar 2011 09:44:04 +0200
 
