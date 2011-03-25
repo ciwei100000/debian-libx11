@@ -1,4 +1,4 @@
-libx11 (2:1.4.2-1) UNRELEASED; urgency=low
+libx11 (2:1.4.2-1) unstable; urgency=low
 
   [ Timo Aaltonen ]
   * New upstream release. (closes: #463159)
@@ -6,7 +6,7 @@ libx11 (2:1.4.2-1) UNRELEASED; urgency=low
   [ Cyril Brulebois ]
   * Bump x11proto-xf86bigfont-dev build-dep.
 
- -- Timo Aaltonen <tjaalton@ubuntu.com>  Fri, 18 Mar 2011 09:44:04 +0200
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 26 Mar 2011 00:36:43 +0100
 
 libx11 (2:1.4.1-5) unstable; urgency=low
 
