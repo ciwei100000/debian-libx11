@@ -17,7 +17,7 @@ Build-Depends:
  quilt,
  automake,
  libtool,
- xutils-dev (>= 1:7.5+5),
+ xutils-dev (>= 1:7.6+2),
 # specs
  xmlto,
  xorg-sgml-doctools (>= 1:1.5),
