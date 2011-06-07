@@ -5,7 +5,7 @@ Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Uploaders: Cyril Brulebois <kibi@debian.org>
 Build-Depends:
  debhelper (>= 5.0.0),
- dpkg-dev (>= 1.15.3),
+ dpkg-dev (>= 1.16.0),
  pkg-config,
  xtrans-dev,
  x11proto-core-dev (>= 7.0.21),
@@ -33,6 +33,8 @@ Depends:
  ${shlibs:Depends},
  ${misc:Depends},
  libx11-data,
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
 Description: X11 client-side library
  This package provides a client interface to the X Window System, otherwise
  known as 'Xlib'.  It provides a complete API for the basic functions of the
@@ -77,6 +79,7 @@ Depends:
  ${shlibs:Depends},
  ${misc:Depends},
  libx11-6 (= ${binary:Version}),
+Multi-Arch: same
 Description: X11 client-side library (debug package)
  This package provides a client interface to the X Window System, otherwise
  known as 'Xlib'.  It provides a complete API for the basic functions of the
@@ -125,6 +128,8 @@ Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
 Description: Xlib/XCB interface library
  libX11-xcb provides functions needed by clients which take advantage of
  Xlib/XCB to mix calls to both Xlib and XCB over the same X connection.
@@ -146,6 +151,7 @@ Depends:
  ${shlibs:Depends},
  ${misc:Depends},
  libx11-xcb1 (= ${binary:Version}),
+Multi-Arch: same
 Description: Xlib/XCB interface library (debug package)
  libX11-xcb provides functions needed by clients which take advantage of
  Xlib/XCB to mix calls to both Xlib and XCB over the same X connection.
