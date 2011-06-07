@@ -1,3 +1,10 @@
+libx11 (2:1.4.3-2) UNRELEASED; urgency=low
+
+  [ Steve Langasek ]
+  * Build for multiarch.
+
+ -- Julien Cristau <jcristau@debian.org>  Tue, 07 Jun 2011 15:58:38 +0200
+
 libx11 (2:1.4.3-1) unstable; urgency=low
 
   * New upstream release:
