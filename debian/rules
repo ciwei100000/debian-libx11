@@ -111,6 +111,7 @@ binary-arch: build install
 	dh_install --sourcedir=debian/tmp -Nlibx11-dev -s
 	dh_installchangelogs -s ChangeLog
 	dh_installman -s
+	dh_lintian -s
 	dh_link -s
 	dh_strip -plibx11-6 --dbg-package=libx11-6-dbg
 	dh_strip -plibx11-xcb1 --dbg-package=libx11-xcb1-dbg
@@ -135,6 +136,7 @@ binary-indep: build install
 	dh_install --sourcedir=debian/tmp -i
 	dh_link -i
 	dh_installman -i
+	dh_lintian -i
 	dh_compress -i
 	dh_fixperms -i
 	dh_installdeb -i
