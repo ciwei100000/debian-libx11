@@ -5,6 +5,7 @@ libx11 (2:1.4.3-2) UNRELEASED; urgency=low
 
   [ Julien Cristau ]
   * Bump Standards-Version to 3.9.2.
+  * Properly clean up libtool m4 files.
 
  -- Julien Cristau <jcristau@debian.org>  Tue, 07 Jun 2011 15:58:38 +0200
 

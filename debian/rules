@@ -78,6 +78,7 @@ clean: xsfclean
 	rm -rf autom4te.cache */autom4te.cache
 	rm -rf build
 	rm -f aclocal.m4 compile config.guess config.sub configure
+	rm -f m4/lt*.m4 m4/libtool.m4
 	rm -f depcomp install-sh ltmain.sh missing mkinstalldirs
 	rm -f src/config.h.in
 	find -name Makefile.in -delete
