@@ -1,6 +1,11 @@
 libx11 (2:1.4.3-3) UNRELEASED; urgency=low
 
+  [ Julien Cristau ]
   * Add lintian override for the libx11-private dep in libx11-6.symbols.
+
+  [ Cyril Brulebois ]
+  * Fix the FTBFS on s390x (Closes: #635692): Add s390x to the list of
+    64-bit architectures in the symbols file. Thanks, Aurélien Jarno!
 
  -- Julien Cristau <jcristau@debian.org>  Sat, 11 Jun 2011 14:35:56 +0200
 
