@@ -1,6 +1,7 @@
 libx11 (2:1.4.4-1) UNRELEASED; urgency=low
 
   * New upstream release.
+  * Drop xorg.css from libx11-dev, depend on xorg-sgml-doctools instead.
 
  -- Julien Cristau <jcristau@debian.org>  Sat, 30 Jul 2011 18:08:01 +0200
 

@@ -108,6 +108,8 @@ Depends:
  x11proto-kb-dev,
  xtrans-dev,
  libxcb1-dev,
+# for xorg.css
+ xorg-sgml-doctools (>= 1:1.5),
 Description: X11 client-side library (development headers)
  This package provides a client interface to the X Window System, otherwise
  known as 'Xlib'.  It provides a complete API for the basic functions of the
