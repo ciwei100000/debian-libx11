@@ -1,3 +1,9 @@
+libx11 (2:1.4.4-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+
+ -- Julien Cristau <jcristau@debian.org>  Sat, 30 Jul 2011 18:08:01 +0200
+
 libx11 (2:1.4.3-3) unstable; urgency=low
 
   [ Julien Cristau ]
