@@ -58,7 +58,7 @@ build-stamp: configure $(STAMP_DIR)/genscripts
 		--prefix=/usr \
 		--mandir=\$${prefix}/share/man \
 		--infodir=\$${prefix}/share/info \
-		--libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH)
+		--libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH) \
 		--enable-specs \
 		--with-xmlto \
 		--without-fop \
