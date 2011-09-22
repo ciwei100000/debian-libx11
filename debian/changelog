@@ -1,10 +1,10 @@
-libx11 (2:1.4.4-2) UNRELEASED; urgency=low
+libx11 (2:1.4.4-2) unstable; urgency=low
 
   [ Colin Watson ]
   * Fix cross-compilation breakage due to a typo in the multiarch patch
     (closes: #642402)
 
- -- Julien Cristau <jcristau@debian.org>  Thu, 22 Sep 2011 17:41:26 +0200
+ -- Julien Cristau <jcristau@debian.org>  Thu, 22 Sep 2011 17:42:39 +0200
 
 libx11 (2:1.4.4-1) unstable; urgency=low
 
