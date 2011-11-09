@@ -308,12 +308,6 @@ en_CA.iso88591:					en_CA.ISO8859-1
 en_CA.ISO-8859-1:				en_CA.ISO8859-1
 en_CA.ISO_8859-1:				en_CA.ISO8859-1
 en_CA.utf8:					en_CA.UTF-8
-en_DK:						en_DK.ISO8859-1
-en_DK.iso88591:					en_DK.ISO8859-1
-en_DK.ISO-8859-1:				en_DK.ISO8859-1
-en_DK.iso885915:				en_DK.ISO8859-15
-en_DK.ISO-8859-15:				en_DK.ISO8859-15
-en_DK.utf8:					en_DK.UTF-8
 en_GB:						en_GB.ISO8859-1
 en_GB.88591:					en_GB.ISO8859-1
 en_GB.88591.en:					en_GB.ISO8859-1
@@ -354,16 +348,6 @@ EN_US:						en_US.ISO8859-1
 en_US.88591:					en_US.ISO8859-1
 en_US.88591.en:					en_US.ISO8859-1
 en_US.iso88591:					en_US.ISO8859-1
-en_US.ISO-8859-1:				en_US.ISO8859-1
-en_US.ISO_8859-1:				en_US.ISO8859-1
-en_US.iso885915:				en_US.ISO8859-15
-en_US.ISO-8859-15:				en_US.ISO8859-15
-en_US.8859-15:					en_US.ISO8859-15
-en_US.ISO8859-15@euro:				en_US.ISO8859-15
-en_US.utf8:					en_US.UTF-8
-EN_US.UTF-8:					en_US.UTF-8
-en_US.88591.en:				en_US.ISO8859-1
-en_US.iso88591:				en_US.ISO8859-1
 en_US.ISO-8859-1:				en_US.ISO8859-1
 en_US.ISO_8859-1:				en_US.ISO8859-1
 en_US.iso885915:				en_US.ISO8859-15
@@ -743,10 +727,6 @@ kl_GL.iso88591:					kl_GL.ISO8859-1
 kl_GL.ISO-8859-1:				kl_GL.ISO8859-1
 kl_GL.iso885915:				kl_GL.ISO8859-15
 kl_GL.utf8:					kl_GL.UTF-8
-km:						km_KH.UTF-8
-km_KH:						km_KH.UTF-8
-km_KH.utf8:					km_KH.UTF-8
-km_KH.UTF-8:					km_KH.UTF-8
 kn:						kn_IN.UTF-8
 kn_IN.utf8:					kn_IN.UTF-8
 kn_IN.UTF-8:					kn_IN.UTF-8
@@ -947,6 +927,7 @@ pt_BR.88591.en:					pt_BR.ISO8859-1
 pt_BR.iso88591:					pt_BR.ISO8859-1
 pt_BR.ISO-8859-1:				pt_BR.ISO8859-1
 pt_BR.ISO_8859-1:				pt_BR.ISO8859-1
+pt_BR.iso885915:				pt_BR.ISO8859-15
 pt_BR.utf8:					pt_BR.UTF-8
 pt_PT:						pt_PT.ISO8859-1
 pt_PT.88591:					pt_PT.ISO8859-1
@@ -1007,11 +988,11 @@ XCOMM CS was the old ISO code for Serbia&Montenegro (now separate RS and ME).
 XCOMM These lines should be deleted in the future.
 sh:						sr_RS.UTF-8@latin
 sh_BA.ISO8859-2@bosnia:				sr_CS.ISO8859-2
+sh_HR.iso88592:					hr_HR.ISO8859-2
 sh_YU:						sr_RS.UTF-8@latin
 sh_YU.utf8:					sr_RS.UTF-8@latin
 si:						si_LK.UTF-8
 si_LK:						si_LK.UTF-8
-sid_ET:                        sid_ET.UTF-8
 sk:						sk_SK.ISO8859-2
 sk_SK:						sk_SK.ISO8859-2
 sk_SK.iso88592:					sk_SK.ISO8859-2
@@ -1220,7 +1201,7 @@ XCOMM The following locale names are used in HPUX 9.x
 american.iso88591:				en_US.ISO8859-1
 arabic.iso88596:				ar_AA.ISO8859-6
 bokmal:						nb_NO.ISO8859-1
-bokmï¿½:						nb_NO.ISO8859-1
+bokmål:						nb_NO.ISO8859-1
 bulgarian:					bg_BG.CP1251
 c-french.iso88591:				fr_CA.ISO8859-1
 catalan:					ca_ES.ISO8859-1
@@ -1235,11 +1216,11 @@ deutsch:					de_DE.ISO8859-1
 dutch:						nl_NL.ISO8859-1
 dutch.iso88591:					nl_BE.ISO8859-1
 eesti:						et_EE.ISO8859-1
-english.iso88591:				en_US.ISO8859-1
+english.iso88591:				en_EN.ISO8859-1
 estonian:					et_EE.ISO8859-1
 finnish:					fi_FI.ISO8859-1
 finnish.iso88591:				fi_FI.ISO8859-1
-franï¿½is:					fr_FR.ISO8859-1
+français:					fr_FR.ISO8859-1
 french:						fr_FR.ISO8859-1
 french.iso88591:				fr_CH.ISO8859-1
 galego:						gl_ES.ISO8859-1
@@ -1248,8 +1229,8 @@ german:						de_DE.ISO8859-1
 german.iso88591:				de_CH.ISO8859-1
 greek:						el_GR.ISO8859-7
 greek.iso88597:					el_GR.ISO8859-7
-hebrew:						he_IL.ISO8859-8
-hebrew.iso88598:				he_IL.ISO8859-8
+hebrew:						iw_IL.ISO8859-8
+hebrew.iso88598:				iw_IL.ISO8859-8
 hrvatski:					hr_HR.ISO8859-2
 hungarian:					hu_HU.ISO8859-2
 icelandic.iso88591:				is_IS.ISO8859-1
@@ -1269,7 +1250,7 @@ portuguese:					pt_PT.ISO8859-1
 portuguese.iso88591:				pt_PT.ISO8859-1
 romanian:					ro_RO.ISO8859-2
 rumanian:					ro_RO.ISO8859-2
-russian:					ru_RU.KOI8-R
+russian:					ru_RU.ISO8859-5
 serbocroatian:					sr_RS.UTF-8@latin
 sinhala:					si_LK.UTF-8
 slovak:						sk_SK.ISO8859-2
