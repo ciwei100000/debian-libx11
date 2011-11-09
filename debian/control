@@ -97,6 +97,7 @@ Description: X11 client-side library (debug package)
 Package: libx11-dev
 Section: libdevel
 Architecture: any
+Multi-Arch: same
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
@@ -110,6 +111,7 @@ Depends:
  libxcb1-dev,
 # for xorg.css
  xorg-sgml-doctools (>= 1:1.5),
+Recommends: libx11-doc
 Description: X11 client-side library (development headers)
  This package provides a client interface to the X Window System, otherwise
  known as 'Xlib'.  It provides a complete API for the basic functions of the
@@ -191,6 +193,27 @@ Description: Xlib/XCB interface library (development headers)
  .
  More information about XCB can be found at:
  <URL:http://xcb.freedesktop.org>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libX11
+
+Package: libx11-doc
+Section: libdevel
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ ${misc:Depends},
+Replaces: libx11-dev (<< 2:1.4.4-3)
+Description: X11 client-side library (development documentation)
+ This package provides a client interface to the X Window System, otherwise
+ known as 'Xlib'.  It provides a complete API for the basic functions of the
+ window system.
+ .
+ This package contains supplemental documentation for the library found in
+ libx11-6. Non-developers likely have little use for this package.
+ .
+ More information about X.Org can be found at:
+ <URL:http://www.X.org>
  .
  This module can be found at
  git://anongit.freedesktop.org/git/xorg/lib/libX11
