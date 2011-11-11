@@ -101,13 +101,10 @@ binary-arch: build install
 	dh_installdocs -s NEWS
 	# Kill *.xml files, we don't need them:
 	find debian/tmp -name '*.xml' -delete
-	# Using exclusions here allows libx11-6.install to use wildcards for
-	# headers and manpages, rather than listing every header and manpage
-	# other than these.
+	# Using exclusions here allows libx11-dev.install to use wildcards
+	# for headers, rather than listing every header other than this one.
 	dh_install --sourcedir=debian/tmp -plibx11-dev \
-	           --exclude=usr/include/X11/Xlib-xcb.h \
-	           --exclude=usr/share/man/man3/XGetXCBConnection.3 \
-	           --exclude=usr/share/man/man3/XSetEventQueueOwner.3
+	           --exclude=usr/include/X11/Xlib-xcb.h
 	dh_install --sourcedir=debian/tmp -Nlibx11-dev -s
 	dh_installchangelogs -s ChangeLog
 	dh_installman -s
@@ -133,7 +130,14 @@ binary-indep: build install
 
 	dh_installdocs -i
 	dh_installchangelogs -i NEWS
-	dh_install --sourcedir=debian/tmp -i
+	# Using exclusions here allows libx11-6.install to use wildcards for
+	# headers and manpages, rather than listing every header and manpage
+	# other than these.
+	dh_install --sourcedir=debian/tmp -plibx11-doc \
+	           --exclude=usr/include/X11/Xlib-xcb.h \
+	           --exclude=usr/share/man/man3/XGetXCBConnection.3 \
+	           --exclude=usr/share/man/man3/XSetEventQueueOwner.3
+	dh_install --sourcedir=debian/tmp -i -Nlibx11-doc
 	dh_link -i
 	dh_installman -i
 	dh_lintian -i

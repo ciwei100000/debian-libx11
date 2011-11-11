@@ -1,3 +1,11 @@
+libx11 (2:1.4.4-4) UNRELEASED; urgency=low
+
+  * debian/rules: since the documentation is moved to libx11-doc, the
+    exception handling for libx11-xcb-dev needs to also look at libx11-doc,
+    not libx11-dev.
+
+ -- Steve Langasek <vorlon@debian.org>  Thu, 10 Nov 2011 18:56:41 -0800
+
 libx11 (2:1.4.4-3) unstable; urgency=low
 
   * Split documentation out from libx11-dev into a separate libx11-doc
