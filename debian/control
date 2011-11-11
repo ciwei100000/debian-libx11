@@ -109,8 +109,6 @@ Depends:
  x11proto-kb-dev,
  xtrans-dev,
  libxcb1-dev,
-# for xorg.css
- xorg-sgml-doctools (>= 1:1.5),
 Recommends: libx11-doc
 Description: X11 client-side library (development headers)
  This package provides a client interface to the X Window System, otherwise
@@ -203,6 +201,8 @@ Architecture: all
 Multi-Arch: foreign
 Depends:
  ${misc:Depends},
+# for xorg.css
+ xorg-sgml-doctools (>= 1:1.5),
 Replaces: libx11-dev (<< 2:1.4.4-3)
 Description: X11 client-side library (development documentation)
  This package provides a client interface to the X Window System, otherwise

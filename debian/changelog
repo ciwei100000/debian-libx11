@@ -1,3 +1,9 @@
+libx11 (2:1.4.4-5) UNRELEASED; urgency=low
+
+  * Move xorg-sgml-doctools dependency from -dev to -doc.
+
+ -- Julien Cristau <jcristau@debian.org>  Fri, 11 Nov 2011 20:38:39 +0100
+
 libx11 (2:1.4.4-4) unstable; urgency=low
 
   * debian/rules: since the documentation is moved to libx11-doc, the
