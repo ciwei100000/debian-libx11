@@ -196,7 +196,7 @@ Description: Xlib/XCB interface library (development headers)
  git://anongit.freedesktop.org/git/xorg/lib/libX11
 
 Package: libx11-doc
-Section: libdevel
+Section: doc
 Architecture: all
 Multi-Arch: foreign
 Depends:
