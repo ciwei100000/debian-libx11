@@ -20,7 +20,7 @@ Build-Depends:
  xutils-dev (>= 1:7.6+2),
 # specs
  xmlto,
- xorg-sgml-doctools (>= 1:1.5),
+ xorg-sgml-doctools (>= 1:1.10),
  w3m,
 Standards-Version: 3.9.2
 Vcs-Git: git://git.debian.org/git/pkg-xorg/lib/libx11
