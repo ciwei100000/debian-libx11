@@ -823,6 +823,7 @@ libX11.so.6 libx11-6 #MINVER#
  _XGetBitsPerPixel@Base 0
  _XGetHostname@Base 0
  (optional)_XGetLCValues@Base 0 1
+ _XGetRequest@Base 2:1.4.99.1
  _XGetScanlinePad@Base 0
  _XGetWindowAttributes@Base 0
  (optional)_XHeadOfDisplayList@Base 0 1
