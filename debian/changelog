@@ -1,4 +1,4 @@
-libx11 (2:1.4.99.1-1) UNRELEASED; urgency=low
+libx11 (2:1.4.99.1-1) experimental; urgency=low
 
   [ Julien Cristau ]
   * Move xorg-sgml-doctools dependency from -dev to -doc.
@@ -15,7 +15,7 @@ libx11 (2:1.4.99.1-1) UNRELEASED; urgency=low
     - _XGetRequest@Base
   * Bump shlibs accordingly, for the udeb.
 
- -- Cyril Brulebois <kibi@debian.org>  Thu, 22 Dec 2011 11:36:50 +0100
+ -- Cyril Brulebois <kibi@debian.org>  Thu, 22 Dec 2011 12:58:15 +0100
 
 libx11 (2:1.4.4-4) unstable; urgency=low
 
