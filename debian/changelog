@@ -13,6 +13,7 @@ libx11 (2:1.4.99.1-1) UNRELEASED; urgency=low
     - 006_tailor_pt_BR.UTF-8_Compose.diff
   * Add symbol:
     - _XGetRequest@Base
+  * Bump shlibs accordingly, for the udeb.
 
  -- Cyril Brulebois <kibi@debian.org>  Thu, 22 Dec 2011 11:36:50 +0100
 
