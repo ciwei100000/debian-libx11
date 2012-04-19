@@ -8,6 +8,7 @@ libx11 (2:1.4.99.901-1) UNRELEASED; urgency=low
   * Drop xorg-sgml-doctools dependency from libx11-doc, the css is now
     included in the html files directly.  Also add Breaks in addition to the
     Replaces on old libx11-dev.
+  * Add build-indep and build-arch targets, don't build specs in build-arch.
 
  -- Julien Cristau <jcristau@debian.org>  Thu, 19 Apr 2012 22:20:57 +0200
 

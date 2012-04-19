@@ -48,7 +48,12 @@ configure: $(STAMP_DIR)/patch
 	dh_testdir
 	autoreconf -vfi
 
-build: build-stamp
+build: build-indep
+build-indep: build-stamp
+build-indep: docflags = --enable-specs --with-xmlto
+build-arch: build-stamp
+build-arch: docflags = --disable-specs
+
 build-stamp: configure $(STAMP_DIR)/genscripts
 	dh_testdir
 
@@ -59,8 +64,7 @@ build-stamp: configure $(STAMP_DIR)/genscripts
 		--mandir=\$${prefix}/share/man \
 		--infodir=\$${prefix}/share/info \
 		--libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH) \
-		--enable-specs \
-		--with-xmlto \
+		$(docflags) \
 		--without-fop \
 		$(confflags) \
 		CFLAGS="$(CFLAGS)"
@@ -82,7 +86,7 @@ clean: xsfclean
 	find -name Makefile.in -delete
 	dh_clean
 
-install: build
+install: build-stamp
 	dh_testdir
 	dh_testroot
 	dh_clean -k
@@ -91,7 +95,7 @@ install: build
 	cd build && $(MAKE) DESTDIR=$(CURDIR)/debian/tmp install
 
 # Build architecture-dependent files here.
-binary-arch: build install
+binary-arch: build-stamp install
 	dh_testdir
 	dh_testroot
 
@@ -121,7 +125,7 @@ binary-arch: build install
 	dh_builddeb -s
 
 # Build architecture-independent files here.
-binary-indep: build install
+binary-indep: build-indep install
 	dh_testdir
 	dh_testroot
 
@@ -146,4 +150,5 @@ binary-indep: build install
 	dh_builddeb -i
 
 binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install
+.PHONY: build build-indep build-arch
+.PHONY: clean binary-indep binary-arch binary install
