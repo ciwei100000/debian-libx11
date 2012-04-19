@@ -4,6 +4,7 @@ libx11 (2:1.4.99.901-1) UNRELEASED; urgency=low
     - XQueryColors: split a request into multiple requests if necessary
       (closes: #278984)
     - Revert "xcb: Add TCP fallback" (closes: #659558)
+  * Don't require (fake)root for debian/rules clean.
 
  -- Julien Cristau <jcristau@debian.org>  Thu, 19 Apr 2012 22:20:57 +0200
 

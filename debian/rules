@@ -69,9 +69,7 @@ build-stamp: configure $(STAMP_DIR)/genscripts
 
 clean: xsfclean
 	dh_testdir
-	dh_testroot
 	rm -f build-stamp
-
 	rm -f config.cache config.log config.status
 	rm -f */config.cache */config.log */config.status
 	rm -f conftest* */conftest*
@@ -82,7 +80,6 @@ clean: xsfclean
 	rm -f depcomp install-sh ltmain.sh missing mkinstalldirs
 	rm -f src/config.h.in
 	find -name Makefile.in -delete
-
 	dh_clean
 
 install: build
