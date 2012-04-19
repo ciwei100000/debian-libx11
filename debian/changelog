@@ -1,4 +1,4 @@
-libx11 (2:1.4.99.901-1) UNRELEASED; urgency=low
+libx11 (2:1.4.99.901-1) unstable; urgency=low
 
   * New upstream release candidate (1.5 RC1)
     - XQueryColors: split a request into multiple requests if necessary
@@ -11,8 +11,9 @@ libx11 (2:1.4.99.901-1) UNRELEASED; urgency=low
   * Add build-indep and build-arch targets, don't build specs in build-arch.
   * Rediff 006_tailor_pt_BR.UTF-8_Compose.diff and
     015_russian_locale_alias.diff.
+  * Upload to unstable.
 
- -- Julien Cristau <jcristau@debian.org>  Thu, 19 Apr 2012 22:20:57 +0200
+ -- Julien Cristau <jcristau@debian.org>  Thu, 19 Apr 2012 22:58:30 +0200
 
 libx11 (2:1.4.99.1-1) experimental; urgency=low
 
