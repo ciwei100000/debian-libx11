@@ -1,3 +1,299 @@
+commit abc523fce31fcf2687229697a8eb656e343ecb0c
+Author: Alan Coopersmith <alan.coopersmith@oracle.com>
+Date:   Thu Mar 15 22:14:45 2012 -0700
+
+    libX11 1.4.99.901 (1.5 RC1)
+    
+    Signed-off-by: Alan Coopersmith <alan.coopersmith@oracle.com>
+
+commit b2cc5905a4a6d519957223e8ba2caef71520040c
+Author: Alan Coopersmith <alan.coopersmith@oracle.com>
+Date:   Thu Mar 15 22:03:21 2012 -0700
+
+    Remove "register" qualifier that annoys Solaris Studio compiler
+    
+    Fixes warning:
+    "Xrm.c", line 1094: warning: storage class after type is obsolescent
+    
+    Signed-off-by: Alan Coopersmith <alan.coopersmith@oracle.com>
+
+commit 62d42953893f93a98db0504eaf06d650ceaf5811
+Author: James Cloos <cloos@jhcloos.com>
+Date:   Wed Mar 14 17:25:46 2012 -0400
+
+    Fix the gtk+ additions
+    
+    (Some of) the Dstroke and dstroke entries already were present as U011[01],
+    even though XK_Dstroke and XK_dstroke are part of the latin2 set in keysymdef.h.
+    
+    The addition of <Multi_key> <o> <apostrophe> as a postfix version of
+    <Multi_key> <apostrophe> <o> blocks the existing entries for ǻ and Ǻ.
+    That prevents its and <Multi_key> <O> <apostrophe>’s addition.
+    
+    Signed-off-by: James Cloos <cloos@jhcloos.com>
+
+commit 91bcce48d94792f78333d2aea73961cc2e739d2e
+Author: Pander <pander@users.sourceforge.net>
+Date:   Wed Mar 14 12:54:53 2012 -0400
+
+    Complete compose key sequences for musical symbols
+    
+    Signed-off-by: Pander <pander@users.sourceforge.net>
+    Signed-off-by: James Cloos <cloos@jhcloos.com>
+
+commit cf040016d455bc37f7665d6714337c5eafd8ea94
+Author: Pander <pander@users.sourceforge.net>
+Date:   Wed Mar 14 12:46:25 2012 -0400
+
+    Add compose sequences from gtk+ to X.Org
+    
+    Signed-off-by: Pander <pander@users.sourceforge.net>
+    Signed-off-by: James Cloos <cloos@jhcloos.com>
+
+commit a4c591ced5cac9301b9abfa0e521be2d0b267882
+Author: Keith Packard <keithp@keithp.com>
+Date:   Sun Mar 4 02:00:13 2012 -0800
+
+    Block for other threads in _XUserLockDisplay
+    
+    Wait for all other threads to release the user-level lock when
+    acquiring it. This ensures that only one thread at a time holds the
+    user-level lock, necessary as it is a nesting lock and a single
+    variable is used to determine when the lock is nesting and when it is
+    contended.
+    
+    Signed-off-by: Keith Packard <keithp@keithp.com>
+    Reviewed-by: Jamey Sharp <jamey@minilop.net>
+
+commit ed00b460acb08787b695f27b864e96102dfd4867
+Author: Jon TURNEY <jon.turney@dronecode.org.uk>
+Date:   Fri Oct 28 11:09:20 2011 -0500
+
+    Don't use caddr_t casts
+    
+    (caddr_t) isn't used anywhere else in xcb or libX11.
+    Cast to (char *) for consistency.
+    
+    Removing this cast allows building for MinGW without patching.
+    
+    v2: Cast to (char *) rather than just dropping the cast
+    
+    Signed-off-by: Jon TURNEY <jon.turney@dronecode.org.uk>
+    Reviewed-by: Alan Coopersmith <alan.coopersmith@oracle.com>
+
+commit 20adca02c2a1d0b7c95ecbe387d68f881fd57754
+Author: Julien Cristau <jcristau@debian.org>
+Date:   Sun Feb 19 13:27:38 2012 +0100
+
+    Revert "xcb: Add TCP fallback"
+    
+    This reverts commit f09c5299a381e2729e800a0ac43f1c0e371f65f6.
+    
+    The TCP fallback ended up falling back to UNIX socket connection if
+    $DISPLAY was set to e.g. some.host:0 and the initial attempt failed.
+    
+    Debian bug#659558 <http://bugs.debian.org/659558>
+    
+    Signed-off-by: Julien Cristau <jcristau@debian.org>
+    
+    Conflicts:
+    
+    	src/OpenDis.c
+
+commit f4378193619baa9bb973c1b5b718721bbcbe92c7
+Author: James Cloos <cloos@jhcloos.com>
+Date:   Wed Feb 22 14:13:20 2012 -0500
+
+    Make the compose sequence for ẞ work.
+    
+    There is no XK_Ssharp symbol for U+1E9E LATIN CAPITAL LETTER SHARP S,
+    so use the U1e9e symbol in the Compose sequence.
+    
+    (Compose sequences do not work when the target symbol is unknown.)
+    
+    Signed-off-by: James Cloos <cloos@jhcloos.com>
+
+commit 2ca641c3a506dcbee97e279b67990d5387389f36
+Author: Marko Myllynen <myllynen@redhat.com>
+Date:   Mon Feb 20 17:04:59 2012 +0200
+
+    Use ezh/EZH in compose maps
+    
+    Related: https://bugs.freedesktop.org/show_bug.cgi?id=19687
+    
+    Signed-off-by: Marko Myllynen <myllynen@redhat.com>
+    Reviewed-by: Matt Dew <marcoz@osource.org>
+    Signed-off-by: James Cloos <cloos@jhcloos.com>
+
+commit 61725822f20f47684a545c1797183ee7075243ac
+Author: Marko Myllynen <myllynen@redhat.com>
+Date:   Sun Feb 20 17:09:43 2011 +0200
+
+    Provide translation from XK_permille (ad5) to Unicode (U2030)
+    
+    https://bugs.freedesktop.org/show_bug.cgi?id=19687
+    
+    Signed-off-by: Marko Myllynen <myllynen@redhat.com>
+    Reviewed-by: Matt Dew <marcoz@osource.org>
+    Signed-off-by: James Cloos <cloos@jhcloos.com>
+
+commit d2cce0abba0fa0143f49026442c8cab5ed721625
+Author: Jeremy Huddleston <jeremyhu@apple.com>
+Date:   Sun Feb 12 19:01:43 2012 -0800
+
+    nls: Use LC_CTYPE=C for sed magic
+    
+    Stricter versions of sed can trip up if the input does not match
+    LC_CTYPE
+    
+    Signed-off-by: Jeremy Huddleston <jeremyhu@apple.com>
+
+commit f180e043f55531933bedfa6e0ff36a00a9ec07f3
+Author: Frédéric Boiteux <fboiteux@calistel.com>
+Date:   Wed Nov 30 12:47:31 2011 +0000
+
+    Compositions with the dead greek symbol
+    
+    FreeDesktop Bug 21475 <https://bugs.freedesktop.org/show_bug.cgi?id=21475>
+    
+    Signed-off-by: Frédéric Boiteux <fboiteux@calistel.com>
+    Signed-off-by: James Cloos <cloos@jhcloos.com>
+
+commit d58e8f8e27790017fcfdeca0843b7318d541c189
+Author: Ryan Pavlik <rpavlik@iastate.edu>
+Date:   Sun Jan 1 21:04:52 2012 +0000
+
+    Use pthreads on MinGW also
+    
+    Use pthreads (provided by the pthreads-win32 compatability library which implements
+    them using native Win32 threading) on MinGW
+    
+    Reviewed-by: Jon TURNEY <jon.turney@dronecode.org.uk>
+
+commit bf15ccb6821664746ec23d769d757edf8059007e
+Author: Ryan Pavlik <rpavlik@iastate.edu>
+Date:   Mon Jan 23 14:18:02 2012 +0000
+
+    Add XWindows.h include to Xxcbint.h
+    
+    This avoids some conflicting type re-definition errors which occur if
+    we attempt to include Windows headers after Xmd.h
+    
+    Reviewed-by: Jon TURNEY <jon.turney@dronecode.org.uk>
+
+commit cadcbd376f0a5d17a71a2fe2f8ced5d93232921a
+Author: Matt Dew <marcoz@osource.org>
+Date:   Sat Jan 21 17:59:51 2012 -0700
+
+    informaltable & table cleanup
+    
+    On certain tables, add top and bottom borders to table header
+    and a bottom border to the table. This matches what those
+    tables in the old pdfs looked like.
+    
+    the <?dbfo keep-together='always'> prevents tables from
+    splitting across pages. Useful for tiny tables.
+    
+    Converting the colwidth to a floating point, IE, 1* -> 1.0*
+    cleans up these build errors:
+    WARNING: table-layout="fixed" and column-width unspecified =>
+    falling back to proportional-column-width(1)
+    
+    Signed-off-by: Matt Dew <marcoz@osource.org>
+
+commit bb551f654df8f647c867f79252241964521e689e
+Author: Alan Coopersmith <alan.coopersmith@oracle.com>
+Date:   Wed Dec 28 21:22:41 2011 -0800
+
+    Add more Xkb man pages to the See Also lists for core keyboard functions
+    
+    Signed-off-by: Alan Coopersmith <alan.coopersmith@oracle.com>
+    Reviewed-by: Peter Hutterer <peter.hutterer@who-t.net>
+
+commit b7bb23fe7c8b8a17128e5bc98a05f68595190438
+Author: Gaetan Nadon <nadon@memsize.(none)>
+Date:   Fri Dec 30 17:08:14 2011 -0500
+
+    docbook.am: embed css styles inside the HTML HEAD element
+    
+    Rather than referring to the external xorg.css stylesheet, embed the content
+    of the file in the html output produced. This is accomplished by using
+    version 1.10 of xorg-xhtml.xsl.
+    
+    This makes the whole html docs tree much more relocatable.
+    In addition, it eliminates xorg.css as a runtime file which makes
+    xorg-sgml-doctools a build time only package.
+    
+    Signed-off-by: Gaetan Nadon <nadon@memsize.(none)>
+
+commit 70505468b7c4a7068cc39be42e421dcee34ec595
+Author: Alan Coopersmith <alan.coopersmith@oracle.com>
+Date:   Tue Dec 13 19:58:30 2011 -0800
+
+    makekeys: move buf declaration from global to main to silence gcc -Wshadow
+    
+    The global was only referenced in the main() function, which passes it
+    as an argument of the same name to the parse_line() function, leading
+    to gcc -Wshadow warnings:
+    
+    makekeys.c: In function ‘parse_line’:
+    makekeys.c:58:24: warning: declaration of ‘buf’ shadows a global declaration
+    makekeys.c:54:13: warning: shadowed declaration is here
+    
+    Signed-off-by: Alan Coopersmith <alan.coopersmith@oracle.com>
+
+commit 87e10a7b9a97c951ab4d477f61177779ac0a6a66
+Author: Kusanagi Kouichi <slash@ac.auone-net.jp>
+Date:   Wed Dec 14 02:17:55 2011 -0500
+
+    XQueryColors: Split a request into multiple requests if necessary
+    
+    https://bugs.freedesktop.org/show_bug.cgi?id=9160
+    
+    Signed-off-by: Kusanagi Kouichi <slash@ac.auone-net.jp>
+    Signed-off-by: James Cloos <cloos@jhcloos.com>
+
+commit d3b3570592e9b9e57f270a0bd86762fd205a2833
+Author: Andreas Wettstein <wettstein509@solnet.ch>
+Date:   Tue Nov 8 20:18:09 2011 +0000
+
+    XIM: Allow modifier releases in compose sequences (#26705)
+    
+    Currently, only non-modifier keys (actually, keysyms) can be part of a compose
+    sequence, and they are matched against the defined compose sequences at the
+    time the key is pressed.  The patch allows to use modifier keys an well, but
+    matches them on key release, and only if no other key has been pressed after
+    the modifier.
+    
+    Releasing a non-matched modifier during an ongoing compose sequence only aborts
+    the sequence if any modifier release would have matched.  In particular, if no
+    compose sequences with modifiers are specified, the compose mechanism works
+    exactly as without this patch.
+    
+    Even if modifiers are part of a compose sequence, they are not filtered.  This
+    is because modifiers affect the keyboard state no matter what we do here and,
+    therefore, filtering them only could confuse clients.
+    
+    The purpose is this extension to the compose mechanism is to allow to make
+    better use of keys in convenient reach for touch typing.
+    
+    Signed-off-by: Andreas Wettstein <wettstein509@solnet.ch>
+    Signed-off-by: James Cloos <cloos@jhcloos.com>
+
+commit 56448a626fc90bcf75a1fa2f4c294b0eb1f23bd6
+Author: Alan Coopersmith <alan.coopersmith@oracle.com>
+Date:   Tue Nov 29 23:56:57 2011 -0800
+
+    Reject negative string counts in copy_string_list
+    
+    Silences parfait warning of a potential memory leak:
+       Memory leak of pointer 'dst' allocated with malloc(length)
+            at line 160 of FSWrap.c in function 'copy_string_list'.
+              'dst' allocated at line 145 with malloc(length).
+              dst leaks when count <= 0 at line 154.
+    
+    Signed-off-by: Alan Coopersmith <alan.coopersmith@oracle.com>
+
 commit bf2d7c8c6d70539c72560b1921e18df2610acf29
 Author: Peter Hutterer <peter.hutterer@who-t.net>
 Date:   Fri Nov 11 14:56:36 2011 +1000
