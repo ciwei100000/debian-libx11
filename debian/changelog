@@ -1,3 +1,9 @@
+libx11 (2:1.4.99.901-2) UNRELEASED; urgency=low
+
+  * Add AC_CHECK_DECL(issetugid) to fix FTBFS on kfreebsd (closes: #669670).
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 29 Apr 2012 16:48:42 +0200
+
 libx11 (2:1.4.99.901-1) unstable; urgency=low
 
   * New upstream release candidate (1.5 RC1)
