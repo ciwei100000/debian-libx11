@@ -1,4 +1,4 @@
-libx11 (2:1.5.0-1) UNRELEASED; urgency=low
+libx11 (2:1.5.0-1) unstable; urgency=low
 
   * New upstream release. Visible changes:
     - Add APL support, yay!
@@ -7,7 +7,7 @@ libx11 (2:1.5.0-1) UNRELEASED; urgency=low
   * Drop patch, fixed upstream:
     - 001-configure-check-if-issetugid-is-declared.diff
 
- -- Cyril Brulebois <kibi@debian.org>  Sat, 16 Jun 2012 20:22:45 +0000
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 16 Jun 2012 20:32:52 +0000
 
 libx11 (2:1.4.99.901-2) unstable; urgency=low
 
