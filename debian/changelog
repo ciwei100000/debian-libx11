@@ -1,6 +1,8 @@
 libx11 (2:1.5.0-1) UNRELEASED; urgency=low
 
   * New upstream release.
+  * Drop patch, fixed upstream:
+    - 001-configure-check-if-issetugid-is-declared.diff
 
  -- Cyril Brulebois <kibi@debian.org>  Sat, 16 Jun 2012 20:22:45 +0000
 
