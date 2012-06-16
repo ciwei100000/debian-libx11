@@ -1,6 +1,9 @@
 libx11 (2:1.5.0-1) UNRELEASED; urgency=low
 
-  * New upstream release.
+  * New upstream release. Visible changes:
+    - Add APL support, yay!
+    - A few duplicated Compose sequences were tweaked or removed. Affected
+      characters are: Ã / µ / Ñ / ñ / ¹ / ² / ³ / Ó / ó / Ǻ / ǻ.
   * Drop patch, fixed upstream:
     - 001-configure-check-if-issetugid-is-declared.diff
 
