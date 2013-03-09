@@ -104,7 +104,7 @@ Depends:
  libx11-6 (= ${binary:Version}),
  libxau-dev (>= 1:1.0.0-1),
  libxdmcp-dev (>= 1:1.0.0-1),
- x11proto-core-dev (>= 6.8.99.8-1),
+ x11proto-core-dev (>= 7.0.17),
  x11proto-input-dev,
  x11proto-kb-dev,
  xtrans-dev,
