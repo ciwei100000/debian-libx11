@@ -57,6 +57,9 @@ build-arch: docflags = --disable-specs
 build-stamp: configure $(STAMP_DIR)/genscripts
 	dh_testdir
 
+	# work around lack of these files in the tarball
+	touch nls/km_KH.UTF-8/XLC_LOCALE.pre
+	touch nls/sr_CS.UTF-8/XLC_LOCALE.pre
 	mkdir -p build
 	cd build && \
 	../configure \
