@@ -1,9 +1,13 @@
-libx11 (2:1.5.0-2) UNRELEASED; urgency=low
+libx11 (2:1.6.0-1) UNRELEASED; urgency=low
 
   * Bump libx11-dev's x11proto-core-dev dependency to 7.0.17 for _X_NORETURN
     (closes: #649866).
+  * New upstream release
+    - Fix unbounded recursion when reading resource files (closes: #145048)
+    - XmbLookupString man page no longer warns (closes: #300819)
+    - Fix build with automake 1.13 (closes: #710467)
 
- -- Julien Cristau <jcristau@debian.org>  Sat, 09 Mar 2013 13:08:18 +0100
+ -- Julien Cristau <jcristau@debian.org>  Sat, 15 Jun 2013 13:24:49 +0200
 
 libx11 (2:1.5.0-1) unstable; urgency=low
 
