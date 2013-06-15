@@ -11,12 +11,6 @@
 
 include debian/xsfbs/xsfbs.mk
 
-CFLAGS = -Wall -g
-ifneq (,$(filter noopt,$(DEB_BUILD_OPTIONS)))
-	CFLAGS += -O0
-else
-	CFLAGS += -O2
-endif
 ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 	MAKEFLAGS += -j$(NUMJOBS)
@@ -71,7 +65,7 @@ build-stamp: configure $(STAMP_DIR)/genscripts
 		--without-fop \
 		--disable-silent-rules \
 		$(confflags) \
-		CFLAGS="$(CFLAGS)"
+		$(shell DEB_CFLAGS_MAINT_APPEND=-Wall dpkg-buildflags --export=configure)
 	cd build && $(MAKE)
 	>$@
 

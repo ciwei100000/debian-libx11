@@ -14,6 +14,7 @@ libx11 (2:1.6.0-1) UNRELEASED; urgency=low
   * Bump shlibs and symbols for _XEatDataWords.
   * Add new locales to configure.ac so they can get installed.
   * Disable silent rules.
+  * Use dpkg-buildflags.
 
  -- Julien Cristau <jcristau@debian.org>  Sat, 15 Jun 2013 13:24:49 +0200
 
