@@ -69,6 +69,7 @@ build-stamp: configure $(STAMP_DIR)/genscripts
 		--libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH) \
 		$(docflags) \
 		--without-fop \
+		--disable-silent-rules \
 		$(confflags) \
 		CFLAGS="$(CFLAGS)"
 	cd build && $(MAKE)
