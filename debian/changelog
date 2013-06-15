@@ -11,6 +11,7 @@ libx11 (2:1.6.0-1) UNRELEASED; urgency=low
   * Refresh 008_remove_ko_Compose.diff.
   * Update 009_remove_th_Compose.diff.
   * Refresh 015_russian_locale_alias.diff.
+  * Bump shlibs and symbols for _XEatDataWords.
 
  -- Julien Cristau <jcristau@debian.org>  Sat, 15 Jun 2013 13:24:49 +0200
 

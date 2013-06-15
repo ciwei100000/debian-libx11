@@ -116,7 +116,7 @@ binary-arch: build-stamp install
 	dh_strip -Nlibx11-6 -Nlibx11-xcb1
 	dh_compress -s
 	dh_fixperms -s
-	dh_makeshlibs -s -plibx11-6 -V'libx11-6 (>= 2:1.4.99.1)' --add-udeb=libx11-6-udeb -- -c4
+	dh_makeshlibs -s -plibx11-6 -V'libx11-6 (>= 2:1.6.0)' --add-udeb=libx11-6-udeb -- -c4
 	dh_makeshlibs -s -Nlibx11-6 -- -c4
 	dh_shlibdeps -s
 	dh_installdeb -s
