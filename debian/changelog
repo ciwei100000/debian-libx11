@@ -8,6 +8,7 @@ libx11 (2:1.6.0-1) UNRELEASED; urgency=low
     - Fix build with automake 1.13 (closes: #710467)
   * Update 003_recognize_glibc_2.3.2_locale_names.diff.
   * Update 006_tailor_pt_BR.UTF-8_Compose.diff.
+  * Refresh 008_remove_ko_Compose.diff.
 
  -- Julien Cristau <jcristau@debian.org>  Sat, 15 Jun 2013 13:24:49 +0200
 
