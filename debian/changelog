@@ -1,4 +1,4 @@
-libx11 (2:1.6.0-1) UNRELEASED; urgency=low
+libx11 (2:1.6.0-1) unstable; urgency=low
 
   * Bump libx11-dev's x11proto-core-dev dependency to 7.0.17 for _X_NORETURN
     (closes: #649866).
@@ -16,7 +16,7 @@ libx11 (2:1.6.0-1) UNRELEASED; urgency=low
   * Disable silent rules.
   * Use dpkg-buildflags.
 
- -- Julien Cristau <jcristau@debian.org>  Sat, 15 Jun 2013 13:24:49 +0200
+ -- Julien Cristau <jcristau@debian.org>  Sat, 15 Jun 2013 18:31:27 +0200
 
 libx11 (2:1.5.0-1) unstable; urgency=low
 
