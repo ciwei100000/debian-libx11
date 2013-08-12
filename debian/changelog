@@ -1,4 +1,4 @@
-libx11 (2:1.6.1-1) UNRELEASED; urgency=low
+libx11 (2:1.6.1-1) unstable; urgency=low
 
   [ Julien Cristau ]
   * New upstream release
@@ -7,7 +7,7 @@ libx11 (2:1.6.1-1) UNRELEASED; urgency=low
   [ Wookey ]
   * Update symbols file for arm64
 
- -- Julien Cristau <jcristau@debian.org>  Mon, 12 Aug 2013 17:50:10 +0200
+ -- Julien Cristau <jcristau@debian.org>  Mon, 12 Aug 2013 17:55:45 +0200
 
 libx11 (2:1.6.0-1) unstable; urgency=low
 
