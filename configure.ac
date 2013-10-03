@@ -1,7 +1,7 @@
 
 # Initialize Autoconf
 AC_PREREQ([2.60])
-AC_INIT([libX11], [1.6.1],
+AC_INIT([libX11], [1.6.2],
         [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg], [libX11])
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_HEADERS([src/config.h include/X11/XlibConf.h])
@@ -324,8 +324,6 @@ for i in $FILES; do
 done
 AC_MSG_RESULT([$KEYSYMDEFS])
 AC_SUBST(KEYSYMDEFS)
-
-AM_CONDITIONAL(UDC, test xfalse = xtrue)
 
 AC_ARG_ENABLE(xcms,
               AS_HELP_STRING([--disable-xcms],
