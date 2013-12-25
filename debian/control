@@ -173,6 +173,7 @@ Description: Xlib/XCB interface library (debug package)
 Package: libx11-xcb-dev
 Section: libdevel
 Architecture: any
+Multi-Arch: same
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
