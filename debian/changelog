@@ -3,6 +3,7 @@ libx11 (2:1.6.2-2) UNRELEASED; urgency=low
   [ Julien Cristau ]
   * Yet more 64 bit archs in symbols file: mips64{,el} (closes: #722088).
   * Remove Cyril Brulebois from Uploaders.
+  * Bump debhelper compat level from 5 to 7.
 
   [ Colin Watson ]
   * Declare libx11-xcb-dev Multi-Arch: same (closes: #727231).
