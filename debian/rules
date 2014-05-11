@@ -9,7 +9,7 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-include debian/xsfbs/xsfbs.mk
+include /usr/share/quilt/quilt.make
 
 ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
@@ -38,7 +38,7 @@ else
 	confflags += --build=$(DEB_BUILD_GNU_TYPE) --host=$(DEB_HOST_GNU_TYPE)
 endif
 
-configure: $(STAMP_DIR)/patch
+configure: $(QUILT_STAMPFN)
 	dh_testdir
 	autoreconf -vfi
 
@@ -48,7 +48,7 @@ build-indep: docflags = --enable-specs --with-xmlto
 build-arch: build-stamp
 build-arch: docflags = --disable-specs
 
-build-stamp: configure $(STAMP_DIR)/genscripts
+build-stamp: configure
 	dh_testdir
 
 	# work around lack of these files in the tarball
@@ -69,7 +69,7 @@ build-stamp: configure $(STAMP_DIR)/genscripts
 	cd build && $(MAKE)
 	>$@
 
-clean: xsfclean
+clean: unpatch
 	dh_testdir
 	rm -f build-stamp
 	rm -f config.cache config.log config.status
@@ -80,7 +80,7 @@ clean: xsfclean
 	rm -f aclocal.m4 compile config.guess config.sub configure
 	rm -f m4/lt*.m4 m4/libtool.m4
 	rm -f depcomp install-sh ltmain.sh missing mkinstalldirs
-	rm -f src/config.h.in
+	rm -f src/config.h.in test-driver
 	find -name Makefile.in -delete
 	dh_clean
 
