@@ -1,3 +1,9 @@
+libx11 (2:1.6.2-3) UNRELEASED; urgency=medium
+
+  * libx11-6.symbols: yet another 64bit arch (ppc64el).  Closes: #749728.
+
+ -- Julien Cristau <jcristau@debian.org>  Thu, 24 Jul 2014 22:48:06 +0200
+
 libx11 (2:1.6.2-2) unstable; urgency=low
 
   [ Julien Cristau ]
