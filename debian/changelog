@@ -1,8 +1,9 @@
-libx11 (2:1.6.2-4) UNRELEASED; urgency=medium
+libx11 (2:1.6.3-1) UNRELEASED; urgency=medium
 
   * Let uscan verify tarball signatures.
+  * New upstream release.
 
- -- Julien Cristau <jcristau@debian.org>  Thu, 30 Apr 2015 20:19:49 +0200
+ -- Julien Cristau <jcristau@debian.org>  Thu, 30 Apr 2015 20:20:21 +0200
 
 libx11 (2:1.6.2-3) unstable; urgency=medium
 
