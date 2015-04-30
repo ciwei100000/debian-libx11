@@ -3,6 +3,7 @@ libx11 (2:1.6.3-1) UNRELEASED; urgency=medium
   * Let uscan verify tarball signatures.
   * New upstream release.
   * Drop 006_tailor_pt_BR.UTF-8_Compose.diff, no longer necessary.
+  * Rediff 003_recognize_glibc_2.3.2_locale_names.diff.
 
  -- Julien Cristau <jcristau@debian.org>  Thu, 30 Apr 2015 20:20:21 +0200
 
