@@ -3,6 +3,7 @@ libx11 (2:1.6.4-1) UNRELEASED; urgency=medium
   [ Andreas Boll ]
   * New upstream release.
     - Fixes CVE-2016-7942 and CVE-2016-7943.
+  * Bump libxcb1-dev build-dep to 1.11.1 per configure.ac.
   * Update a bunch of URLs in packaging to https.
 
   [ Julien Cristau ]

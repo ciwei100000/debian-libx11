@@ -12,7 +12,7 @@ Build-Depends:
  x11proto-input-dev,
  x11proto-xext-dev,
  x11proto-xf86bigfont-dev (>= 1.2.0),
- libxcb1-dev (>= 1.5-3),
+ libxcb1-dev (>= 1.11.1),
  quilt,
  automake,
  libtool,
@@ -177,7 +177,7 @@ Depends:
  ${shlibs:Depends},
  ${misc:Depends},
  libx11-xcb1 (= ${binary:Version}),
- libxcb1-dev (>= 0.9.92),
+ libxcb1-dev (>= 1.11.1),
  libx11-dev,
 Description: Xlib/XCB interface library (development headers)
  libX11-xcb provides functions needed by clients which take advantage of
