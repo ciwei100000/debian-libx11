@@ -9,6 +9,10 @@ libx11 (2:1.6.4-1) UNRELEASED; urgency=medium
   [ Julien Cristau ]
   * Update d/upstream/signing-key.asc with Matthieu Herrb's key.
 
+  [ Emilio Pozuelo Monfort ]
+  * Cherry-pick upstream commit 20a3f99 to plug a memory leak in the
+    security fix.
+
  -- Andreas Boll <andreas.boll.dev@gmail.com>  Fri, 07 Oct 2016 13:49:35 +0200
 
 libx11 (2:1.6.3-1) unstable; urgency=medium
