@@ -13,6 +13,7 @@ libx11 (2:1.6.4-1) UNRELEASED; urgency=medium
   * Cherry-pick upstream commit 20a3f99 to plug a memory leak in the
     security fix.
   * Bump debhelper compat to 10.
+  * Switch from old debhelper to dh.
 
  -- Andreas Boll <andreas.boll.dev@gmail.com>  Fri, 07 Oct 2016 13:49:35 +0200
 
