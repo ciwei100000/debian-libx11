@@ -14,8 +14,6 @@ Build-Depends:
  x11proto-xf86bigfont-dev (>= 1.2.0),
  libxcb1-dev (>= 1.11.1),
  quilt,
- automake,
- libtool,
  xutils-dev (>= 1:7.6+2),
 # specs
  xmlto,

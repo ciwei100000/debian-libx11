@@ -17,6 +17,8 @@ libx11 (2:1.6.4-1) UNRELEASED; urgency=medium
   * Drop workaround for old tarballs not shipping some files.
   * Switch to -dbgsym packages.
   * Bump Standards-Version to 3.9.8, no changes.
+  * Drop libtool and automake build dependencies, debhelper takes
+    care of that for us now.
 
  -- Andreas Boll <andreas.boll.dev@gmail.com>  Fri, 07 Oct 2016 13:49:35 +0200
 
