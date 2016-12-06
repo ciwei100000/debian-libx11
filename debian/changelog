@@ -15,6 +15,7 @@ libx11 (2:1.6.4-1) UNRELEASED; urgency=medium
   * Bump debhelper compat to 10.
   * Switch from old debhelper to dh.
   * Drop workaround for old tarballs not shipping some files.
+  * Switch to -dbgsym packages.
 
  -- Andreas Boll <andreas.boll.dev@gmail.com>  Fri, 07 Oct 2016 13:49:35 +0200
 

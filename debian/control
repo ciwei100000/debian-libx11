@@ -70,29 +70,6 @@ Description: X11 client-side library
  This module can be found at
  git://anongit.freedesktop.org/git/xorg/lib/libX11
 
-Package: libx11-6-dbg
-Section: debug
-Architecture: any
-Priority: extra
-Depends:
- ${shlibs:Depends},
- ${misc:Depends},
- libx11-6 (= ${binary:Version}),
-Multi-Arch: same
-Description: X11 client-side library (debug package)
- This package provides a client interface to the X Window System, otherwise
- known as 'Xlib'.  It provides a complete API for the basic functions of the
- window system.
- .
- This package contains the debug versions of the library found in libx11-6.
- Non-developers likely have little use for this package.
- .
- More information about X.Org can be found at:
- <URL:https://www.X.org>
- .
- This module can be found at
- git://anongit.freedesktop.org/git/xorg/lib/libX11
-
 Package: libx11-dev
 Section: libdevel
 Architecture: any
@@ -134,31 +111,6 @@ Multi-Arch: same
 Description: Xlib/XCB interface library
  libX11-xcb provides functions needed by clients which take advantage of
  Xlib/XCB to mix calls to both Xlib and XCB over the same X connection.
- .
- More information about X.Org can be found at:
- <URL:https://www.X.org>
- .
- More information about XCB can be found at:
- <URL:https://xcb.freedesktop.org>
- .
- This module can be found at
- git://anongit.freedesktop.org/git/xorg/lib/libX11
-
-Package: libx11-xcb1-dbg
-Section: debug
-Architecture: any
-Priority: extra
-Depends:
- ${shlibs:Depends},
- ${misc:Depends},
- libx11-xcb1 (= ${binary:Version}),
-Multi-Arch: same
-Description: Xlib/XCB interface library (debug package)
- libX11-xcb provides functions needed by clients which take advantage of
- Xlib/XCB to mix calls to both Xlib and XCB over the same X connection.
- .
- This package contains the debug versions of the library found in
- libx11-xcb1.  Non-developers likely have little use for this package.
  .
  More information about X.Org can be found at:
  <URL:https://www.X.org>
