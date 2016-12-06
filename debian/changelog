@@ -1,4 +1,4 @@
-libx11 (2:1.6.4-1) UNRELEASED; urgency=medium
+libx11 (2:1.6.4-1) unstable; urgency=medium
 
   [ Andreas Boll ]
   * New upstream release.
@@ -20,7 +20,7 @@ libx11 (2:1.6.4-1) UNRELEASED; urgency=medium
   * Drop libtool and automake build dependencies, debhelper takes
     care of that for us now.
 
- -- Andreas Boll <andreas.boll.dev@gmail.com>  Fri, 07 Oct 2016 13:49:35 +0200
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 06 Dec 2016 01:38:30 +0100
 
 libx11 (2:1.6.3-1) unstable; urgency=medium
 
