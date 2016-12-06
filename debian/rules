@@ -7,9 +7,6 @@ override_dh_auto_configure-indep: docflags = --enable-specs --with-xmlto
 override_dh_auto_configure-arch: docflags = --disable-specs
 
 override_dh_auto_configure-indep override_dh_auto_configure-arch:
-	# work around lack of these files in the tarball
-	touch nls/km_KH.UTF-8/XLC_LOCALE.pre
-	touch nls/sr_CS.UTF-8/XLC_LOCALE.pre
 	dh_auto_configure -- \
 		$(docflags) \
 		--without-fop
