@@ -1,3 +1,10 @@
+libx11 (2:1.6.4-3) UNRELEASED; urgency=medium
+
+  * debian/libx11-6.symbols: use arch-bits=64 rather than listing all
+    64-bits architectures, which is not future-proof.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 07 Dec 2016 17:23:04 +0100
+
 libx11 (2:1.6.4-2) unstable; urgency=medium
 
   * Fix arch:all-only build.
