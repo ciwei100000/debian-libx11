@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Build-Depends:
  debhelper (>= 10),
- dpkg-dev (>= 1.16.0),
+ dpkg-dev (>= 1.18.0),
  pkg-config,
  xtrans-dev,
  x11proto-core-dev (>= 7.0.21),

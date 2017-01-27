@@ -8,6 +8,7 @@ libx11 (2:1.6.4-3) unstable; urgency=high
   * Fix two regressions introduced in 2:1.6.4-1:
     + Fix wrong Xfree in XListFonts failure path
     + Revert cs_CZ.UTF-8 XLC_LOCALE to en_US.UTF-8 (closes: #847345)
+  * Build-depend on dpkg-dev 1.18.0 for arch-bits support in dpkg-gensymbols.
 
  -- Julien Cristau <jcristau@debian.org>  Sat, 28 Jan 2017 00:06:50 +0100
 
