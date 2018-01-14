@@ -2,6 +2,7 @@ libx11 (2:1.6.5-1) UNRELEASED; urgency=medium
 
   * Add Matt Turner's key to d/u/signing-key.asc
   * New upstream release.
+  * Update VCS metadata for move to salsa.
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 14 Jan 2018 18:49:34 +0100
 
