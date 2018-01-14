@@ -1,3 +1,9 @@
+libx11 (2:1.6.4-4) UNRELEASED; urgency=medium
+
+  * Add Matt Turner's key to d/u/signing-key.asc
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 14 Jan 2018 18:46:42 +0100
+
 libx11 (2:1.6.4-3) unstable; urgency=high
 
   [ Emilio Pozuelo Monfort ]
