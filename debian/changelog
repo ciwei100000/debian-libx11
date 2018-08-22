@@ -3,6 +3,7 @@ libx11 (2:1.6.6-1) UNRELEASED; urgency=medium
   * New upstream release.
     - Fixes CVE-2018-14598, CVE-2018-14599 and CVE-2018-14600.
   * Move libx11-doc from Recommends to Suggests (Closes: #648443).
+  * Add debian/README.source
 
  -- Andreas Boll <aboll@debian.org>  Wed, 22 Aug 2018 20:57:58 +0200
 
