@@ -2,6 +2,7 @@ libx11 (2:1.6.7-1) UNRELEASED; urgency=medium
 
   * New upstream release.
     - fix video freezing in firefox with amdgpu
+  * upstream: Add key from Matt Turner.
 
  -- Timo Aaltonen <tjaalton@debian.org>  Tue, 09 Oct 2018 17:56:32 +0300
 
