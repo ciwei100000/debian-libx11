@@ -1,4 +1,4 @@
-libx11 (2:1.6.8-1) UNRELEASED; urgency=medium
+libx11 (2:1.6.8-1) unstable; urgency=medium
 
   [ Timo Aaltonen ]
   * New upstream release.
@@ -7,7 +7,7 @@ libx11 (2:1.6.8-1) UNRELEASED; urgency=medium
   [ Helmut Grohne ]
   * Move documentation dependencies to Build-Depends-Indep. (Closes: #928878)
 
- -- Timo Aaltonen <tjaalton@debian.org>  Wed, 18 Sep 2019 16:24:23 +0300
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 18 Sep 2019 17:09:31 +0300
 
 libx11 (2:1.6.7-1) unstable; urgency=medium
 
