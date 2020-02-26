@@ -79,6 +79,7 @@ Depends:
  xtrans-dev,
  libxcb1-dev,
 Suggests: libx11-doc
+Replaces: x11proto-dev (<< 2019.2)
 Description: X11 client-side library (development headers)
  This package provides a client interface to the X Window System, otherwise
  known as 'Xlib'.  It provides a complete API for the basic functions of the
