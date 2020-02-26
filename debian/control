@@ -20,7 +20,7 @@ Build-Depends-Indep:
  xmlto,
  xorg-sgml-doctools (>= 1:1.10),
  w3m,
-Standards-Version: 4.2.0
+Standards-Version: 4.5.0
 Vcs-Git: https://salsa.debian.org/xorg-team/lib/libx11
 Vcs-Browser: https://salsa.debian.org/xorg-team/lib/libx11
 
