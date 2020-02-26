@@ -1,4 +1,4 @@
-libx11 (2:1.6.9-1) UNRELEASED; urgency=medium
+libx11 (2:1.6.9-1) unstable; urgency=medium
 
   * New upstream release.
   * control: Use debhelper-compat, bump to 12.
@@ -8,7 +8,7 @@ libx11 (2:1.6.9-1) UNRELEASED; urgency=medium
   * watch: Update upstream url.
   * control: Bump policy to 4.5.0.
 
- -- Timo Aaltonen <tjaalton@debian.org>  Wed, 26 Feb 2020 14:00:43 +0200
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 26 Feb 2020 14:32:15 +0200
 
 libx11 (2:1.6.8-1) unstable; urgency=medium
 
