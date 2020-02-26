@@ -15,8 +15,9 @@ override_dh_installdocs:
 	dh_installdocs NEWS
 
 override_dh_install:
-	# Kill *.xml files, we don't need them:
+	# Kill *.xml, *.la files, we don't need them:
 	find debian/tmp -name '*.xml' -delete
+	find debian/tmp -name '*.la' -delete
 	dh_install -plibx11-dev \
 	           --exclude=usr/include/X11/Xlib-xcb.h
 	dh_install -plibx11-doc \
