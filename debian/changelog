@@ -1,3 +1,10 @@
+libx11 (2:1.6.10-1) unstable; urgency=medium
+
+  * New upstream release
+    + fixes heap corruption in the X input method client (CVE-2020-14344)
+
+ -- Julien Cristau <jcristau@debian.org>  Sat, 01 Aug 2020 12:50:40 +0200
+
 libx11 (2:1.6.9-2) unstable; urgency=medium
 
   * control: Depend on x11proto-dev instead of the old protos, bump the
