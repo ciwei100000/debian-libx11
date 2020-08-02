@@ -1,3 +1,9 @@
+libx11 (2:1.6.10-2) unstable; urgency=medium
+
+  * Fix regression introduced in 1.6.10 (closes: #966691)
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 02 Aug 2020 18:58:23 +0200
+
 libx11 (2:1.6.10-1) unstable; urgency=medium
 
   * New upstream release
