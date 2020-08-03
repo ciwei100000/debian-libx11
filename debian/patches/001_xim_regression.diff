@@ -13,7 +13,7 @@ index 2491908e..e10048f9 100644
  	    if (num > (USHRT_MAX / sizeof(XIMStyle)))
  		return False;
 -	    if ((sizeof(num) + (num * sizeof(XIMStyle))) > data_len)
-+	    if ((2 * sizeof(CARD16) + (num * sizeof(CARD32) > data_len)
++	    if ((2 * sizeof(CARD16) + (num * sizeof(CARD32))) > data_len)
  		return False;
  	    alloc_len = sizeof(XIMStyles) + sizeof(XIMStyle) * num;
  	    if (alloc_len < sizeof(XIMStyles))

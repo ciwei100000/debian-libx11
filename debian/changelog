@@ -1,3 +1,9 @@
+libx11 (2:1.6.10-3) unstable; urgency=medium
+
+  * Fix 001_xim_regression.diff to actually build.
+
+ -- Julien Cristau <jcristau@debian.org>  Mon, 03 Aug 2020 08:44:37 +0200
+
 libx11 (2:1.6.10-2) unstable; urgency=medium
 
   * Fix regression introduced in 1.6.10 (closes: #966691)
