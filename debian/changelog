@@ -1,6 +1,7 @@
 libx11 (2:1.6.12-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * 001_xim_regression.diff: Dropped, upstream.
 
  -- Timo Aaltonen <tjaalton@debian.org>  Thu, 17 Sep 2020 12:52:22 +0300
 
