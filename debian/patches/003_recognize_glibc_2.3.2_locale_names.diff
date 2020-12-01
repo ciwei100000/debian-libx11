@@ -146,9 +146,9 @@ but any bit would help.  --Nathanael
 +iso8859-1/Compose:		so_KE.ISO8859-1
 +iso8859-1/Compose:		so_SO.ISO8859-1
  iso8859-2/Compose:		sq_AL.ISO8859-2
- iso8859-2/Compose:		sr_CS.ISO8859-2
- iso8859-5/Compose:		sr_CS.ISO8859-5
-@@ -261,12 +275,19 @@ zh_CN/Compose:			zh_CN.gb2312
+ iso8859-2/Compose:		sr_YU.ISO8859-2
+ microsoft-cp1251/Compose:	sr_YU.CP1251
+@@ -259,12 +273,19 @@ zh_CN/Compose:			zh_CN.gb2312
  zh_CN.gbk/Compose:		zh_CN.gbk
  zh_CN.gb18030/Compose:		zh_CN.gb18030
  zh_HK.big5/Compose:		zh_HK.big5
@@ -168,7 +168,7 @@ but any bit would help.  --Nathanael
  en_US.UTF-8/Compose:		C.UTF-8
  en_US.UTF-8/Compose:		af_ZA.UTF-8
  am_ET.UTF-8/Compose:		am_ET.UTF-8
-@@ -299,6 +320,7 @@ en_US.UTF-8/Compose:		bn_IN.UTF-8
+@@ -297,6 +318,7 @@ en_US.UTF-8/Compose:		bn_IN.UTF-8
  en_US.UTF-8/Compose:		bo_IN.UTF-8
  en_US.UTF-8/Compose:		br_FR.UTF-8
  en_US.UTF-8/Compose:		bs_BA.UTF-8
@@ -176,7 +176,7 @@ but any bit would help.  --Nathanael
  en_US.UTF-8/Compose:		ca_AD.UTF-8
  en_US.UTF-8/Compose:		ca_ES.UTF-8
  en_US.UTF-8/Compose:		ca_FR.UTF-8
-@@ -360,6 +382,7 @@ en_US.UTF-8/Compose:		es_UY.UTF-8
+@@ -358,6 +380,7 @@ en_US.UTF-8/Compose:		es_UY.UTF-8
  en_US.UTF-8/Compose:		es_VE.UTF-8
  en_US.UTF-8/Compose:		et_EE.UTF-8
  en_US.UTF-8/Compose:		eu_ES.UTF-8
@@ -184,7 +184,7 @@ but any bit would help.  --Nathanael
  en_US.UTF-8/Compose:		fa_IR.UTF-8
  fi_FI.UTF-8/Compose:		fi_FI.UTF-8
  en_US.UTF-8/Compose:		fo_FO.UTF-8
-@@ -370,6 +393,8 @@ en_US.UTF-8/Compose:		fr_FR.UTF-8
+@@ -368,6 +391,8 @@ en_US.UTF-8/Compose:		fr_FR.UTF-8
  en_US.UTF-8/Compose:		fr_LU.UTF-8
  en_US.UTF-8/Compose:		ga_IE.UTF-8
  en_US.UTF-8/Compose:		gd_GB.UTF-8
@@ -193,7 +193,7 @@ but any bit would help.  --Nathanael
  en_US.UTF-8/Compose:		gl_ES.UTF-8
  en_US.UTF-8/Compose:		gu_IN.UTF-8
  en_US.UTF-8/Compose:		gv_GB.UTF-8
-@@ -384,6 +409,7 @@ en_US.UTF-8/Compose:		is_IS.UTF-8
+@@ -382,6 +407,7 @@ en_US.UTF-8/Compose:		is_IS.UTF-8
  en_US.UTF-8/Compose:		it_CH.UTF-8
  en_US.UTF-8/Compose:		it_IT.UTF-8
  en_US.UTF-8/Compose:		iu_CA.UTF-8
@@ -201,7 +201,7 @@ but any bit would help.  --Nathanael
  ja_JP.UTF-8/Compose:		ja_JP.UTF-8
  en_US.UTF-8/Compose:		ka_GE.UTF-8
  en_US.UTF-8/Compose:		kk_KZ.UTF-8
-@@ -403,6 +429,7 @@ en_US.UTF-8/Compose:		mai_IN.UTF-8
+@@ -401,6 +427,7 @@ en_US.UTF-8/Compose:		mai_IN.UTF-8
  en_US.UTF-8/Compose:		mi_NZ.UTF-8
  en_US.UTF-8/Compose:		mk_MK.UTF-8
  en_US.UTF-8/Compose:		ml_IN.UTF-8
@@ -209,7 +209,7 @@ but any bit would help.  --Nathanael
  en_US.UTF-8/Compose:		mr_IN.UTF-8
  en_US.UTF-8/Compose:		ms_MY.UTF-8
  en_US.UTF-8/Compose:		mt_MT.UTF-8
-@@ -414,13 +441,19 @@ en_US.UTF-8/Compose:		no_NO.UTF-8
+@@ -412,13 +439,19 @@ en_US.UTF-8/Compose:		no_NO.UTF-8
  en_US.UTF-8/Compose:		nb_NO.UTF-8
  en_US.UTF-8/Compose:		nr_ZA.UTF-8
  en_US.UTF-8/Compose:		nso_ZA.UTF-8
@@ -232,7 +232,7 @@ but any bit would help.  --Nathanael
  en_US.UTF-8/Compose:		ph_PH.UTF-8
  en_US.UTF-8/Compose:		pl_PL.UTF-8
  en_US.UTF-8/Compose:		pp_AN.UTF-8
-@@ -436,9 +469,11 @@ en_US.UTF-8/Compose:		sd_IN.UTF-8@devana
+@@ -434,9 +467,11 @@ en_US.UTF-8/Compose:		sd_IN.UTF-8@devana
  en_US.UTF-8/Compose:		se_NO.UTF-8
  en_US.UTF-8/Compose:		sh_BA.UTF-8
  en_US.UTF-8/Compose:		sh_YU.UTF-8
@@ -242,9 +242,9 @@ but any bit would help.  --Nathanael
  en_US.UTF-8/Compose:		sl_SI.UTF-8
 +en_US.UTF-8/Compose:		so_ET.UTF-8
  en_US.UTF-8/Compose:		sq_AL.UTF-8
- sr_CS.UTF-8/Compose:		sr_CS.UTF-8
  en_US.UTF-8/Compose:		sr_ME.UTF-8
-@@ -454,6 +489,7 @@ en_US.UTF-8/Compose:		tg_TJ.UTF-8
+ en_US.UTF-8/Compose:		sr_RS.UTF-8
+@@ -451,6 +486,7 @@ en_US.UTF-8/Compose:		tg_TJ.UTF-8
  th_TH.UTF-8/Compose:		th_TH.UTF-8
  en_US.UTF-8/Compose:		ti_ER.UTF-8
  en_US.UTF-8/Compose:		ti_ET.UTF-8
@@ -254,7 +254,7 @@ but any bit would help.  --Nathanael
  en_US.UTF-8/Compose:		tr_TR.UTF-8
 --- a/nls/locale.alias.pre
 +++ b/nls/locale.alias.pre
-@@ -321,6 +321,12 @@ en_CA.iso88591:					en_CA.ISO8859-1
+@@ -316,6 +316,12 @@ en_CA.iso88591:					en_CA.ISO8859-1
  en_CA.ISO-8859-1:				en_CA.ISO8859-1
  en_CA.ISO_8859-1:				en_CA.ISO8859-1
  en_CA.utf8:					en_CA.UTF-8
@@ -267,7 +267,7 @@ but any bit would help.  --Nathanael
  en_DL.utf8:					en_DL.UTF-8
  en_GB:						en_GB.ISO8859-1
  en_GB.88591:					en_GB.ISO8859-1
-@@ -374,6 +380,16 @@ en_US.8859-15:					en_US.ISO8859-15
+@@ -369,6 +375,16 @@ en_US.8859-15:					en_US.ISO8859-15
  en_US.ISO8859-15@euro:				en_US.ISO8859-15
  en_US.utf8:					en_US.UTF-8
  EN_US.UTF-8:					en_US.UTF-8
@@ -284,7 +284,7 @@ but any bit would help.  --Nathanael
  en_ZA:						en_ZA.ISO8859-1
  en_ZA.88591:					en_ZA.ISO8859-1
  en_ZA.88591.en:					en_ZA.ISO8859-1
-@@ -942,7 +958,6 @@ pt_BR.88591.en:					pt_BR.ISO8859-1
+@@ -926,7 +942,6 @@ pt_BR.88591.en:					pt_BR.ISO8859-1
  pt_BR.iso88591:					pt_BR.ISO8859-1
  pt_BR.ISO-8859-1:				pt_BR.ISO8859-1
  pt_BR.ISO_8859-1:				pt_BR.ISO8859-1
@@ -292,29 +292,24 @@ but any bit would help.  --Nathanael
  pt_BR.utf8:					pt_BR.UTF-8
  pt_PT:						pt_PT.ISO8859-1
  pt_PT.88591:					pt_PT.ISO8859-1
-@@ -1003,11 +1018,11 @@ XCOMM CS was the old ISO code for Serbia
- XCOMM These lines should be deleted in the future.
- sh:						sr_RS.UTF-8@latin
- sh_BA.ISO8859-2@bosnia:				sr_CS.ISO8859-2
--sh_HR.iso88592:					hr_HR.ISO8859-2
- sh_YU:						sr_RS.UTF-8@latin
- sh_YU.utf8:					sr_RS.UTF-8@latin
+@@ -983,6 +998,7 @@ se_NO:						se_NO.UTF-8
+ se_NO.utf8:					se_NO.UTF-8
  si:						si_LK.UTF-8
  si_LK:						si_LK.UTF-8
-+sid_ET:                        sid_ET.UTF-8
++sid_ET:						sid_ET.UTF-8
  sk:						sk_SK.ISO8859-2
  sk_SK:						sk_SK.ISO8859-2
  sk_SK.iso88592:					sk_SK.ISO8859-2
-@@ -1220,7 +1235,7 @@ XCOMM The following locale names are use
+@@ -1184,7 +1200,7 @@ XCOMM The following locale names are use
  american.iso88591:				en_US.ISO8859-1
  arabic.iso88596:				ar_AA.ISO8859-6
  bokmal:						nb_NO.ISO8859-1
 -bokmål:						nb_NO.ISO8859-1
-+bokmï¿½:						nb_NO.ISO8859-1
++bokmÃ¥l:						nb_NO.ISO8859-1
  bulgarian:					bg_BG.CP1251
  c-french.iso88591:				fr_CA.ISO8859-1
  catalan:					ca_ES.ISO8859-1
-@@ -1235,11 +1250,11 @@ deutsch:					de_DE.ISO8859-1
+@@ -1199,11 +1215,11 @@ deutsch:					de_DE.ISO8859-1
  dutch:						nl_NL.ISO8859-1
  dutch.iso88591:					nl_BE.ISO8859-1
  eesti:						et_EE.ISO8859-1
@@ -416,9 +411,9 @@ but any bit would help.  --Nathanael
 +iso8859-1/XLC_LOCALE:			so_KE.ISO8859-1
 +iso8859-1/XLC_LOCALE:			so_SO.ISO8859-1
  iso8859-2/XLC_LOCALE: 			sq_AL.ISO8859-2
- iso8859-2/XLC_LOCALE:			sr_CS.ISO8859-2
- iso8859-5/XLC_LOCALE:			sr_CS.ISO8859-5
-@@ -238,8 +256,8 @@ iso8859-1/XLC_LOCALE:			sv_SE.ISO8859-1
+ iso8859-2/XLC_LOCALE:			sr_YU.ISO8859-2
+ iso8859-5/XLC_LOCALE:			sr_YU.ISO8859-5
+@@ -236,8 +254,8 @@ iso8859-1/XLC_LOCALE:			sv_SE.ISO8859-1
  iso8859-15/XLC_LOCALE:			sv_SE.ISO8859-15
  tscii-0/XLC_LOCALE:			ta_IN.TSCII-0
  koi8-c/XLC_LOCALE:			tg_TJ.KOI8-C
@@ -428,7 +423,7 @@ but any bit would help.  --Nathanael
  iso8859-1/XLC_LOCALE: 			tl_PH.ISO8859-1
  iso8859-15/XLC_LOCALE:			tn_ZA.ISO8859-15
  iso8859-9/XLC_LOCALE:			tr_TR.ISO8859-9
-@@ -263,10 +281,14 @@ zh_CN.gbk/XLC_LOCALE:			zh_CN.gbk
+@@ -261,10 +279,14 @@ zh_CN.gbk/XLC_LOCALE:			zh_CN.gbk
  zh_CN.gb18030/XLC_LOCALE:		zh_CN.gb18030
  zh_HK.big5/XLC_LOCALE:			zh_HK.big5
  zh_HK.big5hkscs/XLC_LOCALE:		zh_HK.big5hkscs
@@ -443,7 +438,7 @@ but any bit would help.  --Nathanael
  en_US.UTF-8/XLC_LOCALE:			af_ZA.UTF-8
  en_US.UTF-8/XLC_LOCALE:			am_ET.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ar_AA.UTF-8
-@@ -299,6 +321,7 @@ en_US.UTF-8/XLC_LOCALE:			bn_BD.UTF-8
+@@ -297,6 +319,7 @@ en_US.UTF-8/XLC_LOCALE:			bn_BD.UTF-8
  en_US.UTF-8/XLC_LOCALE:			bn_IN.UTF-8
  en_US.UTF-8/XLC_LOCALE:                 bo_IN.UTF-8
  en_US.UTF-8/XLC_LOCALE:			br_FR.UTF-8
@@ -451,7 +446,7 @@ but any bit would help.  --Nathanael
  en_US.UTF-8/XLC_LOCALE:			ca_AD.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ca_ES.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ca_FR.UTF-8
-@@ -336,7 +359,8 @@ en_US.UTF-8/XLC_LOCALE:			en_UK.UTF-8
+@@ -334,7 +357,8 @@ en_US.UTF-8/XLC_LOCALE:			en_UK.UTF-8
  en_US.UTF-8/XLC_LOCALE:			en_US.UTF-8
  en_US.UTF-8/XLC_LOCALE:			en_ZA.UTF-8
  en_US.UTF-8/XLC_LOCALE:			en_ZW.UTF-8
@@ -461,7 +456,7 @@ but any bit would help.  --Nathanael
  en_US.UTF-8/XLC_LOCALE:			eo_XX.UTF-8
  en_US.UTF-8/XLC_LOCALE:			es_AR.UTF-8
  en_US.UTF-8/XLC_LOCALE:			es_BO.UTF-8
-@@ -360,6 +384,7 @@ en_US.UTF-8/XLC_LOCALE:			es_UY.UTF-8
+@@ -358,6 +382,7 @@ en_US.UTF-8/XLC_LOCALE:			es_UY.UTF-8
  en_US.UTF-8/XLC_LOCALE:			es_VE.UTF-8
  en_US.UTF-8/XLC_LOCALE:			et_EE.UTF-8
  en_US.UTF-8/XLC_LOCALE:			eu_ES.UTF-8
@@ -469,7 +464,7 @@ but any bit would help.  --Nathanael
  en_US.UTF-8/XLC_LOCALE:			fa_IR.UTF-8
  en_US.UTF-8/XLC_LOCALE:			fi_FI.UTF-8
  en_US.UTF-8/XLC_LOCALE:			fo_FO.UTF-8
-@@ -370,6 +395,8 @@ en_US.UTF-8/XLC_LOCALE:			fr_FR.UTF-8
+@@ -368,6 +393,8 @@ en_US.UTF-8/XLC_LOCALE:			fr_FR.UTF-8
  en_US.UTF-8/XLC_LOCALE:			fr_LU.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ga_IE.UTF-8
  en_US.UTF-8/XLC_LOCALE:			gd_GB.UTF-8
@@ -533,9 +528,9 @@ but any bit would help.  --Nathanael
  en_US.UTF-8/XLC_LOCALE:			sl_SI.UTF-8
 +en_US.UTF-8/XLC_LOCALE:            so_ET.UTF-8
  en_US.UTF-8/XLC_LOCALE:			sq_AL.UTF-8
- en_US.UTF-8/XLC_LOCALE:			sr_CS.UTF-8
  en_US.UTF-8/XLC_LOCALE:			sr_ME.UTF-8
-@@ -454,6 +492,7 @@ en_US.UTF-8/XLC_LOCALE:			tg_TJ.UTF-8
+ en_US.UTF-8/XLC_LOCALE:			sr_RS.UTF-8
+@@ -453,6 +491,7 @@ en_US.UTF-8/XLC_LOCALE:			tg_TJ.UTF-8
  th_TH.UTF-8/XLC_LOCALE:			th_TH.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ti_ER.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ti_ET.UTF-8
