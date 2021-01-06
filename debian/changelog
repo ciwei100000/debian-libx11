@@ -1,11 +1,11 @@
-libx11 (2:1.7.0-1) UNRELEASED; urgency=medium
+libx11 (2:1.7.0-1) unstable; urgency=medium
 
   * New upstream release.
   * patches: Refreshed.
   * signing-key: Added key from Keith Packard.
   * symbols: Updated.
 
- -- Timo Aaltonen <tjaalton@debian.org>  Tue, 01 Dec 2020 16:48:57 +0200
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 06 Jan 2021 20:47:58 +0200
 
 libx11 (2:1.6.12-1) unstable; urgency=medium
 
