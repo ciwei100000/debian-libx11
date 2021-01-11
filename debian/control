@@ -38,7 +38,7 @@ Description: X11 client-side library
  <URL:https://www.X.org>
  .
  This module can be found at
- git://anongit.freedesktop.org/git/xorg/lib/libX11
+ https://gitlab.freedesktop.org/xorg/lib/libX11
 
 Package: libx11-6-udeb
 XC-Package-Type: udeb
@@ -63,7 +63,7 @@ Description: X11 client-side library
  <URL:https://www.X.org>
  .
  This module can be found at
- git://anongit.freedesktop.org/git/xorg/lib/libX11
+ https://gitlab.freedesktop.org/xorg/lib/libX11
 
 Package: libx11-dev
 Section: libdevel
@@ -92,7 +92,7 @@ Description: X11 client-side library (development headers)
  <URL:https://www.X.org>
  .
  This module can be found at
- git://anongit.freedesktop.org/git/xorg/lib/libX11
+ https://gitlab.freedesktop.org/xorg/lib/libX11
 
 Package: libx11-xcb1
 Section: libs
@@ -114,7 +114,7 @@ Description: Xlib/XCB interface library
  <URL:https://xcb.freedesktop.org>
  .
  This module can be found at
- git://anongit.freedesktop.org/git/xorg/lib/libX11
+ https://gitlab.freedesktop.org/xorg/lib/libX11
 
 Package: libx11-xcb-dev
 Section: libdevel
@@ -140,7 +140,7 @@ Description: Xlib/XCB interface library (development headers)
  <URL:https://xcb.freedesktop.org>
  .
  This module can be found at
- git://anongit.freedesktop.org/git/xorg/lib/libX11
+ https://gitlab.freedesktop.org/xorg/lib/libX11
 
 Package: libx11-doc
 Section: doc
@@ -162,4 +162,4 @@ Description: X11 client-side library (development documentation)
  <URL:https://www.X.org>
  .
  This module can be found at
- git://anongit.freedesktop.org/git/xorg/lib/libX11
+ https://gitlab.freedesktop.org/xorg/lib/libX11
