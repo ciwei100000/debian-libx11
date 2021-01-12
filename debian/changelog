@@ -1,3 +1,10 @@
+libx11 (2:1.7.0-3) UNRELEASED; urgency=medium
+
+  * libx11-6 Breaks old libx11-xcb1, as further mitigation for bug
+    #979590.
+
+ -- Julien Cristau <jcristau@debian.org>  Tue, 12 Jan 2021 10:56:59 +0100
+
 libx11 (2:1.7.0-2) unstable; urgency=medium
 
   * Set a strict dependency of libx11-xcb1 on libx11-6, as internal ABI

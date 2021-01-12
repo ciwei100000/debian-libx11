@@ -28,6 +28,8 @@ Depends:
  ${misc:Depends},
  libx11-data,
 Pre-Depends: ${misc:Pre-Depends}
+Breaks:
+ libx11-xcb1 (<< 2:1.7.0-2),
 Multi-Arch: same
 Description: X11 client-side library
  This package provides a client interface to the X Window System, otherwise
