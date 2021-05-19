@@ -1,4 +1,4 @@
-libx11 (2:1.7.1-1) UNRELEASED; urgency=medium
+libx11 (2:1.7.1-1) unstable; urgency=medium
 
   [ Julien Cristau ]
   * libx11-6 Breaks old libx11-xcb1, as further mitigation for bug
@@ -9,7 +9,7 @@ libx11 (2:1.7.1-1) UNRELEASED; urgency=medium
   * CVE-2021-31535: X protocol command injection due to missing request
     length checks (closes: #988737)
 
- -- Julien Cristau <jcristau@debian.org>  Tue, 12 Jan 2021 10:56:59 +0100
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 19 May 2021 17:22:09 +0200
 
 libx11 (2:1.7.0-2) unstable; urgency=medium
 
