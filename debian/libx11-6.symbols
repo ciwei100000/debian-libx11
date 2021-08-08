@@ -1075,8 +1075,11 @@ libX11.so.6 libx11-6 #MINVER#
  (optional)_XimXTransFreeConnInfo@Base 0 1
  (optional)_XimXTransGetConnectionNumber@Base 0 1
  (optional)_XimXTransGetHostname@Base 0 1
+ (optional)_XimXTransGetMyAddr@Base 0 1
+ (optional)_XimXTransOpenCLTSClient@Base 0 1
  (optional)_XimXTransGetPeerAddr@Base 0 1
  (optional)_XimXTransIsLocal@Base 0 1
+ (optional)_XimXTransOpenCLTSClient@Base 0 1
  (optional)_XimXTransOpenCOTSClient@Base 0 1
  (optional)_XimXTransRead@Base 0 1
  (optional)_XimXTransReadv@Base 0 1
